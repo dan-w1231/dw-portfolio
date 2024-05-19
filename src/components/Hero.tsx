@@ -26,7 +26,6 @@ export function Hero() {
             <motion.div
               className="relative z-[99]"
               initial={{ opacity: 0, x: -80 }}
-              viewport= {{ once: true, amount: 0 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3, staggerChildren: 0.4 }}
             >
@@ -44,16 +43,12 @@ export function Hero() {
         </div>
         <div className="relative w-full sm:w-1/3 flex items-end lg:col-span-4 lg:row-span-2 z-[3]">
           <motion.button 
-            className="relative px-2 sm:px-0 z-10 max-w-full flex w-full md:w-80"
+            className="relative px-2 sm:px-0 z-10 max-w-full flex w-full md:w-80 xl:w-64"
             initial={{ opacity: 0, x: -10 }}
-            viewport= {{ once: true, amount: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ type: "spring", stiffness: 100, duration: 1.5}}
-            whileHover={{
-              scale: 1.05,
-              transition: { type: "spring", stiffness: 100, duration: 1 },
-            }}
-            whileTap={{ scale: 0.96 }}
+            whileHover={{ scale: 1.05, y: 0, transition: { type: "spring", stiffness: 100, duration: 0.2 }, }}
+            whileTap={{ scale: 0.95, y: 0, transition: { type: "spring", stiffness: 100, duration: 0.2 }, }}
             >
             <Button href="#pricing" color="primaryGrad" className="w-full">
                   View CV
@@ -66,7 +61,6 @@ export function Hero() {
           <motion.div
             // className="absolute w-48 sm:w-96 md:w-[32rem] h-48 overflow-visible"
             className="absolute w-full h-full right-0 top-0"
-            viewport= {{ once: true, amount: 0 }}
             initial={{ opacity: 0, x: 60, rotate: 0 }}
             whileInView={{ opacity: 1, x: 0, rotate: 0 }}
             transition={{ type: "spring", stiffness: 100, delay: 1, duration: 6 }}

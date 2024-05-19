@@ -13,9 +13,9 @@ const variantStyles = {
     slate: 
       'bg-slate-900 text-white hover:bg-slate-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 active:bg-slate-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-slate-900',
     blue: 
-      'bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-blue-600',
+      'bg-blue-600 text-white box-border hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 active:bg-blue-700 active:text-white/80 disabled:opacity-30 disabled:hover:bg-blue-600',
     primaryGrad: 
-      'bg-primaryGrad text-white hover:from-blue-600 from-0% hover:to-blue-600 to-100% focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-blue-100 active:bg-blue-700 active: bg-blue-400 disabled:opacity-30 disabled:hover:bg-blue-600',
+      'bg-primaryGrad text-white box-border hover:from-blue-600 from-0% hover:bg-[#5768FF] focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-blue-100 active:border-1 active:border-[#4756E2] disabled:opacity-30 disabled:hover:bg-blue-600',
     secondaryGrad: 
       'border border-slate-400 bg-gradient-to-t from-slate-400 from-0% via-slate-300 via-90% to-slate-200 text-slate hover:from-slate-400 from-0% hover:to-slate-300 to-100% focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-100 active:bg-blue-700 active: bg-blue-400 disabled:opacity-30 disabled:hover:bg-blue-600',
     white:

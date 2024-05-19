@@ -18,12 +18,12 @@ export function About() {
     <section
       id="about"
       aria-labelledby="about-title"
-      className="relative max-w-screen-2xl mx-auto scroll-mt-14 pt-2 sm:scroll-mt-32 sm:pb-16 sm:pt-0 lg:pt-0"
+      className="max-w-screen-2xl mt-2 xs:mt-4 px-2 xs:px-4 sm:pb-16 m-auto"
     >
       <div className="absolute inset-x-0 bottom-0 top-1/2 text-slate-900/10 [mask-image:linear-gradient(transparent,white)]">
         <GridPattern x="50%" y="100%" />
       </div>
-      <div className="relative mx-4">
+      <div className="relative">
         <div className="bg-white/60 rounded-4xl rounded-tr-8xl backdrop-blur shadow-lg pt-px rounded-4xl md:rounded-5xl xl:rounded-6xl">
           <div className="absolute top-[0] right-[0px] h-24 w-24 overflow-hidden rounded-full bg-slate-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
             <Image
