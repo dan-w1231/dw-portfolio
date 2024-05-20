@@ -7,6 +7,9 @@ export function SectionTitle() {
     <motion.div
       id="sectionPill"
       className="sticky left-0 top-16 px-4 py-12 bg-[#BDCACE] flex items-center justify-center rounded-r-[46px] overflow-hidden z-[99]"
+      initial={{ opacity: 0, x: -90 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ type: "spring", stiffness: 100, delay: 2.4, duration: 2 }}
     >
       <div
         id="sectionPillTitle"
