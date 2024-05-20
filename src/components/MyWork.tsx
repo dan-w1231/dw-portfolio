@@ -170,8 +170,8 @@ export function MyWork() {
   useEffect(() => {
     const handleScroll = () => {
       const zindex = scrollYProgress.get() > 0.85 ? 2 : 1;
-      console.log('Z-Index:', zindex);
-      console.log('Scroll Y Progress:', scrollYProgress.get());
+      // console.log('Z-Index:', zindex);
+      // console.log('Scroll Y Progress:', scrollYProgress.get());
     };
 
   window.addEventListener('scroll', handleScroll);
@@ -181,12 +181,12 @@ export function MyWork() {
     };
   }, [scrollYProgress]);
 
-  // const horizontalListThreshold = 0.85;
-  // const aboutThreshold = 0.85;
+  const horizontalListThreshold = 0.85;
+  const aboutThreshold = 0.85;
 
-  // const scrollPosition = scrollYProgress.get();
-  // const horizontalListZIndex = scrollPosition < horizontalListThreshold ? 99 : 1;
-  // const aboutZIndex = scrollPosition > aboutThreshold ? 99 : 1;
+  const scrollPosition = scrollYProgress.get();
+  const horizontalListZIndex = scrollPosition < horizontalListThreshold ? 99 : 1;
+  const aboutZIndex = scrollPosition > aboutThreshold ? 99 : 1;
 
   return (
     <section

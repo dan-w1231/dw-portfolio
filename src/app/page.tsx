@@ -36,7 +36,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 70, delay: 1.4, duration: 1.5, staggerChildren: 0.5 }}
           >
-            <div className="absolute h-[1980px] top-4 mt-96">
+            <div className="absolute h-[1980px] md:h-[1130px] top-4 md:top-[1rem] mt-96 md:mt-[24rem] z-[97]">
               <SectionTitle />
             </div>
             <MyWork />

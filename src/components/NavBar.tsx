@@ -109,7 +109,7 @@ export function NavBar() {
   }, [])
 
   return (
-    <div ref={navBarRef} className="sticky top-0 z-50">
+    <div ref={navBarRef} className="sticky top-0 z-[99]">
       <Popover className="">
         {({ open }) => (
           <>
@@ -137,7 +137,7 @@ export function NavBar() {
               <Popover.Button
                 className={clsx(
                   '-mr-1 ml-auto flex h-8 w-8 items-center justify-center',
-                  open && 'relative z-10',
+                  open && 'relative z-[98]',
                 )}
                 aria-label="Toggle navigation menu"
               >
@@ -171,7 +171,7 @@ export function NavBar() {
                 </Popover.Button>
               ))}
             </Popover.Panel>
-            <div className="absolute inset-x-0 bottom-full z-10 h-4 bg-transparent" />
+            <div className="absolute inset-x-0 bottom-full z-[98] h-4 bg-transparent" />
           </>
         )}
       </Popover>
