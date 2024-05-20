@@ -30,10 +30,23 @@ export default {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      colors: {
+        'blurple': '#5768FF',
+        'midnight': {
+          900: '#151721', // titles
+          800: '#2C2E37', // light
+          700: '#44454D', // lighter
+          600: '#5B5D64', // lighterer
+          500: '#73747A', // lightererer
+          400: '#8A8B90'  // lightest
+        },
+      },
       screens: {
-        'xs': '431px',
-        // Set as iphone Max are 430w so layout is the same for most mobiles, then switches any larger
+        // Set as iPhone 14/15 Max are 430w
+        // This is a particularly wide device width
         // => @media (min-width: 431px) { ... }
+        'xs': '431px',
+
       },
       borderRadius: {
         '4xl': '2rem',

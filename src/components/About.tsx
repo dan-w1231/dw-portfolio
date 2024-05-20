@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-
+import { motion } from "framer-motion"
 import { GridPattern } from '@/components/GridPattern'
 import { SectionHeading } from '@/components/SectionHeading'
 import avatarImage from '@/images/avatars/avatar.png'
@@ -20,7 +20,7 @@ export function About() {
       aria-labelledby="about-title"
       className="max-w-screen-2xl mt-2 xs:mt-4 px-2 xs:px-4 sm:pb-16 m-auto"
     >
-      <div className="absolute inset-x-0 bottom-0 top-1/2 text-slate-900/10 [mask-image:linear-gradient(transparent,white)]">
+      <div className="absolute inset-x-0 bottom-0 top-1/2 text-midnight-900/10 [mask-image:linear-gradient(transparent,white)]">
         <GridPattern x="50%" y="100%" />
       </div>
       <div className="relative">
@@ -33,15 +33,20 @@ export function About() {
               sizes="(min-width: 1024px) 18rem, (min-width: 768px) 16rem, 11rem"
             />
           </div>
-          <div className="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
-            <SectionHeading number="5" id="about-title">
-              About
+          <motion.div
+              className="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32"
+              initial={{ opacity: 0, x: -80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3, staggerChildren: 0.4 }}
+            >
+            <SectionHeading number="2" id="about-title">
+              Some sub title thing
             </SectionHeading>
-            <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
+            <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-midnight-900 sm:text-6xl">
               <span className="block text-blue-600">Daniel Wallace –</span> Hey
               there, here's a lorem ipsum’.
             </p>
-            <p className="mt-4 text-lg tracking-tight text-slate-700">
+            <p className="mt-4 text-lg tracking-tight text-midnight-700">
               I’ve been designing lorem ipsum for 12 years dolar sit amet di jora al cetin. Lorem ipsum dolar sut amet di jora al cetin de gon de gari han di lorem.
             </p>
             <p className="mt-8">
@@ -53,7 +58,7 @@ export function About() {
                 <span className="ml-4">Social or some other link</span>
               </Link>
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

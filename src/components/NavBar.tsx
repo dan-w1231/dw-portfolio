@@ -129,7 +129,7 @@ export function NavBar() {
                   >
                     {(mobileActiveIndex + 1).toString().padStart(2, '0')}
                   </span>
-                  <span className="ml-4 text-base font-medium text-slate-900">
+                  <span className="ml-4 text-base font-medium text-midnigh-900">
                     {sections[mobileActiveIndex].title}
                   </span> */}
                 </>
@@ -165,7 +165,7 @@ export function NavBar() {
                   >
                     {(sectionIndex + 1).toString().padStart(2, '0')}
                   </span>
-                  <span className="ml-4 text-base font-medium text-slate-900">
+                  <span className="ml-4 text-base font-medium text-midnigh-900">
                     {section.title}
                   </span>
                 </Popover.Button>
@@ -178,7 +178,7 @@ export function NavBar() {
       {/* <div className="hidden sm:flex sm:h-32 sm:justify-center sm:border-b sm:border-slate-200 sm:bg-transparent sm:[@supports(backdrop-filter:blur(0))]:bg-white/50 sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur">
         <ol
           role="list"
-          className="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col text-base font-medium text-slate-900 [counter-reset:section]"
+          className="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col text-base font-medium text-midnigh-900 [counter-reset:section]"
         >
           {sections.map((section, sectionIndex) => (
             <li key={section.id} className="flex [counter-increment:section]">
@@ -189,7 +189,7 @@ export function NavBar() {
                   'flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)]',
                   sectionIndex === activeIndex
                     ? 'border-blue-600 bg-blue-50 text-blue-600 before:text-blue-600'
-                    : 'border-transparent before:text-slate-500 hover:bg-blue-50/40 hover:before:text-slate-900',
+                    : 'border-transparent before:text-midnigh-500 hover:bg-blue-50/40 hover:before:text-midnigh-900',
                 )}
               >
                 {section.title}

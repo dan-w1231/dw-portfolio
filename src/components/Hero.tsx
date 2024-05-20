@@ -1,7 +1,5 @@
-'use client'
-
 import Image from 'next/image'
-import { motion, useScroll } from "framer-motion"
+import { motion } from "framer-motion"
 import { Button } from '@/components/Button'
 import Circle from '@/images/resources/circle.svg'
 import nightBg from '@/images/resources/nightBg.svg'
@@ -29,13 +27,10 @@ export function Hero() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3, staggerChildren: 0.4 }}
             >
-              <p className="font-display text-3xl font-semibold tracking-tight text-slate-600 mb-4 z-[99]">
+              <p className="font-display text-3xl font-semibold tracking-tight text-midnight-600 mb-4 z-[99]">
                 Hey, I'm Dan 👋
               </p>
-              {/* <h1 className="font-serif text-5xl sm:text-7xl font-extrabold text-slate-900 sm:text-6xl z-1">
-                An experience designer with a passion for human-centred products.
-              </h1> */}
-              <h1 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-slate-900 z-1">
+              <h1 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900 z-1">
                 Digital product designer.
               </h1>
             </motion.div>

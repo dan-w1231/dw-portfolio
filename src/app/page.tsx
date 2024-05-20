@@ -1,26 +1,22 @@
 'use client'
-import { About } from '@/components/About'
 import { Footer } from '@/components/Footer'
+import { SectionTitle } from '@/components/SectionTitle'
 import { GridPattern } from '@/components/GridPattern'
 import { FlowChart } from '@/components/FlowChart'
-import { GridIcon } from '@/components/GridIcon'
 import { Hero } from '@/components/Hero'
-import { motion, useScroll, useTransform, useMotionValue } from "framer-motion"
-import { useRef } from "react";
+import { motion } from "framer-motion"
 import { NavBar } from '@/components/NavBar'
 import { MyWork } from '@/components/MyWork'
-import avatarImage1 from '@/images/avatars/avatar-1.png'
-import avatarImage2 from '@/images/avatars/avatar-2.png'
 
 export default function Home() {
   return (
     <> 
       <NavBar />
       <div id="main" className="relative w-screen mx-auto">
-        <div className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-slate-900/10">
+        <div className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/10">
           <GridPattern x="20%" />
         </div>
-        <div className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-slate-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),transparent)]">
+        <div className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),transparent)]">
           <div className="right-[-90px]">
             <FlowChart size="100%" />
           </div>
@@ -40,6 +36,9 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 70, delay: 1.4, duration: 1.5, staggerChildren: 0.5 }}
           >
+            <div className="absolute h-[1980px] top-4 mt-96">
+              <SectionTitle />
+            </div>
             <MyWork />
           </motion.div>
 

@@ -1,17 +1,15 @@
 'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import { About } from '@/components/About'
-import { motion, useScroll, useTransform, useSpring, useMotionValue} from "framer-motion"
-import { useRef, useState, useLayoutEffect, useCallback, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef, useEffect } from "react";
 import { Container } from '@/components/Container'
-import CircleArrow from '@/images/resources/circleArrow.svg'
+import circleArrow from '@/images/resources/circleArrow.svg'
 import insightsImage from '@/images/resources/insights.png'
 import breatheImage from '@/images/resources/breathe.png'
 import fitcheckImage from '@/images/resources/fitcheck.png'
 import fafmcImage from '@/images/resources/fafmc.png'
-import { useScrollPercentage } from "react-scroll-percentage";
 
 const myWork = [
   {
@@ -31,7 +29,7 @@ const myWork = [
           >
             <Image src={breatheImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={CircleArrow} alt="" className="absolute w-auto top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
         </div>
       )
     },
@@ -53,7 +51,7 @@ const myWork = [
           >
             <Image src={insightsImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={CircleArrow} alt="" className="absolute w-auto top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
         </div>
       )
     },
@@ -75,7 +73,7 @@ const myWork = [
           >
             <Image src={fitcheckImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={CircleArrow} alt="" className="absolute w-auto top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
         </div>
       )
     },
@@ -102,11 +100,9 @@ const myWork = [
               }}
               whileTap={{ scale: 0.9 }}
 />
-            <Link href="/insights" className="pointer-events-none">
               <Image src={breatheImage} className="pointer-events-none" alt="" />
-            </Link>
           </motion.div>
-          <Image src={CircleArrow} alt="" className="absolute w-auto top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
         </div>
       )
     },
@@ -128,7 +124,7 @@ const myWork = [
           >
             <Image src={fitcheckImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={CircleArrow} alt="" className="absolute w-auto top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
         </div>
       )
     },
@@ -150,7 +146,7 @@ const myWork = [
           >
             <Image src={fafmcImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={CircleArrow} alt="" className="absolute w-auto top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
         </div>
       )
     },
@@ -164,6 +160,12 @@ export function MyWork() {
     target: targetRef,
   });
 
+
+  // Get the initial window width cos next
+  const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
+
+  const x = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0%", "0%"] : ["0px", "-2800px"]);
+
   // scroll event listener
   useEffect(() => {
     const handleScroll = () => {
@@ -172,36 +174,31 @@ export function MyWork() {
       console.log('Scroll Y Progress:', scrollYProgress.get());
     };
 
-    window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [scrollYProgress]);
 
-  const x = useTransform(scrollYProgress, [0, 1], window.innerWidth <768 ? ["0%", "0%"] : ["0px", "-2800px"]);
+  // const horizontalListThreshold = 0.85;
+  // const aboutThreshold = 0.85;
 
-  // Calculate the scroll position thresholds
-  const horizontalListThreshold = 0.85; // Adjust as needed
-  const aboutThreshold = 0.85; // Adjust as needed
-
-  const scrollPosition = scrollYProgress.get();
-
-  // Determine the z-index values based on scrollYProgress
-  const horizontalListZIndex = scrollPosition < horizontalListThreshold ? 99 : 1;
-  const aboutZIndex = scrollPosition > aboutThreshold ? 99 : 1;
+  // const scrollPosition = scrollYProgress.get();
+  // const horizontalListZIndex = scrollPosition < horizontalListThreshold ? 99 : 1;
+  // const aboutZIndex = scrollPosition > aboutThreshold ? 99 : 1;
 
   return (
     <section
       id="myWork"
       aria-labelledby="myWork-title"
       ref={targetRef}
-      className="relative mt-2 xs:my-4 md:h-[200vh] lg:h-[300vh] border border-red-400"  
+      className="relative mt-2 xs:my-4 md:h-[200vh] lg:h-[300vh]"  
     >
       <Container 
         size="lg" 
         className="relative z-50 w-full md:sticky md:top-0 flex items-center overflow-hidden pb-20 -mb-20 md:pt-20 md:-mt-20"
-        style={{ zIndex: horizontalListZIndex }}
+        // style={{ zIndex: horizontalListZIndex }}
         >
         <motion.ol
           style={{ x }}
@@ -210,13 +207,13 @@ export function MyWork() {
         >
           {myWork.map((work) => (
             <motion.div
-              className="md:snap-start md:scroll-mx-0"
+              className="md:snap-start md:scroll-mx-0 select-none"
               initial={{ scale: 1, y: 0 }}
-              whileHover={{ scale: 1.05, y: -4 }}
-              whileTap={{ scale: 0.95, y: 0 }}
-              transition={{ type: "spring", stiffness: 100, duration: 0.8 }}
+              whileHover={{ scale: 1.01, y: -2 }}
+              whileTap={{ scale: 0.99, y: 0 }}
+              transition={{ duration: 0.2 }}
             > 
-              <Link href={`/${work.url}/`}>
+              <Link href={`/${work.url}/`} className="select-none">
                 <li
                   key={work.title}
                   className="items-center gap-8 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg md:grid-cols-3"
@@ -230,11 +227,16 @@ export function MyWork() {
           ))}
         </motion.ol>
       </Container>
-      <div
-        className="sticky top-[176px] md:top-[592px] z-50" 
-        style={{ zIndex: aboutZIndex }}>
+      <motion.div
+            className="sticky top-[176px] md:top-[592px] z-50"
+            // style={{ zIndex: aboutZIndex }}
+            initial={{ opacity: 0, y: 50 }}
+            viewport= {{ once: true, amount: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 70, duration: 1.5, staggerChildren: 0.5 }}
+          >
           <About />
-      </div>
+      </motion.div>
     </section>
   )
 }
