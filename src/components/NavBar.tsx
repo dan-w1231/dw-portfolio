@@ -17,9 +17,9 @@ const sections = [
       </>
     ),
   },
-  { id: 'screencasts', title: 'My Design Language' },
-  { id: 'resources', title: 'My Work' },
-  { id: 'pricing', title: 'Contact' },
+  { id: 'page1', title: 'My Design Language' },
+  { id: 'work', title: 'My Work' },
+  { id: 'contact', title: 'Contact' },
 ]
 
 function MenuIcon({
