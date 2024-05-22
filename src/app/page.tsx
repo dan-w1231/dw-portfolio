@@ -23,12 +23,12 @@ export default function Home() {
         </div>
         <div className="relative mx-auto mt-2 xs:mt-4 xl:mt-14">
           <motion.div
-            initial={{ opacity: 0, y: 50, rotate: 4 }}
+            initial={{ opacity: 0, x: 50, y: 50, rotate: 4 }}
             viewport= {{ once: true, amount: 0 }}
-            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-            transition={{ type: "spring", stiffness: 70, duration: 1.5, staggerChildren: 0.5 }}
+            whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
+            transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
           >
-            <Hero />
+          <Hero />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 50 }}

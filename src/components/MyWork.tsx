@@ -25,11 +25,11 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{ type: "spring", stiffness: 100, duration: 1.5 }}
+            transition={{  stiffness: 100, duration: 1.5 }}
           >
             <Image src={breatheImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
         </div>
       )
     },
@@ -47,11 +47,11 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{ type: "spring", stiffness: 100, duration: 1.5 }}
+            transition={{  stiffness: 100, duration: 1.5 }}
           >
             <Image src={insightsImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
         </div>
       )
     },
@@ -69,11 +69,11 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{ type: "spring", stiffness: 100, duration: 1.5 }}
+            transition={{  stiffness: 100, duration: 1.5 }}
           >
             <Image src={fitcheckImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
         </div>
       )
     },
@@ -91,7 +91,7 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{ type: "spring", stiffness: 100, duration: 1.5 }}
+            transition={{  stiffness: 100, duration: 1.5 }}
           >
             <motion.button
               whileHover={{
@@ -102,7 +102,7 @@ const myWork = [
 />
               <Image src={breatheImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
         </div>
       )
     },
@@ -120,11 +120,11 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{ type: "spring", stiffness: 100, duration: 1.5 }}
+            transition={{  stiffness: 100, duration: 1.5 }}
           >
             <Image src={fitcheckImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
         </div>
       )
     },
@@ -142,11 +142,11 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{ type: "spring", stiffness: 100, duration: 1.5 }}
+            transition={{  stiffness: 100, duration: 1.5 }}
           >
             <Image src={fafmcImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" unoptimized />
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
         </div>
       )
     },
@@ -160,33 +160,32 @@ export function MyWork() {
     target: targetRef,
   });
 
-
   // Get the initial window width cos next
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
 
   const x = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0%", "0%"] : ["0px", "-2800px"]);
 
-  // scroll event listener
-  useEffect(() => {
-    const handleScroll = () => {
-      const zindex = scrollYProgress.get() > 0.85 ? 2 : 1;
-      // console.log('Z-Index:', zindex);
-      // console.log('Scroll Y Progress:', scrollYProgress.get());
-    };
+  // // scroll event listener
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const zindex = scrollYProgress.get() > 0.85 ? 2 : 1;
+  //     // console.log('Z-Index:', zindex);
+  //     // console.log('Scroll Y Progress:', scrollYProgress.get());
+  //   };
 
-  window.addEventListener('scroll', handleScroll);
+  // window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrollYProgress]);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [scrollYProgress]);
 
-  const horizontalListThreshold = 0.85;
-  const aboutThreshold = 0.85;
+  // const horizontalListThreshold = 0.85;
+  // const aboutThreshold = 0.85;
 
-  const scrollPosition = scrollYProgress.get();
-  const horizontalListZIndex = scrollPosition < horizontalListThreshold ? 99 : 1;
-  const aboutZIndex = scrollPosition > aboutThreshold ? 99 : 1;
+  // const scrollPosition = scrollYProgress.get();
+  // const horizontalListZIndex = scrollPosition < horizontalListThreshold ? 99 : 1;
+  // const aboutZIndex = scrollPosition > aboutThreshold ? 99 : 1;
 
   return (
     <section
@@ -197,7 +196,7 @@ export function MyWork() {
     >
       <Container 
         size="lg" 
-        className="relative z-50 w-full md:sticky md:top-0 flex items-center overflow-hidden pb-20 -mb-20 md:pt-20 md:-mt-20"
+        className="relative z-96 w-full md:sticky md:top-0 flex items-center overflow-hidden pb-20 -mb-20 md:pt-20 md:-mt-20"
         // style={{ zIndex: horizontalListZIndex }}
         >
         <motion.ol
@@ -233,7 +232,7 @@ export function MyWork() {
             initial={{ opacity: 0, y: 50 }}
             viewport= {{ once: true, amount: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 70, duration: 1.5, staggerChildren: 0.5 }}
+            transition={{  stiffness: 70, duration: 1.5, staggerChildren: 0.5 }}
           >
           <About />
       </motion.div>

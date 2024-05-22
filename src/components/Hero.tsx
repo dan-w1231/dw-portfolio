@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { motion } from "framer-motion"
 import { Button } from '@/components/Button'
+// Webpack import fuckery why do PDFs not just work?
+// import CV from '../../public/CV.pdf'
 import Circle from '@/images/resources/circle.svg'
 import nightBg from '@/images/resources/nightBg.svg'
 import marbleSphere from '@/images/resources/marbleSphere.png'
@@ -45,8 +47,8 @@ export function Hero() {
             whileHover={{ scale: 1.05, y: 0, transition: { type: "spring", stiffness: 100, duration: 0.2 }, }}
             whileTap={{ scale: 0.95, y: 0, transition: { type: "spring", stiffness: 100, duration: 0.2 }, }}
             >
-            <Button href="#pricing" color="primaryGrad" className="w-full">
-                  View CV
+            <Button href="/danWallaceCV2024.pdf" target="_blank" color="primaryGrad" className="w-full">
+              View CV
             </Button>
             {/* <Image className="w-full" src={coverImage} alt="" priority /> */}
           </motion.button>

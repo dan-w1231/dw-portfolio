@@ -39,15 +39,13 @@ export function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3, staggerChildren: 0.4 }}
             >
-            <SectionHeading number="2" id="about-title">
-              Some sub title thing
-            </SectionHeading>
+
             <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-midnight-900 sm:text-6xl">
-              <span className="block text-blue-600">Daniel Wallace –</span> Hey
+              <span className="block text-blue-600">Dan Wallace –</span> Hey
               there, here's a lorem ipsum’.
             </p>
             <p className="mt-4 text-lg tracking-tight text-midnight-700">
-              I’ve been designing lorem ipsum for 12 years dolar sit amet di jora al cetin. Lorem ipsum dolar sut amet di jora al cetin de gon de gari han di lorem.
+              Placeholder text but maybe instead put my skills in here like Figma, Typescript, css, FramerMotion, UserTesting, analytics, conversion rate optimisation, blah blah lorem ipsum.
             </p>
             <p className="mt-8">
               <Link
@@ -55,7 +53,7 @@ export function About() {
                 className="inline-flex items-center text-base font-medium tracking-tight text-blue-600"
               >
                 <TwitterIcon className="h-10 w-10 fill-current" />
-                <span className="ml-4">Social or some other link</span>
+                <span className="ml-4">Remove link put contact box instead</span>
               </Link>
             </p>
           </motion.div>
