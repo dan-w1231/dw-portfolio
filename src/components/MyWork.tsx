@@ -5,7 +5,9 @@ import { About } from '@/components/About'
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef, useEffect } from "react";
 import { Container } from '@/components/Container'
+
 import circleArrow from '@/images/resources/circleArrow.svg'
+import NVBuyNow from '@/images/resources/deviceImages/deal.png'
 import insightsImage from '@/images/resources/insights.png'
 import breatheImage from '@/images/resources/breathe.png'
 import fitcheckImage from '@/images/resources/fitcheck.png'
@@ -16,18 +18,18 @@ const myWork = [
     title: 'Recovery',
     description:
       'Lorem description.',
-    url: 'recovery',
+    url: 'newvehicle',
     image: function BreatheImage() {
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)]">
           <motion.div
-            className="w-[370px]"
+            className="w-[496px]"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
             transition={{  stiffness: 100, duration: 1.5 }}
           >
-            <Image src={breatheImage} className="pointer-events-none" alt="" />
+            <Image src={NVBuyNow} className="pointer-events-none" alt="" />
           </motion.div>
           <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
         </div>

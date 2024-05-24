@@ -23,7 +23,7 @@ export default function NotFound() {
           href="/"
           className="mt-6 text-base font-medium text-blurple hover:text-midnight-900"
         >
-          Go back home <span aria-hidden="true">&rarr;</span>
+          <span aria-hidden="true">&larr;</span> Go back home 
         </Link>
       </Container>
     </div>
