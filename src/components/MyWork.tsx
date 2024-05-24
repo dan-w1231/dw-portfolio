@@ -208,6 +208,7 @@ export function MyWork() {
         >
           {myWork.map((work) => (
             <motion.div
+              key="workContainer"
               className="md:snap-start md:scroll-mx-0 select-none"
               initial={{ scale: 1, y: 0 }}
               whileHover={{ scale: 1.01, y: -2 }}
@@ -219,7 +220,7 @@ export function MyWork() {
                   key={work.title}
                   className="items-center gap-8 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg md:grid-cols-3"
                 >
-                  <div className="relative h-[370px] md:h-[496px] sm:h-[496px] w-full md:w-[496px] overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg sm:h-60">
+                  <div key="workImageWrapper" className="relative h-[370px] md:h-[496px] sm:h-[496px] w-full md:w-[496px] overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg sm:h-60">
                     <work.image />
                   </div>
                 </li>

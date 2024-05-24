@@ -5,13 +5,14 @@ import { GridPattern } from '@/components/GridPattern'
 import { Hero } from '@/components/Hero'
 import { NavBar } from '@/components/NavBar'
 import { BulletTag } from '@/components/BulletTag'
-import { motion, useTransform, useScroll } from 'framer-motion'
+import { motion, useTransform, useScroll, AnimatePresence } from 'framer-motion'
 import { useRef, useEffect } from "react";
 import Link from 'next/link'
 import Image from 'next/image'
 
 import yourDeal from '@/images/resources/deviceImages/yourDeal-flat.png'
 import relationshipMap from '@/images/resources/relationshipMap.png'
+import researchPlan from '@/images/resources/researchPlan.png'
 
 const NVImages = [
   {
@@ -51,23 +52,22 @@ const NVImages = [
 ]
 
 export default function NewVehicle() {
+
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-
   const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0%", "0%"] : ["0px", "-100px"]);
 
   return (
     <> 
-      <NavBar />
+      <NavBar key="NavBar" />
       <div id="main" className="relative w-screen mx-auto">
-        <div className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/10">
+        <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/10">
           <GridPattern x="20%" />
         </div>
-        <div className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),transparent)]">
+        <div key="flowChartPattern" className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),transparent)]">
           <div className="right-[-90px]">
             <FlowChart size="100%" />
           </div>
@@ -86,21 +86,25 @@ export default function NewVehicle() {
             <header className="relative w-full px-2 xs:px-4 rounded-4xl mx-auto">
               <div
                 className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-lg rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">
-                  <Link
-                    href="/"
-                    className="mt-6 text-base font-medium text-blurple hover:text-midnight-900"
-                  >
-                    <span aria-hidden="true">&larr;</span> Back 
-                </Link>
+                  
                 <div className="relative max-w-full items-end flex items-center md:mt-10">
                   <div className="w-full">
+                  <AnimatePresence>
                     <motion.div
+                      key="contentWorkImage"
                       className="relative z-[99]"
                       initial={{ opacity: 0, y: 80 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3, staggerChildren: 0.5 }}
+                      exit={{ opacity: 0, y: 80 }}
                     >
-                      <h1 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple">
+                      <Link
+                        href="/"
+                        className="text-base font-medium text-blurple hover:text-midnight-900"
+                      >
+                        <span aria-hidden="true">&larr;</span> Back 
+                      </Link>
+                      <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple">
                         NewVehicle.com
                       </h1>
                       <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900">
@@ -156,8 +160,19 @@ export default function NewVehicle() {
                         <div className="mt-6">
                         <Image src={relationshipMap} loading="lazy" placeholder="blur" className="pointer-events-none" alt="" />
                         </div>
-                        
+                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          At it’s core we wanted a finance comparison tool that dealers could integrate into their websites. Buyers can compare finance products 
+                          for the vehicle they want, then continue on to NewVehicle.com to check their eligibility or apply. Sellers are then notified of the lead 
+                          within a lead management system so they can take action.
+                        </p>
+                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                          Research
+                        </h3>
+                        <div className="mt-6">
+                        <Image src={researchPlan} loading="lazy" placeholder="blur" className="pointer-events-none" alt="" />
+                        </div>
                     </motion.div>
+                    </AnimatePresence>
                   </div>
                 </div>
               </div>
