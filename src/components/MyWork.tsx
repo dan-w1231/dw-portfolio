@@ -206,7 +206,7 @@ export function MyWork() {
             <motion.ol
               style={{ x }}
               role="list"
-              className="w-full ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] md:max-w-screen-2xl grid md:grid-flow-col md:grid-cols-[repeat(auto-fill,_minmax(496px,_1fr))] md:auto-cols-[minmax(496px,_1fr)] grid-cols-1 gap-y-2 xs:gap-y-4 md:gap-x-4 md:-my-16 md:-mx-4 md:py-16 2xl:px-4"
+              className="w-full xl:ease-[cubic-bezier(0.16,0.84,0.44,1)] xl:duration-[600ms] md:max-w-screen-2xl grid md:grid-flow-col md:grid-cols-[repeat(auto-fill,_minmax(496px,_1fr))] md:auto-cols-[minmax(496px,_1fr)] grid-cols-1 gap-y-2 xs:gap-y-4 md:gap-x-4 md:-my-16 md:-mx-4 md:py-16 2xl:px-4"
             >
               {myWork.map((work) => (
                 <motion.div

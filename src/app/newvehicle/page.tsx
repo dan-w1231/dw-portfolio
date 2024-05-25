@@ -1,8 +1,6 @@
 'use client'
 import { FlowChart } from '@/components/FlowChart'
-import { Footer } from '@/components/Footer'
 import { GridPattern } from '@/components/GridPattern'
-import { Hero } from '@/components/Hero'
 import { BulletTag } from '@/components/BulletTag'
 import { motion, useTransform, useScroll, AnimatePresence } from 'framer-motion'
 import { useRef, useEffect } from "react"

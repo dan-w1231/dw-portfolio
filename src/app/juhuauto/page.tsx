@@ -1,8 +1,6 @@
 'use client'
 import { FlowChart } from '@/components/FlowChart'
-import { Footer } from '@/components/Footer'
 import { GridPattern } from '@/components/GridPattern'
-import { Hero } from '@/components/Hero'
 import { BulletTag } from '@/components/BulletTag'
 import { motion, useTransform, useScroll, AnimatePresence } from 'framer-motion'
 import { useRef, useEffect } from "react"
@@ -21,105 +19,29 @@ import wireframeNV from '@/images/resources/wireframingNV.png'
 import featureMap from '@/images/resources/fullFeatureMap.png'
 import flowOptions from '@/images/resources/flowOptions.png'
 import productPages from '@/images/resources/productPages.png'
+import analyticsNV from '@/images/resources/analyticsNV.png'
+import ABWidget from '@/images/resources/ABWidget.png'
+import calcs from '@/images/resources/productPagesCalcs.png'
+import fpa from '@/images/resources/fpa.png'
+import reserve from '@/images/resources/reserve-wide.png'
+import approved from '@/images/resources/approved.png'
 
-const NVImages = [
+const JuhuImages = [
   {
-    image: function YourDeal() {
+    image: function Calcs() {
       return (
-        <div className="relative w-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)] rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg">
+        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[#253243] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
-            className="w-[496px]"
+            // className="w-80 md:w-[496px] md:mr-[10%]"
+            className="mr-[10%]"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
+            viewport= {{ once: true, amount: 0.25 }}
+            transition={{  stiffness: 100, duration: 1.2 }}
           >
-            <Image src={yourDeal} className="" alt="" />
-          </motion.div>
-        </div>
-      )
-    },
-  },
-  {
-    image: function ImageTwo() {
-      return (
-        <div className="relative w-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)] rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg">
-          <motion.div
-            className="w-[496px]"
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
-          >
-            <Image src={yourDeal} className="" alt="" />
-          </motion.div>
-        </div>
-      )
-    },
-  },
-  {
-    image: function ImageThree() {
-      return (
-        <div className="relative w-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)] rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg">
-          <motion.div
-            className="w-[496px]"
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
-          >
-            <Image src={yourDeal} className="" alt="" />
-          </motion.div>
-        </div>
-      )
-    },
-  },
-  {
-    image: function ImageFour() {
-      return (
-        <div className="relative w-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)] rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg">
-          <motion.div
-            className="w-[496px]"
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
-          >
-            <Image src={yourDeal} className="" alt="" />
-          </motion.div>
-        </div>
-      )
-    },
-  },
-  {
-    image: function ImageFive() {
-      return (
-        <div className="relative w-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)] rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg">
-          <motion.div
-            className="w-[496px]"
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
-          >
-            <Image src={yourDeal} className="" alt="" />
-          </motion.div>
-        </div>
-      )
-    },
-  },
-  {
-    image: function ImageSix() {
-      return (
-        <div className="relative w-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)] rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg">
-          <motion.div
-            className="w-[496px]"
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
-          >
-            <Image src={yourDeal} className="" alt="" />
+            <Zoom>
+              <Image src={calcs} className="w-full max-w-[496px]" alt="Themed finance calculators embedded in dealership websites" />
+            </Zoom>
           </motion.div>
         </div>
       )
@@ -128,15 +50,74 @@ const NVImages = [
   {
     image: function YourDeal() {
       return (
-        <div className="relative w-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)] rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg">
+        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
-            className="w-[496px]"
+            className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
+            viewport= {{ once: true, amount: 0.25 }}
+            transition={{  stiffness: 100, duration: 1.2 }}
           >
-            <Image src={yourDeal} className="" alt="" />
+            <Zoom>
+              <Image src={yourDeal} className="w-full m-w-[496px]" alt="The deal page." />
+            </Zoom>
+          </motion.div>
+        </div>
+      )
+    },
+  },
+  {
+    image: function Reserve() {
+      return (
+        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+          <motion.div
+            className=""
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport= {{ once: true, amount: 0.25 }}
+            transition={{  stiffness: 100, duration: 1.2 }}
+          > 
+            <Zoom>
+              <Image src={reserve} className="w-full max-w-[44rem] p-[12%]" alt="Desktop view of a reservation." />
+            </Zoom>
+          </motion.div>
+        </div>
+      )
+    },
+  },
+  {
+    image: function VehicleAd() {
+      return (
+        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+          <motion.div
+            className=""
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport= {{ once: true, amount: 0.25 }}
+            transition={{  stiffness: 100, duration: 1.2 }}
+          >
+            <Zoom>
+              <Image src={fpa} className="w-full max-w-[17rem] p-[18%]" alt="Vehicle advert." />
+            </Zoom>
+          </motion.div>
+        </div>
+      )
+    },
+  },
+  {
+    image: function Approved() {
+      return (
+        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+          <motion.div
+            className=""
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport= {{ once: true, amount: 0.25 }}
+            transition={{  stiffness: 100, duration: 1.2 }}
+          >
+            <Zoom>
+              <Image src={approved} className="w-full max-w-[17rem] p-[18%]" alt="Instant decision on finance applications." />
+            </Zoom>
           </motion.div>
         </div>
       )
@@ -151,7 +132,7 @@ export default function NewVehicle() {
     target: targetRef,
   });
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0%", "0%"] : ["0px", "-400px"]);
+  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0%", "0%"] : ["0px", "1800px"]);
 
   return (
     <> 
@@ -166,7 +147,7 @@ export default function NewVehicle() {
         </div>
         <div className="relative mx-auto mt-2 xs:mt-4 xl:mt-14">
           <motion.div
-            className="w-full max-w-screen-2xl flex flex-row gap-[40px] no-wrap flex-center mx-auto"
+            className="w-full max-w-screen-2xl flex flex-col gap-0 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97"
             ref={targetRef}
             initial={{ opacity: 0, y: 50 }}
             viewport= {{ once: true, amount: 0 }}
@@ -174,11 +155,10 @@ export default function NewVehicle() {
             transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
           >
           {/* Left col */}
-          <div className="w-full max-w-[768px]">
-            <header className="relative w-full px-2 xs:px-4 rounded-4xl mx-auto">
+          <div className="w-full max-w-[800px]">
+            <header className="relative w-full px-2 xs:px-4 2xl:pl-4 rounded-4xl mx-auto">
               <div
-                className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-lg rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">
-                  
+                className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-lg rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">   
                 <div className="relative max-w-full items-end flex items-center md:mt-10">
                   <div className="w-full">
                   <AnimatePresence>
@@ -201,10 +181,10 @@ export default function NewVehicle() {
                         </Link>
                       </motion.div>
                       <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple">
-                        Juhu Auto
+                        NewVehicle
                       </h1>
                       <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900">
-                        A/B Testing
+                        Buy Online
                       </h2>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
                           A vehicle purchase experience that can be embedded into dealership websites, and a secure checkout 
@@ -258,7 +238,8 @@ export default function NewVehicle() {
                           Research
                         </h3>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          At the beginning we wanted to understand how people felt about buying cars, in particular about buying on finance.
+                          At the beginning I wanted to better understand how people felt about buying cars, in particular about buying on finance. There seemed to be a
+                          wealth of knowledge about the behaviour of car buyers online, but much less about finance specifically.
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoom>
@@ -283,17 +264,17 @@ export default function NewVehicle() {
                           </Zoom>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                        One of the common worries that respondents expressed with buying online was <span className="font-bold">Trust and Security.</span> Finance applications inherently require very sensitive customer data (from employment history to bank details), and respondents commented that they’d need to trust a 3rd party website for them to enter this kind of information with confidence.
+                        One of the common worries that respondents expressed with buying online was <span className="font-bold">trust and security.</span> Finance applications inherently require very sensitive customer data (from employment history to bank details), and respondents commented that they’d need to trust a 3rd party website for them to enter this kind of information with confidence.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                        A lack of <span className="font-bold">Transparency</span> with the finance process was also commonly expressed, with some respondents commenting on how they sometimes felt “left in the dark” when it comes to a finance deal. Some claimed sales staff may emphasise the Monthly Payment while glossing over interest rates, payment schedules, final payments and potential penalty fees for going over the mileage limits of a PCP finance deal.
+                        A <span className="font-bold">lack of transparency</span> with the finance process was also commonly expressed, with some respondents commenting on how they sometimes felt “left in the dark” when it comes to a finance deal. Some claimed sales staff may emphasise the <span className="italic">monthly payment</span> while glossing over <span className="italic">interest rates, payment schedules, final payments</span> and potential <span className="italic">penalty fees</span> for going over the mileage limits of a PCP finance deal.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
 
                         From this one of the goals became <span className="font-bold">compliance, security</span> at every stage of the process.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                        Other take-aways included <span className="font-bold">clear and detailed vehicle information</span>, the ability to <span className="font-bold">save your progress</span> during the application, and having the <span className="font-bold">dealer information available from any step of the purchase.</span>
+                        Other take-aways included having clear and detailed vehicle information, the ability to save your progress during the application, and having the dealer information available from any step of the purchase.
                         </p>
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                           Wireframing
@@ -322,18 +303,49 @@ export default function NewVehicle() {
                           </div>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          After lots of coffee, hundreds of variations and some review sessions, the first designs for finance calculators, applications, and checkout were presented end-to-end. 
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Given that trust was a big factor, we wanted users transitioning between the dealership website 
-                          to our checkout experience to be as seamless as possible. I sat down with developers to create a themeing guide 
-                          that would allow each dealership to customize their checkout to their own needs, making their customers still feel at home when leaving
-                          the retailer's website. A separate 'NewVehicle.com' specific brand guide was also created that could be expanded on if the business decided 
-                          to have parts of the site unthemed and unrelated to dealerships.
+                          After lots of coffee, hundreds of variations and a few review sessions, the first designs for the new finance calculators, applications, and checkout were presented end-to-end. 
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoom>
                             <Image src={productPages} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
+                          </Zoom>
+                        </div>
+                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          Given that trust was a big factor, it was important to create a seamless experience for users 
+                          transitioning from dealership websites to our checkout process. I sat down with developers to create 
+                          a themeing guide that would allow each dealership to customize their checkout to their own brand, ensuring 
+                          customers still felt at home when leaving the retailer’s site. A separate 'NewVehicle.com' UI guide was 
+                          also created that could be expanded on if the business decided to have parts of the site unthemed and unrelated to dealerships.
+                        </p>
+                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                          Analytics and Optimisations
+                        </h3>
+                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          After release the product was a huge success shipping live to 800+ dealerships in the UK, with the number of
+                          leads generated up around ~35%. The following year I spent a lot of time burried in Google Analytics and Hotjar, setting it up, searching for weak performing pages and presenting
+                          hypotheses of ways we could make the process simpler and improve conversion rates on different pages.
+                        </p>
+                        <div className="mt-6 cursor-zoom-in">
+                          <Zoom>
+                            <Image src={analyticsNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
+                          </Zoom>
+                        </div>
+                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          One example of improvement was a change to the finance calculator and its following page. The calculator was the one area embedded on the retailer's vehicle page
+                           and received the highest number of impressions of any stage. Each quote had a "Learn More" call to action which lead
+                          to a "Finance Details" page with 2 options: Check Eligibility or Apply.
+                        </p>
+                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          Drop-offs were highest at these two steps, so the hypothesis was to add a more direct call to action on each quote ("Apply Now" and "Check Eligibility") and move the finance details 
+                          into the calculator, removing the need for the page inbetween a quote and applying or checking eligbility.
+                        </p>
+                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          The change was beta tested to select retailers, and the results showed both an increase in engagement on the quotes, 
+                          and considerably less dropoffs during the checkout, so the change was subsequently rolled out to all retailers.
+                        </p>
+                        <div className="mt-6 cursor-zoom-in">
+                          <Zoom>
+                            <Image src={ABWidget} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
                           </Zoom>
                         </div>
                     </motion.div>
@@ -344,15 +356,20 @@ export default function NewVehicle() {
             </header>
           </div>
           {/* Right col */}
-          <motion.ol 
-            style={{ y }}
-            role="list" 
-            className="sticky top-10 w-full flex flex-col gap-6 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms]"
-            >
-            {NVImages.map((images) => (
-                <images.image />
-            ))}
-          </motion.ol>
+            <div className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%]">
+              <h3 className="font-display md:hidden font-bold text-3xl xl:text-4xl px-4 tracking-tight font-extrabold text-midnight-900 mt-10">
+              Final product
+              </h3>
+            <motion.ol 
+              style={{ y }}
+              role="list" 
+              className="rounded-t-xl py-4 px-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4 md:backdrop-blur-[0px]"
+              >
+              {NVImages.map((images) => (
+                  <images.image />
+              ))}
+            </motion.ol>
+            </div>
           </motion.div>
         </div>
       </div>
