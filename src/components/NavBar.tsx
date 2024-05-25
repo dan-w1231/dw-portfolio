@@ -19,7 +19,7 @@ const sections = [
   },
   { id: 'page1', title: 'My Design Language' },
   { id: 'work', title: 'My Work' },
-  { id: 'contact', title: 'Contact' },
+  { id: 'anotherpage', title: 'Contact' },
 ]
 
 function MenuIcon({
@@ -122,7 +122,7 @@ export function NavBar() {
             >
               {!open && (
                 <>
-                  <Image className="" src={Logo} alt="DW Design" />
+                  <Image src={Logo} alt="DW Design" priority />
                   {/* <span
                     aria-hidden="true"
                     className="font-mono text-sm text-blue-600"

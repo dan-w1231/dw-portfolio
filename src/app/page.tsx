@@ -5,13 +5,11 @@ import { GridPattern } from '@/components/GridPattern'
 import { FlowChart } from '@/components/FlowChart'
 import { Hero } from '@/components/Hero'
 import { motion, AnimatePresence } from "framer-motion"
-import { NavBar } from '@/components/NavBar'
 import { MyWork } from '@/components/MyWork'
 
 export default function Home() {
   return (
-    <> 
-      <NavBar key="NavBar" />
+    <>
       <div id="main" className="relative w-screen mx-auto">
         <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/10">
           <GridPattern x="20%" />
@@ -47,7 +45,6 @@ export default function Home() {
                 <MyWork />
             </motion.div>
           </AnimatePresence>
-          <Footer />
         </div>
       </div>
     </>

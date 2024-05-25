@@ -197,10 +197,10 @@ export default function NewVehicle() {
                         <span aria-hidden="true">&larr;</span> Back 
                       </Link>
                       <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple">
-                        NewVehicle.com
+                        Juhu Auto
                       </h1>
                       <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900">
-                        Buy Online
+                        A/B Testing
                       </h2>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
                           A vehicle purchase experience that can be embedded into dealership websites, and a secure checkout 

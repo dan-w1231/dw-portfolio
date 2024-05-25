@@ -2,6 +2,8 @@ import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import clsx from 'clsx'
 import '@/styles/tailwind.css'
+import { NavBar } from '@/components/NavBar'
+import { Footer } from '@/components/Footer'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -54,7 +56,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-noise-pattern bg-radial-bg">{children}</body>
+      <body className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-noise-pattern bg-radial-bg">
+      <NavBar />
+        {children}
+      <Footer />
+      </body>
     </html>
   )
 }
