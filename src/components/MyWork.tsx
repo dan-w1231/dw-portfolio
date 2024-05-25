@@ -155,7 +155,7 @@ const myWork = [
   },
 ]
 
-export function MyWork(isVisible) {
+export function MyWork() {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -191,60 +191,58 @@ export function MyWork(isVisible) {
 
   return (
     <AnimatePresence>
-      {isVisible && ( 
-    <motion.div key={2} exit={{ opacity: 0, y: -30}} >
-    <section
-      id="myWork"
-      aria-labelledby="myWork-title"
-      ref={targetRef}
-      className="relative mt-2 xs:my-4 md:h-[200vh] lg:h-[300vh]"  
-    >
-      <Container 
-        size="lg" 
-        className="relative z-96 w-full md:sticky md:top-0 flex items-center overflow-hidden pb-20 -mb-20 md:pt-20 md:-mt-20"
-        // style={{ zIndex: horizontalListZIndex }}
+      <motion.div key={2} exit={{ opacity: 0, y: -30}} >
+        <section
+          id="myWork"
+          aria-labelledby="myWork-title"
+          ref={targetRef}
+          className="relative mt-2 xs:my-4 md:h-[200vh] lg:h-[300vh]"  
         >
-        <motion.ol
-          style={{ x }}
-          role="list"
-          className="w-full ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] md:max-w-screen-2xl grid md:grid-flow-col md:grid-cols-[repeat(auto-fill,_minmax(496px,_1fr))] md:auto-cols-[minmax(496px,_1fr)] grid-cols-1 gap-y-2 xs:gap-y-4 md:gap-x-4 md:-my-16 md:-mx-4 md:py-16 2xl:px-4"
-        >
-          {myWork.map((work) => (
-            <motion.div
-              key="workContainer"
-              className="md:snap-start md:scroll-mx-0 select-none"
-              initial={{ scale: 1, y: 0 }}
-              whileHover={{ scale: 1.01, y: -2 }}
-              whileTap={{ scale: 0.99, y: 0 }}
-              transition={{ duration: 0.2 }}
-            > 
-              <Link href={`/${work.url}/`} className="select-none">
-                <li
-                  key={work.title}
-                  className="items-center gap-8 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg md:grid-cols-3"
-                >
-                  <div key="workImageWrapper" className="relative h-[370px] md:h-[496px] sm:h-[496px] w-full md:w-[496px] overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg sm:h-60">
-                    <work.image />
-                  </div>
-                </li>
-              </Link>
-            </motion.div>
-          ))}
-        </motion.ol>
-      </Container>
-      <motion.div
-            className="sticky top-[176px] md:top-[592px] z-50"
-            // style={{ zIndex: aboutZIndex }}
-            initial={{ opacity: 0, y: 50 }}
-            viewport= {{ once: true, amount: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{  stiffness: 70, duration: 1.5, staggerChildren: 0.5 }}
-          >
-          <About />
+          <Container 
+            size="lg" 
+            className="relative z-96 w-full md:sticky md:top-0 flex items-center overflow-hidden pb-20 -mb-20 md:pt-20 md:-mt-20"
+            // style={{ zIndex: horizontalListZIndex }}
+            >
+            <motion.ol
+              style={{ x }}
+              role="list"
+              className="w-full ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] md:max-w-screen-2xl grid md:grid-flow-col md:grid-cols-[repeat(auto-fill,_minmax(496px,_1fr))] md:auto-cols-[minmax(496px,_1fr)] grid-cols-1 gap-y-2 xs:gap-y-4 md:gap-x-4 md:-my-16 md:-mx-4 md:py-16 2xl:px-4"
+            >
+              {myWork.map((work) => (
+                <motion.div
+                  key="workContainer"
+                  className="md:snap-start md:scroll-mx-0 select-none"
+                  initial={{ scale: 1, y: 0 }}
+                  whileHover={{ scale: 1.01, y: -2 }}
+                  whileTap={{ scale: 0.99, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                > 
+                  <Link href={`/${work.url}/`} className="select-none">
+                    <li
+                      key={work.title}
+                      className="items-center gap-8 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg md:grid-cols-3"
+                    >
+                      <div key="workImageWrapper" className="relative h-[370px] md:h-[496px] sm:h-[496px] w-full md:w-[496px] overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg sm:h-60">
+                        <work.image />
+                      </div>
+                    </li>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.ol>
+          </Container>
+          <motion.div
+                className="sticky top-[176px] md:top-[592px] z-50"
+                // style={{ zIndex: aboutZIndex }}
+                initial={{ opacity: 0, y: 50 }}
+                viewport= {{ once: true, amount: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{  stiffness: 70, duration: 1.5, staggerChildren: 0.5 }}
+              >
+              <About />
+          </motion.div>
+        </section>
       </motion.div>
-    </section>
-    </motion.div>
-    )}
     </AnimatePresence>
   )
 }
