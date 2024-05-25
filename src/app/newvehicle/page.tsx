@@ -90,14 +90,14 @@ const NVImages = [
       return (
         <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
-            className=""
+            className="p-[18%]"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={fpa} className="w-full max-w-[17rem] p-[18%]" alt="Vehicle advert." />
+              <Image src={fpa} className="w-full max-w-[17rem]" alt="Vehicle advert." />
             </Zoom>
           </motion.div>
         </div>
@@ -109,14 +109,14 @@ const NVImages = [
       return (
         <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
-            className=""
+            className="p-[18%]"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={approved} className="w-full max-w-[17rem] p-[18%]" alt="Instant decision on finance applications." />
+              <Image src={approved} className="w-full max-w-[17rem]" alt="Instant decision on finance applications." />
             </Zoom>
           </motion.div>
         </div>
@@ -188,15 +188,11 @@ export default function NewVehicle() {
                       </h2>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
                           A vehicle purchase experience that can be embedded into dealership websites, and a secure checkout 
-                          website for Buyer’s to manage their car purchase.
+                          for Buyer’s to manage their car purchase.
                         </p>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
                           <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>To optimised experience</BulletTag>
                         </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          A vehicle purchase experience that can be embedded into dealership websites, and a secure checkout 
-                          website for Buyer’s to manage their car purchase.
-                        </p>
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                           Goals
                         </h3>

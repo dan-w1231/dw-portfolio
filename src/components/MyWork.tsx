@@ -7,29 +7,53 @@ import { useRef, useEffect } from "react";
 import { Container } from '@/components/Container'
 
 import circleArrow from '@/images/resources/circleArrow.svg'
-import NVBuyNow from '@/images/resources/deviceImages/deal.png'
+import NVDeal from '@/images/resources/deviceImages/yourDeal-side.png'
 import insightsImage from '@/images/resources/insights.png'
 import breatheImage from '@/images/resources/breathe.png'
 import fitcheckImage from '@/images/resources/fitcheck.png'
 import fafmcImage from '@/images/resources/fafmc.png'
+import juhuAutoImage from '@/images/resources/deviceImages/juhuCover2.png'
 
+// CURRENTLY IDEAL FOR ~6 IMAGES
 const myWork = [
   {
-    title: 'Recovery',
+    title: 'NewVehicle',
     description:
-      'Lorem description.',
+      'Online retailing tools for dealership websites, and a secure checkout experience.',
     url: 'newvehicle',
-    image: function BreatheImage() {
+    image: function NVBuyNow() {
       return (
-        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)]">
+        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#202A37_16%,#253243)]">
           <motion.div
-            className="w-[496px]"
+            className="w-100 -mr-[20%] -mb-[14%]"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
             transition={{  stiffness: 100, duration: 1.5 }}
           >
-            <Image src={NVBuyNow} className="pointer-events-none" alt="" />
+            <Image src={NVDeal} className="pointer-events-none w-auto h-[370px]" alt="" />
+          </motion.div>
+          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
+        </div>
+      )
+    },
+  },
+  {
+    title: 'Juhu Auto',
+    description:
+      'Vehicle marketplace for Germany.',
+    url: 'juhuauto',
+    image: function JuhuAutoCover() {
+      return (
+        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[#C3E72F]">
+          <motion.div
+            className="w-100"
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport= {{ once: false, amount: 0.25 }}
+            transition={{  stiffness: 100, duration: 1.5 }}
+          >
+            <Image src={juhuAutoImage} className="pointer-events-none w-full" alt="" />
           </motion.div>
           <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
         </div>

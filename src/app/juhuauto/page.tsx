@@ -125,7 +125,7 @@ const JuhuImages = [
   },
 ]
 
-export default function NewVehicle() {
+export default function JuhuAuto() {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -180,49 +180,33 @@ export default function NewVehicle() {
                           <span aria-hidden="true">&larr;</span> Back 
                         </Link>
                       </motion.div>
-                      <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple">
-                        NewVehicle
+                      <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-[#01A516]">
+                        Vehicle Marketplace in Germany
                       </h1>
                       <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900">
-                        Buy Online
+                        Juhu Auto
                       </h2>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          A vehicle purchase experience that can be embedded into dealership websites, and a secure checkout 
-                          website for Buyer’s to manage their car purchase.
+                          Create a vehicle marketplace that can be adapted to different languages and cultures. Combining previous work where I designed online retailing tools including vehicle search, finance calculators, applications and eligibility checking, brought together into a simple yet innovative way to buy a vehicle.
                         </p>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                          <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>To optimised experience</BulletTag>
+                          <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>Post-release User & A/B Testing</BulletTag>
                         </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          A vehicle purchase experience that can be embedded into dealership websites, and a secure checkout 
-                          website for Buyer’s to manage their car purchase.
-                        </p>
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                           Goals
                         </h3>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
-                          For car buyers
-                        </h4>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Whether buying a car with cash or on finance, create an online purchasing experience that’s as transparent and seamless as possible.
-                        </p>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
-                          For car sellers
-                        </h4>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Generate and display high quality leads by making a frictionless car purchase experience for buyers, themed to fit each retailer’s 
-                          branding. Working from the philosophy that the better the experience is for the buyer, the more cars dealers will sell.
+                          I had already designed online retailing software in the UK that was well tested and converted well. The goal was to use this knowledge (and the domain knowledge of the client’s market experts) to design a bespoke vehicle marketplace for the German market and bank BDK, then utilise user testing and A/B testing to further tailor the experience to German buyers. Ultimately I wanted to help make a great product to compete in Germany.
                         </p>
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                           Scope
                         </h3>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Leverage the business’s existing vehicle quoting technology by creating themeable lead generating tools, focused on helping buyers 
-                          who want to get the best finance deal for their new vehicle.
+                          A unique vehicle search using Algolia’s instant search, vehicle advert pages, message the retailer, finance quoting, eligibility checking, applying for finance, instant application decision from the lender.
                         </p>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                          <BulletTag>Finance quote comparison tool</BulletTag><BulletTag>Finance eligibility checking</BulletTag><BulletTag>Finance applications</BulletTag>
-                          <BulletTag>Instant feedback on application decision</BulletTag><BulletTag>Dealer lead management system</BulletTag>
+                          <BulletTag>Search</BulletTag><BulletTag>Find a car</BulletTag><BulletTag>Find a retailer and view their stock</BulletTag><BulletTag>Send message to retailer</BulletTag>
+                          <BulletTag>Pre-Approval with instant decision</BulletTag>
                         </div>
                         <div className="mt-6 cursor-zoom-in" >
                           <Zoom>
@@ -365,7 +349,7 @@ export default function NewVehicle() {
               role="list" 
               className="rounded-t-xl py-4 px-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4 md:backdrop-blur-[0px]"
               >
-              {NVImages.map((images) => (
+              {JuhuImages.map((images) => (
                   <images.image />
               ))}
             </motion.ol>
