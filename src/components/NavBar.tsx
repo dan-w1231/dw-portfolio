@@ -19,9 +19,9 @@ const sections = [
       </>
     ),
   },
-  { id: 'page1', title: 'My Design Language' },
-  { id: 'work', title: 'My Work' },
-  { id: 'anotherpage', title: 'Contact' },
+  { id: 'Todo', title: 'My Design Language' },
+  { id: 'Todo2', title: 'My Work' },
+  { id: 'Todo3', title: 'Contact' },
 ]
 
 function MenuIcon({

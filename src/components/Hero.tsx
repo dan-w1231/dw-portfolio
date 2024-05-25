@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { Button } from '@/components/Button'
 // Webpack import fuckery why do PDFs not just work?
 // import CV from '../../public/CV.pdf'
@@ -12,8 +12,11 @@ import mL3 from '@/images/resources/sphere/3.png'
 import mL4 from '@/images/resources/sphere/4.png'
 import mL5 from '@/images/resources/sphere/5.png'
 
-export function Hero() {
-  return (
+export function Hero(isVisible) {
+  return ( 
+    <AnimatePresence>
+      {isVisible && (
+    <motion.div key={1} exit={{ opacity: 0, y: -30}} >
     <header className="relative m-w-full px-2 xs:px-4 rounded-4xl max-w-screen-2xl mx-auto">
       <div  
         className="relative max-w-full pt-11 md:pt-20 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-lg rounded-4xl md:rounded-5xl xl:rounded-6xl flex flex-row flex-wrap justify-between gap-6 md:gap-10 overflow-hidden z-[2]">
@@ -189,5 +192,8 @@ export function Hero() {
           </div>
       </div>
     </header>
+    </motion.div>
+    )}
+    </AnimatePresence>
   )
 }

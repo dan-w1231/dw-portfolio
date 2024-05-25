@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { About } from '@/components/About'
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useRef, useEffect } from "react";
 import { Container } from '@/components/Container'
 
@@ -155,7 +155,7 @@ const myWork = [
   },
 ]
 
-export function MyWork() {
+export function MyWork(isVisible) {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -190,6 +190,9 @@ export function MyWork() {
   // const aboutZIndex = scrollPosition > aboutThreshold ? 99 : 1;
 
   return (
+    <AnimatePresence>
+      {isVisible && ( 
+    <motion.div key={2} exit={{ opacity: 0, y: -30}} >
     <section
       id="myWork"
       aria-labelledby="myWork-title"
@@ -240,5 +243,8 @@ export function MyWork() {
           <About />
       </motion.div>
     </section>
+    </motion.div>
+    )}
+    </AnimatePresence>
   )
 }
