@@ -190,12 +190,16 @@ export default function NewVehicle() {
                       transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3, staggerChildren: 0.5 }}
                       exit={{ opacity: 0, y: 80 }}
                     >
-                      <Link
-                        href="/"
-                        className="text-base font-medium text-blurple hover:text-midnight-900"
-                      >
-                        <span aria-hidden="true">&larr;</span> Back 
-                      </Link>
+                      <motion.div
+                        initial={{ x: 0 }}
+                        whileHover={{ x: -4 }}>
+                        <Link
+                          href="/"
+                          className="text-base font-medium text-blurple hover:text-midnight-900"
+                        >
+                          <span aria-hidden="true">&larr;</span> Back 
+                        </Link>
+                      </motion.div>
                       <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple">
                         Juhu Auto
                       </h1>

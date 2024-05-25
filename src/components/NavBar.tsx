@@ -5,7 +5,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Popover } from '@headlessui/react'
 import clsx from 'clsx'
-import Logo from '@/images/resources/dwLogo.svg'
+import Logo from '@/images/resources/dwLogo.png'
+// SVG logo is flickering. Y tho..?
+// import Logo from '@/images/resources/dwLogo.svg'
 
 const sections = [
   {
@@ -122,7 +124,7 @@ export function NavBar() {
             >
               {!open && (
                 <>
-                  <Image src={Logo} alt="DW Design" priority />
+                  <Image src={Logo} height="22" alt="DW Design" priority />
                   {/* <span
                     aria-hidden="true"
                     className="font-mono text-sm text-blue-600"
