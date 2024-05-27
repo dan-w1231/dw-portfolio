@@ -9,38 +9,28 @@ import 'react-medium-image-zoom/dist/styles.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-
-import yourDeal from '@/images/resources/deviceImages/yourDeal-flat.png'
-import relationshipMap from '@/images/resources/relationshipMap.png'
-import researchPlan from '@/images/resources/researchPlan.png'
-import streetQPlan from '@/images/resources/streetInterviewQPlan.png'
-import personas from '@/images/resources/personas.png'
-import wireframeNV from '@/images/resources/wireframingNV.png'
-import featureMap from '@/images/resources/fullFeatureMap.png'
-import flowOptions from '@/images/resources/flowOptions.png'
-import productPages from '@/images/resources/productPages.png'
-import analyticsNV from '@/images/resources/analyticsNV.png'
-import ABWidget from '@/images/resources/ABWidget.png'
-import calcs from '@/images/resources/productPagesCalcs.png'
-import fpa from '@/images/resources/fpa.png'
-import reserve from '@/images/resources/reserve-wide.png'
-import approved from '@/images/resources/approved.png'
+import bdkToJuhu from '@/images/resources/deviceImages/bdkTojuhu.png'
+import bdkSitemap from '@/images/resources/bdkSitemap.png'
+import bdkTaskflow from '@/images/resources/bdktaskFlow.png'
+import bdkEEA from '@/images/resources/bdkEEA.png'
+import ABcategories from '@/images/resources/homeCategories.png'
+import ABcategoriesStats from '@/images/resources/homeCategoriesStats.png'
 
 const JuhuImages = [
   {
-    image: function Calcs() {
+    image: function BDKToJuhu() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[#253243] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[linear-gradient(#BFE725_33%,#5CC300)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             // className="w-80 md:w-[496px] md:mr-[10%]"
-            className="mr-[10%]"
+            className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={calcs} className="w-full max-w-[496px]" alt="Themed finance calculators embedded in dealership websites" />
+              <Image src={bdkToJuhu} className="w-full max-w-[390px] py-10" alt="Themed finance calculators embedded in dealership websites" />
             </Zoom>
           </motion.div>
         </div>
@@ -59,7 +49,7 @@ const JuhuImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={yourDeal} className="w-full m-w-[496px]" alt="The deal page." />
+              <Image src={bdkToJuhu} className="w-full m-w-[496px]" alt="The deal page." />
             </Zoom>
           </motion.div>
         </div>
@@ -78,7 +68,7 @@ const JuhuImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           > 
             <Zoom>
-              <Image src={reserve} className="w-full max-w-[44rem] p-[12%]" alt="Desktop view of a reservation." />
+              <Image src={bdkToJuhu} className="w-full max-w-[44rem] p-[12%]" alt="Desktop view of a reservation." />
             </Zoom>
           </motion.div>
         </div>
@@ -97,7 +87,7 @@ const JuhuImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={fpa} className="w-full max-w-[17rem] p-[18%]" alt="Vehicle advert." />
+              <Image src={bdkToJuhu} className="w-full max-w-[17rem] p-[18%]" alt="Vehicle advert." />
             </Zoom>
           </motion.div>
         </div>
@@ -116,7 +106,7 @@ const JuhuImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={approved} className="w-full max-w-[17rem] p-[18%]" alt="Instant decision on finance applications." />
+              <Image src={bdkToJuhu} className="w-full max-w-[17rem] p-[18%]" alt="Instant decision on finance applications." />
             </Zoom>
           </motion.div>
         </div>
@@ -187,7 +177,7 @@ export default function JuhuAuto() {
                         Juhu Auto
                       </h2>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Create a vehicle marketplace that can be adapted to different languages and cultures. Combining previous work where I designed online retailing tools including vehicle search, finance calculators, applications and eligibility checking, brought together into a simple yet innovative way to buy a vehicle.
+                          Create a vehicle marketplace for advertising German retailer's vehicles along with affordable finance products. Combining previous work where I designed online retailing tools including vehicle search, finance calculators, applications and eligibility checking, brought together into a simple yet innovative way to buy a vehicle.
                         </p>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
                           <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>Post-release User & A/B Testing</BulletTag>
@@ -196,140 +186,97 @@ export default function JuhuAuto() {
                           Goals
                         </h3>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          I had already designed online retailing software in the UK that was well tested and converted well. The goal was to use this knowledge (and the domain knowledge of the client’s market experts) to design a bespoke vehicle marketplace for the German market and bank BDK, then utilise user testing and A/B testing to further tailor the experience to German buyers. Ultimately I wanted to help make a great product to compete in Germany.
+                          Use what was learned in the UK market to create a bespoke vehicle marketplace for Germany, with a goal to optimise post-release.
                         </p>
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                           Scope
                         </h3>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          A unique vehicle search using Algolia’s instant search, vehicle advert pages, message the retailer, finance quoting, eligibility checking, applying for finance, instant application decision from the lender.
-                        </p>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
                           <BulletTag>Search</BulletTag><BulletTag>Find a car</BulletTag><BulletTag>Find a retailer and view their stock</BulletTag><BulletTag>Send message to retailer</BulletTag>
-                          <BulletTag>Pre-Approval with instant decision</BulletTag>
+                          <BulletTag>Pre-Approval with instant decision</BulletTag><BulletTag>Post-release usability testing</BulletTag>
+                        </div>
+                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                          Ideation
+                        </h3>
+                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
+                          Task Flows
+                        </h4>
+                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          To begin I started by using the research from previous projects to develop some high-level task flows for the main tasks. 
+                          outlining what a buyer wants to do when they land on the site, whether they
+                          already know what they want or not.
+                        </p>
+                        <div className="mt-6 cursor-zoom-in" >
+                          <Zoom>
+                            <Image src={bdkTaskflow} loading="lazy" placeholder="blur" className="bg-white rounded-lg" alt="research plan" />
+                          </Zoom>  
                         </div>
                         <div className="mt-6 cursor-zoom-in" >
                           <Zoom>
-                            <Image src={relationshipMap} loading="lazy" placeholder="blur" className="bg-white rounded-lg" alt="research plan" />
+                            <Image src={bdkSitemap} loading="lazy" placeholder="blur" className="bg-white rounded-lg" alt="research plan" />
                           </Zoom>  
                         </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          At it’s core we wanted a finance comparison tool that dealers could integrate into their websites. Buyers can compare finance products 
-                          for the vehicle they want, then continue on to NewVehicle.com to check their eligibility or apply. Sellers are then notified of the lead 
-                          within a lead management system so they can take action.
-                        </p>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
-                          Research
-                        </h3>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          At the beginning I wanted to better understand how people felt about buying cars, in particular about buying on finance. There seemed to be a
-                          wealth of knowledge about the behaviour of car buyers online, but much less about finance specifically.
-                        </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoom>
-                            <Image src={researchPlan} loading="lazy" placeholder="blur" className="bg-white rounded-lg" alt="Research plan" />
+                            <Image src={bdkEEA} loading="lazy" placeholder="blur" className="bg-white rounded-lg" alt="Research plan" />
                           </Zoom>
                         </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          I planned the questions with our team then took to the streets and asked people around Manchester their thoughts.
-                        </p>
+
                         <div className="mt-6 cursor-zoom-in">
                         <Zoom>
-                            <Image src={streetQPlan} loading="lazy" placeholder="blur" className="bg-white rounded-lg p-6" alt="Planning for street interviews" />
+                            <Image src={ABcategories} loading="lazy" placeholder="blur" className="bg-white rounded-lg p-6" alt="Planning for street interviews" />
                         </Zoom>
                         </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          We then card sorted the results into different types of buyers, then I created personas matching people to shopping behaviours and business opportunities, 
-                          which became invaluable when designing many parts of the consumer UI.
-                        </p>
+
                         <div className="mt-6 cursor-zoom-in">
                           <Zoom>
-                            <Image src={personas} loading="lazy" placeholder="blur" className="rounded-lg" alt="Four of the personas created" />
+                            <Image src={ABcategoriesStats} loading="lazy" placeholder="blur" className="rounded-lg" alt="Four of the personas created" />
                           </Zoom>
                         </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                        One of the common worries that respondents expressed with buying online was <span className="font-bold">trust and security.</span> Finance applications inherently require very sensitive customer data (from employment history to bank details), and respondents commented that they’d need to trust a 3rd party website for them to enter this kind of information with confidence.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                        A <span className="font-bold">lack of transparency</span> with the finance process was also commonly expressed, with some respondents commenting on how they sometimes felt “left in the dark” when it comes to a finance deal. Some claimed sales staff may emphasise the <span className="italic">monthly payment</span> while glossing over <span className="italic">interest rates, payment schedules, final payments</span> and potential <span className="italic">penalty fees</span> for going over the mileage limits of a PCP finance deal.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
 
-                        From this one of the goals became <span className="font-bold">compliance, security</span> at every stage of the process.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                        Other take-aways included having clear and detailed vehicle information, the ability to save your progress during the application, and having the dealer information available from any step of the purchase.
-                        </p>
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                           Wireframing
                         </h3>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          The next sessions I brought devs together to brainstorm user flows, while I scribbled on the (WriteOn) walls.
-                        </p>
+                        
                         <div className="mt-6 cursor-zoom-in">
                           <Zoom>
-                            <Image src={wireframeNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Wireframes of the NV application process" />
+                            <Image src={bdkToJuhu} loading="lazy" placeholder="blur" className="rounded-lg" alt="Wireframes of the NV application process" />
                           </Zoom>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Due to the size of the undertaking (quoting, eligibility checking, applications, an account) I formalized a process diagram in Miro to share how everything could fit together.
+                          
                         </p>
                         <div className="mt-6 flex flex-row gap-4">
                           <div className="w-1/2">
                           <Zoom>
-                            <Image src={featureMap} loading="lazy" placeholder="blur" className="rounded-lg" alt="A map of how the different vehicle retailing features fit together" />
+                            <Image src={bdkToJuhu} loading="lazy" placeholder="blur" className="rounded-lg" alt="A map of how the different vehicle retailing features fit together" />
                           </Zoom>
                           </div>
                           <div className="w-1/2">
                           <Zoom>
-                            <Image src={flowOptions} loading="lazy" placeholder="blur" className="rounded-lg" alt="Different options placed on the ideas wall." />
+                            <Image src={bdkToJuhu} loading="lazy" placeholder="blur" className="rounded-lg" alt="Different options placed on the ideas wall." />
                           </Zoom>
                           </div>
                         </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          After lots of coffee, hundreds of variations and a few review sessions, the first designs for the new finance calculators, applications, and checkout were presented end-to-end. 
-                        </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoom>
-                            <Image src={productPages} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
+                            <Image src={bdkToJuhu} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
                           </Zoom>
                         </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Given that trust was a big factor, it was important to create a seamless experience for users 
-                          transitioning from dealership websites to our checkout process. I sat down with developers to create 
-                          a themeing guide that would allow each dealership to customize their checkout to their own brand, ensuring 
-                          customers still felt at home when leaving the retailer’s site. A separate 'NewVehicle.com' UI guide was 
-                          also created that could be expanded on if the business decided to have parts of the site unthemed and unrelated to dealerships.
-                        </p>
+
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                           Analytics and Optimisations
                         </h3>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          After release the product was a huge success shipping live to 800+ dealerships in the UK, with the number of
-                          leads generated up around ~35%. The following year I spent a lot of time burried in Google Analytics and Hotjar, setting it up, searching for weak performing pages and presenting
-                          hypotheses of ways we could make the process simpler and improve conversion rates on different pages.
-                        </p>
+
                         <div className="mt-6 cursor-zoom-in">
                           <Zoom>
-                            <Image src={analyticsNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
+                            <Image src={bdkToJuhu} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
                           </Zoom>
                         </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          One example of improvement was a change to the finance calculator and its following page. The calculator was the one area embedded on the retailer's vehicle page
-                           and received the highest number of impressions of any stage. Each quote had a "Learn More" call to action which lead
-                          to a "Finance Details" page with 2 options: Check Eligibility or Apply.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Drop-offs were highest at these two steps, so the hypothesis was to add a more direct call to action on each quote ("Apply Now" and "Check Eligibility") and move the finance details 
-                          into the calculator, removing the need for the page inbetween a quote and applying or checking eligbility.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          The change was beta tested to select retailers, and the results showed both an increase in engagement on the quotes, 
-                          and considerably less dropoffs during the checkout, so the change was subsequently rolled out to all retailers.
-                        </p>
+
                         <div className="mt-6 cursor-zoom-in">
                           <Zoom>
-                            <Image src={ABWidget} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
+                            <Image src={bdkToJuhu} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
                           </Zoom>
                         </div>
                     </motion.div>
@@ -342,7 +289,7 @@ export default function JuhuAuto() {
           {/* Right col */}
             <div className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%]">
               <h3 className="font-display md:hidden font-bold text-3xl xl:text-4xl px-4 tracking-tight font-extrabold text-midnight-900 mt-10">
-              Final product
+                Screenshots of work
               </h3>
             <motion.ol 
               style={{ y }}

@@ -33,7 +33,7 @@ const NVImages = [
         <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[#253243] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             // className="w-80 md:w-[496px] md:mr-[10%]"
-            className="mr-[10%]"
+            className="-ml-[15%]"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}

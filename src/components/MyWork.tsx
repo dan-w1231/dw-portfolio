@@ -7,7 +7,8 @@ import { useRef, useEffect } from "react";
 import { Container } from '@/components/Container'
 
 import circleArrow from '@/images/resources/circleArrow.svg'
-import NVDeal from '@/images/resources/deviceImages/yourDeal-side.png'
+import arrowTopRight from '@/images/resources/arrowTopRight.svg'
+import NVDeal from '@/images/resources/deviceImages/yourDealTradein.png'
 import insightsImage from '@/images/resources/insights.png'
 import breatheImage from '@/images/resources/breathe.png'
 import fitcheckImage from '@/images/resources/fitcheck.png'
@@ -25,15 +26,17 @@ const myWork = [
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#202A37_16%,#253243)]">
           <motion.div
-            className="w-100 -mr-[20%] -mb-[14%]"
+            className="w-[496px]"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
             transition={{  stiffness: 100, duration: 1.5 }}
           >
-            <Image src={NVDeal} className="pointer-events-none w-auto h-[370px]" alt="" />
+            <Image src={NVDeal} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
+          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
+            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
+          </div>
         </div>
       )
     },
@@ -55,7 +58,9 @@ const myWork = [
           >
             <Image src={juhuAutoImage} className="pointer-events-none w-full" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
+          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
+            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
+          </div>
         </div>
       )
     },
@@ -77,7 +82,9 @@ const myWork = [
           >
             <Image src={insightsImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
+          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
+            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
+          </div>
         </div>
       )
     },
@@ -99,7 +106,9 @@ const myWork = [
           >
             <Image src={fitcheckImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
+          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
+            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
+          </div>
         </div>
       )
     },
@@ -128,7 +137,9 @@ const myWork = [
 />
               <Image src={breatheImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
+          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
+            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
+          </div>
         </div>
       )
     },
@@ -150,7 +161,9 @@ const myWork = [
           >
             <Image src={fitcheckImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
+          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
+            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
+          </div>
         </div>
       )
     },
@@ -172,7 +185,9 @@ const myWork = [
           >
             <Image src={fafmcImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <Image src={circleArrow} alt="" className="absolute w-auto md:w-[80px] xl:w-[140px] top-[8px] right-[8px]" />
+          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
+            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
+          </div>
         </div>
       )
     },
@@ -237,8 +252,8 @@ export function MyWork() {
                   key="workContainer"
                   className="md:snap-start md:scroll-mx-0 select-none"
                   initial={{ scale: 1, y: 0 }}
-                  whileHover={{ scale: 1.01, y: -2 }}
-                  whileTap={{ scale: 0.99, y: 0 }}
+                  whileHover={{ scale: 0.98, y: -2 }}
+                  whileTap={{ scale: 0.97, y: 0 }}
                   transition={{ duration: 0.2 }}
                 > 
                   <Link href={`/${work.url}/`} className="select-none">
