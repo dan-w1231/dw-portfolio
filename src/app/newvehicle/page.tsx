@@ -222,7 +222,7 @@ export default function NewVehicle() {
                         </div>
                         <div className="mt-6 cursor-zoom-in" >
                           <Zoom>
-                            <Image src={relationshipMap} loading="lazy" placeholder="blur" className="bg-white rounded-lg" alt="research plan" />
+                            <Image src={relationshipMap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="research plan" />
                           </Zoom>  
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
@@ -239,7 +239,7 @@ export default function NewVehicle() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoom>
-                            <Image src={researchPlan} loading="lazy" placeholder="blur" className="bg-white rounded-lg" alt="Research plan" />
+                            <Image src={researchPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="Research plan" />
                           </Zoom>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
@@ -247,7 +247,7 @@ export default function NewVehicle() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                         <Zoom>
-                            <Image src={streetQPlan} loading="lazy" placeholder="blur" className="bg-white rounded-lg p-6" alt="Planning for street interviews" />
+                            <Image src={streetQPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6" alt="Planning for street interviews" />
                         </Zoom>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
