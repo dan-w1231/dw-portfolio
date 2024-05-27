@@ -192,8 +192,8 @@ export default function JuhuAuto() {
                           Scope
                         </h3>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                          <BulletTag>Search</BulletTag><BulletTag>Find a car</BulletTag><BulletTag>Find seller & view stock</BulletTag><BulletTag>Contact seller</BulletTag>
-                          <BulletTag>Get Pre-Approved</BulletTag><BulletTag>Post-release usability testing</BulletTag>
+                          <BulletTag>Search</BulletTag><BulletTag>Find seller & view stock</BulletTag><BulletTag>Contact seller</BulletTag>
+                          <BulletTag>Get Pre-Approved</BulletTag><BulletTag>Book a test drive</BulletTag><BulletTag>Post-release usability testing</BulletTag>
                         </div>
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                           Ideation
