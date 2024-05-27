@@ -171,10 +171,10 @@ export default function JuhuAuto() {
                         </Link>
                       </motion.div>
                       <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-[#01A516]">
-                        Vehicle Marketplace in Germany
+                        Juhu Auto
                       </h1>
                       <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900">
-                        Juhu Auto
+                        Car marketplace in Germahy
                       </h2>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
                           Create a vehicle marketplace for advertising German retailer's vehicles along with affordable finance products. Combining previous work where I designed online retailing tools including vehicle search, finance calculators, applications and eligibility checking, brought together into a simple yet innovative way to buy a vehicle.
@@ -192,8 +192,8 @@ export default function JuhuAuto() {
                           Scope
                         </h3>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                          <BulletTag>Search</BulletTag><BulletTag>Find a car</BulletTag><BulletTag>Find a retailer and view their stock</BulletTag><BulletTag>Send message to retailer</BulletTag>
-                          <BulletTag>Pre-Approval with instant decision</BulletTag><BulletTag>Post-release usability testing</BulletTag>
+                          <BulletTag>Search</BulletTag><BulletTag>Find a car</BulletTag><BulletTag>Find seller & view stock</BulletTag><BulletTag>Contact seller</BulletTag>
+                          <BulletTag>Get Pre-Approved</BulletTag><BulletTag>Post-release usability testing</BulletTag>
                         </div>
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                           Ideation
