@@ -42,8 +42,8 @@ export function Hero() {
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ type: "spring", stiffness: 100, duration: 1.5}}
-                whileHover={{ scale: 1.05, y: 0, transition: { type: "spring", stiffness: 100, duration: 0.2 }, }}
-                whileTap={{ scale: 0.95, y: 0, transition: { type: "spring", stiffness: 100, duration: 0.2 }, }}
+                whileHover={{ scale: 1.05, y: 0, transition: { type: "spring", stiffness: 400, duration: 0.2 }, }}
+                whileTap={{ scale: 0.95, y: 0, transition: { type: "spring", stiffness: 400, duration: 0.2 }, }}
                 >
                 <Button href="/danWallaceCV2024.pdf" target="_blank" color="primaryGrad" className="w-full">
                   View CV

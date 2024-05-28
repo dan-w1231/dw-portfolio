@@ -18,6 +18,7 @@ import bdkSitemap from '@/images/resources/bdkSitemap.png'
 import bdkTaskflow from '@/images/resources/bdktaskFlow.png'
 import bdkEEA from '@/images/resources/bdkEEA.png'
 import bdkWireframes from '@/images/resources/bdkWireframes.png'
+import bdkWireframesToJuhu from '@/images/resources/bdkWireframesToJuhu.png'
 import juhuUserTest from '@/images/resources/juhuUserTest.png'
 import ABcategories from '@/images/resources/CategoryABResults.png'
 
@@ -25,7 +26,7 @@ const JuhuImages = [
   {
     image: function BDKToJuhu() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[#E7FFCE] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             // className="w-80 md:w-[496px] md:mr-[10%]"
             className=""
@@ -45,7 +46,7 @@ const JuhuImages = [
   {
     image: function JuhuVehicleAdvert() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[#E7FFCE] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -64,7 +65,7 @@ const JuhuImages = [
   {
     image: function JuhuPreapproval() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[#E7FFCE] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -83,7 +84,7 @@ const JuhuImages = [
   {
     image: function JuhuQuotes() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[#E7FFCE] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -226,9 +227,17 @@ export default function JuhuAuto() {
                             <Image src={bdkWireframes} loading="lazy" placeholder="blur" className="rounded-lg object-contain" alt="Four of the personas created" />
                           </Zoom>
                         </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          After a few rounds of testing and tweaking the prototypes, the product was branded in Germany as Juhu Auto, and my work would continue post-release to test and optimise the product.
+                        <p className="mt-6 text-lg tracking-tight text-midnight-800">
+                          After a few rounds of testing and tweaking the prototypes, I spent time with translators converting the wireframes into German, then the wireframes were used by a 3rd-party branding agency in Germany to create the consumer brand "Juhu Auto". I then made some adjustments to the branded designs, and the product was built.
                         </p>
+                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          My work would continue a few months after release to test and optimise the product.
+                        </p>
+                        <div className="mt-6 cursor-zoom-in">
+                          <Zoom>
+                            <Image src={bdkWireframesToJuhu} loading="lazy" placeholder="blur" className="rounded-lg object-contain" alt="Four of the personas created" />
+                          </Zoom>
+                        </div>
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                           User Testing
                         </h3>
@@ -239,7 +248,7 @@ export default function JuhuAuto() {
                           <span className="font-bold">Type:</span> Unmoderated test using Loop11.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          <span className="font-bold">Method:</span> Planned and created the test in English, then translated the test with my German-speaking colleague.   
+                          <span className="font-bold">Method:</span> Initially I planned and built the test in English, then was later translated by my German-speaking colleague.   
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
                           I used TestingTime to recruit German participants who recently bought a car or were actively searching for one.
@@ -250,16 +259,16 @@ export default function JuhuAuto() {
                           </Zoom>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          <span className="font-bold">Discovery:</span> Participants mentioned they were interested in a particular bodystyle i.e. Kleinwagen (Small car) but did not type this into the search box.
+                          <span className="font-bold">Discovery:</span> Participants mentioned they were interested in a particular bodystyle during pre-task questions i.e. Kleinwagen (Small car) but did not type this into the search box.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
                           <span className="font-bold">Solution:</span> Create an A/B test that presents categories on the homepage that can be quickly tapped to display those results.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                        <span className="font-bold">Discovery:</span> Participants using the budget filter accidentally entered their 'maximum budget' into the 'minimum price' field, displaying only vehicles out of their range.
+                        <span className="font-bold">Discovery:</span> Participants using the budget filter accidentally entered their 'maximum budget' into the 'minimum price' field, displaying only vehicles exceeding their price range.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          <span className="font-bold">Solution:</span> Redesigned the budget filter to be more focused on a maximum budget.
+                          <span className="font-bold">Solution:</span> Redesigned and deployed a new budget filter to be more focused on a maximum budget.
                         </p>
                         
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
@@ -275,7 +284,7 @@ export default function JuhuAuto() {
                           Traffic
                         </h4>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          22,000 users over 2 weeks, traffic split 50/50 between Control and Variation.
+                          22,000 users over 2 weeks, traffic split 50/50 between the Control and Variation homepage.
                         </p>
                         <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
                           Results
@@ -300,7 +309,7 @@ export default function JuhuAuto() {
             <motion.ol 
               style={{ y }}
               role="list" 
-              className="rounded-t-xl py-4 px-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4 md:backdrop-blur-[0px]"
+              className="rounded-t-xl py-4 px-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4 md:backdrop-blur-[10px]"
               >
               {JuhuImages.map((images) => (
                   <images.image />

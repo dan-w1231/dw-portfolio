@@ -16,12 +16,14 @@ import fafmcImage from '@/images/resources/fafmc.png'
 import juhuAutoImage from '@/images/resources/deviceImages/juhuCover2.png'
 
 // CURRENTLY IDEAL FOR ~6 IMAGES
+
 const myWork = [
   {
     title: 'NewVehicle',
     description:
       'Online retailing tools for dealership websites, and a secure checkout experience.',
     url: 'newvehicle',
+    type: 'Case Study',
     image: function NVBuyNow() {
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#202A37_16%,#253243)]">
@@ -34,9 +36,6 @@ const myWork = [
           >
             <Image src={NVDeal} className="pointer-events-none" alt="" />
           </motion.div>
-          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
-            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
-          </div>
         </div>
       )
     },
@@ -46,6 +45,7 @@ const myWork = [
     description:
       'Vehicle marketplace for Germany.',
     url: 'juhuauto',
+    type: 'Case Study',
     image: function JuhuAutoCover() {
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[#C3E72F]">
@@ -58,9 +58,6 @@ const myWork = [
           >
             <Image src={juhuAutoImage} className="pointer-events-none w-full" alt="" />
           </motion.div>
-          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
-            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
-          </div>
         </div>
       )
     },
@@ -70,6 +67,7 @@ const myWork = [
     description:
       'Lorem description.',
     url: 'insights',
+    type: 'Case Study',
     image: function InsightsImage() {
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#3C2E97_35%,#5945D6)]">
@@ -82,9 +80,6 @@ const myWork = [
           >
             <Image src={insightsImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
-            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
-          </div>
         </div>
       )
     },
@@ -94,6 +89,7 @@ const myWork = [
     description:
       'Lorem description.',
     url: 'fitnesscheck',
+    type: 'Gallery',
     image: function FitnessCheckImage() {
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#95702A,#FEC351)]">
@@ -106,9 +102,6 @@ const myWork = [
           >
             <Image src={fitcheckImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
-            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
-          </div>
         </div>
       )
     },
@@ -118,6 +111,7 @@ const myWork = [
     description:
       'Lorem description.',
     url: 'dealerplatform',
+    type: 'Gallery',
     image: function BreatheImage() {
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)]">
@@ -137,9 +131,6 @@ const myWork = [
 />
               <Image src={breatheImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
-            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
-          </div>
         </div>
       )
     },
@@ -149,6 +140,7 @@ const myWork = [
     description:
       'Lorem description.',
     url: 'financecalculator',
+    type: 'Gallery',
     image: function FinanceComparison() {
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#95702A,#FEC351)]">
@@ -161,9 +153,6 @@ const myWork = [
           >
             <Image src={fitcheckImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
-            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
-          </div>
         </div>
       )
     },
@@ -173,6 +162,7 @@ const myWork = [
     description:
       'Lorem description.',
     url: 'anuthaone',
+    type: 'Gallery',
     image: function DealerPlatform() {
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#3AC0A8,#45D6BC)]">
@@ -185,9 +175,6 @@ const myWork = [
           >
             <Image src={fafmcImage} className="pointer-events-none" alt="" />
           </motion.div>
-          <div id="proceedArrow"className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white/60 backdrop-blur-xl rounded-full">
-            <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
-          </div>
         </div>
       )
     },
@@ -195,6 +182,18 @@ const myWork = [
 ]
 
 export function MyWork() {
+
+  const workContainerVariants = ({
+    default: { scale: 1, y: 0 },
+    hover: { scale: 0.98, y: -2 },
+  })
+
+  const workArrowVariants = ({
+    hover: { 
+      backgroundColor: 'rgba(255,255,255,1)',
+      transform: 'scale(0.98)',
+       },
+  })
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -205,6 +204,8 @@ export function MyWork() {
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
 
   const x = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0%", "0%"] : ["0px", "-2800px"]);
+  
+
 
   // // scroll event listener
   // useEffect(() => {
@@ -251,8 +252,8 @@ export function MyWork() {
                 <motion.div
                   key="workContainer"
                   className="md:snap-start md:scroll-mx-0 select-none"
-                  initial={{ scale: 1, y: 0 }}
-                  whileHover={{ scale: 0.98, y: -2 }}
+                  variants={workContainerVariants}
+                  whileHover="hover"
                   whileTap={{ scale: 0.97, y: 0 }}
                   transition={{ duration: 0.2 }}
                 > 
@@ -261,8 +262,14 @@ export function MyWork() {
                       key={work.title}
                       className="items-center gap-8 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg md:grid-cols-3"
                     >
-                      <div key="workImageWrapper" className="relative h-[370px] md:h-[496px] sm:h-[496px] w-full md:w-[496px] overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg sm:h-60">
+                      <div key="workImageWrapper" className="relative flex justify-center h-[370px] md:h-[496px] sm:h-[496px] w-full md:w-[496px] overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg sm:h-60">
                         <work.image />
+                        <motion.div id="proceedArrow" variants={workArrowVariants} className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white bg-opacity-60 backdrop-blur-sm scale-100 rounded-full">
+                          <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
+                        </motion.div>
+                        <motion.div id="typeTag"className="absolute bottom-6 flex items-center justify-center px-4 py-2 bg-white backdrop-blur-sm rounded-full font-display text-lg tracking-tight font-bold text-midnight-900 text-center">
+                          {work.type}
+                        </motion.div>
                       </div>
                     </li>
                   </Link>
