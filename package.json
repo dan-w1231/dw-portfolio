@@ -12,6 +12,9 @@
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.18",
+    "@nextui-org/skeleton": "^2.0.28",
+    "@nextui-org/system": "^2.2.0",
+    "@nextui-org/theme": "^2.2.4",
     "@types/node": "20.4.5",
     "@types/react": "18.2.17",
     "@types/react-dom": "18.2.7",

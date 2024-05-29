@@ -30,7 +30,7 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
+            transition={{ duration: 1.5 }}
           >
             <Image src={NVDeal} className="pointer-events-none" alt="" />
           </motion.div>
@@ -52,7 +52,7 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
+            transition={{ duration: 1.5 }}
           >
             <Image src={juhuAutoImage} className="pointer-events-none w-full" alt="" />
           </motion.div>
@@ -74,7 +74,7 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
+            transition={{ duration: 1.5 }}
           >
             <Image src={insightsImage} className="pointer-events-none" alt="" />
           </motion.div>
@@ -96,7 +96,7 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
+            transition={{ duration: 1.5 }}
           >
             <Image src={fitcheckImage} className="pointer-events-none" alt="" />
           </motion.div>
@@ -118,7 +118,7 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
+            transition={{ duration: 1.5 }}
           >
             <motion.button
               whileHover={{
@@ -147,7 +147,7 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
+            transition={{ duration: 1.5 }}
           >
             <Image src={fitcheckImage} className="pointer-events-none" alt="" />
           </motion.div>
@@ -169,7 +169,7 @@ const myWork = [
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.5 }}
+            transition={{ duration: 1.5 }}
           >
             <Image src={fafmcImage} className="pointer-events-none" alt="" />
           </motion.div>
@@ -246,7 +246,7 @@ export function MyWork() {
               className="w-full xl:ease-[cubic-bezier(0.16,0.84,0.44,1)] xl:duration-[600ms] md:max-w-screen-2xl grid md:grid-flow-col md:grid-cols-[repeat(auto-fill,_minmax(496px,_1fr))] md:auto-cols-[minmax(496px,_1fr)] grid-cols-1 gap-y-2 xs:gap-y-4 md:gap-x-4 md:-my-16 md:-mx-4 md:py-16 2xl:px-4"
             >
               {myWork.map((work) => (
-                <motion.div
+                <motion.div layout
                   key="workContainer"
                   className="md:snap-start md:scroll-mx-0 select-none"
                   variants={workContainerVariants}

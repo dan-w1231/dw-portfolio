@@ -15,9 +15,10 @@ export default function Template({
     <AnimatePresence mode="wait">
       <motion.div 
         key={pathname}
-        initial={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 80, duration: 1.8 }}
-        exit={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type:"spring", stiffness: 80, duration: 1.5 }}
+        exit={{ opacity: 0, y: 30 }}
         >
         <FrozenRoute>{children}</FrozenRoute>
       </motion.div>

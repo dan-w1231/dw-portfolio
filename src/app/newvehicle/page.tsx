@@ -1,14 +1,12 @@
 'use client'
-import { FlowChart } from '@/components/FlowChart'
-import { GridPattern } from '@/components/GridPattern'
 import { BulletTag } from '@/components/BulletTag'
 import { motion, useTransform, useScroll } from 'framer-motion'
-import { useRef, useEffect } from "react"
+import { AnimateHeightChange } from '@/components/AnimateHeightChange'
+import { useRef } from "react"
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import Link from 'next/link'
 import Image from 'next/image'
-
 
 import yourDeal from '@/images/resources/deviceImages/yourDeal-flat.png'
 import relationshipMap from '@/images/resources/relationshipMap.png'
@@ -30,96 +28,95 @@ const NVImages = [
   {
     image: function Calcs() {
       return (
-        <div className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout transition={{ duration: 0.3 }} className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
-            // className="w-80 md:w-[496px] md:mr-[10%]"
             className="-ml-[15%]"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.2 }}
+            transition={{ duration: 1.2 }}
           >
             <Zoom>
-              <Image src={calcs} loading="lazy" placeholder="blur" className="w-full max-w-[496px]" alt="Themed finance calculators embedded in dealership websites" />
+              <Image src={calcs} className="w-full max-w-[496px]" alt="Themed finance calculators embedded in dealership websites" />
             </Zoom>
           </motion.div>
-        </div>
+          </motion.div>
       )
     },
   },
   {
     image: function YourDeal() {
       return (
-        <div className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-          <motion.div
+        <motion.div layout transition={{ duration: 0.3 }} className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+          <motion.div 
             className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.2 }}
+            transition={{ duration: 1.2 }}
           >
             <Zoom>
-              <Image src={yourDeal} loading="lazy" placeholder="blur" className="w-full m-w-[496px]" alt="The deal page." />
+              <Image src={yourDeal} className="w-full m-w-[496px]" alt="The deal page." />
             </Zoom>
           </motion.div>
-        </div>
+        </motion.div>
       )
     },
   },
   {
     image: function Reserve() {
       return (
-        <div className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout transition={{ duration: 0.3 }} className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.2 }}
+            transition={{ duration: 1.2 }}
           > 
             <Zoom>
-              <Image src={reserve} loading="lazy" placeholder="blur" className="w-full max-w-[44rem] p-[12%]" alt="Desktop view of a reservation." />
+              <Image src={reserve} className="w-full max-w-[44rem] p-[12%]" alt="Desktop view of a reservation." />
             </Zoom>
           </motion.div>
-        </div>
+        </motion.div>
       )
     },
   },
   {
     image: function VehicleAd() {
       return (
-        <div className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
-            className="p-[18%]"
+            className="p-[18%] h-auto"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.2 }}
+            transition={{ duration: 1.2 }}
           >
             <Zoom>
-              <Image src={fpa} loading="lazy" placeholder="blur" className="w-full max-w-[17rem]" alt="Vehicle advert." />
+              <Image src={fpa} className="w-full max-w-[17rem]" alt="Vehicle advert." />
             </Zoom>
           </motion.div>
-        </div>
+        </motion.div>
       )
     },
   },
   {
     image: function Approved() {
       return (
-        <div className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
-            className="p-[18%]"
+            className="p-[18%] h-auto"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.2 }}
+            transition={{ duration: 1.2 }}
           >
             <Zoom>
-              <Image src={approved} loading="lazy" placeholder="blur" className="w-full max-w-[17rem]" alt="Instant decision on finance applications." />
+              <Image src={approved} className="w-full max-w-[17rem]" alt="Instant decision on finance applications." />
             </Zoom>
           </motion.div>
-        </div>
+        </motion.div>
       )
     },
   },
@@ -155,9 +152,6 @@ export default function NewVehicle() {
                     <motion.div
                       key="contentWorkImage"
                       className="relative z-[99]"
-                      initial={{ opacity: 0, x: -80 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3 }}
                     >
                       <motion.div
                         initial={{ x: 0 }}
@@ -170,12 +164,6 @@ export default function NewVehicle() {
                           <span aria-hidden="true">&larr;</span> Back 
                         </Link>
                       </motion.div>
-                      <motion.div
-                        key={5}
-                        initial={{ opacity: 0, x: -80 }} 
-                        animate={{ opacity: 1, x: 0 }} 
-                        transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.6 }} 
-                        >
                         <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple">
                           NewVehicle
                         </h1>
@@ -189,13 +177,6 @@ export default function NewVehicle() {
                           <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
                             <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>To optimised experience</BulletTag>
                           </div>
-                        </motion.div>
-                        <motion.div
-                          key={6} 
-                          initial={{ opacity: 0, x: -80 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.8 }}
-                          >
                           <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                             Goals
                           </h3>
@@ -347,7 +328,6 @@ export default function NewVehicle() {
                               <Image src={ABWidget} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
                             </Zoom>
                           </div>
-                        </motion.div>
                     </motion.div>
                   </div>
                 </div>
@@ -357,18 +337,22 @@ export default function NewVehicle() {
           {/* Right col */}
             <motion.div 
               className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%] order-1 md:order-2"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "spring", stiffness: 70, delay: 0.6, duration: 1.5 }}
+              transition={{ type: "spring", stiffness: 70, delay: 1, duration: 1.5 }}
               >
             <motion.ol 
               style={{ y }}
               role="list" 
               className="rounded-t-xl px-2 py-2 xs:px-4 xs:py-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4 md:backdrop-blur-[0px]"
               >
+              
               {NVImages.map((images) => (
+                <AnimateHeightChange>
                   <images.image />
+                </AnimateHeightChange>
               ))}
+
             </motion.ol>
             </motion.div>
           </div>

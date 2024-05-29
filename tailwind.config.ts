@@ -1,8 +1,12 @@
+import {nextui} from '@nextui-org/theme';
 import { type Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@nextui-org/theme/dist/components/[object Object].js"
+  ],
   theme: {
     boxShadow: {
       sm: '0 2px 6px rgb(15 23 42 / 0.08)',
@@ -81,5 +85,5 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [nextui()],
 } satisfies Config

@@ -1,8 +1,7 @@
 'use client'
-import { FlowChart } from '@/components/FlowChart'
-import { GridPattern } from '@/components/GridPattern'
 import { BulletTag } from '@/components/BulletTag'
 import { motion, useTransform, useScroll } from 'framer-motion'
+import { AnimateHeightChange } from '@/components/AnimateHeightChange'
 import { useRef, useEffect } from "react"
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
@@ -22,17 +21,18 @@ import bdkWireframesToJuhu from '@/images/resources/bdkWireframesToJuhu.png'
 import juhuUserTest from '@/images/resources/juhuUserTest.png'
 import ABcategories from '@/images/resources/CategoryABResults.png'
 
+
 const JuhuImages = [
   {
     image: function BDKToJuhu() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <div className="relative transition-all w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.2 }}
+            transition={{ type:"spring", stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
               <Image src={bdkToJuhu} loading="lazy" placeholder="blur" className="w-full max-w-[390px] py-10 object-contain" alt="Wireframes to brand" />
@@ -45,13 +45,13 @@ const JuhuImages = [
   {
     image: function JuhuVehicleAdvert() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <div className="relative transition-all w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.2 }}
+            transition={{ stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
               <Image src={juhuFPAs} loading="lazy" placeholder="blur" className="w-full max-w-[400px] object-contain" alt="The vehicle advert page." />
@@ -64,13 +64,13 @@ const JuhuImages = [
   {
     image: function JuhuPreapproval() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <div className="relative transition-transform w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.2 }}
+            transition={{ stiffness: 100, duration: 1.2 }}
           > 
             <Zoom>
               <Image src={juhuPreApproval} loading="lazy" placeholder="blur" className="w-full max-w-[400px] object-contain" alt="Getting pre-approved" />
@@ -83,13 +83,13 @@ const JuhuImages = [
   {
     image: function JuhuQuotes() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <div className="relative transition-transform w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{  stiffness: 100, duration: 1.2 }}
+            transition={{ stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
               <Image src={juhuQuotes} loading="lazy" placeholder="blur" className="w-full max-w-[650px] object-contain p-[10%]" alt="Viewing finance quotes on a laptop." />
@@ -117,10 +117,6 @@ export default function JuhuAuto() {
         key="juhuAuto"
         className="relative w-screen mx-auto"
         ref={targetRef}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 50 }}
-        transition={{ type: "spring", stiffness: 80, duration: 1.5 }}
       >
         <div className="relative mx-auto md:mt-4 xl:mt-14">
           <div className="w-full max-w-screen-2xl flex flex-col gap-0 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97"
@@ -135,9 +131,9 @@ export default function JuhuAuto() {
                     <motion.div
                       key="contentWorkImage"
                       className="relative z-[99]"
-                      initial={{ opacity: 0, x: -80 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.4, duration: 1 }}
                     >
                       <motion.div
                         initial={{ x: 0 }}
@@ -150,12 +146,6 @@ export default function JuhuAuto() {
                           <span aria-hidden="true">&larr;</span> Back 
                         </Link>
                       </motion.div>
-                      <motion.div
-                        key={7}
-                        initial={{ opacity: 0, x: -80 }} 
-                        animate={{ opacity: 1, x: 0 }} 
-                        transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.6 }} 
-                        >
                         <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-[#01A516]">
                           Juhu Auto
                         </h1>
@@ -168,13 +158,6 @@ export default function JuhuAuto() {
                           <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
                             <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>Post-release User & A/B Testing</BulletTag>
                           </div>
-                        </motion.div>
-                        <motion.div
-                          key={8}
-                          initial={{ opacity: 0, x: -80 }} 
-                          animate={{ opacity: 1, x: 0 }} 
-                          transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.8 }} 
-                        >
                           <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                             Goals
                           </h3>
@@ -198,7 +181,6 @@ export default function JuhuAuto() {
                             Leveraging research from previous projects I developed user task flows for the primary task "Finding a car", outlining how 
                             buyers at different stages of the purchase journey could complete their tasks.
                           </p>
-
                           <div className="mt-6 flex flex-row gap-4">
                             <div className="w-1/2">
                               <Zoom>
@@ -300,7 +282,6 @@ export default function JuhuAuto() {
                               <Image src={ABcategories} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6 object-contain" alt="Wireframes of the NV application process" />
                             </Zoom>
                           </div>
-                        </motion.div>
                     </motion.div>
                   </div>
                 </div>
@@ -308,19 +289,21 @@ export default function JuhuAuto() {
             </header>
           </div>
           {/* Right col */}
-          <motion.div 
+          <motion.div layout
               className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%] order-1 md:order-2"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 70, delay: 1, duration: 1.5 }}
               >
-            <motion.ol 
+            <motion.ol layout 
               style={{ y }}
               role="list" 
               className="rounded-t-xl px-2 py-2 xs:px-4 xs:py-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4 md:backdrop-blur-[10px]"
               >
               {JuhuImages.map((images) => (
+                <AnimateHeightChange>
                   <images.image />
+                </AnimateHeightChange>
               ))}
             </motion.ol>
           </motion.div>
