@@ -4,6 +4,8 @@ import clsx from 'clsx'
 import '@/styles/tailwind.css'
 import { NavBar } from '@/components/NavBar'
 import { Footer } from '@/components/Footer'
+import { GridPattern } from '@/components/GridPattern'
+import { FlowChart } from '@/components/FlowChart'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -57,9 +59,17 @@ export default function RootLayout({
         />
       </head>
       <body className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-noise-pattern bg-radial-bg">
-      <NavBar />
-        {children}
-      <Footer />
+        <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
+            <GridPattern x="20%" />
+          </div>
+          <div key="flowChartPattern" className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),transparent)]">
+            <div className="right-[-90px]">
+              <FlowChart size="100%" />
+          </div>
+        </div>
+        <NavBar />
+          {children}
+        <Footer />
       </body>
     </html>
   )

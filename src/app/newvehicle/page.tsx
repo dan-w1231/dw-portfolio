@@ -30,7 +30,7 @@ const NVImages = [
   {
     image: function Calcs() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[#253243] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <div className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             // className="w-80 md:w-[496px] md:mr-[10%]"
             className="-ml-[15%]"
@@ -40,7 +40,7 @@ const NVImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={calcs} className="w-full max-w-[496px]" alt="Themed finance calculators embedded in dealership websites" />
+              <Image src={calcs} width={496} height={660} loading="lazy" placeholder="blur" className="w-full max-w-[496px]" alt="Themed finance calculators embedded in dealership websites" />
             </Zoom>
           </motion.div>
         </div>
@@ -50,7 +50,7 @@ const NVImages = [
   {
     image: function YourDeal() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <div className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -59,7 +59,7 @@ const NVImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={yourDeal} className="w-full m-w-[496px]" alt="The deal page." />
+              <Image src={yourDeal} width={496} height={660} loading="lazy" placeholder="blur" className="w-full m-w-[496px]" alt="The deal page." />
             </Zoom>
           </motion.div>
         </div>
@@ -69,7 +69,7 @@ const NVImages = [
   {
     image: function Reserve() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <div className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -78,7 +78,7 @@ const NVImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           > 
             <Zoom>
-              <Image src={reserve} className="w-full max-w-[44rem] p-[12%]" alt="Desktop view of a reservation." />
+              <Image src={reserve} width={496} height={660} loading="lazy" placeholder="blur" className="w-full max-w-[44rem] p-[12%]" alt="Desktop view of a reservation." />
             </Zoom>
           </motion.div>
         </div>
@@ -88,7 +88,7 @@ const NVImages = [
   {
     image: function VehicleAd() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <div className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             className="p-[18%]"
             initial={{ opacity: 0, y: 32 }}
@@ -97,7 +97,7 @@ const NVImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={fpa} className="w-full max-w-[17rem]" alt="Vehicle advert." />
+              <Image src={fpa} width={496} height={660} loading="lazy" placeholder="blur" className="w-full max-w-[17rem]" alt="Vehicle advert." />
             </Zoom>
           </motion.div>
         </div>
@@ -107,7 +107,7 @@ const NVImages = [
   {
     image: function Approved() {
       return (
-        <div className="relative w-2/3 md:w-full inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <div className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             className="p-[18%]"
             initial={{ opacity: 0, y: 32 }}
@@ -116,7 +116,7 @@ const NVImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={approved} className="w-full max-w-[17rem]" alt="Instant decision on finance applications." />
+              <Image src={approved} width={496} height={660} loading="lazy" placeholder="blur" className="w-full max-w-[17rem]" alt="Instant decision on finance applications." />
             </Zoom>
           </motion.div>
         </div>
@@ -136,39 +136,30 @@ export default function NewVehicle() {
 
   return (
     <> 
-      <div id="main" className="relative w-screen mx-auto">
-        <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
-          <GridPattern x="20%" />
-        </div>
-        <div key="flowChartPattern" className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),transparent)]">
-          <div className="right-[-90px]">
-            <FlowChart size="100%" />
-          </div>
-        </div>
+    <AnimatePresence mode="wait">
+      <motion.div 
+        id="main"
+        key={3} 
+        className="relative w-screen mx-auto"
+        ref={targetRef}
+        transition={{ type: "spring", stiffness: 80, duration: 1.5 }}
+      >
         <div className="relative mx-auto mt-2 xs:mt-4 xl:mt-14">
-          <motion.div
-            className="w-full max-w-screen-2xl flex flex-col gap-0 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97"
-            ref={targetRef}
-            initial={{ opacity: 0, y: 50 }}
-            viewport= {{ once: true, amount: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
-          >
+          <div className="w-full max-w-screen-2xl flex flex-col gap-0 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97">
+
           {/* Left col */}
           <div className="w-full max-w-[800px]">
             <header className="relative w-full px-2 xs:px-4 2xl:pl-4 rounded-4xl mx-auto">
               <div
                 className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-lg rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">   
-                <div className="relative max-w-full items-end flex items-center md:mt-10">
+                <div className="relative max-w-full items-end flex items-center md:mt-4">
                   <div className="w-full">
-                  <AnimatePresence>
                     <motion.div
                       key="contentWorkImage"
                       className="relative z-[99]"
-                      initial={{ opacity: 0, y: 80 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3, staggerChildren: 0.5 }}
-                      exit={{ opacity: 0, y: 80 }}
+                      initial={{ opacity: 0, x: -80 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3 }}
                     >
                       <motion.div
                         initial={{ x: 0 }}
@@ -180,6 +171,9 @@ export default function NewVehicle() {
                           <span aria-hidden="true">&larr;</span> Back 
                         </Link>
                       </motion.div>
+                      <motion.div initial={{ opacity: 0, x: -80 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.2 }} key={5}>
                       <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple">
                         NewVehicle
                       </h1>
@@ -193,6 +187,10 @@ export default function NewVehicle() {
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
                           <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>To optimised experience</BulletTag>
                         </div>
+                        </motion.div>
+                        <motion.div initial={{ opacity: 0, x: -80 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.4 }} key={6}>
                         <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                           Goals
                         </h3>
@@ -344,15 +342,20 @@ export default function NewVehicle() {
                             <Image src={ABWidget} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
                           </Zoom>
                         </div>
+                        </motion.div>
                     </motion.div>
-                    </AnimatePresence>
                   </div>
                 </div>
               </div>
             </header>
           </div>
           {/* Right col */}
-            <div className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%]">
+            <motion.div 
+              className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%]"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 70, delay: 0.6, duration: 1.5 }}
+              >
               <h3 className="font-display md:hidden font-bold text-3xl xl:text-4xl px-4 tracking-tight font-extrabold text-midnight-900 mt-10">
               Final product
               </h3>
@@ -365,10 +368,11 @@ export default function NewVehicle() {
                   <images.image />
               ))}
             </motion.ol>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
-      </div>
+      </motion.div>
+    </AnimatePresence>
     </>
   )
 }

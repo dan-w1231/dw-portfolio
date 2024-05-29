@@ -114,35 +114,26 @@ export default function JuhuAuto() {
   return (
     <> 
       <div id="main" className="relative w-screen mx-auto">
-        <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
-          <GridPattern x="20%" />
-        </div>
-        <div key="flowChartPattern" className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),transparent)]">
-          <div className="right-[-90px]">
-            <FlowChart size="100%" />
-          </div>
-        </div>
         <div className="relative mx-auto mt-2 xs:mt-4 xl:mt-14">
           <motion.div
             className="w-full max-w-screen-2xl flex flex-col gap-0 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97"
             ref={targetRef}
             initial={{ opacity: 0, y: 50 }}
-            viewport= {{ once: true, amount: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 80, duration: 1.5 }}
           >
           {/* Left col */}
           <div className="w-full max-w-[800px]">
             <header className="relative w-full px-2 xs:px-4 2xl:pl-4 rounded-4xl mx-auto">
               <div
                 className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-lg rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">   
-                <div className="relative max-w-full items-end flex items-center md:mt-10">
+                <div className="relative max-w-full items-end flex items-center md:mt-4">
                   <div className="w-full">
                   <AnimatePresence>
                     <motion.div
                       key="contentWorkImage"
                       className="relative z-[99]"
-                      initial={{ opacity: 0, y: 80 }}
+                      initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3, staggerChildren: 0.5 }}
                       exit={{ opacity: 0, y: 80 }}
@@ -302,7 +293,12 @@ export default function JuhuAuto() {
             </header>
           </div>
           {/* Right col */}
-            <div className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%]">
+          <motion.div 
+              className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%]"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 70, delay: 1, duration: 1.5 }}
+              >
               <h3 className="font-display md:hidden font-bold text-3xl xl:text-4xl px-4 tracking-tight font-extrabold text-midnight-900 mt-10">
                 Screenshots of work
               </h3>
@@ -315,7 +311,7 @@ export default function JuhuAuto() {
                   <images.image />
               ))}
             </motion.ol>
-            </div>
+          </motion.div>
           </motion.div>
         </div>
       </div>
