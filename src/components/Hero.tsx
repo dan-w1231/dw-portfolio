@@ -49,14 +49,12 @@ export function Hero() {
                   View CV
                 </Button>
                 <div className="absolute h-[64px] bg-primaryGrad rounded-full pointer-events-none z-[98] scale-y-[-0.99] scale-x-[-0.99] brightness-100 blur-[8px] md:blur-[40px] opacity-20 w-[96%] top-[62px]" />
-
-                {/* <Image className="w-full" src={coverImage} alt="" priority /> */}
               </motion.button>
             </div>
-            {/* <div className="absolute top-[-20px] sm:top-[-30px] md:top-[-52px] right-[-70px] sm:right-0 md:right-[98px] w-48 h-64 overflow-visible z-[2]"> */}
             <div className="absolute top-0 right-0 w-full h-full z-[2]">
+              
               <motion.div
-                // className="absolute w-48 sm:w-96 md:w-[32rem] h-48 overflow-visible"
+
                 className="absolute w-full h-full right-0 top-0"
                 initial={{ opacity: 0, x: 60, rotate: 0 }}
                 whileInView={{ opacity: 1, x: 0, rotate: 0 }}

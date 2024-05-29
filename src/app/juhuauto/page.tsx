@@ -112,16 +112,21 @@ export default function JuhuAuto() {
   const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0%", "0%"] : ["0px", "1800px"]);
 
   return (
-    <> 
-      <div id="main" className="relative w-screen mx-auto">
+    <>
+      <AnimatePresence>
+      <motion.div 
+        id="main"
+        key={6} 
+        className="relative w-screen mx-auto"
+        ref={targetRef}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 30 }}
+        transition={{ type: "spring", stiffness: 80, duration: 1.5 }}
+      >
         <div className="relative mx-auto mt-2 xs:mt-4 xl:mt-14">
-          <motion.div
-            className="w-full max-w-screen-2xl flex flex-col gap-0 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97"
-            ref={targetRef}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 80, duration: 1.5 }}
-          >
+          <div className="w-full max-w-screen-2xl flex flex-col gap-0 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97"
+>
           {/* Left col */}
           <div className="w-full max-w-[800px]">
             <header className="relative w-full px-2 xs:px-4 2xl:pl-4 rounded-4xl mx-auto">
@@ -129,14 +134,12 @@ export default function JuhuAuto() {
                 className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-lg rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">   
                 <div className="relative max-w-full items-end flex items-center md:mt-4">
                   <div className="w-full">
-                  <AnimatePresence>
                     <motion.div
                       key="contentWorkImage"
                       className="relative z-[99]"
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3, staggerChildren: 0.5 }}
-                      exit={{ opacity: 0, y: 80 }}
+                      initial={{ opacity: 0, x: -80 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3 }}
                     >
                       <motion.div
                         initial={{ x: 0 }}
@@ -148,145 +151,158 @@ export default function JuhuAuto() {
                           <span aria-hidden="true">&larr;</span> Back 
                         </Link>
                       </motion.div>
-                      <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-[#01A516]">
-                        Juhu Auto
-                      </h1>
-                      <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900">
-                        Car marketplace in Germahy
-                      </h2>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Create a finance-focused vehicle marketplace for buyers and sellers in Germany, on behalf of Bank Deutsches Kraftfahrzeuggewerbe (BDK). Combining previous work where I designed online retailing tools including vehicle search, finance calculators, applications and eligibility checking, brought together into a simple yet engaging way to buy a car.
-                        </p>
-                        <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                          <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>Post-release User & A/B Testing</BulletTag>
-                        </div>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
-                          Goals
-                        </h3>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Use research conducted in the UK market and German market experts to create a bespoke vehicle marketplace for Germany, with a goal to optimise post-release.
-                        </p>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
-                          Scope
-                        </h3>
-                        <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                          <BulletTag>Search</BulletTag><BulletTag>Vehicle Adverts</BulletTag><BulletTag>Contact seller</BulletTag>
-                          <BulletTag>Get Pre-Approved</BulletTag><BulletTag>Book a test drive</BulletTag><BulletTag>Post-release usability testing</BulletTag>
-                        </div>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
-                          Ideation
-                        </h3>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
-                          Task Flows
-                        </h4>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Leveraging research from previous projects I developed user task flows for the primary task "Finding a car", outlining how 
-                          buyers at different stages of the purchase journey could complete their tasks.
-                        </p>
+                      <motion.div
+                        key={7}
+                        initial={{ opacity: 0, x: -80 }} 
+                        animate={{ opacity: 1, x: 0 }} 
+                        transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.6 }} 
+                        >
+                        <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-[#01A516]">
+                          Juhu Auto
+                        </h1>
+                        <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900">
+                          Car marketplace in Germahy
+                        </h2>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            Create a finance-focused vehicle marketplace for buyers and sellers in Germany, on behalf of Bank Deutsches Kraftfahrzeuggewerbe (BDK). Combining previous work where I designed online retailing tools including vehicle search, finance calculators, applications and eligibility checking, brought together into a simple yet engaging way to buy a car.
+                          </p>
+                          <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
+                            <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>Post-release User & A/B Testing</BulletTag>
+                          </div>
+                        </motion.div>
+                        <motion.div
+                          key={8}
+                          initial={{ opacity: 0, x: -80 }} 
+                          animate={{ opacity: 1, x: 0 }} 
+                          transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.8 }} 
+                        >
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                            Goals
+                          </h3>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            Use research conducted in the UK market and German market experts to create a bespoke vehicle marketplace for Germany, with a goal to optimise post-release.
+                          </p>
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                            Scope
+                          </h3>
+                          <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
+                            <BulletTag>Search</BulletTag><BulletTag>Vehicle Adverts</BulletTag><BulletTag>Contact seller</BulletTag>
+                            <BulletTag>Get Pre-Approved</BulletTag><BulletTag>Book a test drive</BulletTag><BulletTag>Post-release usability testing</BulletTag>
+                          </div>
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                            Ideation
+                          </h3>
+                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
+                            Task Flows
+                          </h4>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            Leveraging research from previous projects I developed user task flows for the primary task "Finding a car", outlining how 
+                            buyers at different stages of the purchase journey could complete their tasks.
+                          </p>
 
-                        <div className="mt-6 flex flex-row gap-4">
-                          <div className="w-1/2">
+                          <div className="mt-6 flex flex-row gap-4">
+                            <div className="w-1/2">
+                              <Zoom>
+                                <Image src={bdkEEA} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="research plan" />
+                              </Zoom>
+                            </div>
+                            <div className="w-1/2">
+                              <Zoom>
+                                <Image src={bdkTaskflow} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="Research plan" />
+                              </Zoom>
+                            </div>
+                          </div>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            People who know exactly which model they want can quickly get to evaluation stage, while those still unsure need ways to explore and browse potential options.
+                          </p>
+                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
+                            Navigation
+                          </h4>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            Based on the requirements and task flows I created a simple sitemap.
+                          </p>
+                          <div className="mt-6 cursor-zoom-in">
+                          <Zoom>
+                              <Image src={bdkSitemap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6 object-contain" alt="Planning for street interviews" />
+                          </Zoom>
+                          </div>
+                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
+                            Wireframing & Prototyping
+                          </h4>
+                          <div className="mt-6 cursor-zoom-in">
                             <Zoom>
-                              <Image src={bdkEEA} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="research plan" />
+                              <Image src={bdkWireframes} loading="lazy" placeholder="blur" className="rounded-lg object-contain" alt="Four of the personas created" />
                             </Zoom>
                           </div>
-                          <div className="w-1/2">
+                          <p className="mt-6 text-lg tracking-tight text-midnight-800">
+                            After a few rounds of testing and tweaking the prototypes, I spent time with translators converting the wireframes into German, then the wireframes were used by a 3rd-party branding agency in Germany to create the consumer brand "Juhu Auto". I then made some adjustments to the branded designs, and the product was built.
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            My work would continue a few months after release to test and optimise the product.
+                          </p>
+                          <div className="mt-6 cursor-zoom-in">
                             <Zoom>
-                              <Image src={bdkTaskflow} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="Research plan" />
+                              <Image src={bdkWireframesToJuhu} loading="lazy" placeholder="blur" className="rounded-lg object-contain" alt="Four of the personas created" />
                             </Zoom>
                           </div>
-                        </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          People who know exactly which model they want can quickly get to evaluation stage, while those still unsure need ways to explore and browse potential options.
-                        </p>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
-                          Navigation
-                        </h4>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Based on the requirements and task flows I created a simple sitemap.
-                        </p>
-                        <div className="mt-6 cursor-zoom-in">
-                        <Zoom>
-                            <Image src={bdkSitemap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6 object-contain" alt="Planning for street interviews" />
-                        </Zoom>
-                        </div>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
-                          Wireframing & Prototyping
-                        </h4>
-                        <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
-                            <Image src={bdkWireframes} loading="lazy" placeholder="blur" className="rounded-lg object-contain" alt="Four of the personas created" />
-                          </Zoom>
-                        </div>
-                        <p className="mt-6 text-lg tracking-tight text-midnight-800">
-                          After a few rounds of testing and tweaking the prototypes, I spent time with translators converting the wireframes into German, then the wireframes were used by a 3rd-party branding agency in Germany to create the consumer brand "Juhu Auto". I then made some adjustments to the branded designs, and the product was built.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          My work would continue a few months after release to test and optimise the product.
-                        </p>
-                        <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
-                            <Image src={bdkWireframesToJuhu} loading="lazy" placeholder="blur" className="rounded-lg object-contain" alt="Four of the personas created" />
-                          </Zoom>
-                        </div>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
-                          User Testing
-                        </h3>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          <span className="font-bold">Goal:</span> Understand how users navigate the site to purchase a car, and discover the common pain points.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          <span className="font-bold">Type:</span> Unmoderated test using Loop11.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          <span className="font-bold">Method:</span> Initially I planned and built the test in English, then was later translated by my German-speaking colleague.   
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          I used TestingTime to recruit German participants who recently bought a car or were actively searching for one.
-                        </p>
-                        <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
-                            <Image src={juhuUserTest} loading="lazy" placeholder="blur" className="rounded-lg" alt="Wireframes of the NV application process" />
-                          </Zoom>
-                        </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          <span className="font-bold">Discovery:</span> Participants mentioned they were interested in a particular bodystyle during pre-task questions i.e. Kleinwagen (Small car) but did not type this into the search box.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          <span className="font-bold">Solution:</span> Create an A/B test that presents categories on the homepage that can be quickly tapped to display those results.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                        <span className="font-bold">Discovery:</span> Participants using the budget filter accidentally entered their 'maximum budget' into the 'minimum price' field, displaying only vehicles exceeding their price range.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          <span className="font-bold">Solution:</span> Redesigned and deployed a new budget filter to be more focused on a maximum budget.
-                        </p>
-                        
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
-                          A/B Testing
-                        </h3>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
-                          Hypothesis
-                        </h4>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Providing users with one-click ‘Bodystyle Categories’ on the homepage will increase conversion from the homepage to vehicle results. 
-                        </p>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
-                          Traffic
-                        </h4>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          22,000 users over 2 weeks, traffic split 50/50 between the Control and Variation homepage.
-                        </p>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
-                          Results
-                        </h4>
-                        <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
-                            <Image src={ABcategories} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6 object-contain" alt="Wireframes of the NV application process" />
-                          </Zoom>
-                        </div>
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                            User Testing
+                          </h3>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            <span className="font-bold">Goal:</span> Understand how users navigate the site to purchase a car, and discover the common pain points.
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            <span className="font-bold">Type:</span> Unmoderated test using Loop11.
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            <span className="font-bold">Method:</span> Initially I planned and built the test in English, then was later translated by my German-speaking colleague.   
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            I used TestingTime to recruit German participants who recently bought a car or were actively searching for one.
+                          </p>
+                          <div className="mt-6 cursor-zoom-in">
+                            <Zoom>
+                              <Image src={juhuUserTest} loading="lazy" placeholder="blur" className="rounded-lg" alt="Wireframes of the NV application process" />
+                            </Zoom>
+                          </div>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            <span className="font-bold">Discovery:</span> Participants mentioned they were interested in a particular bodystyle during pre-task questions i.e. Kleinwagen (Small car) but did not type this into the search box.
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            <span className="font-bold">Solution:</span> Create an A/B test that presents categories on the homepage that can be quickly tapped to display those results.
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <span className="font-bold">Discovery:</span> Participants using the budget filter accidentally entered their 'maximum budget' into the 'minimum price' field, displaying only vehicles exceeding their price range.
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            <span className="font-bold">Solution:</span> Redesigned and deployed a new budget filter to be more focused on a maximum budget.
+                          </p>
+                          
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                            A/B Testing
+                          </h3>
+                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
+                            Hypothesis
+                          </h4>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            Providing users with one-click ‘Bodystyle Categories’ on the homepage will increase conversion from the homepage to vehicle results. 
+                          </p>
+                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
+                            Traffic
+                          </h4>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            22,000 users over 2 weeks, traffic split 50/50 between the Control and Variation homepage.
+                          </p>
+                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
+                            Results
+                          </h4>
+                          <div className="mt-6 cursor-zoom-in">
+                            <Zoom>
+                              <Image src={ABcategories} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6 object-contain" alt="Wireframes of the NV application process" />
+                            </Zoom>
+                          </div>
+                        </motion.div>
                     </motion.div>
-                    </AnimatePresence>
                   </div>
                 </div>
               </div>
@@ -312,9 +328,10 @@ export default function JuhuAuto() {
               ))}
             </motion.ol>
           </motion.div>
-          </motion.div>
+          </div>
         </div>
-      </div>
+      </motion.div>
+      </AnimatePresence>
     </>
   )
 }

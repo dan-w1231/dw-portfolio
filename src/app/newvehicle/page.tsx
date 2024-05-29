@@ -142,6 +142,9 @@ export default function NewVehicle() {
         key={3} 
         className="relative w-screen mx-auto"
         ref={targetRef}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 30 }}
         transition={{ type: "spring", stiffness: 80, duration: 1.5 }}
       >
         <div className="relative mx-auto mt-2 xs:mt-4 xl:mt-14">
@@ -171,177 +174,183 @@ export default function NewVehicle() {
                           <span aria-hidden="true">&larr;</span> Back 
                         </Link>
                       </motion.div>
-                      <motion.div initial={{ opacity: 0, x: -80 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.2 }} key={5}>
-                      <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple">
-                        NewVehicle
-                      </h1>
-                      <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900">
-                        Buy Online
-                      </h2>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          A vehicle purchase experience that can be embedded into dealership websites, and a secure checkout 
-                          for Buyer’s to manage their car purchase.
-                        </p>
-                        <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                          <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>To optimised experience</BulletTag>
-                        </div>
+                      <motion.div
+                        key={5}
+                        initial={{ opacity: 0, x: -80 }} 
+                        animate={{ opacity: 1, x: 0 }} 
+                        transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.6 }} 
+                        >
+                        <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple">
+                          NewVehicle
+                        </h1>
+                        <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900">
+                          Buy Online
+                        </h2>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            A vehicle purchase experience that can be embedded into dealership websites, and a secure checkout 
+                            for Buyer’s to manage their car purchase.
+                          </p>
+                          <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
+                            <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>To optimised experience</BulletTag>
+                          </div>
                         </motion.div>
-                        <motion.div initial={{ opacity: 0, x: -80 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.4 }} key={6}>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
-                          Goals
-                        </h3>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
-                          For car buyers
-                        </h4>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Whether buying a car with cash or on finance, create an online purchasing experience that’s as transparent and seamless as possible.
-                        </p>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
-                          For car sellers
-                        </h4>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Generate and display high quality leads by making a frictionless car purchase experience for buyers, themed to fit each retailer’s 
-                          branding. Working from the philosophy that the better the experience is for the buyer, the more cars dealers will sell.
-                        </p>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
-                          Scope
-                        </h3>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Leverage the business’s existing vehicle quoting technology by creating themeable lead generating tools, focused on helping buyers 
-                          who want to get the best finance deal for their new vehicle.
-                        </p>
-                        <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                          <BulletTag>Finance quote comparison tool</BulletTag><BulletTag>Finance eligibility checking</BulletTag><BulletTag>Finance applications</BulletTag>
-                          <BulletTag>Instant feedback on application decision</BulletTag><BulletTag>Dealer lead management system</BulletTag>
-                        </div>
-                        <div className="mt-6 cursor-zoom-in" >
+                        <motion.div
+                          key={6} 
+                          initial={{ opacity: 0, x: -80 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ type: "spring", stiffness: 80, duration: 3, delay: 0.8 }}
+                          >
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                            Goals
+                          </h3>
+                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
+                            For car buyers
+                          </h4>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            Whether buying a car with cash or on finance, create an online purchasing experience that’s as transparent and seamless as possible.
+                          </p>
+                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
+                            For car sellers
+                          </h4>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            Generate and display high quality leads by making a frictionless car purchase experience for buyers, themed to fit each retailer’s 
+                            branding. Working from the philosophy that the better the experience is for the buyer, the more cars dealers will sell.
+                          </p>
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                            Scope
+                          </h3>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            Leverage the business’s existing vehicle quoting technology by creating themeable lead generating tools, focused on helping buyers 
+                            who want to get the best finance deal for their new vehicle.
+                          </p>
+                          <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
+                            <BulletTag>Finance quote comparison tool</BulletTag><BulletTag>Finance eligibility checking</BulletTag><BulletTag>Finance applications</BulletTag>
+                            <BulletTag>Instant feedback on application decision</BulletTag><BulletTag>Dealer lead management system</BulletTag>
+                          </div>
+                          <div className="mt-6 cursor-zoom-in" >
+                            <Zoom>
+                              <Image src={relationshipMap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="research plan" />
+                            </Zoom>  
+                          </div>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            At it’s core we wanted a finance comparison tool that dealers could integrate into their websites. Buyers can compare finance products 
+                            for the vehicle they want, then continue on to NewVehicle.com to check their eligibility or apply. Sellers are then notified of the lead 
+                            within a lead management system so they can take action.
+                          </p>
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                            Research
+                          </h3>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            At the beginning I wanted to better understand how people felt about buying cars, in particular about buying on finance. There seemed to be a
+                            wealth of knowledge about the behaviour of car buyers online, but much less about finance specifically.
+                          </p>
+                          <div className="mt-6 cursor-zoom-in">
+                            <Zoom>
+                              <Image src={researchPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="Research plan" />
+                            </Zoom>
+                          </div>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            I planned the questions with our team then took to the streets and asked people around Manchester their thoughts.
+                          </p>
+                          <div className="mt-6 cursor-zoom-in">
                           <Zoom>
-                            <Image src={relationshipMap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="research plan" />
-                          </Zoom>  
-                        </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          At it’s core we wanted a finance comparison tool that dealers could integrate into their websites. Buyers can compare finance products 
-                          for the vehicle they want, then continue on to NewVehicle.com to check their eligibility or apply. Sellers are then notified of the lead 
-                          within a lead management system so they can take action.
-                        </p>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
-                          Research
-                        </h3>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          At the beginning I wanted to better understand how people felt about buying cars, in particular about buying on finance. There seemed to be a
-                          wealth of knowledge about the behaviour of car buyers online, but much less about finance specifically.
-                        </p>
-                        <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
-                            <Image src={researchPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="Research plan" />
+                              <Image src={streetQPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6" alt="Planning for street interviews" />
                           </Zoom>
-                        </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          I planned the questions with our team then took to the streets and asked people around Manchester their thoughts.
-                        </p>
-                        <div className="mt-6 cursor-zoom-in">
-                        <Zoom>
-                            <Image src={streetQPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6" alt="Planning for street interviews" />
-                        </Zoom>
-                        </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          We then card sorted the results into different types of buyers, then I created personas matching people to shopping behaviours and business opportunities, 
-                          which became invaluable when designing many parts of the consumer UI.
-                        </p>
-                        <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
-                            <Image src={personas} loading="lazy" placeholder="blur" className="rounded-lg" alt="Four of the personas created" />
-                          </Zoom>
-                        </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                        One of the common worries that respondents expressed with buying online was <span className="font-bold">trust and security.</span> Finance applications inherently require very sensitive customer data (from employment history to bank details), and respondents commented that they’d need to trust a 3rd party website for them to enter this kind of information with confidence.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                        A <span className="font-bold">lack of transparency</span> with the finance process was also commonly expressed, with some respondents commenting on how they sometimes felt “left in the dark” when it comes to a finance deal. Some claimed sales staff may emphasise the <span className="italic">monthly payment</span> while glossing over <span className="italic">interest rates, payment schedules, final payments</span> and potential <span className="italic">penalty fees</span> for going over the mileage limits of a PCP finance deal.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          </div>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            We then card sorted the results into different types of buyers, then I created personas matching people to shopping behaviours and business opportunities, 
+                            which became invaluable when designing many parts of the consumer UI.
+                          </p>
+                          <div className="mt-6 cursor-zoom-in">
+                            <Zoom>
+                              <Image src={personas} loading="lazy" placeholder="blur" className="rounded-lg" alt="Four of the personas created" />
+                            </Zoom>
+                          </div>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          One of the common worries that respondents expressed with buying online was <span className="font-bold">trust and security.</span> Finance applications inherently require very sensitive customer data (from employment history to bank details), and respondents commented that they’d need to trust a 3rd party website for them to enter this kind of information with confidence.
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          A <span className="font-bold">lack of transparency</span> with the finance process was also commonly expressed, with some respondents commenting on how they sometimes felt “left in the dark” when it comes to a finance deal. Some claimed sales staff may emphasise the <span className="italic">monthly payment</span> while glossing over <span className="italic">interest rates, payment schedules, final payments</span> and potential <span className="italic">penalty fees</span> for going over the mileage limits of a PCP finance deal.
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
 
-                        From this one of the goals became <span className="font-bold">compliance, security</span> at every stage of the process.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                        Other take-aways included having clear and detailed vehicle information, the ability to save your progress during the application, and having the dealer information available from any step of the purchase.
-                        </p>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
-                          Wireframing
-                        </h3>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          The next sessions I brought devs together to brainstorm user flows, while I scribbled on the (WriteOn) walls.
-                        </p>
-                        <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
-                            <Image src={wireframeNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Wireframes of the NV application process" />
-                          </Zoom>
-                        </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Due to the size of the undertaking (quoting, eligibility checking, applications, an account) I formalized a process diagram in Miro to share how everything could fit together.
-                        </p>
-                        <div className="mt-6 flex flex-row gap-4">
-                          <div className="w-1/2">
-                          <Zoom>
-                            <Image src={featureMap} loading="lazy" placeholder="blur" className="rounded-lg" alt="A map of how the different vehicle retailing features fit together" />
-                          </Zoom>
+                          From this one of the goals became <span className="font-bold">compliance, security</span> at every stage of the process.
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          Other take-aways included having clear and detailed vehicle information, the ability to save your progress during the application, and having the dealer information available from any step of the purchase.
+                          </p>
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                            Wireframing
+                          </h3>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            The next sessions I brought devs together to brainstorm user flows, while I scribbled on the (WriteOn) walls.
+                          </p>
+                          <div className="mt-6 cursor-zoom-in">
+                            <Zoom>
+                              <Image src={wireframeNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Wireframes of the NV application process" />
+                            </Zoom>
                           </div>
-                          <div className="w-1/2">
-                          <Zoom>
-                            <Image src={flowOptions} loading="lazy" placeholder="blur" className="rounded-lg" alt="Different options placed on the ideas wall." />
-                          </Zoom>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            Due to the size of the undertaking (quoting, eligibility checking, applications, an account) I formalized a process diagram in Miro to share how everything could fit together.
+                          </p>
+                          <div className="mt-6 flex flex-row gap-4">
+                            <div className="w-1/2">
+                            <Zoom>
+                              <Image src={featureMap} loading="lazy" placeholder="blur" className="rounded-lg" alt="A map of how the different vehicle retailing features fit together" />
+                            </Zoom>
+                            </div>
+                            <div className="w-1/2">
+                            <Zoom>
+                              <Image src={flowOptions} loading="lazy" placeholder="blur" className="rounded-lg" alt="Different options placed on the ideas wall." />
+                            </Zoom>
+                            </div>
                           </div>
-                        </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          After lots of coffee, hundreds of variations and a few review sessions, the first designs for the new finance calculators, applications, and checkout were presented end-to-end. 
-                        </p>
-                        <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
-                            <Image src={productPages} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
-                          </Zoom>
-                        </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Given that trust was a big factor, it was important to create a seamless experience for users 
-                          transitioning from dealership websites to our checkout process. I sat down with developers to create 
-                          a themeing guide that would allow each dealership to customize their checkout to their own brand, ensuring 
-                          customers still felt at home when leaving the retailer’s site. A separate 'NewVehicle.com' UI guide was 
-                          also created that could be expanded on if the business decided to have parts of the site unthemed and unrelated to dealerships.
-                        </p>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
-                          Analytics and Optimisations
-                        </h3>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          After release the product was a huge success shipping live to 800+ dealerships in the UK, with the number of
-                          leads generated up around ~35%. The following year I spent a lot of time burried in Google Analytics and Hotjar, setting it up, searching for weak performing pages and presenting
-                          hypotheses of ways we could make the process simpler and improve conversion rates on different pages.
-                        </p>
-                        <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
-                            <Image src={analyticsNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
-                          </Zoom>
-                        </div>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          One example of improvement was a change to the finance calculator and its following page. The calculator was the one area embedded on the retailer's vehicle page
-                           and received the highest number of impressions of any stage. Each quote had a "Learn More" call to action which lead
-                          to a "Finance Details" page with 2 options: Check Eligibility or Apply.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          Drop-offs were highest at these two steps, so the hypothesis was to add a more direct call to action on each quote ("Apply Now" and "Check Eligibility") and move the finance details 
-                          into the calculator, removing the need for the page inbetween a quote and applying or checking eligbility.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                          The change was beta tested to select retailers, and the results showed both an increase in engagement on the quotes, 
-                          and considerably less dropoffs during the checkout, so the change was subsequently rolled out to all retailers.
-                        </p>
-                        <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
-                            <Image src={ABWidget} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
-                          </Zoom>
-                        </div>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            After lots of coffee, hundreds of variations and a few review sessions, the first designs for the new finance calculators, applications, and checkout were presented end-to-end. 
+                          </p>
+                          <div className="mt-6 cursor-zoom-in">
+                            <Zoom>
+                              <Image src={productPages} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
+                            </Zoom>
+                          </div>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            Given that trust was a big factor, it was important to create a seamless experience for users 
+                            transitioning from dealership websites to our checkout process. I sat down with developers to create 
+                            a themeing guide that would allow each dealership to customize their checkout to their own brand, ensuring 
+                            customers still felt at home when leaving the retailer’s site. A separate 'NewVehicle.com' UI guide was 
+                            also created that could be expanded on if the business decided to have parts of the site unthemed and unrelated to dealerships.
+                          </p>
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                            Analytics and Optimisations
+                          </h3>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            After release the product was a huge success shipping live to 800+ dealerships in the UK, with the number of
+                            leads generated up around ~35%. The following year I spent a lot of time burried in Google Analytics and Hotjar, setting it up, searching for weak performing pages and presenting
+                            hypotheses of ways we could make the process simpler and improve conversion rates on different pages.
+                          </p>
+                          <div className="mt-6 cursor-zoom-in">
+                            <Zoom>
+                              <Image src={analyticsNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
+                            </Zoom>
+                          </div>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            One example of improvement was a change to the finance calculator and its following page. The calculator was the one area embedded on the retailer's vehicle page
+                            and received the highest number of impressions of any stage. Each quote had a "Learn More" call to action which lead
+                            to a "Finance Details" page with 2 options: Check Eligibility or Apply.
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            Drop-offs were highest at these two steps, so the hypothesis was to add a more direct call to action on each quote ("Apply Now" and "Check Eligibility") and move the finance details 
+                            into the calculator, removing the need for the page inbetween a quote and applying or checking eligbility.
+                          </p>
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                            The change was beta tested to select retailers, and the results showed both an increase in engagement on the quotes, 
+                            and considerably less dropoffs during the checkout, so the change was subsequently rolled out to all retailers.
+                          </p>
+                          <div className="mt-6 cursor-zoom-in">
+                            <Zoom>
+                              <Image src={ABWidget} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
+                            </Zoom>
+                          </div>
                         </motion.div>
                     </motion.div>
                   </div>
