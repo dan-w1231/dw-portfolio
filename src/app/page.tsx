@@ -1,8 +1,6 @@
 'use client'
 import { useRef } from "react";
 import { SectionTitle } from '@/components/SectionTitle'
-import { GridPattern } from '@/components/GridPattern'
-import { FlowChart } from '@/components/FlowChart'
 import { Hero } from '@/components/Hero'
 import { motion, AnimatePresence } from "framer-motion"
 import { MyWork } from '@/components/MyWork'
@@ -11,7 +9,11 @@ export default function Home() {
   const constraintRef = useRef<HTMLDivElement | null>(null);
   return (
     <>
-      <div id="main" className="relative w-screen mx-auto">
+      <motion.div 
+        id="main" 
+        key="homePage"
+        className="relative w-screen mx-auto"
+        >
         <div className="relative mx-auto mt-2 xs:mt-4 xl:mt-14" key={4}>
           <AnimatePresence mode="wait">
             <motion.div
@@ -39,22 +41,7 @@ export default function Home() {
             </motion.div>
           </AnimatePresence>
         </div>
-        
-        {/*
-        // Bouncy ball
-        <div id="ballContainer" className="fixed top-0 left-0 w-full h-full z-[99]" ref={constraintRef}>
-          <motion.div
-            id="ball"
-            className="absolute bottom-10 left-20 w-10 h-10 rounded-full bg-blurple"
-            drag
-            dragConstraints={constraintRef}
-            dragMomentum={true}
-            dragElastic={0}
-            dragTransition={{ bounceStiffness: 500, bounceDamping: 10 }}>
-          </motion.div>
-        </div> 
-        */}
-      </div>
+      </motion.div>
     </>
   )
 }

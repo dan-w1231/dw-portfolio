@@ -40,7 +40,7 @@ export function SectionTitle() {
       className="sticky left-0 top-16 md:top-[210px] md:mt-[160px] lg:mt-[102px] px-4 py-12 bg-[#BDCACE] flex items-center justify-center rounded-r-[46px] overflow-hidden z-[99]"
       initial={{ opacity: 0, x: -90 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ type: "spring", stiffness: 100, delay: 2.4, duration: 2 }}
+      transition={{ type: "spring", stiffness: 100, delay: 2, duration: 2 }}
       // ref={targetRef}
     >
       <div

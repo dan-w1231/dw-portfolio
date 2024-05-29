@@ -6,6 +6,7 @@ import { NavBar } from '@/components/NavBar'
 import { Footer } from '@/components/Footer'
 import { GridPattern } from '@/components/GridPattern'
 import { FlowChart } from '@/components/FlowChart'
+import Template from '@/app/template'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -68,7 +69,7 @@ export default function RootLayout({
           </div>
         </div>
         <NavBar />
-          {children}
+          <Template>{children}</Template>
         <Footer />
       </body>
     </html>

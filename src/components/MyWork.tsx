@@ -267,7 +267,7 @@ export function MyWork() {
                         <motion.div id="proceedArrow" variants={workArrowVariants} className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white bg-opacity-60 backdrop-blur-sm scale-100 rounded-full">
                           <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
                         </motion.div>
-                        <motion.div id="typeTag"className="absolute bottom-6 flex items-center justify-center px-4 py-2 bg-white backdrop-blur-sm rounded-full font-display text-lg tracking-tight font-bold text-midnight-900 text-center">
+                        <motion.div id="typeTag"className="absolute left-2 bottom-2 md:left-[initial] md:bottom-6 flex items-center justify-center px-4 py-2 bg-white backdrop-blur-sm rounded-full font-display text-lg tracking-tight font-bold text-midnight-900 text-center">
                           {work.type}
                         </motion.div>
                       </div>

@@ -2,7 +2,7 @@
 import { FlowChart } from '@/components/FlowChart'
 import { GridPattern } from '@/components/GridPattern'
 import { BulletTag } from '@/components/BulletTag'
-import { motion, useTransform, useScroll, AnimatePresence } from 'framer-motion'
+import { motion, useTransform, useScroll } from 'framer-motion'
 import { useRef, useEffect } from "react"
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
@@ -136,22 +136,17 @@ export default function NewVehicle() {
 
   return (
     <> 
-    <AnimatePresence mode="wait">
       <motion.div 
         id="main"
-        key={3} 
+        key="newVehicle" 
         className="relative w-screen mx-auto"
         ref={targetRef}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 30 }}
-        transition={{ type: "spring", stiffness: 80, duration: 1.5 }}
       >
-        <div className="relative mx-auto mt-2 xs:mt-4 xl:mt-14">
+        <div className="relative mx-auto md:mt-4 xl:mt-14">
           <div className="w-full max-w-screen-2xl flex flex-col gap-0 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97">
 
           {/* Left col */}
-          <div className="w-full max-w-[800px]">
+          <div className="w-full max-w-[800px] order-2 md:order-1">
             <header className="relative w-full px-2 xs:px-4 2xl:pl-4 rounded-4xl mx-auto">
               <div
                 className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-lg rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">   
@@ -166,7 +161,8 @@ export default function NewVehicle() {
                     >
                       <motion.div
                         initial={{ x: 0 }}
-                        whileHover={{ x: -4 }}>
+                        whileHover={{ x: -4 }}
+                        whileTap={{ x: -6 }}>
                         <Link
                           href="/"
                           className="text-base font-medium text-blurple hover:text-midnight-900"
@@ -360,18 +356,15 @@ export default function NewVehicle() {
           </div>
           {/* Right col */}
             <motion.div 
-              className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%]"
+              className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%] order-1 md:order-2"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 70, delay: 0.6, duration: 1.5 }}
               >
-              <h3 className="font-display md:hidden font-bold text-3xl xl:text-4xl px-4 tracking-tight font-extrabold text-midnight-900 mt-10">
-              Final product
-              </h3>
             <motion.ol 
               style={{ y }}
               role="list" 
-              className="rounded-t-xl py-4 px-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4 md:backdrop-blur-[0px]"
+              className="rounded-t-xl px-2 py-2 xs:px-4 xs:py-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4 md:backdrop-blur-[0px]"
               >
               {NVImages.map((images) => (
                   <images.image />
@@ -381,7 +374,6 @@ export default function NewVehicle() {
           </div>
         </div>
       </motion.div>
-    </AnimatePresence>
     </>
   )
 }
