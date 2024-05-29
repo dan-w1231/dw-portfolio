@@ -40,7 +40,7 @@ const NVImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={calcs} width={496} height={660} loading="lazy" placeholder="blur" className="w-full max-w-[496px]" alt="Themed finance calculators embedded in dealership websites" />
+              <Image src={calcs} loading="lazy" placeholder="blur" className="w-full max-w-[496px]" alt="Themed finance calculators embedded in dealership websites" />
             </Zoom>
           </motion.div>
         </div>
@@ -59,7 +59,7 @@ const NVImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={yourDeal} width={496} height={660} loading="lazy" placeholder="blur" className="w-full m-w-[496px]" alt="The deal page." />
+              <Image src={yourDeal} loading="lazy" placeholder="blur" className="w-full m-w-[496px]" alt="The deal page." />
             </Zoom>
           </motion.div>
         </div>
@@ -78,7 +78,7 @@ const NVImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           > 
             <Zoom>
-              <Image src={reserve} width={496} height={660} loading="lazy" placeholder="blur" className="w-full max-w-[44rem] p-[12%]" alt="Desktop view of a reservation." />
+              <Image src={reserve} loading="lazy" placeholder="blur" className="w-full max-w-[44rem] p-[12%]" alt="Desktop view of a reservation." />
             </Zoom>
           </motion.div>
         </div>
@@ -97,7 +97,7 @@ const NVImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={fpa} width={496} height={660} loading="lazy" placeholder="blur" className="w-full max-w-[17rem]" alt="Vehicle advert." />
+              <Image src={fpa} loading="lazy" placeholder="blur" className="w-full max-w-[17rem]" alt="Vehicle advert." />
             </Zoom>
           </motion.div>
         </div>
@@ -116,7 +116,7 @@ const NVImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={approved} width={496} height={660} loading="lazy" placeholder="blur" className="w-full max-w-[17rem]" alt="Instant decision on finance applications." />
+              <Image src={approved} loading="lazy" placeholder="blur" className="w-full max-w-[17rem]" alt="Instant decision on finance applications." />
             </Zoom>
           </motion.div>
         </div>

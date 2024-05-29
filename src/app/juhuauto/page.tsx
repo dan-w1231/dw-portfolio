@@ -35,7 +35,7 @@ const JuhuImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={bdkToJuhu} className="w-full max-w-[390px] py-10 object-contain" alt="Wireframes to brand" />
+              <Image src={bdkToJuhu} loading="lazy" placeholder="blur" className="w-full max-w-[390px] py-10 object-contain" alt="Wireframes to brand" />
             </Zoom>
           </motion.div>
         </div>
@@ -54,7 +54,7 @@ const JuhuImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={juhuFPAs} className="w-full max-w-[400px] object-contain" alt="The vehicle advert page." />
+              <Image src={juhuFPAs} loading="lazy" placeholder="blur" className="w-full max-w-[400px] object-contain" alt="The vehicle advert page." />
             </Zoom>
           </motion.div>
         </div>
@@ -73,7 +73,7 @@ const JuhuImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           > 
             <Zoom>
-              <Image src={juhuPreApproval} className="w-full max-w-[400px] object-contain" alt="Getting pre-approved" />
+              <Image src={juhuPreApproval} loading="lazy" placeholder="blur" className="w-full max-w-[400px] object-contain" alt="Getting pre-approved" />
             </Zoom>
           </motion.div>
         </div>
@@ -92,7 +92,7 @@ const JuhuImages = [
             transition={{  stiffness: 100, duration: 1.2 }}
           >
             <Zoom>
-              <Image src={juhuQuotes} className="w-full max-w-[650px] object-contain p-[10%]" alt="Viewing finance quotes on a laptop." />
+              <Image src={juhuQuotes} loading="lazy" placeholder="blur" className="w-full max-w-[650px] object-contain p-[10%]" alt="Viewing finance quotes on a laptop." />
             </Zoom>
           </motion.div>
         </div>

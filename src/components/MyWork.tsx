@@ -2,11 +2,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { About } from '@/components/About'
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef, useEffect } from "react";
 import { Container } from '@/components/Container'
-
-import circleArrow from '@/images/resources/circleArrow.svg'
 import arrowTopRight from '@/images/resources/arrowTopRight.svg'
 import NVDeal from '@/images/resources/deviceImages/yourDealTradein.png'
 import insightsImage from '@/images/resources/insights.png'
@@ -230,8 +228,7 @@ export function MyWork() {
   // const aboutZIndex = scrollPosition > aboutThreshold ? 99 : 1;
 
   return (
-    <AnimatePresence>
-      <motion.div key={2} exit={{ opacity: 0, y: -30}} >
+      <motion.div key={2}>
         <section
           id="myWork"
           aria-labelledby="myWork-title"
@@ -267,7 +264,7 @@ export function MyWork() {
                         <motion.div id="proceedArrow" variants={workArrowVariants} className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white bg-opacity-60 backdrop-blur-sm scale-100 rounded-full">
                           <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
                         </motion.div>
-                        <motion.div id="typeTag"className="absolute left-2 bottom-2 md:left-[initial] md:bottom-6 flex items-center justify-center px-4 py-2 bg-white backdrop-blur-sm rounded-full font-display text-lg tracking-tight font-bold text-midnight-900 text-center">
+                        <motion.div id="typeTag" variants={workArrowVariants} className="absolute left-2 bottom-2 md:left-[initial] md:bottom-6 flex items-center justify-center px-4 py-2 bg-white bg-opacity-60 backdrop-blur-sm scale-100 rounded-full font-display text-lg tracking-tight font-bold text-midnight-900 text-center">
                           {work.type}
                         </motion.div>
                       </div>
@@ -289,6 +286,5 @@ export function MyWork() {
           </motion.div>
         </section>
       </motion.div>
-    </AnimatePresence>
   )
 }
