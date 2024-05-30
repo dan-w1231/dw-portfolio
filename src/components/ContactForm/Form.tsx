@@ -69,7 +69,7 @@ export const Form = () => {
         id="name"
         name="name"
         label="Name"
-        autocomplete="name"
+        autoComplete="name"
         // placeholder="John Doe"
         error={!!errors.name}
         errorMessage={!!errors.name ? errors.name : ""}
@@ -80,7 +80,7 @@ export const Form = () => {
         id="email"
         name="email"
         label="Email"
-        autocomplete="email"
+        autoComplete="email"
         // placeholder="you@example.com"
         error={!!errors.email}
         errorMessage={!!errors.email ? errors.email : ""}
