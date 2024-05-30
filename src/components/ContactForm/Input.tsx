@@ -6,7 +6,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
   name: string;
   label: string;
-  autocomplete: string;
+  autoComplete: string;
   // placeholder: string;
   error?: boolean;
   errorMessage?: string;
@@ -15,7 +15,7 @@ const Input = ({
   id,
   name,
   label,
-  autocomplete,
+  autoComplete,
   // placeholder,
   error = false,
   errorMessage = "",
@@ -57,7 +57,7 @@ const Input = ({
           className="block w-full text-sm font-bold tracking-tight sm:text-lg p-0"
           onFocus={handleFocus}
           onBlur={handleBlur}
-          autocomplete={autocomplete}
+          autoComplete={autoComplete}
           // placeholder={placeholder}
         />
         {error && <p className="mt-2 text-sm text-pink-600">*{errorMessage}</p>}
