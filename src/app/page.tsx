@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { SectionTitle } from '@/components/SectionTitle'
 import { Hero } from '@/components/Hero'
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { MyWork } from '@/components/MyWork'
 
 export default function Home() {
@@ -15,7 +15,6 @@ export default function Home() {
         className="relative w-screen mx-auto"
         >
         <div className="relative mx-auto mt-2 xs:mt-4 xl:mt-14" key={4}>
-          <AnimatePresence mode="wait">
             <motion.div
               key="contentHero"
               initial={{ opacity: 0, y: 50, rotate: 0 }}
@@ -39,7 +38,6 @@ export default function Home() {
               </div>
                 <MyWork />
             </motion.div>
-          </AnimatePresence>
         </div>
       </motion.div>
     </>

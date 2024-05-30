@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { About } from '@/components/About'
+import { ContactBox } from '@/components/ContactBox'
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef, useEffect } from "react";
 import { Container } from '@/components/Container'
@@ -241,6 +241,7 @@ export function MyWork() {
             // style={{ zIndex: horizontalListZIndex }}
             >
             <motion.ol
+              layout
               style={{ x }}
               role="list"
               className="w-full xl:ease-[cubic-bezier(0.16,0.84,0.44,1)] xl:duration-[600ms] md:max-w-screen-2xl grid md:grid-flow-col md:grid-cols-[repeat(auto-fill,_minmax(496px,_1fr))] md:auto-cols-[minmax(496px,_1fr)] grid-cols-1 gap-y-2 xs:gap-y-4 md:gap-x-4 md:-my-16 md:-mx-4 md:py-16 2xl:px-4"
@@ -282,7 +283,7 @@ export function MyWork() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{  stiffness: 70, duration: 1.5, staggerChildren: 0.5 }}
               >
-              <About />
+              <ContactBox />
           </motion.div>
         </section>
       </motion.div>

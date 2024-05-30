@@ -5,6 +5,7 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 export default {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/pages/**/*.{js,jsx,ts,tsx}",
     "./node_modules/@nextui-org/theme/dist/components/[object Object].js"
   ],
   theme: {

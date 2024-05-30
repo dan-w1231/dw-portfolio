@@ -26,9 +26,10 @@ import approved from '@/images/resources/approved.png'
 
 const NVImages = [
   {
+    // IMAGES TOO BIG, OPTIMIZE
     image: function Calcs() {
       return (
-        <motion.div layout transition={{ duration: 0.3 }} className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             className="-ml-[15%]"
             initial={{ opacity: 0, y: 32 }}
@@ -47,7 +48,7 @@ const NVImages = [
   {
     image: function YourDeal() {
       return (
-        <motion.div layout transition={{ duration: 0.3 }} className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div 
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -66,7 +67,7 @@ const NVImages = [
   {
     image: function Reserve() {
       return (
-        <motion.div layout transition={{ duration: 0.3 }} className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[linear-gradient(#29374A_33%,#253243)] rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}

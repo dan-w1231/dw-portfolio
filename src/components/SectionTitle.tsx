@@ -3,7 +3,7 @@ import Image from 'next/image'
 // import { motion, useScroll, useTransform } from "framer-motion"
 import { motion } from "framer-motion"
 // import { useRef, useEffect } from "react";
-import arrowDown from '@/images/resources/arrowDown.svg'
+import arrow from '@/images/resources/arrowDown.svg'
 
 export function SectionTitle() {
 
@@ -57,7 +57,7 @@ export function SectionTitle() {
           // style={{ rotateZ: arrowRotation }}
           className="flex flex-col justify-center items-center"
         >
-          <Image src={arrowDown} alt="" className="md:-rotate-90" />
+          <Image src={arrow} alt="" className="md:-rotate-90" />
         </motion.div>
       </div>
     </motion.div>

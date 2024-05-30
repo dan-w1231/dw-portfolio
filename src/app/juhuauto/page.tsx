@@ -20,82 +20,84 @@ import bdkWireframes from '@/images/resources/bdkWireframes.png'
 import bdkWireframesToJuhu from '@/images/resources/bdkWireframesToJuhu.png'
 import juhuUserTest from '@/images/resources/juhuUserTest.png'
 import ABcategories from '@/images/resources/CategoryABResults.png'
+// import PhysicalDemandsTest from '@/images/resources/PDA-jobRecordDARK.png'
 
 
 const JuhuImages = [
   {
+    // IMAGES TOO BIG, OPTIMIZE
     image: function BDKToJuhu() {
       return (
-        <div className="relative transition-all w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 1, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{ type:"spring", stiffness: 100, duration: 1.2 }}
+            transition={{ duration: 1.2 }}
           >
             <Zoom>
-              <Image src={bdkToJuhu} loading="lazy" placeholder="blur" className="w-full max-w-[390px] py-10 object-contain" alt="Wireframes to brand" />
+              <Image src={bdkToJuhu} className="w-full max-w-[390px] py-10 object-contain" alt="Wireframes to brand" />
             </Zoom>
           </motion.div>
-        </div>
+        </motion.div>
       )
     },
   },
   {
     image: function JuhuVehicleAdvert() {
       return (
-        <div className="relative transition-all w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{ stiffness: 100, duration: 1.2 }}
+            transition={{ duration: 1.2 }}
           >
             <Zoom>
-              <Image src={juhuFPAs} loading="lazy" placeholder="blur" className="w-full max-w-[400px] object-contain" alt="The vehicle advert page." />
+              <Image src={juhuFPAs} className="w-full max-w-[400px] object-contain" alt="The vehicle advert page." />
             </Zoom>
           </motion.div>
-        </div>
+        </motion.div>
       )
     },
   },
   {
     image: function JuhuPreapproval() {
       return (
-        <div className="relative transition-transform w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{ stiffness: 100, duration: 1.2 }}
+            transition={{ duration: 1.2 }}
           > 
             <Zoom>
-              <Image src={juhuPreApproval} loading="lazy" placeholder="blur" className="w-full max-w-[400px] object-contain" alt="Getting pre-approved" />
+              <Image src={juhuPreApproval} className="w-full max-w-[400px] object-contain" alt="Getting pre-approved" />
             </Zoom>
           </motion.div>
-        </div>
+        </motion.div>
       )
     },
   },
   {
     image: function JuhuQuotes() {
       return (
-        <div className="relative transition-transform w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: true, amount: 0.25 }}
-            transition={{ stiffness: 100, duration: 1.2 }}
+            transition={{ duration: 1.2 }}
           >
             <Zoom>
-              <Image src={juhuQuotes} loading="lazy" placeholder="blur" className="w-full max-w-[650px] object-contain p-[10%]" alt="Viewing finance quotes on a laptop." />
+              <Image src={juhuQuotes} className="w-full max-w-[650px] object-contain p-[10%]" alt="Viewing finance quotes on a laptop." />
             </Zoom>
           </motion.div>
-        </div>
+        </motion.div>
       )
     },
   },
@@ -131,9 +133,6 @@ export default function JuhuAuto() {
                     <motion.div
                       key="contentWorkImage"
                       className="relative z-[99]"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.4, duration: 1 }}
                     >
                       <motion.div
                         initial={{ x: 0 }}
