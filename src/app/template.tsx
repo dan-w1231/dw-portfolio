@@ -20,7 +20,8 @@ export default function Template({
         transition={{ type:"spring", stiffness: 80, duration: 1.5 }}
         exit={{ opacity: 0, y: 30 }}
         >
-        <FrozenRoute>{children}</FrozenRoute>
+        {/* Committing sacrilege to make exit animations working */}
+        {children}
       </motion.div>
     </AnimatePresence>
   )

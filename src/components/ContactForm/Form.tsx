@@ -1,5 +1,6 @@
 'use client'
 import axios from "axios";
+import { RiLoader5Fill } from "react-icons/ri";
 import { useState } from "react";
 import { validate } from "@/app/utils/validate";
 import Input from "./Input";
@@ -103,8 +104,8 @@ export const Form = () => {
         {loading !== true ? (
           "SUBMIT"
         ) : (
-          <div className="flex h-full w-full items-center justify-center ">
-            LOADING
+          <div className="absolute  flex h-full w-full items-center justify-center bg-red-500">
+            <RiLoader5Fill className="h-8 w-8 animate-spin"/>
           </div>
         )}
       </button>

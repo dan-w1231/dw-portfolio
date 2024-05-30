@@ -59,12 +59,12 @@ export function ContactBox() {
                 </Link>
               </p>
             </div>
-            {/* <div id="contactFormArea" className="w-full md:w-half max-w-[450px]">
+            <div id="contactFormArea" className="w-full md:w-half max-w-[450px]">
               <Form />
-            </div> */}
-            <div id="contactFormAreaTemp" className="w-full h-[280px] md:w-half max-w-[450px] bg-black bg-opacity-[0.06] rounded-3xl flex items-center justify-center">
-              form with sendgrid wip
             </div>
+            {/* <div id="contactFormAreaTemp" className="w-full h-[280px] md:w-half max-w-[450px] bg-black bg-opacity-[0.06] rounded-3xl flex items-center justify-center">
+              form with sendgrid wip
+            </div> */}
           </div>
         </div>
       </div>
