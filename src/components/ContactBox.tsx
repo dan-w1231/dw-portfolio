@@ -36,16 +36,16 @@ export function ContactBox() {
               sizes="(min-width: 1024px) 18rem, (min-width: 768px) 16rem, 11rem"
             />
           </div> */}
-          <div className="flex flex-row gap-4 md:gap-10 px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-10 px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
             <div
                 id="contactIntroText"
                 className="w-full md:w-half"
                 // className="w-full md:w-half px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32"
               >
-              <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-blurple sm:text-6xl">
+              <div className="mt-8 font-display text-5xl font-extrabold tracking-tight text-blurple sm:text-6xl">
                 <span className="block text-midnight-900">Feel free to reach out</span>
                 <span className="block underline text-5xl sm:text-6xl">dan@dwdesign.io</span>
-              </p>
+              </div>
               <p className="mt-4 text-2xl tracking-tight text-midnight-700 flex gap-2">
                 Or fill out this nifty form and I'll get back to you<Image src={arrow} alt="arrow pointing to form" className="md:-rotate-90" />
               </p>
@@ -59,8 +59,11 @@ export function ContactBox() {
                 </Link>
               </p>
             </div>
-            <div id="contactFormArea" className="w-full md:w-half max-w-[450px]">
+            {/* <div id="contactFormArea" className="w-full md:w-half max-w-[450px]">
               <Form />
+            </div> */}
+            <div id="contactFormAreaTemp" className="w-full h-[280px] md:w-half max-w-[450px] bg-black bg-opacity-[0.06] rounded-3xl flex items-center justify-center">
+              form with sendgrid wip
             </div>
           </div>
         </div>

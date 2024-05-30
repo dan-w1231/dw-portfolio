@@ -201,7 +201,7 @@ export function MyWork() {
   // Get the initial window width cos next
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
 
-  const x = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0%", "0%"] : ["0px", "-2800px"]);
+  const x = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0", "0"] : ["0px", "-2800px"]);
   
 
 
@@ -248,7 +248,7 @@ export function MyWork() {
             >
               {myWork.map((work) => (
                 <motion.div layout
-                  key="workContainer"
+                  key={work.url}
                   className="md:snap-start md:scroll-mx-0 select-none"
                   variants={workContainerVariants}
                   whileHover="hover"

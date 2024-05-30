@@ -7,7 +7,9 @@ import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import MediaQuery from 'react-responsive'
 
+// Static Images
 import yourDeal from '@/images/resources/deviceImages/yourDeal-flat.png'
 import relationshipMap from '@/images/resources/relationshipMap.png'
 import researchPlan from '@/images/resources/researchPlan.png'
@@ -347,11 +349,18 @@ export default function NewVehicle() {
               role="list" 
               className="rounded-t-xl px-2 py-2 xs:px-4 xs:py-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4 md:backdrop-blur-[0px]"
               >
-              
+              {/* CAUSING HYDRATION ISSUES? */}
               {NVImages.map((images) => (
-                <AnimateHeightChange>
-                  <images.image />
-                </AnimateHeightChange>
+                <MediaQuery minWidth={768}>
+                  {(matches) =>
+                    matches ? 
+                    <AnimateHeightChange>
+                      <images.image />
+                    </AnimateHeightChange> 
+                    : 
+                    <images.image />
+                }
+                </MediaQuery>
               ))}
 
             </motion.ol>

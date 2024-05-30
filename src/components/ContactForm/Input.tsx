@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react';
 import { motion } from "framer-motion";
 
@@ -7,7 +6,8 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
   name: string;
   label: string;
-  placeholder: string;
+  autocomplete: string;
+  // placeholder: string;
   error?: boolean;
   errorMessage?: string;
 }
@@ -15,7 +15,8 @@ const Input = ({
   id,
   name,
   label,
-  placeholder,
+  autocomplete,
+  // placeholder,
   error = false,
   errorMessage = "",
   ...props
@@ -40,7 +41,10 @@ const Input = ({
           htmlFor={id}
           className={`absolute block text-sm tracking-tight sm:text-lg text-midnight-900 transition-transform duration-600`}
           initial={{ x: 0, y: 0 }}
-          style={{ translateY: isFocused || props.value ? '-40px' : '0' }}
+          style={{ 
+            translateY: isFocused || props.value ? '-40px' : '0',
+            scale: isFocused ? 0.98 : 1
+          }}
           transition={{ type:"spring", stiffness: 80, duration: 0.5 }}
           >
             {label}
@@ -53,6 +57,7 @@ const Input = ({
           className="block w-full text-sm font-bold tracking-tight sm:text-lg p-0"
           onFocus={handleFocus}
           onBlur={handleBlur}
+          autocomplete={autocomplete}
           // placeholder={placeholder}
         />
         {error && <p className="mt-2 text-sm text-pink-600">*{errorMessage}</p>}

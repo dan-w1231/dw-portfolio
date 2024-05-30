@@ -20,6 +20,7 @@ import bdkWireframes from '@/images/resources/bdkWireframes.png'
 import bdkWireframesToJuhu from '@/images/resources/bdkWireframesToJuhu.png'
 import juhuUserTest from '@/images/resources/juhuUserTest.png'
 import ABcategories from '@/images/resources/CategoryABResults.png'
+import MediaQuery from 'react-responsive'
 // import PhysicalDemandsTest from '@/images/resources/PDA-jobRecordDARK.png'
 
 
@@ -110,7 +111,7 @@ export default function JuhuAuto() {
     target: targetRef,
   });
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0%", "0%"] : ["0px", "1800px"]);
+  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0", "0"] : ["0px", "1800px"]);
 
   return (
     <>
@@ -167,8 +168,8 @@ export default function JuhuAuto() {
                             Scope
                           </h3>
                           <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                            <BulletTag>Search</BulletTag><BulletTag>Vehicle Adverts</BulletTag><BulletTag>Contact seller</BulletTag>
-                            <BulletTag>Get Pre-Approved</BulletTag><BulletTag>Book a test drive</BulletTag><BulletTag>Post-release usability testing</BulletTag>
+                            <BulletTag>Find a car</BulletTag><BulletTag>Contact seller</BulletTag>
+                            <BulletTag>Get Pre-Approved</BulletTag><BulletTag>Book a test drive</BulletTag>
                           </div>
                           <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                             Ideation
@@ -193,7 +194,7 @@ export default function JuhuAuto() {
                             </div>
                           </div>
                           <p className="mt-4 text-lg tracking-tight text-midnight-800">
-                            People who know exactly which model they want can quickly get to evaluation stage, while those still unsure need ways to explore and browse potential options.
+                            People who know exactly which model they want can quickly get to the evaluation stage, while those still unsure need ways to explore and browse potential options.
                           </p>
                           <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
                             Navigation
@@ -294,17 +295,25 @@ export default function JuhuAuto() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 70, delay: 1, duration: 1.5 }}
               >
-            <motion.ol layout 
+            <motion.div layout 
               style={{ y }}
               role="list" 
               className="rounded-t-xl px-2 py-2 xs:px-4 xs:py-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4 md:backdrop-blur-[10px]"
               >
+              {/* CAUSING HYDRATION ISSUES? */}
               {JuhuImages.map((images) => (
-                <AnimateHeightChange>
-                  <images.image />
-                </AnimateHeightChange>
+                <MediaQuery minWidth={768}>
+                  {(matches) =>
+                    matches ? 
+                    <AnimateHeightChange>
+                      <images.image />
+                    </AnimateHeightChange> 
+                    : 
+                    <images.image />
+                }
+                </MediaQuery>
               ))}
-            </motion.ol>
+            </motion.div>
           </motion.div>
           </div>
         </div>
