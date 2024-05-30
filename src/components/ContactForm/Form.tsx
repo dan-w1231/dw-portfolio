@@ -1,14 +1,24 @@
 'use client'
 
 import { sendEmailAction } from "@/actions/SendEmail";
-import { useRef, useTransition } from "react";
+import { useRef, useTransition, useState } from "react";
+import Input from './Input';
+import TextArea from './TextArea';
 import toast from "react-hot-toast";
+import validate from '@/app/utils/validate'
 
 
 function Form() {
   const formRef = useRef<HTMLFormElement>(null);
-
   const [isPending, startTransition] = useTransition();
+
+    // Initialize state for input values
+    const [values, setValues] = useState({
+      name: "",
+      email: "",
+      message:"",
+      // Add other input fields here
+    });
 
   const handleSubmitContactForm = (formData: FormData) => {
     startTransition(async () => {
@@ -22,36 +32,51 @@ function Form() {
     });
   };
 
+    // Update input values when they change
+    const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setValues((prevValues) => ({
+        ...prevValues,
+        [name]: value,
+      }));
+    };
+
   return (
     <form
       ref={formRef}
-      action={handleSubmitContactForm}
+      action={handleSubmitContactForm} // Should I use onSubmit instead of action?
       className="rounded-lg bg-slate-200/30 p-8 w-[400px]"
     >
-      <h3 className="mb-8 text-center text-xl">Contact Us</h3>
-
       <div className="flex flex-col gap-6">
-        <input
+        <Input
+          // Example for name value
+          value={values.name}
+          id="name"
           name="name"
           type="text"
-          placeholder="Name"
-          className="rounded-md p-2 text-black"
+          label="Name"
+          autoComplete="name"
+          onChange={handleInputChange}
           disabled={isPending}
         />
-        <input
+        <Input
+        // Example for name value
+         value={values.email}
+          id="email"
           name="email"
           type="email"
-          placeholder="Email"
-          className="rounded-md p-2 text-black"
+          label="Email"
+          autoComplete="email"
+          onChange={handleInputChange}
           disabled={isPending}
         />
-        <textarea
+        <TextArea
+          id="message"
           name="message"
-          placeholder="Message"
-          className="rounded-md p-2 min-h-40 text-black"
+          label="message"
+          onChange={handleInputChange}
           disabled={isPending}
         />
-
         <button
           type="submit"
           className="w-48 rounded-lg bg-slate-800 py-2 ml-auto"

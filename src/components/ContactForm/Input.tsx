@@ -11,6 +11,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
   errorMessage?: string;
 }
+
 const Input = ({
   id,
   name,
@@ -43,7 +44,7 @@ const Input = ({
           initial={{ x: 0, y: 0 }}
           style={{ 
             translateY: isFocused || props.value ? '-40px' : '0',
-            scale: isFocused ? 0.98 : 1
+            scale: isFocused ? 0.95 : 1,
           }}
           transition={{ type:"spring", stiffness: 80, duration: 0.5 }}
           >
