@@ -3,9 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from "framer-motion"
 import { GridPattern } from '@/components/GridPattern'
-import { Form } from './ContactForm/Form'
 import arrow from '@/images/resources/arrowDown.svg'
 import avatarImage from '@/images/avatars/avatar.png'
+import Form from './ContactForm/Form'
 
 function TwitterIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (

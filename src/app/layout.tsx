@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer'
 import { GridPattern } from '@/components/GridPattern'
 import { FlowChart } from '@/components/FlowChart'
 import Template from '@/app/template'
+import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -70,6 +71,12 @@ export default function RootLayout({
         </div>
         <NavBar />
           <Template>{children}</Template>
+          <Toaster toastOptions={{
+            style: {
+              textAlign: "center",
+            },
+          }}
+          />
         <Footer />
       </body>
     </html>

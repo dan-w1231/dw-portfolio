@@ -21,7 +21,7 @@ export default function Template({
         exit={{ opacity: 0, y: 30 }}
         >
         {/* Committing sacrilege to make exit animations working */}
-        {children}
+        <FrozenRoute>{children}</FrozenRoute>
       </motion.div>
     </AnimatePresence>
   )
