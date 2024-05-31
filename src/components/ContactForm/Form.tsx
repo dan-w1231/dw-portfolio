@@ -5,35 +5,70 @@ import { useRef, useTransition, useState } from "react";
 import Input from './Input';
 import TextArea from './TextArea';
 import toast from "react-hot-toast";
-import validate from '@/app/utils/validate'
+import { validate } from "@/app/utils/validate";
+import { Button } from '@/components/Button'
+
 
 
 function Form() {
   const formRef = useRef<HTMLFormElement>(null);
   const [isPending, startTransition] = useTransition();
 
-    // Initialize state for input values
     const [values, setValues] = useState({
       name: "",
       email: "",
       message:"",
-      // Add other input fields here
     });
-
-  const handleSubmitContactForm = (formData: FormData) => {
-    startTransition(async () => {
-      const { errorMessage } = await sendEmailAction(formData);
-      if (!errorMessage) {
-        toast.success("Message sent!");
-        formRef.current?.reset();
-      } else {
-        toast.error(errorMessage);
+    // e: Form event correct ?
+    const handleSubmitContactForm = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      if (!formRef.current) {
+        console.error("Form reference is null.");
+        return;
       }
-    });
-  };
+      const formData = new FormData(formRef.current);
+      const errors = validate({
+        name: values.name,
+        email: values.email,
+        message: values.message,
+      });
+      if (Object.keys(errors).length === 0) {
+        // No valdy error, proceed
+
+        const { errorMessage } = await sendEmailAction(formData);
+        
+        if (!errorMessage) {
+          toast.success("Message sent!");
+          formRef.current?.reset();
+        } else {
+          toast.error(errorMessage);
+        }
+      } else {
+        // Display validation errors
+        <div className="text-red-500">
+          {Object.keys(errors).map((fieldName) => (
+            <p key={fieldName}>{errors[fieldName]}</p>
+          ))}
+        </div>
+        console.log("Validation errors:", errors);
+        // Later set state to display errors
+      }
+    };
+
+  // const handleSubmitContactForm = (formData: FormData) => {
+  //   startTransition(async () => {
+  //     const { errorMessage } = await sendEmailAction(formData);
+  //     if (!errorMessage) {
+  //       toast.success("Message sent!");
+  //       formRef.current?.reset();
+  //     } else {
+  //       toast.error(errorMessage);
+  //     }
+  //   });
+  // };
 
     // Update input values when they change
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const { name, value } = e.target;
       setValues((prevValues) => ({
         ...prevValues,
@@ -44,10 +79,10 @@ function Form() {
   return (
     <form
       ref={formRef}
-      action={handleSubmitContactForm} // Should I use onSubmit instead of action?
+      onSubmit={handleSubmitContactForm} // Should I use onSubmit instead of action?
       className="rounded-lg bg-slate-200/30 p-8 w-[400px]"
     >
-      <div className="flex flex-col gap-6">
+      <div className="relative flex flex-col gap-2">
         <Input
           // Example for name value
           value={values.name}
@@ -74,16 +109,18 @@ function Form() {
           id="message"
           name="message"
           label="message"
-          onChange={handleInputChange}
+          // handleInputChange e:InputElement not compatible with text area > change
+          // onChange={handleInputChange}
           disabled={isPending}
-        />
-        <button
-          type="submit"
-          className="w-48 rounded-lg bg-slate-800 py-2 ml-auto"
-          disabled={isPending}
-        >
-          Send Message
-        </button>
+          >
+        </TextArea>
+        <Button
+            type="submit"
+            color="primaryGrad"
+            className="absolute bottom-2 right-2 w-16 w-auto min-w-0 rounded-full bg-slate-800 px-5 py-2 ml-auto"
+            disabled={isPending}
+              >Send
+        </Button>
       </div>
     </form>
   );
