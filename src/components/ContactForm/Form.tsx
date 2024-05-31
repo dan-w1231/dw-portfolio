@@ -8,67 +8,68 @@ import toast from "react-hot-toast";
 import { validate } from "@/app/utils/validate";
 import { Button } from '@/components/Button'
 
-
-
 function Form() {
   const formRef = useRef<HTMLFormElement>(null);
   const [isPending, startTransition] = useTransition();
 
-    const [values, setValues] = useState({
-      name: "",
-      email: "",
-      message:"",
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    message:"",
+    errors: {}
+  });
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    const errors = validate({
+      name: values.name,
+      email: values.email,
+      message: values.message,
     });
-    // e: Form event correct ?
-    const handleSubmitContactForm = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      if (!formRef.current) {
-        console.error("Form reference is null.");
-        return;
-      }
-      const formData = new FormData(formRef.current);
-      const errors = validate({
-        name: values.name,
-        email: values.email,
-        message: values.message,
-      });
-      if (Object.keys(errors).length === 0) {
-        // No valdy error, proceed
+    setValues((prevValues) => ({
+      ...prevValues,
+      errors,
+    }));
+  };
 
-        const { errorMessage } = await sendEmailAction(formData);
-        
-        if (!errorMessage) {
-          toast.success("Message sent!");
-          formRef.current?.reset();
-        } else {
-          toast.error(errorMessage);
-        }
+  const handleSubmitContactForm = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formRef.current) {
+      console.error("Form reference is null.");
+      return;
+    }
+    const formData = new FormData(formRef.current);
+    const errors = validate({
+      name: values.name,
+      email: values.email,
+      message: values.message,
+    });
+    setValues({ ...values, errors })
+    if (Object.keys(errors).length === 0) {
+      // No valdy error, proceed
+
+      const { errorMessage } = await sendEmailAction(formData);
+      
+      if (!errorMessage) {
+        toast.success("Message sent!");
+        formRef.current?.reset();
       } else {
-        // Display validation errors
-        <div className="text-red-500">
-          {Object.keys(errors).map((fieldName) => (
-            <p key={fieldName}>{errors[fieldName]}</p>
-          ))}
-        </div>
-        console.log("Validation errors:", errors);
-        // Later set state to display errors
+        toast.error(errorMessage);
       }
-    };
+    } else {
+      // Display validation errors
+      <div className="text-red-500">
+        {Object.keys(errors).map((fieldName) => (
+          <p key={fieldName}>{errors[fieldName]}</p>
+        ))}
+      </div>
+      console.log("Validation error found on handleSubmitContactForm:", errors);
+      // Later set state to display errors
+    }
+  };
 
-  // const handleSubmitContactForm = (formData: FormData) => {
-  //   startTransition(async () => {
-  //     const { errorMessage } = await sendEmailAction(formData);
-  //     if (!errorMessage) {
-  //       toast.success("Message sent!");
-  //       formRef.current?.reset();
-  //     } else {
-  //       toast.error(errorMessage);
-  //     }
-  //   });
-  // };
-
-    // Update input values when they change
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Update values when they change
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { name, value } = e.target;
       setValues((prevValues) => ({
         ...prevValues,
@@ -89,29 +90,35 @@ function Form() {
           id="name"
           name="name"
           type="text"
-          label="Name"
+          label="Name*"
           autoComplete="name"
-          onChange={handleInputChange}
           disabled={isPending}
+          errors={values.errors}
+          onChange={handleInputChange}
+          onBlur={handleBlur}
         />
         <Input
-        // Example for name value
-         value={values.email}
+          value={values.email}
           id="email"
           name="email"
           type="email"
-          label="Email"
+          label="Email*"
           autoComplete="email"
-          onChange={handleInputChange}
           disabled={isPending}
+          errors={values.errors}
+          onChange={handleInputChange}
+          onBlur={handleBlur}
         />
         <TextArea
+          value={values.message}
           id="message"
           name="message"
-          label="message"
-          // handleInputChange e:InputElement not compatible with text area > change
-          // onChange={handleInputChange}
+          label="Message*"
+          errors={values.errors}
+          onChange={handleInputChange}
+          onBlur={handleBlur}
           disabled={isPending}
+          autoComplete="off"
           >
         </TextArea>
         <Button
@@ -122,6 +129,11 @@ function Form() {
               >Send
         </Button>
       </div>
+          <div className="text-red-500">
+            {Object.keys(values.errors).map((fieldName: string) => (
+              <p key={fieldName}>{(values.errors as Record<string, string>)[fieldName]}</p>
+            ))}
+        </div>
     </form>
   );
 }
