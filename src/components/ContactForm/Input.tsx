@@ -76,7 +76,7 @@ const Input = ({
   //     borderColor = "rgba(21,23,33,0.16)";
   // }
 
-    const inputClasses = `relative border transition-all flex items-center align-center p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-base rounded-full pointer-events-none`;
+    const inputClasses = `relative border transition-all flex items-center align-center p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-base rounded-full focus:box-shadow-xl pointer-events-none`;
 
     const wrapperVariants = ({
       default: { scale: 1, y: 0 },
@@ -98,7 +98,7 @@ const Input = ({
       onMouseLeave={handleMouseLeave}
       className={inputClasses}
       style={{  borderColor,
-                transform: `scale(${isFocused ? '1.06' : isHovered ? '1.02' : '1'})`,
+                transform: `scale(${isFocused ? '1.01' : isHovered ? '1.01' : '1'})`,
                 zIndex: `${isFocused ? '99' : isHovered ? '99' : '1'}`
        }}
       transition={{ duration: 0.2 }}

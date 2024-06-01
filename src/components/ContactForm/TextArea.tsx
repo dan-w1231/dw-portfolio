@@ -85,7 +85,7 @@ const TextArea = ({
       onMouseLeave={handleMouseLeave}
       className={inputClasses}
       style={{  borderColor,
-                transform: `scale(${isFocused ? '1.06' : isHovered ? '1.02' : '1'})`,
+                transform: `scale(${isFocused ? '1.01' : isHovered ? '1.01' : '1'})`,
                 zIndex: `${isFocused ? '97' : isHovered ? '97' : '1'}`
       }}
       transition={{ duration: 0.2 }}
