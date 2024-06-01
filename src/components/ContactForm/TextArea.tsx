@@ -13,6 +13,7 @@ interface TextAreaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onBlur: (event: React.FocusEvent<HTMLTextAreaElement>) => void;
+  setFormInteracted: (value: boolean) => void;
 }
 
 const TextArea = ({
@@ -23,6 +24,7 @@ const TextArea = ({
   errors = {},
   errorMessage = "",
   value,
+  setFormInteracted,
   onChange,
   onBlur,
   ...props
@@ -45,6 +47,7 @@ const TextArea = ({
   const handleBlur = (e: React.FocusEvent<HTMLTextAreaElement>) => {
     setIsFocused(false);
     setTouched(true);
+    setFormInteracted(true);
     onBlur(e);
   };
 
@@ -62,13 +65,13 @@ const TextArea = ({
 
   let borderColor = "transparent";
     if (touched) {
-      borderColor = hasError ? "red" : "green";
+      borderColor = hasError ? "#FF3257" : "#2AC355";
   }
     if (isFocused || isHovered) {
       borderColor = "#5768FF";
   }
 
-  const inputClasses = `border-2 flex items-center align-center p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-sm rounded-full pointer-events-none`;
+  const inputClasses = `relative border flex items-center align-center transition-all p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-base md:text-base rounded-[38px] pointer-events-none`;
 
   const wrapperVariants = ({
     default: { scale: 1, y: 0 },
@@ -81,13 +84,17 @@ const TextArea = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={inputClasses}
-      style={{ borderColor }}
+      style={{  borderColor,
+                transform: `scale(${isFocused ? '1.06' : isHovered ? '1.02' : '1'})`,
+                zIndex: `${isFocused ? '97' : isHovered ? '97' : '1'}`
+      }}
       transition={{ duration: 0.2 }}
       variants={wrapperVariants}
       >
         <motion.label 
-          className="absolute block text-sm tracking-tight sm:text-lg transition-transform duration-600 px-[14px] rounded-full bg-blurple text-white border-2xl"
+          className="absolute top-4 left-[16px] block text-base tracking-tight sm:text-lg transition-transform duration-600 px-[14px] rounded-full bg-white bg-opacity-50 backdrop-blur text-midnight-900 border-2xl"
           htmlFor={id}
+          initial={{ x: 0, y: 6 }}
           transition={{ type:"spring", stiffness: 80, duration: 0.5 }}
           style={{ 
             translateY: isFocused || value ? '-38px' : '0',
@@ -107,7 +114,8 @@ const TextArea = ({
           onChange={onChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          className="block pointer-events-auto leading-normal tracking-tight resize-none pl-[32px] pr-[92px] py-[23px] rounded-full w-full appearance-none outline-none text-blurple text-sm font-bold sm:text-lg p-0"
+          // onChange={handleInputChange}
+          className="block transition-all pointer-events-auto leading-normal tracking-tight pl-[32px] pr-[88px] py-[21px] rounded-[38px] w-full appearance-none outline-none text-blurple text-base font-bold sm:text-lg p-0 h-[78px] max-h-[278px]"
         ></textarea>
     </motion.div>
   );

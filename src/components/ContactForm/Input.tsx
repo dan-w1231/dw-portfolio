@@ -7,28 +7,31 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
   name: string;
   label: string;
+  type: string;
   autoComplete: string;
   errors?: { [key: string]: string }; 
   errorMessage?: string;
-  value: string; 
+  value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
+  setFormInteracted: (value: boolean) => void;
 }
 
 const Input = ({
   id,
   name,
   label,
+  type,
   autoComplete,
   errors = {},
   errorMessage = "",
   value,
+  setFormInteracted,
   onChange,
   onBlur,
   ...props
 }: InputProps) => {
-    console.log("Input component rerendered with errors:", errors);
-    
+
     const [isFocused, setIsFocused] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [touched, setTouched] = useState(false);
@@ -46,6 +49,7 @@ const Input = ({
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
       setIsFocused(false);
       setTouched(true);
+      setFormInteracted(true);
       onBlur(e);
     };
     
@@ -63,14 +67,16 @@ const Input = ({
 
     let borderColor = "transparent";
       if (touched) {
-        borderColor = hasError ? "red" : "green";
+        borderColor = hasError ? "#FF3257" : "#2AC355";
     }
       if (isFocused || isHovered) {
         borderColor = "#5768FF";
     }
+  //   if (isHovered) {
+  //     borderColor = "rgba(21,23,33,0.16)";
+  // }
 
-    const inputClasses = `border-2 flex items-center align-center p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-sm rounded-full pointer-events-none`;
-    // const inputClasses = `flex items-center align-center p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-sm rounded-full pointer-events-none hover:border-2 active:border-2 hover:border-blurple active:border-blurple focus:border-blurple hover:scale-104 active:scale-102 ${error ? ` border-2 border-${borderColor}` : ` border-2 border-${borderColor}`}`;
+    const inputClasses = `relative border transition-all flex items-center align-center p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-base rounded-full pointer-events-none`;
 
     const wrapperVariants = ({
       default: { scale: 1, y: 0 },
@@ -91,14 +97,17 @@ const Input = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={inputClasses}
-      style={{ borderColor }}
+      style={{  borderColor,
+                transform: `scale(${isFocused ? '1.06' : isHovered ? '1.02' : '1'})`,
+                zIndex: `${isFocused ? '99' : isHovered ? '99' : '1'}`
+       }}
       transition={{ duration: 0.2 }}
       variants={wrapperVariants}
       >
         <motion.label
           htmlFor={id}
-          className={`absolute block text-sm tracking-tight sm:text-lg transition-transform duration-600 px-[14px] rounded-full bg-blurple text-white border-2xl`}
-          initial={{ x: -10, y: 0 }}
+          className={`absolute left-[16px] text-base tracking-tight sm:text-lg transition-transform duration-600 px-[14px] rounded-full bg-white bg-opacity-50 backdrop-blur text-midnight-900 border-2xl`}
+          initial={{ x: 0, y: 0 }}
           style={{ 
             translateY: isFocused || value ? '-38px' : '0',
             translateX: isFocused || value ? '-17px' : '0',
@@ -111,17 +120,17 @@ const Input = ({
         </motion.label>
         <input
           {...props}
-          type="text"
+          type={type}
           id={id}
           name={name}
           value={value}
-          className="block pointer-events-auto px-[32px] py-[23px] rounded-full w-full appearance-none outline-none text-blurple text-sm font-bold tracking-tight sm:text-lg p-0"
+          className="block pointer-events-auto transition-all px-[32px] py-[21px] rounded-full w-full appearance-none outline-none text-blurple text-base sm:text-base font-bold tracking-tight  p-0"
           onChange={onChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
           autoComplete={autoComplete}
         />
-        {/* {hasError && <p className="mt-2 text-sm text-red-600">{error}</p>} */}
+        {/* {hasError && <p className="mt-2 text-base text-red-600">{error}</p>} */}
     </motion.div>
   );
 };
