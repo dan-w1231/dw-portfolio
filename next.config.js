@@ -21,6 +21,9 @@ module.exports = {
       ],
       type: "asset/resource",
     });
+
+    config.resolve.fallback = { fs: false };
+
     return config;
   },
   nextConfig,
