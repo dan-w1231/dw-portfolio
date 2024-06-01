@@ -194,7 +194,7 @@ function Form() {
           <Button
               type="submit"
               color="primaryGrad"
-              className="w-24 w-auto min-w-0 rounded-full bg-slate-800 px-5 py-2 ml-auto"
+              className="w-24 rounded-full bg-slate-800 px-5 py-2 ml-auto"
               disabled={isPending}
                 >Send
           </Button>

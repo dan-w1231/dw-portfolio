@@ -44,10 +44,10 @@ export function ContactBox() {
               >
               <div className="font-display text-5xl font-extrabold tracking-tight text-blurple sm:text-6xl">
                 <span className="block text-midnight-900">Reach out.</span>
-                <span className="block no-underline md:underline border-none text-5xl sm:text-6xl">dan@dwdesign.io</span>
+                <span className="block no-underline md:underline border-none text-4xl sm:text-6xl">dan@dwdesign.io</span>
               </div>
               <p className="mt-4 text-2xl tracking-tight text-midnight-700 flex gap-2">
-                Or fill out this nifty form and I'll get back to you<Image src={arrow} alt="arrow pointing to form" className="md:-rotate-90" />
+                Or fill out this nifty form and I'll get back to you.<Image src={arrow} alt="arrow pointing to form" className="xl:-rotate-90" />
               </p>
               {/* <p className="mt-8">
                 <Link

@@ -3,9 +3,9 @@ import clsx from 'clsx'
 
 const baseStyles = {
   solid:
-    'transform-gpu transition-all ease-in-out duration-300 hover:scale-98 hover:shadow-md inline-flex min-w-[180px] md:max-w-[336px] justify-center rounded-full py-4 px-8 text-lg font-semibold tracking-tight shadow-lg focus:outline-none',
+    'transform-gpu transition-all ease-in-out duration-300 hover:scale-98 hover:shadow-md inline-flex min-w-[108px] md:max-w-[336px] justify-center rounded-full py-4 px-8 text-lg font-semibold tracking-tight shadow-lg focus:outline-none',
   outline:
-    'inline-flex min-w-[180px] shadow-lg justify-center rounded-full py-3 px-8 items-center border py-[calc(theme(spacing.1)-1px)] px-[calc(theme(spacing.4)-1px)] text-lg font-semibold tracking-tight focus:outline-none',
+    'inline-flex min-w-[130px] shadow-lg justify-center rounded-full py-3 px-8 items-center border py-[calc(theme(spacing.1)-1px)] px-[calc(theme(spacing.4)-1px)] text-lg font-semibold tracking-tight focus:outline-none',
 }
 
 const variantStyles = {
