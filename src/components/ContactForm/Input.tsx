@@ -35,12 +35,6 @@ const Input = ({
     const [isFocused, setIsFocused] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [touched, setTouched] = useState(false);
-    const [values, setValues] = useState({
-      name: "",
-      email: "",
-      message:"",
-      errors: {}
-    });
   
     const handleFocus = () => {
       setIsFocused(true);
@@ -51,6 +45,11 @@ const Input = ({
       setTouched(true);
       setFormInteracted(true);
       onBlur(e);
+    };
+
+    const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setTouched(true);
+      onChange(e);
     };
     
     const handleMouseEnter = () => {
@@ -66,15 +65,12 @@ const Input = ({
     const hasNoErrors = Object.keys(errors).length === 0;
 
     let borderColor = "transparent";
+    if (isFocused || isHovered) {
+      borderColor = "#5768FF";
+    }
       if (touched) {
         borderColor = hasError ? "#FF3257" : "#2AC355";
     }
-      if (isFocused || isHovered) {
-        borderColor = "#5768FF";
-    }
-  //   if (isHovered) {
-  //     borderColor = "rgba(21,23,33,0.16)";
-  // }
 
     const inputClasses = `relative border transition-all flex items-center align-center p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-base rounded-full focus:box-shadow-xl pointer-events-none`;
 
@@ -82,14 +78,6 @@ const Input = ({
       default: { scale: 1, y: 0 },
       focus: { scale: 1.04, y: -2 },
     })
-  
-    // const inputVariants = ({
-    //   hover: { 
-    //     backgroundColor: 'rgba(255,255,255,1)',
-    //     transform: 'scale(0.98)',
-    //      },
-    // })
-  
   
   return (
     <motion.div 
@@ -125,7 +113,7 @@ const Input = ({
           name={name}
           value={value}
           className="block pointer-events-auto transition-all px-[32px] py-[21px] rounded-full w-full appearance-none outline-none text-blurple text-base sm:text-base font-bold tracking-tight  p-0"
-          onChange={onChange}
+          onInput={handleInput}
           onFocus={handleFocus}
           onBlur={handleBlur}
           autoComplete={autoComplete}

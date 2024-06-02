@@ -33,12 +33,6 @@ const TextArea = ({
   const [isFocused, setIsFocused] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [touched, setTouched] = useState(false);
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    message:"",
-    errors: {}
-  });
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -49,6 +43,11 @@ const TextArea = ({
     setTouched(true);
     setFormInteracted(true);
     onBlur(e);
+  };
+
+  const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setTouched(true);
+    onChange(e);
   };
 
   const handleMouseEnter = () => {
@@ -64,11 +63,11 @@ const TextArea = ({
   const hasNoErrors = Object.keys(errors).length === 0;
 
   let borderColor = "transparent";
+  if (isFocused || isHovered) {
+    borderColor = "#5768FF";
+  }
     if (touched) {
       borderColor = hasError ? "#FF3257" : "#2AC355";
-  }
-    if (isFocused || isHovered) {
-      borderColor = "#5768FF";
   }
 
   const inputClasses = `relative border flex items-center align-center transition-all p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-base md:text-base rounded-[38px] pointer-events-none`;
@@ -111,10 +110,9 @@ const TextArea = ({
           name={name}
           rows={2}
           value={value}
-          onChange={onChange}
+          onInput={handleInput}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          // onChange={handleInputChange}
           className="block transition-all pointer-events-auto leading-normal tracking-tight pl-[32px] pr-[88px] py-[21px] rounded-[38px] w-full max-w-[95%] appearance-none outline-none text-blurple text-base font-bold sm:text-lg p-0 h-[78px] max-h-[278px]"
         ></textarea>
     </motion.div>

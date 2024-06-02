@@ -27,14 +27,6 @@ function FieldStatus({ name, error, showMessage }: { name: string; error: string
   );
 }
 
-// background: #ffffffbf;
-//     backdrop-filter: blur(8px);
-//     border-radius: 20px;
-//     overflow: hidden;
-//     padding: 16px 32px;
-//     margin-top: 8px;
-// }
-
 type FormValues = {
   name: string;
   email: string;
@@ -57,6 +49,18 @@ function Form() {
     message:"",
     errors: {}
   });
+
+  const validateForm = () => {
+    const errors = validate({
+      name: values.name,
+      email: values.email,
+      message: values.message,
+    });
+    setValues((prevValues) => ({
+      ...prevValues,
+      errors,
+    }));
+  };
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
