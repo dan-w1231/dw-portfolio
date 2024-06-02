@@ -9,7 +9,7 @@ interface TextAreaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
   label: string;
   autoComplete: string;
   errors?: { [key: string]: string }; 
-  errorMessage?: string;
+  // errorMessage?: string;
   value: string;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onBlur: (event: React.FocusEvent<HTMLTextAreaElement>) => void;
@@ -22,7 +22,7 @@ const TextArea = ({
   label,
   autoComplete,
   errors = {},
-  errorMessage = "",
+  // errorMessage = "",
   value,
   setFormInteracted,
   onChange,
@@ -105,7 +105,6 @@ const TextArea = ({
           {label}
         </motion.label>
         <textarea
-          {...props}
           id={id}
           name={name}
           rows={2}

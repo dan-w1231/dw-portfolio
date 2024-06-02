@@ -63,32 +63,46 @@ function Form() {
   };
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    // This might cause form to validate twice on submit?
+    validateForm();
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    const errors = validate({
-      name: values.name,
-      email: values.email,
-      message: values.message,
-    });
     setValues((prevValues) => ({
       ...prevValues,
-      errors,
+      [name]: value,
     }));
+    // Call validate
+    validateForm();
+  };
+
+
+  const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+
+    // Call validate
+    validateForm();
+
+    // Grow TextArea height based on scrollheight
+    e.target.style.height = 'inherit'; // reset height
+    e.target.style.height = `${e.target.scrollHeight}px`; // height increases with scrollHeight
   };
 
   const handleSubmitContactForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) {
-      console.error("Form reference is null.");
       return;
     }
     const formData = new FormData(formRef.current);
-    const errors = validate({
-      name: values.name,
-      email: values.email,
-      message: values.message,
-    });
-    setValues({ ...values, errors })
-    if (Object.keys(errors).length === 0) {
+    
+    validateForm();
+    
+    if (Object.keys(values.errors).length === 0) {
       // No valdy error, proceed
 
       const { errorMessage } = await sendEmailAction(formData);
@@ -108,37 +122,12 @@ function Form() {
     } else {
       // Display validation errors
       <div className="text-red-500">
-        {Object.keys(errors).map((fieldName) => (
-          <p key={fieldName}>{errors[fieldName]}</p>
+        {Object.keys(values.errors).map((fieldName) => (
+          <p key={fieldName}>{values.errors[fieldName as keyof typeof values.errors]}</p>
         ))}
       </div>
-      // console.log("Validation error found on handleSubmitContactForm:", errors);
     }
   };
-
-    // Update values when they change
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const { name, value } = e.target;
-      setValues((prevValues) => ({
-        ...prevValues,
-        [name]: value,
-      }));
-
-    // Validate after every keystroke
-    const errors = validate({
-      name: values.name,
-      email: values.email,
-      message: values.message,
-    });
-    setValues((prevValues) => ({
-      ...prevValues,
-      errors,
-  }));
-
-      // Make the textarea grow in height as the user types
-      e.target.style.height = 'inherit'; // Temporarily reset the height
-      e.target.style.height = `${e.target.scrollHeight}px`; // Set the height to match the scrollHeight
-    };
 
   return (
     <form
@@ -149,7 +138,6 @@ function Form() {
       <div className="relative flex flex-col gap-2">
         <div className="flex flex-col md:flex-row gap-2">
           <Input
-            // Example for name value
             value={values.name}
             id="name"
             name="name"
@@ -184,7 +172,7 @@ function Form() {
           label="Message*"
           errors={values.errors}
           setFormInteracted={setFormInteracted}
-          onChange={handleInputChange}
+          onChange={handleTextAreaChange}
           onBlur={handleBlur}
           disabled={isPending}
           autoComplete="off"

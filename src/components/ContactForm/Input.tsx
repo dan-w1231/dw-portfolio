@@ -10,7 +10,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   type: string;
   autoComplete: string;
   errors?: { [key: string]: string }; 
-  errorMessage?: string;
+  // errorMessage?: string;
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
@@ -24,7 +24,7 @@ const Input = ({
   type,
   autoComplete,
   errors = {},
-  errorMessage = "",
+  // errorMessage = "",
   value,
   setFormInteracted,
   onChange,
@@ -62,7 +62,7 @@ const Input = ({
 
     const error = errors[name];
     const hasError = Boolean(error);
-    const hasNoErrors = Object.keys(errors).length === 0;
+    // const hasNoErrors = Object.keys(errors).length === 0;
 
     let borderColor = "transparent";
     if (isFocused || isHovered) {
@@ -107,7 +107,6 @@ const Input = ({
             {label}
         </motion.label>
         <input
-          {...props}
           type={type}
           id={id}
           name={name}
