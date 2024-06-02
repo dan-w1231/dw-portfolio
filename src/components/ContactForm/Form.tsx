@@ -40,8 +40,8 @@ type FormValues = {
 
 function Form() {
   const formRef = useRef<HTMLFormElement>(null);
-  const [isPending, startTransition] = useTransition();
   const [formInteracted, setFormInteracted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [values, setValues] = useState<FormValues>({
     name: "",
@@ -98,13 +98,15 @@ function Form() {
     if (!formRef.current) {
       return;
     }
-    const formData = new FormData(formRef.current);
-    
+
+    setIsSubmitting(true);
+
     validateForm();
+
+    const formData = new FormData(formRef.current);
     
     if (Object.keys(values.errors).length === 0) {
       // No valdy error, proceed
-
       const { errorMessage } = await sendEmailAction(formData);
       
       if (!errorMessage) {
@@ -120,6 +122,7 @@ function Form() {
         toast.error(errorMessage, {duration: 6000 });
       }
     } else {
+      toast.error("Please check what you've input.", {duration: 5000 });
       // Display validation errors
       <div className="text-red-500">
         {Object.keys(values.errors).map((fieldName) => (
@@ -127,6 +130,7 @@ function Form() {
         ))}
       </div>
     }
+    setIsSubmitting(false);
   };
 
   return (
@@ -144,7 +148,7 @@ function Form() {
             type="text"
             label="Name*"
             autoComplete="name"
-            disabled={isPending}
+            disabled={isSubmitting}
             errors={values.errors}
             setFormInteracted={setFormInteracted}
             onChange={handleInputChange}
@@ -157,7 +161,7 @@ function Form() {
             type="email"
             label="Email*"
             autoComplete="email"
-            disabled={isPending}
+            disabled={isSubmitting}
             errors={values.errors}
             setFormInteracted={setFormInteracted}
             onChange={handleInputChange}
@@ -174,7 +178,7 @@ function Form() {
           setFormInteracted={setFormInteracted}
           onChange={handleTextAreaChange}
           onBlur={handleBlur}
-          disabled={isPending}
+          disabled={isSubmitting}
           autoComplete="off"
           >
         </TextArea>
@@ -187,7 +191,7 @@ function Form() {
               type="submit"
               color="primaryGrad"
               className="w-24 rounded-full bg-slate-800 px-5 py-2 ml-auto"
-              disabled={isPending}
+              disabled={isSubmitting}
                 >Send
           </Button>
         </motion.div>
