@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, forwardRef, useImperativeHandle } from 'react';
 import { motion } from "framer-motion";
 
 interface TextAreaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
@@ -9,26 +9,26 @@ interface TextAreaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
   label: string;
   autoComplete: string;
   errors?: { [key: string]: string }; 
-  // errorMessage?: string;
   value: string;
+  formSubmitted: boolean;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onBlur: (event: React.FocusEvent<HTMLTextAreaElement>) => void;
   setFormInteracted: (value: boolean) => void;
 }
 
-const TextArea = ({
+const TextArea = forwardRef (({
   id,
   name,
   label,
   autoComplete,
   errors = {},
-  // errorMessage = "",
   value,
+  formSubmitted,
   setFormInteracted,
   onChange,
   onBlur,
   ...props
-}: TextAreaProps) => {
+}: TextAreaProps, ref) => {
 
   const [isFocused, setIsFocused] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -58,16 +58,27 @@ const TextArea = ({
     setIsHovered(false);
   };
 
+  const reset = () => {
+    setTouched(false);
+  };
+
+  useImperativeHandle(ref, () => ({
+    reset
+  }));
+
   const error = errors[name];
   const hasError = Boolean(error);
-  const hasNoErrors = Object.keys(errors).length === 0;
 
   let borderColor = "transparent";
-  if (isFocused || isHovered) {
-    borderColor = "#5768FF";
-  }
+  if (formSubmitted) {
+    borderColor = "transparent";
+  } else {
+    if (isFocused || isHovered) {
+      borderColor = "#5768FF";
+    }
     if (touched) {
       borderColor = hasError ? "#FF3257" : "#2AC355";
+    }
   }
 
   const inputClasses = `relative border flex items-center align-center transition-all p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-base md:text-base rounded-[38px] pointer-events-none`;
@@ -116,6 +127,6 @@ const TextArea = ({
         ></textarea>
     </motion.div>
   );
-};
+});
 export default TextArea;
 

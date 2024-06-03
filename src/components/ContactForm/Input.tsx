@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, forwardRef, useImperativeHandle } from 'react';
 import { motion } from "framer-motion";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -10,27 +10,27 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   type: string;
   autoComplete: string;
   errors?: { [key: string]: string }; 
-  // errorMessage?: string;
   value: string;
+  formSubmitted: boolean;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
   setFormInteracted: (value: boolean) => void;
 }
 
-const Input = ({
+const Input = forwardRef(({
   id,
   name,
   label,
   type,
   autoComplete,
   errors = {},
-  // errorMessage = "",
   value,
+  formSubmitted,
   setFormInteracted,
   onChange,
   onBlur,
   ...props
-}: InputProps) => {
+}: InputProps, ref) => {
 
     const [isFocused, setIsFocused] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
@@ -60,16 +60,27 @@ const Input = ({
       setIsHovered(false);
     };
 
+    const reset = () => {
+      setTouched(false);
+    };
+
+    useImperativeHandle(ref, () => ({
+      reset
+    }));
+
     const error = errors[name];
     const hasError = Boolean(error);
-    // const hasNoErrors = Object.keys(errors).length === 0;
 
     let borderColor = "transparent";
-    if (isFocused || isHovered) {
-      borderColor = "#5768FF";
-    }
+    if (formSubmitted) {
+      borderColor = "transparent";
+    } else {
+      if (isFocused || isHovered) {
+        borderColor = "#5768FF";
+      }
       if (touched) {
         borderColor = hasError ? "#FF3257" : "#2AC355";
+      }
     }
 
     const inputClasses = `relative border transition-all flex items-center align-center p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-base rounded-full focus:box-shadow-xl pointer-events-none`;
@@ -120,5 +131,5 @@ const Input = ({
         {/* {hasError && <p className="mt-2 text-base text-red-600">{error}</p>} */}
     </motion.div>
   );
-};
+});
 export default Input;

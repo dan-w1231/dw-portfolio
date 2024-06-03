@@ -61,6 +61,13 @@ export default function RootLayout({
         />
       </head>
       <body className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-noise-pattern bg-radial-bg">
+        <Toaster 
+          toastOptions={{
+            style: {
+              textAlign: "center",
+            },
+        }}
+        />
         <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
             <GridPattern x="20%" />
           </div>
@@ -71,12 +78,6 @@ export default function RootLayout({
         </div>
         <NavBar />
           <Template>{children}</Template>
-          <Toaster toastOptions={{
-            style: {
-              textAlign: "center",
-            },
-          }}
-          />
         <Footer />
       </body>
     </html>
