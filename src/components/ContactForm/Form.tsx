@@ -139,7 +139,7 @@ function Form() {
         toast.error(errorMessage, {duration: 6000 });
       }
     } else {
-      toast.error("Please check what you've input.", {duration: 5000 });
+      toast.error("Oops :( Please check your inputs and try again, or contact me via email.", {duration: 6000 });
       // Display validation errors
       <div className="text-red-500">
         {Object.keys(values.errors).map((fieldName) => (
