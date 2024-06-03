@@ -103,23 +103,22 @@ function Form() {
 
     const formData = new FormData(formRef.current);
 
+  try {
     validateForm();
-    
+
     if (Object.keys(values.errors).length === 0) {
-      
       // No valdy error, proceed
       const baseUrl = process.env.NODE_ENV === 'production' 
         ? 'https://dwdesign-five.vercel.app' 
         : 'http://localhost:3000';
 
-      // const { errorMessage } = await sendEmailAction(formData);
       const response = await fetch(`${baseUrl}/api/SendEmail`, {
         method: 'POST',
         body: new URLSearchParams(formData as any),
       });
 
-      const { errorMessage } = await await response.json();
-      
+      const { errorMessage } = await response.json();
+
       if (!errorMessage) {
         toast.success("Your message sent successfully!", { duration: 6000 });
         formRef.current?.reset();
@@ -141,8 +140,12 @@ function Form() {
         ))}
       </div>
     }
+  } catch (error) {
+    console.error(error);
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
 
   return (
     <form
