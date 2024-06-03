@@ -117,7 +117,14 @@ function Form() {
         body: new URLSearchParams(formData as any),
       });
 
-      const { errorMessage } = await response.json();
+      let errorMessage = null;
+
+      try {
+        const data = await response.json();
+        errorMessage = data.errorMessage;
+      } catch (error) {
+        console.error('Failed to parse response body:', error);
+      }
 
       if (!errorMessage) {
         toast.success("Your message sent successfully!", { duration: 6000 });
