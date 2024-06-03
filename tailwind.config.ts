@@ -51,7 +51,14 @@ export default {
         // This is a particularly wide device width
         // => @media (min-width: 431px) { ... }
         'xs': '431px',
-
+      },
+      fontFamily: {
+        display: ['Cabinet Grotesk', ...defaultTheme.fontFamily.sans],
+        serif: ['EB Garamond', ...defaultTheme.fontFamily.serif],
+        sans: 'var(--font-inter)',
+      },
+      letterSpacing: {
+        tight: '-.02em',
       },
       borderRadius: {
         '4xl': '2rem',
@@ -61,13 +68,8 @@ export default {
         '8xl': '7rem',
         '9xl': '8rem'
       },
-      fontFamily: {
-        display: ['Cabinet Grotesk', ...defaultTheme.fontFamily.sans],
-        serif: ['EB Garamond', ...defaultTheme.fontFamily.serif],
-        sans: 'var(--font-inter)',
-      },
-      letterSpacing: {
-        tight: '-.02em',
+      transitionProperty: {
+        'height': 'height',
       },
       backgroundImage: {
         'primaryGrad': `linear-gradient(180deg, rgba(128,141,255,1) 0%, rgba(87,104,255,1) 8%, rgba(87,104,255,1) 50%, rgba(71,86,226,1) 100%);`,
