@@ -1,6 +1,6 @@
 'use client'
 
-import { sendEmailAction } from "@/actions/SendEmail";
+// import { sendEmailAction } from "@/pages/api/SendEmail";
 import { useRef, useTransition, useState } from "react";
 import Image from 'next/image'
 import Input from './Input';
@@ -101,13 +101,24 @@ function Form() {
 
     setIsSubmitting(true);
 
-    validateForm();
-
     const formData = new FormData(formRef.current);
+
+    validateForm();
     
     if (Object.keys(values.errors).length === 0) {
+      
       // No valdy error, proceed
-      const { errorMessage } = await sendEmailAction(formData);
+      const baseUrl = process.env.NODE_ENV === 'production' 
+        ? 'https://dwdesign-five.vercel.app' 
+        : 'http://localhost:3000';
+
+      // const { errorMessage } = await sendEmailAction(formData);
+      const response = await fetch(`${baseUrl}/api/SendEmail`, {
+        method: 'POST',
+        body: new URLSearchParams(formData as any),
+      });
+
+      const { errorMessage } = await await response.json();
       
       if (!errorMessage) {
         toast.success("Your message sent successfully!", { duration: 6000 });
