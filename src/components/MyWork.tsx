@@ -113,21 +113,14 @@ const myWork = [
     image: function BreatheImage() {
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)]">
-            <motion.div
+          <motion.div
             className="w-[370px]"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <motion.button
-              whileHover={{
-              scale: 1.2,
-              transition: { duration: 1 },
-              }}
-              whileTap={{ scale: 0.9 }}
-/>
-              <Image src={breatheImage} className="pointer-events-none" alt="" />
+            <Image src={breatheImage} className="pointer-events-none" alt="" />
           </motion.div>
         </div>
       )
