@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import Link from 'next/link';
+
 declare module 'react' {
   interface CSSProperties {
     '--x'?: string;
@@ -7,9 +9,9 @@ declare module 'react' {
   }
 }
 
-type ButtonProps = React.ComponentPropsWithoutRef<'button'>;
+type ButtonProps = React.ComponentPropsWithoutRef<'button'> & { href?: string, target?: string };
 
-export function Button({ className, ...props }: ButtonProps) {
+export function Button({ className, href, target, ...props }: ButtonProps) {
   const [gradientPosition, setGradientPosition] = useState({ x: 0, y: 0 });
   const [isMouseOver, setIsMouseOver] = useState(false);
 
@@ -33,15 +35,24 @@ export function Button({ className, ...props }: ButtonProps) {
   const shineClasses = clsx('absolute inset-0 bg-white bg-opacity-40 pointer-events-none transition-opacity duration-300', { 'opacity-0': !isMouseOver });
   const textClasses = 'relative pointer-events-none z-20';
 
-  return (
-    <button
-      className={clsx(baseClasses, className)}
-      onMouseEnter={handleMouseEnter}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ '--x': `${gradientPosition.x}px`, '--y': `${gradientPosition.y}px` }}
-      {...props}
-    >
+  const buttonProps = {
+    className: clsx(baseClasses, className),
+    onMouseEnter: handleMouseEnter,
+    onMouseMove: handleMouseMove,
+    onMouseLeave: handleMouseLeave,
+    style: { '--x': `${gradientPosition.x}px`, '--y': `${gradientPosition.y}px` },
+    ...props
+  };
+
+  return href ? (
+    <div {...buttonProps}>
+      <Link href={href} target={target}>
+        <span className={textClasses}>{props.children}</span>
+        <span className={shineClasses} style={{ background: `radial-gradient(circle 220px at var(--x) var(--y), rgba(36,250,199,0.4) 0%, rgba(36,250,199,0) 70%)` }}></span>
+      </Link>
+    </div>
+  ) : (
+    <button {...buttonProps}>
       <span className={textClasses}>{props.children}</span>
       <span className={shineClasses} style={{ background: `radial-gradient(circle 220px at var(--x) var(--y), rgba(36,250,199,0.4) 0%, rgba(36,250,199,0) 70%)` }}></span>
     </button>
