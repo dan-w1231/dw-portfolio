@@ -144,7 +144,6 @@ function Form() {
       const baseUrl = process.env.NODE_ENV === 'production' 
         ? 'https://dwdesign-five.vercel.app' 
         : 'http://localhost:3000';
-        // : 'http://192.168.1.179:3000';
 
       const response = await fetch(`${baseUrl}/api/SendEmail`, {
         method: 'POST',
@@ -161,7 +160,19 @@ function Form() {
       }
 
       if (!errorMessage) {
-        toast.success("Thanks!\nYour message has been sent!", { duration: 7000 });
+        toast.success(
+          <div>
+            <span style={{ fontSize: "20px", fontWeight: 600 }}>Thanks!</span>
+            <br />
+              Your message has been sent.
+          </div>,
+          {
+            duration: 7000,
+            style: {
+              fontWeight: "normal",
+            },
+          }
+        );
         formRef.current?.reset();
         setValues({
           name: "",
@@ -178,7 +189,19 @@ function Form() {
         toast.error(errorMessage, {duration: 6000 });
       }
     } else {
-      toast.error("Oops :(\nPlease check your inputs and try again, or contact me via email.", {duration: 7000 });
+      toast.error(
+        <div>
+          <span style={{ fontSize: "20px", fontWeight: 600 }}>Oops :(</span>
+          <br />
+            Please check your inputs and try again, or contact me via email.
+        </div>,
+        {
+          duration: 7000,
+          style: {
+            fontWeight: "normal",
+          },
+        }
+      );
       // Display validation errors
       <div className="text-red-500">
         {Object.keys(values.errors).map((fieldName) => (

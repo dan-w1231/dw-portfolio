@@ -202,30 +202,6 @@ export function MyWork() {
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
 
   const x = useTransform(scrollYProgress, [0, 1], initialWindowWidth <768 ? ["0", "0"] : ["0px", "-2800px"]);
-  
-
-
-  // // scroll event listener
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const zindex = scrollYProgress.get() > 0.85 ? 2 : 1;
-  //     // console.log('Z-Index:', zindex);
-  //     // console.log('Scroll Y Progress:', scrollYProgress.get());
-  //   };
-
-  // window.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [scrollYProgress]);
-
-  // const horizontalListThreshold = 0.85;
-  // const aboutThreshold = 0.85;
-
-  // const scrollPosition = scrollYProgress.get();
-  // const horizontalListZIndex = scrollPosition < horizontalListThreshold ? 99 : 1;
-  // const aboutZIndex = scrollPosition > aboutThreshold ? 99 : 1;
 
   return (
       <motion.div key={2}>

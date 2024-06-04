@@ -62,10 +62,32 @@ export default function RootLayout({
       </head>
       <body className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-noise-pattern bg-radial-bg">
         <Toaster 
+          position="bottom-center"
           toastOptions={{
-            style: {
-              textAlign: "center",
+            success: {  
+              style: {
+                fontFamily: "Cabinet Grotesk",
+                alignItems: "flex-start",
+                letterSpacing: "-0.025em",
+                padding: "24px",
+                borderRadius: "38px",
+                background: "rgba(255,255,255,0.95)",
+                backdropFilter: "blur(8px)",
+                border: "1px solid #2AC355",
+              },
             },
+            error: {  
+              style: {
+                fontFamily: "Cabinet Grotesk",
+                alignItems: "flex-start",
+                letterSpacing: "-0.025em",
+                padding: "24px",
+                borderRadius: "38px",
+                background: "rgba(255,255,255,0.95)",
+                backdropFilter: "blur(8px)",
+                border: "1px solid #FF3257",
+              },
+            }
         }}
         />
         <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
