@@ -110,7 +110,7 @@ export function Hero() {
                   />
                   </motion.div>
                   <motion.div
-                    animate={{rotate: 0, x: -7, z: -1}}
+                    animate={{rotate: 0, x: -7, y: -8, z: -1}}
                     transition={{ duration: 8, repeat: Infinity, delay: 2, repeatType: "mirror", transition:{ type: "spring"} }}
                   >
                   <Image
