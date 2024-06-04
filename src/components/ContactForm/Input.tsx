@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, forwardRef, useImperativeHandle } from 'react';
+import { useState, forwardRef, useImperativeHandle, useEffect } from 'react';
 import { motion } from "framer-motion";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -12,6 +12,8 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   errors?: { [key: string]: string }; 
   value: string;
   formSubmitted: boolean;
+  formInvalid: boolean;
+  formAttempted: boolean;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
   setFormInteracted: (value: boolean) => void;
@@ -26,6 +28,8 @@ const Input = forwardRef(({
   errors = {},
   value,
   formSubmitted,
+  formInvalid,
+  formAttempted,
   setFormInteracted,
   onChange,
   onBlur,
@@ -35,6 +39,10 @@ const Input = forwardRef(({
     const [isFocused, setIsFocused] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [touched, setTouched] = useState(false);
+
+    useEffect(() => {
+      console.log('formInvalid:', formInvalid);
+    }, [formInvalid]);
   
     const handleFocus = () => {
       setIsFocused(true);
@@ -72,15 +80,16 @@ const Input = forwardRef(({
     const hasError = Boolean(error);
 
     let borderColor = "transparent";
-    if (formSubmitted) {
-      borderColor = "transparent";
-    } else {
-      if (isFocused || isHovered) {
-        borderColor = "#5768FF";
-      }
-      if (touched) {
+    if (formAttempted) {
+      if (formInvalid) {
         borderColor = hasError ? "#FF3257" : "#2AC355";
+      } else {
+        borderColor = "transparent";
       }
+    } else if (touched) {
+      borderColor = hasError ? "#FF3257" : "#2AC355";
+    } else if (isFocused || isHovered) {
+      borderColor = "#5768FF";
     }
 
     const inputClasses = `relative border transition-all flex items-center align-center p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-base rounded-full focus:box-shadow-xl pointer-events-none`;

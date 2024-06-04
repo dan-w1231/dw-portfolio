@@ -11,7 +11,7 @@ import { Button } from '@/components/Button';
 import { motion } from "framer-motion";
 import Cross from '@/images/resources/cross.svg';
 import Tick from '@/images/resources/tick.svg';
-import Loader from 'react-loading-icons/dist/esm/components/three-dots'
+import Loader from 'react-loading-icons/dist/esm/components/rings'
 
 function FieldStatus({ name, error, showMessage }: { name: string; error: string | undefined; showMessage: boolean }) {
   return (
@@ -43,8 +43,10 @@ function Form() {
   const formRef = useRef<HTMLFormElement>(null);
   const [formInteracted, setFormInteracted] = useState(false);
   const [showValidationStatus, setShowValidationStatus] = useState(false);
+  const [formAttempted, setFormAttempted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formInvalid, setIsFormInvalid] = useState(false);
   const nameInputRef = useRef<InputRef | null>(null);
   const emailInputRef = useRef<InputRef | null>(null);
   const messageInputRef = useRef<InputRef | null>(null);
@@ -126,7 +128,7 @@ function Form() {
     if (!formRef.current) {
       return;
     }
-
+    setFormAttempted(true);
     setIsSubmitting(true);
     setFormSubmitted(false);
 
@@ -173,6 +175,7 @@ function Form() {
             },
           }
         );
+        setIsFormInvalid(false);
         formRef.current?.reset();
         setValues({
           name: "",
@@ -191,7 +194,7 @@ function Form() {
     } else {
       toast.error(
         <div>
-          <span style={{ fontSize: "20px", fontWeight: 600 }}>Oops :(</span>
+          <span style={{ fontSize: "20px", fontWeight: 600 }}>Oops :o</span>
           <br />
             Please check your inputs and try again, or contact me via email.
         </div>,
@@ -202,6 +205,7 @@ function Form() {
           },
         }
       );
+      setIsFormInvalid(true);
       // Display validation errors
       <div className="text-red-500">
         {Object.keys(values.errors).map((fieldName) => (
@@ -237,6 +241,8 @@ function Form() {
             onChange={handleInputChange}
             onBlur={handleBlur}
             formSubmitted={formSubmitted}
+            formInvalid={formInvalid}
+            formAttempted={formAttempted}
             ref={nameInputRef}
           />
           <Input
@@ -252,6 +258,8 @@ function Form() {
             onChange={handleInputChange}
             onBlur={handleBlur}
             formSubmitted={formSubmitted}
+            formInvalid={formInvalid}
+            formAttempted={formAttempted}
             ref={emailInputRef}
           />
         </div>
@@ -259,13 +267,15 @@ function Form() {
           value={values.message}
           id="message"
           name="message"
-          type="submit"
+          type="text"
           label="Message*"
           errors={values.errors}
           setFormInteracted={setFormInteracted}
           onChange={handleTextAreaChange}
           onBlur={handleBlur}
           formSubmitted={formSubmitted}
+          formInvalid={formInvalid}
+          formAttempted={formAttempted}
           disabled={isSubmitting}
           autoComplete="off"
           ref={messageInputRef}

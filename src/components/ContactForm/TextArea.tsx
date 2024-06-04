@@ -11,6 +11,8 @@ interface TextAreaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
   errors?: { [key: string]: string }; 
   value: string;
   formSubmitted: boolean;
+  formInvalid: boolean;
+  formAttempted: boolean;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onBlur: (event: React.FocusEvent<HTMLTextAreaElement>) => void;
   setFormInteracted: (value: boolean) => void;
@@ -24,6 +26,8 @@ const TextArea = forwardRef (({
   errors = {},
   value,
   formSubmitted,
+  formInvalid,
+  formAttempted,
   setFormInteracted,
   onChange,
   onBlur,
@@ -70,15 +74,16 @@ const TextArea = forwardRef (({
   const hasError = Boolean(error);
 
   let borderColor = "transparent";
-  if (formSubmitted) {
-    borderColor = "transparent";
-  } else {
-    if (isFocused || isHovered) {
-      borderColor = "#5768FF";
-    }
-    if (touched) {
+  if (formAttempted) {
+    if (formInvalid) {
       borderColor = hasError ? "#FF3257" : "#2AC355";
+    } else {
+      borderColor = "transparent";
     }
+  } else if (touched) {
+    borderColor = hasError ? "#FF3257" : "#2AC355";
+  } else if (isFocused || isHovered) {
+    borderColor = "#5768FF";
   }
 
   const inputClasses = `relative border flex items-center align-center transition-all p-0 box-border transition-all outline-0 w-full bg-white shadow-lg text-base md:text-base rounded-[38px] pointer-events-none`;

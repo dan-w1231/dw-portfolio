@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from '@/components/Button'
+import { ButtonLink } from '@/components/ButtonLink'
 // Webpack import fuckery why do PDFs not just work?
 // import CV from '../../public/CV.pdf'
 import Circle from '@/images/resources/circle.svg'
@@ -45,9 +46,9 @@ export function Hero() {
                 whileHover={{ scale: 1.05, y: 0, transition: { type: "spring", stiffness: 400, duration: 0.2 }, }}
                 whileTap={{ scale: 0.95, y: 0, transition: { type: "spring", stiffness: 400, duration: 0.2 }, }}
                 >
-                <Button href="/danWallaceCV2024.pdf" target="_blank" className="w-full">
+                <ButtonLink href="/danWallaceCV2024.pdf" target="_blank" className="w-full">
                   View CV
-                </Button>
+                </ButtonLink>
                 <div className="absolute h-[64px] bg-primaryGrad rounded-full pointer-events-none z-[98] scale-y-[-0.99] scale-x-[-0.99] brightness-100 blur-[8px] md:blur-[40px] opacity-20 w-[96%] top-[62px]" />
               </motion.button>
             </div>
