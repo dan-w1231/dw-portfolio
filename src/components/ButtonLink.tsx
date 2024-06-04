@@ -53,9 +53,9 @@ export function ButtonLink({ className, href, target, ...props }: ButtonLinkProp
     };
   }, [element, springX, springY]);
 
-  const baseClasses = 'relative text-white overflow-hidden transform-gpu transition-all ease-in-out duration-300 hover:scale-98 hover:shadow-md inline-flex min-w-[108px] md:max-w-[336px] justify-center rounded-full py-4 px-8 text-lg font-semibold tracking-tight shadow-lg focus:outline-none bg-primaryGrad h-[64px]';
+  const baseClasses = 'relative text-white overflow-hidden transform-gpu transition-all ease-in-out duration-300 hover:scale-98 hover:shadow-md inline-flex min-w-[108px] md:max-w-[336px] justify-center rounded-full text-lg font-semibold tracking-tight shadow-lg focus:outline-none bg-primaryGrad h-[64px]';
   const shineClasses = clsx('absolute inset-0 bg-white bg-opacity-40 pointer-events-none transition-opacity duration-300', { 'opacity-0': !isMouseOver });
-  const textClasses = 'relative pointer-events-none z-20';
+  const textClasses = 'relative pointer-events-none w-full h-full flex items-center justify-center z-20';
 
   return (
     <div
@@ -65,10 +65,10 @@ export function ButtonLink({ className, href, target, ...props }: ButtonLinkProp
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <Link href={href} target={target}>
-          <span className={textClasses}>{props.children}</span>
-          <span className={shineClasses} style={{ background: `radial-gradient(circle 220px at var(--x) var(--y), rgba(36,250,199,0.4) 0%, rgba(36,250,199,0) 70%)` }}></span>
-      </Link>
+      <a href={href} target={target} className="w-full h-full">
+        <span className={textClasses}>{props.children}</span>
+        <span className={shineClasses} style={{ background: `radial-gradient(circle 220px at var(--x) var(--y), rgba(36,250,199,0.4) 0%, rgba(36,250,199,0) 70%)` }}></span>
+      </a>
     </div>
   );
 }

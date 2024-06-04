@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, forwardRef, useImperativeHandle, useEffect } from 'react';
+import { useState, forwardRef, useImperativeHandle } from 'react';
 import { motion } from "framer-motion";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -39,10 +39,6 @@ const Input = forwardRef(({
     const [isFocused, setIsFocused] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [touched, setTouched] = useState(false);
-
-    useEffect(() => {
-      console.log('formInvalid:', formInvalid);
-    }, [formInvalid]);
   
     const handleFocus = () => {
       setIsFocused(true);

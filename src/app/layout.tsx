@@ -98,7 +98,7 @@ export default function RootLayout({
               <FlowChart size="100%" />
           </div>
         </div>
-        {/* <NavBar /> */}
+        <NavBar />
           <Template>{children}</Template>
         <Footer />
       </body>
