@@ -4,10 +4,16 @@ import Image from 'next/image'
 import Logo from '@/images/resources/dwLogo.png'
 import { Button } from '@/components/Button'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export function NavBar() {
   const handleContactClick = () => {
-    document.getElementById('contactBox')?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById('contactBox');
+    element?.scrollIntoView({ behavior: 'smooth' });
+    // setTimeout(() => {
+    //   const adjustment = window.innerWidth <= 768 ? -150 : 1700;
+    //   window.scrollBy(0, adjustment);
+    // }, 501);
   };
   return (
     <motion.div 
@@ -18,7 +24,9 @@ export function NavBar() {
       animate={{ opacity: 1 }}
     >
       <div className="w-full flex items-center pr-2 pl-4 md:pl-10 py-2 bg-sectionGrad backdrop-blur-[60px] rounded-4xl xl:rounded-5xl z-[99] max-w-screen-2xl mx-2 xs:mx-4">
-        <Image src={Logo} height="22" alt="DW Design" priority />
+        <Link href="/">
+          <Image src={Logo} height="22" alt="DW Design" priority />
+        </Link>
         <motion.div className="relative ml-auto"
           whileHover={{ scale: 0.98, y: 0 }}
           whileTap={{ scale: 0.95, y: 0 }}

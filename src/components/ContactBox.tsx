@@ -26,10 +26,10 @@ export function ContactBox() {
         <GridPattern x="50%" y="100%" />
       </div>
       <div className="relative">
-        <div className="bg-cardGrad rounded-4xl rounded-tr-8xl backdrop-blur-[60px] shadow-xl pt-px rounded-4xl md:rounded-5xl xl:rounded-6xl">
+        <div className="bg-cardGrad rounded-4xl rounded-tr-8xl backdrop-blur-[140px] shadow-xl pt-px rounded-4xl md:rounded-5xl xl:rounded-6xl">
           <div className="flex flex-col xl:flex-row gap-4 md:gap-10 px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
             <div
-                id="contactIntroText"
+                id="contactStart"
                 className="w-full xl:w-1/2"
               >
               <div className="font-display text-5xl font-extrabold tracking-tight text-blurple sm:text-6xl">

@@ -90,7 +90,6 @@ function Form() {
   };
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    // This might cause form to validate twice on submit?
     validateForm();
   };
 
@@ -145,7 +144,7 @@ function Form() {
       // No valdy error, proceed
       const baseUrl = process.env.NODE_ENV === 'production' 
         ? 'https://dwdesign-five.vercel.app' 
-        : 'http://localhost:3000';
+        : 'http://192.168.1.179:3000';
 
       const response = await fetch(`${baseUrl}/api/SendEmail`, {
         method: 'POST',

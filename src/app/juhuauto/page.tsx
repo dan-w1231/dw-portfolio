@@ -3,8 +3,7 @@ import { BulletTag } from '@/components/BulletTag'
 import { motion, useTransform, useScroll } from 'framer-motion'
 import { AnimateHeightChange } from '@/components/AnimateHeightChange'
 import { useRef, useEffect } from "react"
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
+import Zoomy from '@/components/Zoomy'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -37,9 +36,9 @@ const JuhuImages = [
             viewport= {{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           >
-            <Zoom>
+            <Zoomy>
               <Image src={bdkToJuhu} className="w-full max-w-[390px] py-10 object-contain" alt="Wireframes to brand" />
-            </Zoom>
+            </Zoomy>
           </motion.div>
         </motion.div>
       )
@@ -56,9 +55,9 @@ const JuhuImages = [
             viewport= {{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           >
-            <Zoom>
+            <Zoomy>
               <Image src={juhuFPAs} className="w-full max-w-[400px] object-contain" alt="The vehicle advert page." />
-            </Zoom>
+            </Zoomy>
           </motion.div>
         </motion.div>
       )
@@ -75,9 +74,9 @@ const JuhuImages = [
             viewport= {{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           > 
-            <Zoom>
+            <Zoomy>
               <Image src={juhuPreApproval} className="w-full max-w-[400px] object-contain" alt="Getting pre-approved" />
-            </Zoom>
+            </Zoomy>
           </motion.div>
         </motion.div>
       )
@@ -94,9 +93,9 @@ const JuhuImages = [
             viewport= {{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           >
-            <Zoom>
+            <Zoomy>
               <Image src={juhuQuotes} className="w-full max-w-[650px] object-contain p-[10%]" alt="Viewing finance quotes on a laptop." />
-            </Zoom>
+            </Zoomy>
           </motion.div>
         </motion.div>
       )
@@ -183,14 +182,14 @@ export default function JuhuAuto() {
                           </p>
                           <div className="mt-6 flex flex-row gap-4">
                             <div className="w-1/2">
-                              <Zoom>
+                              <Zoomy>
                                 <Image src={bdkEEA} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="research plan" />
-                              </Zoom>
+                              </Zoomy>
                             </div>
                             <div className="w-1/2">
-                              <Zoom>
+                              <Zoomy>
                                 <Image src={bdkTaskflow} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="Research plan" />
-                              </Zoom>
+                              </Zoomy>
                             </div>
                           </div>
                           <p className="mt-4 text-lg tracking-tight text-midnight-800">
@@ -203,17 +202,17 @@ export default function JuhuAuto() {
                             Based on the requirements and task flows I created a simple sitemap.
                           </p>
                           <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
+                          <Zoomy>
                               <Image src={bdkSitemap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6 object-contain" alt="Planning for street interviews" />
-                          </Zoom>
+                          </Zoomy>
                           </div>
                           <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
                             Wireframing & Prototyping
                           </h4>
                           <div className="mt-6 cursor-zoom-in">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={bdkWireframes} loading="lazy" placeholder="blur" className="rounded-lg object-contain" alt="Four of the personas created" />
-                            </Zoom>
+                            </Zoomy>
                           </div>
                           <p className="mt-6 text-lg tracking-tight text-midnight-800">
                             After a few rounds of testing and tweaking the prototypes, I spent time with translators converting the wireframes into German, then the wireframes were used by a 3rd-party branding agency in Germany to create the consumer brand "Juhu Auto". I then made some adjustments to the branded designs, and the product was built.
@@ -222,9 +221,9 @@ export default function JuhuAuto() {
                             My work would continue a few months after release to test and optimise the product.
                           </p>
                           <div className="mt-6 cursor-zoom-in">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={bdkWireframesToJuhu} loading="lazy" placeholder="blur" className="rounded-lg object-contain" alt="Four of the personas created" />
-                            </Zoom>
+                            </Zoomy>
                           </div>
                           <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
                             User Testing
@@ -242,9 +241,9 @@ export default function JuhuAuto() {
                             I used TestingTime to recruit German participants who recently bought a car or were actively searching for one.
                           </p>
                           <div className="mt-6 cursor-zoom-in">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={juhuUserTest} loading="lazy" placeholder="blur" className="rounded-lg" alt="Wireframes of the NV application process" />
-                            </Zoom>
+                            </Zoomy>
                           </div>
                           <p className="mt-4 text-lg tracking-tight text-midnight-800">
                             <span className="font-bold">Discovery:</span> Participants mentioned they were interested in a particular bodystyle during pre-task questions i.e. Kleinwagen (Small car) but did not type this into the search box.
@@ -278,9 +277,9 @@ export default function JuhuAuto() {
                             Results
                           </h4>
                           <div className="mt-6 cursor-zoom-in">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={ABcategories} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6 object-contain" alt="Wireframes of the NV application process" />
-                            </Zoom>
+                            </Zoomy>
                           </div>
                     </motion.div>
                   </div>
@@ -293,7 +292,7 @@ export default function JuhuAuto() {
               className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%] order-1 md:order-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "spring", stiffness: 70, delay: 1, duration: 1.5 }}
+              transition={{ type: "spring", stiffness: 70, delay: initialWindowWidth > 767 ? 1 : 0, duration: 1.5 }}
               >
             <motion.div layout 
               style={{ y }}

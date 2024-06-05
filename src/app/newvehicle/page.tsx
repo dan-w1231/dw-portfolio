@@ -3,8 +3,8 @@ import { BulletTag } from '@/components/BulletTag'
 import { motion, useTransform, useScroll } from 'framer-motion'
 import { AnimateHeightChange } from '@/components/AnimateHeightChange'
 import { useRef } from "react"
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
+import { ContactBox } from '@/components/ContactBox'
+import Zoomy from '@/components/Zoomy'
 import Link from 'next/link'
 import Image from 'next/image'
 import MediaQuery from 'react-responsive'
@@ -39,9 +39,9 @@ const NVImages = [
             viewport= {{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           >
-            <Zoom>
+            <Zoomy>
               <Image src={calcs} className="w-full max-w-[496px]" alt="Themed finance calculators embedded in dealership websites" />
-            </Zoom>
+            </Zoomy>
           </motion.div>
           </motion.div>
       )
@@ -58,9 +58,9 @@ const NVImages = [
             viewport= {{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           >
-            <Zoom>
+            <Zoomy>
               <Image src={yourDeal} className="w-full m-w-[496px]" alt="The deal page." />
-            </Zoom>
+            </Zoomy>
           </motion.div>
         </motion.div>
       )
@@ -77,9 +77,9 @@ const NVImages = [
             viewport= {{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           > 
-            <Zoom>
+            <Zoomy>
               <Image src={reserve} className="w-full max-w-[44rem] p-[12%]" alt="Desktop view of a reservation." />
-            </Zoom>
+            </Zoomy>
           </motion.div>
         </motion.div>
       )
@@ -96,9 +96,9 @@ const NVImages = [
             viewport= {{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           >
-            <Zoom>
+            <Zoomy>
               <Image src={fpa} className="w-full max-w-[17rem]" alt="Vehicle advert." />
-            </Zoom>
+            </Zoomy>
           </motion.div>
         </motion.div>
       )
@@ -115,9 +115,9 @@ const NVImages = [
             viewport= {{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           >
-            <Zoom>
+            <Zoomy>
               <Image src={approved} className="w-full max-w-[17rem]" alt="Instant decision on finance applications." />
-            </Zoom>
+            </Zoomy>
           </motion.div>
         </motion.div>
       )
@@ -208,9 +208,9 @@ export default function NewVehicle() {
                             <BulletTag>Instant feedback on application decision</BulletTag><BulletTag>Dealer lead management system</BulletTag>
                           </div>
                           <div className="mt-6 cursor-zoom-in" >
-                            <Zoom>
+                            <Zoomy>
                               <Image src={relationshipMap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="research plan" />
-                            </Zoom>  
+                            </Zoomy>  
                           </div>
                           <p className="mt-4 text-lg tracking-tight text-midnight-800">
                             At it’s core we wanted a finance comparison tool that dealers could integrate into their websites. Buyers can compare finance products 
@@ -225,26 +225,26 @@ export default function NewVehicle() {
                             wealth of knowledge about the behaviour of car buyers online, but much less about finance specifically.
                           </p>
                           <div className="mt-6 cursor-zoom-in">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={researchPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="Research plan" />
-                            </Zoom>
+                            </Zoomy>
                           </div>
                           <p className="mt-4 text-lg tracking-tight text-midnight-800">
                             I planned the questions with our team then took to the streets and asked people around Manchester their thoughts.
                           </p>
                           <div className="mt-6 cursor-zoom-in">
-                          <Zoom>
+                          <Zoomy>
                               <Image src={streetQPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6" alt="Planning for street interviews" />
-                          </Zoom>
+                          </Zoomy>
                           </div>
                           <p className="mt-4 text-lg tracking-tight text-midnight-800">
                             We then card sorted the results into different types of buyers, then I created personas matching people to shopping behaviours and business opportunities, 
                             which became invaluable when designing many parts of the consumer UI.
                           </p>
                           <div className="mt-6 cursor-zoom-in">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={personas} loading="lazy" placeholder="blur" className="rounded-lg" alt="Four of the personas created" />
-                            </Zoom>
+                            </Zoomy>
                           </div>
                           <p className="mt-4 text-lg tracking-tight text-midnight-800">
                           One of the common worries that respondents expressed with buying online was <span className="font-bold">trust and security.</span> Finance applications inherently require very sensitive customer data (from employment history to bank details), and respondents commented that they’d need to trust a 3rd party website for them to enter this kind of information with confidence.
@@ -266,32 +266,32 @@ export default function NewVehicle() {
                             The next sessions I brought devs together to brainstorm user flows, while I scribbled on the (WriteOn) walls.
                           </p>
                           <div className="mt-6 cursor-zoom-in">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={wireframeNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Wireframes of the NV application process" />
-                            </Zoom>
+                            </Zoomy>
                           </div>
                           <p className="mt-4 text-lg tracking-tight text-midnight-800">
                             Due to the size of the undertaking (quoting, eligibility checking, applications, an account) I formalized a process diagram in Miro to share how everything could fit together.
                           </p>
                           <div className="mt-6 flex flex-row gap-4">
                             <div className="w-1/2">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={featureMap} loading="lazy" placeholder="blur" className="rounded-lg" alt="A map of how the different vehicle retailing features fit together" />
-                            </Zoom>
+                            </Zoomy>
                             </div>
                             <div className="w-1/2">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={flowOptions} loading="lazy" placeholder="blur" className="rounded-lg" alt="Different options placed on the ideas wall." />
-                            </Zoom>
+                            </Zoomy>
                             </div>
                           </div>
                           <p className="mt-4 text-lg tracking-tight text-midnight-800">
                             After lots of coffee, hundreds of variations and a few review sessions, the first designs for the new finance calculators, applications, and checkout were presented end-to-end. 
                           </p>
                           <div className="mt-6 cursor-zoom-in">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={productPages} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
-                            </Zoom>
+                            </Zoomy>
                           </div>
                           <p className="mt-4 text-lg tracking-tight text-midnight-800">
                             Given that trust was a big factor, it was important to create a seamless experience for users 
@@ -309,9 +309,9 @@ export default function NewVehicle() {
                             hypotheses of ways we could make the process simpler and improve conversion rates on different pages.
                           </p>
                           <div className="mt-6 cursor-zoom-in">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={analyticsNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
-                            </Zoom>
+                            </Zoomy>
                           </div>
                           <p className="mt-4 text-lg tracking-tight text-midnight-800">
                             One example of improvement was a change to the finance calculator and its following page. The calculator was the one area embedded on the retailer's vehicle page
@@ -327,9 +327,9 @@ export default function NewVehicle() {
                             and considerably less dropoffs during the checkout, so the change was subsequently rolled out to all retailers.
                           </p>
                           <div className="mt-6 cursor-zoom-in">
-                            <Zoom>
+                            <Zoomy>
                               <Image src={ABWidget} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
-                            </Zoom>
+                            </Zoomy>
                           </div>
                     </motion.div>
                   </div>
@@ -342,7 +342,7 @@ export default function NewVehicle() {
               className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%] order-1 md:order-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "spring", stiffness: 70, delay: 1, duration: 1.5 }}
+              transition={{ type: "spring", stiffness: 70, delay: initialWindowWidth > 767 ? 1 : 0, duration: 1.5 }}
               >
             <motion.ol 
               style={{ y }}
