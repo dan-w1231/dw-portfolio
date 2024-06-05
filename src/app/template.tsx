@@ -17,10 +17,10 @@ export default function Template({
         key={pathname}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ type:"spring", stiffness: 80, duration: 1.5 }}
+        transition={{ type: "spring", stiffness: 70, delay: 0.3, duration: 1.5 }}
         exit={{ opacity: 0, y: 30 }}
         >
-        {/* Committing sacrilege to make exit animations working */}
+        {/* Committing sacrilege to make exit animations work */}
         <FrozenRoute>{children}</FrozenRoute>
       </motion.div>
     </AnimatePresence>

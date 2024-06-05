@@ -1,29 +1,33 @@
 'use client'
 
-import { useRouter } from 'next/router';
 import Image from 'next/image'
 import Logo from '@/images/resources/dwLogo.png'
 import { Button } from '@/components/Button'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 export function NavBar() {
   const handleContactClick = () => {
     document.getElementById('contactBox')?.scrollIntoView({ behavior: 'smooth' });
   };
   return (
-    <div className="sticky top-2 xs:top-4 xl:4 w-full flex items-center mx-auto max-w-screen-2xl z-[99]">
-      <div className="w-full flex items-center pr-2 pl-6 py-2 bg-sectionGrad backdrop-blur-[60px] rounded-4xl xl:rounded-5xl z-[99] max-w-screen-2xl mx-2 xs:mx-4">
+    <motion.div 
+      id="NavBar"
+      key="navBar"
+      className="sticky top-2 xs:top-4 xl:4 w-full flex items-center mx-auto max-w-screen-2xl z-[99]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <div className="w-full flex items-center pr-2 pl-4 md:pl-10 py-2 bg-sectionGrad backdrop-blur-[60px] rounded-4xl xl:rounded-5xl z-[99] max-w-screen-2xl mx-2 xs:mx-4">
         <Image src={Logo} height="22" alt="DW Design" priority />
         <motion.div className="relative ml-auto"
-          whileHover={{ scale: 1.05, y: 0 }}
+          whileHover={{ scale: 0.98, y: 0 }}
           whileTap={{ scale: 0.95, y: 0 }}
           transition={{ type: "spring", stiffness: 400, duration: 0.2 }}
           >
           <Button onClick={handleContactClick} variant="secondary" className="ml-auto px-6">Contact</Button>
         </motion.div>
         </div>
-      </div>
+      </motion.div>
     )
   }
 

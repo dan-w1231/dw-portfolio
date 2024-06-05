@@ -202,11 +202,11 @@ export function MyWork() {
           id="myWork"
           aria-labelledby="myWork-title"
           ref={targetRef}
-          className="relative mt-2 xs:my-4 md:h-[200vh] lg:h-[300vh]"  
+          className="relative mt-2 xs:my-4 md:h-[200vh] lg:h-[310vh]"  
         >
           <Container 
             size="lg" 
-            className="relative z-96 w-full md:sticky md:top-0 flex items-center overflow-hidden pb-20 -mb-20 md:pt-20 md:-mt-20"
+            className="relative z-96 w-full md:sticky md:top-8 flex items-center overflow-hidden pb-20 -mb-20 md:pt-20 md:-mt-20"
             // style={{ zIndex: horizontalListZIndex }}
             >
             <motion.ol
@@ -227,9 +227,9 @@ export function MyWork() {
                   <Link href={`/${work.url}/`} className="select-none">
                     <li
                       key={work.title}
-                      className="items-center gap-8 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg md:grid-cols-3"
+                      className="items-center gap-8 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-xl hover:shadow-lg md:grid-cols-3"
                     >
-                      <div key="workImageWrapper" className="relative flex justify-center h-[370px] md:h-[496px] sm:h-[496px] w-full md:w-[496px] overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg sm:h-60">
+                      <div key="workImageWrapper" className="relative flex justify-center h-[370px] md:h-[496px] sm:h-[496px] w-full md:w-[496px] overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl sm:h-60">
                         <work.image />
                         <motion.div id="proceedArrow" variants={workArrowVariants} className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white bg-opacity-60 backdrop-blur-[60px] scale-100 rounded-full">
                           <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
@@ -245,7 +245,7 @@ export function MyWork() {
             </motion.ol>
           </Container>
           <motion.div
-                className="sticky top-[176px] md:top-[592px] z-50"
+                className="sticky top-[176px] md:top-[624px] z-50"
                 // style={{ zIndex: aboutZIndex }}
                 initial={{ opacity: 0, y: 50 }}
                 viewport= {{ once: true, amount: 0 }}

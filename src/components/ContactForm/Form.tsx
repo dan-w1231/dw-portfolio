@@ -281,8 +281,8 @@ function Form() {
           ref={messageInputRef}
           >
         </TextArea>
-        <motion.div className="absolute bottom-2 right-2 w-auto h-auto z-[98]"
-          whileHover={{ scale: 1.05, y: 0 }}
+        <motion.div className="absolute bottom-2 right-2 w-auto h-auto z-[98] rounded-full"
+          whileHover={{ scale: 0.98, y: 0 }}
           whileTap={{ scale: 0.95, y: 0 }}
           transition={{ type: "spring", stiffness: 400, duration: 0.2 }}
           >

@@ -118,17 +118,17 @@ export default function JuhuAuto() {
       <motion.div 
         id="main"
         key="juhuAuto"
-        className="relative w-screen mx-auto"
+        className="relative w-screen mx-auto mt-2 xs:mt-4 md:mt-8 xl:mt-8"
         ref={targetRef}
       >
-        <div className="relative mx-auto md:mt-4 xl:mt-14">
+        <div className="relative mx-auto">
           <div className="w-full max-w-screen-2xl flex flex-col gap-0 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97"
 >
           {/* Left col */}
           <div className="w-full max-w-[800px] order-2 md:order-1">
             <header className="relative w-full px-2 xs:px-4 2xl:pl-4 rounded-4xl mx-auto">
               <div
-                className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-lg rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">   
+                className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-xl rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">   
                 <div className="relative max-w-full items-end flex items-center md:mt-4">
                   <div className="w-full">
                     <motion.div

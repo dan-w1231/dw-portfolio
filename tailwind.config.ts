@@ -13,10 +13,8 @@ export default {
       sm: '0 2px 6px rgb(15 23 42 / 0.08)',
       md: '0 24px 80px -4px rgb(15 23 42 / 0.04)',
       lg: '0 24px 80px -4px rgb(15 23 42 / 0.12), 0 3px 6px rgb(15 23 42 / 0)',
-      xl: '2px 11px 16px rgb(15 23 42 / 0.17), 0 1px 6px rgb(15 23 42 / 0.17), 3px 23px 24px rgb(15 23 42 / 0.17)',
-      // sm: '0 2px 6px rgb(15 23 42 / 0.08)',
-      // md: '0 8px 8px rgb(15 23 42 / 0.05), 0 3px 6px rgb(15 23 42 / 0.05)',
-      // lg: '0 24px 15px rgb(15 23 42 / 0.08), 0 3px 6px rgb(15 23 42 / 0.08)',
+      xl: '0px 24px 32px rgba(142, 171, 198, 0.35)',
+      // lg: '0 24px 80px -4px rgb(15 23 42 / 0.12), 0 3px 6px rgb(15 23 42 / 0)',
       // xl: '2px 11px 16px rgb(15 23 42 / 0.17), 0 1px 6px rgb(15 23 42 / 0.17), 3px 23px 24px rgb(15 23 42 / 0.17)',
     },
     fontSize: {

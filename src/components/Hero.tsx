@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Button } from '@/components/Button'
 import { ButtonLink } from '@/components/ButtonLink'
 // Webpack import fuckery why do PDFs not just work?
@@ -15,11 +15,10 @@ import mL5 from '@/images/resources/sphere/5.png'
 
 export function Hero() {
   return ( 
-    <AnimatePresence>
-      <motion.div key={1} exit={{ opacity: 0, y: -30}} >
+      <motion.div key={1} >
         <header className="relative m-w-full px-2 xs:px-4 rounded-4xl max-w-screen-2xl mx-auto">
           <div  
-            className="relative max-w-full pt-11 md:pt-20 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-lg rounded-4xl md:rounded-5xl xl:rounded-6xl flex flex-row flex-wrap justify-between gap-6 md:gap-10 overflow-hidden z-[2]">
+            className="relative max-w-full pt-11 md:pt-20 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-xl rounded-4xl md:rounded-5xl xl:rounded-6xl flex flex-row flex-wrap justify-between gap-6 md:gap-10 overflow-hidden z-[2]">
             <div className="relative max-w-full md:w-3/4 items-end flex items-center z-[1]">
               <div className="w-full">
                 <motion.div
@@ -39,11 +38,11 @@ export function Hero() {
             </div>
             <div className="relative w-full sm:w-1/3 flex z-[3]">
               <motion.button 
-                className="relative px-2 sm:px-0 z-10 max-w-full flex w-full md:w-80 xl:w-64"
+                className="relative px-2 sm:px-0 z-10 max-w-full flex w-full md:w-80 xl:w-64 rounded-full"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ type: "spring", stiffness: 100, duration: 1.5}}
-                whileHover={{ scale: 1.05, y: 0, transition: { type: "spring", stiffness: 400, duration: 0.2 }, }}
+                whileHover={{ scale: 0.98, y: 0, transition: { type: "spring", stiffness: 400, duration: 0.2 }, }}
                 whileTap={{ scale: 0.95, y: 0, transition: { type: "spring", stiffness: 400, duration: 0.2 }, }}
                 >
                 <ButtonLink href="/danWallaceCV2024.pdf" target="_blank" className="w-full">
@@ -145,6 +144,5 @@ export function Hero() {
           </div>
         </header>
       </motion.div>
-    </AnimatePresence>
   )
 }
