@@ -8,10 +8,11 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 export function NavBar() {
-  
+  const handleContactClick = () => {
+    document.getElementById('contactBox')?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
-    // Need to add new parent div with mx-auto, then mx-2 xs:mx-4 on the div inside
-    <div className="sticky top-4 w-full flex items-center mx-auto max-w-screen-2xl z-[99]">
+    <div className="sticky top-2 xs:top-4 xl:4 w-full flex items-center mx-auto max-w-screen-2xl z-[99]">
       <div className="w-full flex items-center pr-2 pl-6 py-2 bg-sectionGrad backdrop-blur-[60px] rounded-4xl xl:rounded-5xl z-[99] max-w-screen-2xl mx-2 xs:mx-4">
         <Image src={Logo} height="22" alt="DW Design" priority />
         <motion.div className="relative ml-auto"
@@ -19,9 +20,7 @@ export function NavBar() {
           whileTap={{ scale: 0.95, y: 0 }}
           transition={{ type: "spring", stiffness: 400, duration: 0.2 }}
           >
-            <Link href="#contactBox">
-                <Button variant="secondary" className="ml-auto px-6">Contact</Button>
-            </Link>
+          <Button onClick={handleContactClick} variant="secondary" className="ml-auto px-6">Contact</Button>
         </motion.div>
         </div>
       </div>
