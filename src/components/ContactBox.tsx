@@ -26,7 +26,7 @@ export function ContactBox() {
         <GridPattern x="50%" y="100%" />
       </div>
       <div className="relative">
-        <div className="bg-white/60 rounded-4xl rounded-tr-8xl backdrop-blur shadow-lg pt-px rounded-4xl md:rounded-5xl xl:rounded-6xl">
+        <div className="bg-cardGrad rounded-4xl rounded-tr-8xl backdrop-blur shadow-lg pt-px rounded-4xl md:rounded-5xl xl:rounded-6xl">
           {/* AVATAR IMAGE
           <div className="absolute top-[0] right-[0px] h-24 w-24 overflow-hidden rounded-full bg-slate-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
             <Image

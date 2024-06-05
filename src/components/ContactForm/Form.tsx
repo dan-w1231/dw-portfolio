@@ -169,7 +169,7 @@ function Form() {
               Your message has been sent.
           </div>,
           {
-            duration: 7000,
+            duration: 5000,
             style: {
               fontWeight: "normal",
             },
@@ -189,7 +189,7 @@ function Form() {
         setFormSubmitted(true);
         setShowValidationStatus(false);
       } else {
-        toast.error(errorMessage, {duration: 6000 });
+        toast.error(errorMessage, {duration: 5000 });
       }
     } else {
       toast.error(
@@ -199,7 +199,7 @@ function Form() {
             Please check your inputs and try again, or contact me via email.
         </div>,
         {
-          duration: 7000,
+          duration: 5000,
           style: {
             fontWeight: "normal",
           },

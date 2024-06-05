@@ -128,7 +128,7 @@ const TextArea = forwardRef (({
           onInput={handleInput}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          className="block transition-all pointer-events-auto leading-normal tracking-tight pl-[32px] pr-[88px] py-[21px] rounded-[38px] w-full max-w-[95%] appearance-none outline-none text-blurple text-base font-bold sm:text-lg p-0 h-[78px] max-h-[278px]"
+          className="block transition-all resize-none pointer-events-auto leading-normal tracking-tight pl-[32px] pr-[88px] py-[21px] rounded-[38px] w-full max-w-[95%] appearance-none outline-none text-blurple text-base font-bold sm:text-lg p-0 h-[78px] max-h-[278px]"
         ></textarea>
     </motion.div>
   );

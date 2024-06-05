@@ -14,7 +14,7 @@ export default function Home() {
         key="homePage"
         className="relative w-screen mx-auto"
         >
-        <div className="relative mx-auto mt-2 xs:mt-4 xl:mt-14" key={4}>
+        <div className="relative mx-auto mt-6 xs:mt-8 xl:mt-8" key={4}>
             <motion.div
               key="contentHero"
               initial={{ opacity: 0, y: 50, rotate: 0 }}

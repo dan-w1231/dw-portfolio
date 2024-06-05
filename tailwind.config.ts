@@ -73,7 +73,9 @@ export default {
       },
       backgroundImage: {
         'primaryGrad': `linear-gradient(180deg, rgba(128,141,255,1) 0%, rgba(87,104,255,1) 8%, rgba(87,104,255,1) 50%, rgba(71,86,226,1) 100%);`,
+        'secondaryGrad': `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(236,235,241,1) 8%, rgba(236,235,241,1) 50%, rgba(221,219,232,1) 100%);`,
         'cardGrad': `linear-gradient(150deg, rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255, .04) 100%);`,
+        'sectionGrad': `linear-gradient(150deg, rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255,0.1) 100%);`,
         'noise-pattern': `url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1295275/background-noise.png),
                           radial-gradient(50% 50% at 50% 20%, rgba(89, 69, 214, 0.08) 0%, rgba(89, 69, 214, 0) 100%), 
                           radial-gradient(45% 55% at 100% 50%, rgba(30, 41, 140, 0.16) 0%, rgba(30, 41, 140, 0) 100%),
