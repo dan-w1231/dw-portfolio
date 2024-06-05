@@ -22,7 +22,7 @@ export function ContactBox() {
       aria-labelledby="contactBox-Title"
       className="max-w-screen-2xl mt-2 xs:mt-4 px-2 xs:px-4 sm:pb-16 m-auto"
     >
-      <div className="absolute inset-x-0 bottom-0 top-1/2 text-midnight-900/10 [mask-image:linear-gradient(transparent,white)]">
+      <div className="absolute pointer-events-none inset-x-0 bottom-0 top-1/2 text-midnight-900/10 [mask-image:linear-gradient(transparent,white)]">
         <GridPattern x="50%" y="100%" />
       </div>
       <div className="relative">
@@ -42,7 +42,7 @@ export function ContactBox() {
                 Or fill out this form and I'll get back to you.<Image src={arrow} alt="arrow pointing to form" className="xl:-rotate-90" />
               </p>
             </div>
-            <div id="contactFormArea" className="relative w-full md:w-half xl:max-w-[450px] xl:h-auto">
+            <div id="contactFormArea" className="relative w-full md:w-half xl:max-w-[580px] xl:h-auto">
               <Form />
             </div>
           </div>

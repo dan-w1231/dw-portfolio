@@ -7,7 +7,7 @@ import { ContactBox } from '@/components/ContactBox'
 import Zoomy from '@/components/Zoomy'
 import Link from 'next/link'
 import Image from 'next/image'
-import MediaQuery from 'react-responsive'
+import MediaQuery, { useMediaQuery } from 'react-responsive';
 
 // Static Images
 import yourDeal from '@/images/resources/deviceImages/yourDeal-flat.png'
@@ -128,6 +128,7 @@ const NVImages = [
 export default function NewVehicle() {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
+  const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 768 });
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
@@ -142,7 +143,7 @@ export default function NewVehicle() {
         className="relative w-screen mx-auto mt-2 xs:mt-4 md:mt-8 xl:mt-8"
         ref={targetRef}
       >
-        <div className="relative mx-auto">
+        <div className="relative mx-auto z-[1]">
           <div className="w-full max-w-screen-2xl flex flex-col gap-0 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97">
 
           {/* Left col */}
@@ -362,11 +363,16 @@ export default function NewVehicle() {
                 }
                 </MediaQuery>
               ))}
-
+              {/* {isDesktopOrLaptop && ( 
+              <ContactBox />
+              )}  */}
             </motion.ol>
             </motion.div>
           </div>
         </div>
+        {/* {!isDesktopOrLaptop && ( */}
+        <ContactBox />
+        {/* )} */}
       </motion.div>
     </>
   )

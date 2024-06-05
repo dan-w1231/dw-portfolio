@@ -88,5 +88,7 @@ export default {
       }
     },
   },
-  plugins: [nextui()],
+    plugins: [
+    require('@tailwindcss/container-queries'),
+  ],
 } satisfies Config

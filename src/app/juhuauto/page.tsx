@@ -3,6 +3,7 @@ import { BulletTag } from '@/components/BulletTag'
 import { motion, useTransform, useScroll } from 'framer-motion'
 import { AnimateHeightChange } from '@/components/AnimateHeightChange'
 import { useRef, useEffect } from "react"
+import { ContactBox } from '@/components/ContactBox'
 import Zoomy from '@/components/Zoomy'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -19,7 +20,7 @@ import bdkWireframes from '@/images/resources/bdkWireframes.png'
 import bdkWireframesToJuhu from '@/images/resources/bdkWireframesToJuhu.png'
 import juhuUserTest from '@/images/resources/juhuUserTest.png'
 import ABcategories from '@/images/resources/CategoryABResults.png'
-import MediaQuery from 'react-responsive'
+import MediaQuery, { useMediaQuery } from 'react-responsive';
 // import PhysicalDemandsTest from '@/images/resources/PDA-jobRecordDARK.png'
 
 
@@ -106,6 +107,7 @@ const JuhuImages = [
 export default function JuhuAuto() {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
+  const isDesktopOrLaptop = useMediaQuery({ minDeviceWidth: 768 });
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
@@ -120,7 +122,7 @@ export default function JuhuAuto() {
         className="relative w-screen mx-auto mt-2 xs:mt-4 md:mt-8 xl:mt-8"
         ref={targetRef}
       >
-        <div className="relative mx-auto">
+        <div className="relative mx-auto z-[1]">
           <div className="w-full max-w-screen-2xl flex flex-col gap-0 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97"
 >
           {/* Left col */}
@@ -312,10 +314,16 @@ export default function JuhuAuto() {
                 }
                 </MediaQuery>
               ))}
+              {/* {isDesktopOrLaptop && ( 
+              <ContactBox />
+              )}  */}
             </motion.div>
           </motion.div>
           </div>
         </div>
+        {/* {!isDesktopOrLaptop && ( */}
+        <ContactBox />
+        {/* )} */}
       </motion.div>
     </>
   )
