@@ -11,7 +11,7 @@ export function NavBar() {
   
   return (
     // Need to add new parent div with mx-auto, then mx-2 xs:mx-4 on the div inside
-    <div className="sticky top-4 w-full flex items-center mx-auto max-w-screen-2xl">
+    <div className="sticky top-4 w-full flex items-center mx-auto max-w-screen-2xl z-[99]">
       <div className="w-full flex items-center pr-2 pl-6 py-2 bg-sectionGrad backdrop-blur-[60px] rounded-4xl xl:rounded-5xl z-[99] max-w-screen-2xl mx-2 xs:mx-4">
         <Image src={Logo} height="22" alt="DW Design" priority />
         <motion.div className="relative ml-auto"
