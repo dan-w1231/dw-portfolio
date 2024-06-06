@@ -6,7 +6,7 @@ import arrow from '@/images/resources/arrowDown.svg'
 import Form from './ContactForm/Form'
 import { processClasses } from '@/app/utils/processClasses'
 
-export function ContactBox({ useContainerQuery, flexClass }: { useContainerQuery?: boolean, flexClass?: string}) {
+export function ContactBox({ useContainerQuery, parentClass, flexClass }: { useContainerQuery?: boolean, parentClass?: string, flexClass?: string}) {
 
   const email = "dan@dwdesign.io";
   const copyEmail = (event: React.MouseEvent) => {
@@ -21,7 +21,7 @@ export function ContactBox({ useContainerQuery, flexClass }: { useContainerQuery
     <section
       id="contactBox"
       aria-labelledby="contactBox-Title"
-      className="max-w-screen-2xl mt-2 xs:mt-4 sm:pb-16 m-auto w-full"
+      className={`max-w-screen-2xl sm:pb-16 m-auto w-full ${parentClass}`}
     >
       <div className="absolute pointer-events-none inset-x-0 bottom-0 top-1/2 text-midnight-900/10 [mask-image:linear-gradient(transparent,white)]">
         <GridPattern x="50%" y="100%" />

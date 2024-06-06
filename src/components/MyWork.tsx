@@ -252,7 +252,7 @@ export function MyWork() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{  stiffness: 70, duration: 1.5, staggerChildren: 0.5 }}
               >
-              <ContactBox useContainerQuery={false} flexClass="md:flex-row" />
+              <ContactBox useContainerQuery={false} parentClass="mt-2 xs:mt-4" flexClass="md:flex-row" />
           </motion.div>
         </section>
       </motion.div>
