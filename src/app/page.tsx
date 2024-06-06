@@ -4,6 +4,7 @@ import { SectionTitle } from '@/components/SectionTitle'
 import { Hero } from '@/components/Hero'
 import { motion } from "framer-motion"
 import { MyWork } from '@/components/MyWork'
+import { ContactBox } from '@/components/ContactBox'
 
 export default function Home() {
   return (

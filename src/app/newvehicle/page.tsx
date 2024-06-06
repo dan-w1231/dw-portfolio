@@ -363,16 +363,20 @@ export default function NewVehicle() {
                 }
                 </MediaQuery>
               ))}
-              {/* {isDesktopOrLaptop && ( 
-              <ContactBox />
-              )}  */}
+              {isDesktopOrLaptop && ( 
+              <div className="sticky top-8 w-full" >
+                <ContactBox useContainerQuery={true} flexClass="@xs:flex-row"/>
+              </div>
+              )} 
             </motion.ol>
             </motion.div>
           </div>
         </div>
-        {/* {!isDesktopOrLaptop && ( */}
-        <ContactBox />
-        {/* )} */}
+        {!isDesktopOrLaptop && (
+        <div className="px-2 xs:px-4">
+          <ContactBox useContainerQuery={false} flexClass="md:flex-row" />
+        </div>
+        )}
       </motion.div>
     </>
   )

@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import Cross from '@/images/resources/cross.svg';
 import Tick from '@/images/resources/tick.svg';
 import Loader from 'react-loading-icons/dist/esm/components/rings'
+import { processClasses } from '@/app/utils/processClasses'
 
 function FieldStatus({ name, error, showMessage }: { name: string; error: string | undefined; showMessage: boolean }) {
   return (
@@ -38,8 +39,12 @@ type FormValues = {
     message?: string;
   };
 };
+interface FormProps {
+  useContainerQuery?: boolean; 
+  flexClass?: string;
+}
 
-function Form() {
+const Form: React.FC<FormProps> = ({ flexClass, useContainerQuery, ...props }) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [formInteracted, setFormInteracted] = useState(false);
   const [showValidationStatus, setShowValidationStatus] = useState(false);
@@ -50,6 +55,7 @@ function Form() {
   const nameInputRef = useRef<InputRef | null>(null);
   const emailInputRef = useRef<InputRef | null>(null);
   const messageInputRef = useRef<InputRef | null>(null);
+
   interface InputRef {
     reset: () => void;
   }
@@ -219,14 +225,31 @@ function Form() {
   }
 };
 
+const processClasses = (classes: string, useContainerQuery?: boolean) => {
+  if (!useContainerQuery) {
+    return classes;
+  }
+
+  return classes
+  .split(' ')
+  .map((className) => {
+    if (className.startsWith('xs:') || className.startsWith('sm:') || className.startsWith('md:') || className.startsWith('lg:') || className.startsWith('xl:')) {
+      return '@' + className;
+    }
+
+    return className;
+  })
+  .join(' ');
+  };
+
   return (
     <form
       ref={formRef}
       onSubmit={handleSubmitContactForm}
-      className="relative xl:absolute rounded-lg bg-transparent w-full sm:w-auto"
+      className={processClasses(`relative w-full xl:absolute rounded-lg bg-transparent w-full @container`, useContainerQuery)}
     >
-      <div className="relative flex flex-col gap-2">
-        <div className="flex flex-col md:flex-row gap-2">
+      <div className={processClasses(`relative flex flex-col gap-2`, useContainerQuery)}>
+      <div className={processClasses(`flex flex-col gap-2 ${flexClass}`, useContainerQuery)}>
           <Input
             value={values.name}
             id="name"

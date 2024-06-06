@@ -314,16 +314,16 @@ export default function JuhuAuto() {
                 }
                 </MediaQuery>
               ))}
-              {/* {isDesktopOrLaptop && ( 
-              <ContactBox />
-              )}  */}
+              {isDesktopOrLaptop && ( 
+              <ContactBox useContainerQuery={true} flexClass="@xs:flex-row"/>
+              )} 
             </motion.div>
           </motion.div>
           </div>
         </div>
-        {/* {!isDesktopOrLaptop && ( */}
-        <ContactBox />
-        {/* )} */}
+        {!isDesktopOrLaptop && (
+        <ContactBox useContainerQuery={false} flexClass="md:flex-row"/>
+        )}
       </motion.div>
     </>
   )

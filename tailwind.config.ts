@@ -50,6 +50,14 @@ export default {
         // => @media (min-width: 431px) { ... }
         'xs': '431px',
       },
+      containers: {
+        'xs': '431px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
       fontFamily: {
         display: ['Cabinet Grotesk', ...defaultTheme.fontFamily.sans],
         serif: ['EB Garamond', ...defaultTheme.fontFamily.serif],

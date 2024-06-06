@@ -245,14 +245,14 @@ export function MyWork() {
             </motion.ol>
           </Container>
           <motion.div
-                className="sticky top-[176px] md:top-[624px] z-50"
+                className="sticky top-[176px] md:top-[624px] px-2 xs:px-4 z-50"
                 // style={{ zIndex: aboutZIndex }}
                 initial={{ opacity: 0, y: 50 }}
                 viewport= {{ once: true, amount: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{  stiffness: 70, duration: 1.5, staggerChildren: 0.5 }}
               >
-              <ContactBox />
+              <ContactBox useContainerQuery={false} flexClass="md:flex-row" />
           </motion.div>
         </section>
       </motion.div>
