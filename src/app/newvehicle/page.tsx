@@ -364,9 +364,7 @@ export default function NewVehicle() {
                 </MediaQuery>
               ))}
               {isDesktopOrLaptop && ( 
-              <div className="sticky top-8 w-full" >
                 <ContactBox useContainerQuery={true} flexClass="@xs:flex-row"/>
-              </div>
               )} 
             </motion.ol>
             </motion.div>
