@@ -5,11 +5,26 @@ import { motion } from 'framer-motion';
 import { Light } from './Light';
 import { Divider } from './Divider';
 import { Dark } from './Dark';
-import { useTheme } from '@/ThemeContext'; // Adjust the import path as necessary
+
+const getInitialTheme = (): 'dark' | 'light' => {
+  if (typeof window !== 'undefined') {
+    if (localStorage.theme) return localStorage.theme as 'dark' | 'light';
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+  }
+  return 'light';
+};
+
+const saveTheme = (theme: 'dark' | 'light'): void => {
+  localStorage.theme = theme;
+  if (theme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+};
 
 export const LightDarkToggle: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
-  const darkMode = theme === 'dark';
+  const [darkMode, setDarkMode] = useState<boolean>(getInitialTheme() === 'dark');
 
   useEffect(() => {
     saveTheme(darkMode ? 'dark' : 'light');
