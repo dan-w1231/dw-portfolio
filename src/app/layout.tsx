@@ -1,5 +1,4 @@
-'use client'
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import { type Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import clsx from 'clsx';
@@ -11,7 +10,6 @@ import { FlowChart } from '@/components/FlowChart';
 import Template from '@/app/template';
 import { Toaster } from 'react-hot-toast';
 import { LightDarkToggle, useTheme } from '@/components/HOC/ThemeContext';
-import { motion } from 'framer-motion';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -64,9 +62,8 @@ export default function RootLayout({
             rel="stylesheet"
           />
         </head>
-        <motion.body 
+        <body
           className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-lightBg bg-[#E1D4DE] dark:bg-[#1A1824] dark:bg-darkBg bg-noisePattern"
-          transition={{ duration: 0.3 }}
           >
           <Toaster 
             position="bottom-center"
@@ -108,7 +105,7 @@ export default function RootLayout({
           <NavBar />
             <Template>{children}</Template>
           <Footer />
-        </motion.body>
+        </body>
       </html>
     </LightDarkToggle>
   )
