@@ -4,7 +4,6 @@ import { usePathname } from 'next/navigation'
 import FrozenRoute from '@/components/HOC/FrozenRoute'
 import { motion, AnimatePresence } from 'framer-motion'
 
-
 export default function Template({ 
   children, 
 }: { 
@@ -20,8 +19,7 @@ export default function Template({
         transition={{ type: "spring", stiffness: 70, delay: 0.3, duration: 1.5 }}
         exit={{ opacity: 0, y: 30 }}
         >
-        {/* Committing sacrilege to make exit animations work */}
-        <FrozenRoute>{children}</FrozenRoute>
+          <FrozenRoute>{children}</FrozenRoute>
       </motion.div>
     </AnimatePresence>
   )

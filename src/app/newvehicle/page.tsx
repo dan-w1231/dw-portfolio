@@ -150,7 +150,7 @@ export default function NewVehicle() {
           <div className="w-full max-w-[800px] order-2 md:order-1">
             <header className="relative w-full px-2 xs:px-4 2xl:pl-4 rounded-4xl mx-auto">
               <div
-                className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-xl rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">   
+                className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad dark:bg-cardGradDark backdrop-blur-[140px] shadow-xl dark:shadow-xlD rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">   
                 <div className="relative max-w-full items-end flex items-center md:mt-4">
                   <div className="w-full">
                     <motion.div
@@ -163,44 +163,44 @@ export default function NewVehicle() {
                         whileTap={{ x: -6 }}>
                         <Link
                           href="/"
-                          className="text-base font-medium text-blurple hover:text-midnight-900"
+                          className="text-base font-medium text-blurple-900 hover:text-midnight-900 dark:text-ice-900 "
                         >
                           <span aria-hidden="true">&larr;</span> Back 
                         </Link>
                       </motion.div>
-                        <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple">
+                        <h1 className="mt-6 font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-blurple-900">
                           NewVehicle
                         </h1>
-                        <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900">
+                        <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 ">
                           Buy Online
                         </h2>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             A vehicle purchase experience that can be embedded into dealership websites, and a secure checkout 
                             for Buyer’s to manage their car purchase.
                           </p>
                           <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
                             <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>To optimised experience</BulletTag>
                           </div>
-                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-10">
                             Goals
                           </h3>
-                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
+                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-6">
                             For car buyers
                           </h4>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             Whether buying a car with cash or on finance, create an online purchasing experience that’s as transparent and seamless as possible.
                           </p>
-                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 mt-6">
+                          <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-6">
                             For car sellers
                           </h4>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             Generate and display high quality leads by making a frictionless car purchase experience for buyers, themed to fit each retailer’s 
                             branding. Working from the philosophy that the better the experience is for the buyer, the more cars dealers will sell.
                           </p>
-                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-10">
                             Scope
                           </h3>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             Leverage the business’s existing vehicle quoting technology by creating themeable lead generating tools, focused on helping buyers 
                             who want to get the best finance deal for their new vehicle.
                           </p>
@@ -213,15 +213,15 @@ export default function NewVehicle() {
                               <Image src={relationshipMap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="research plan" />
                             </Zoomy>  
                           </div>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             At it’s core we wanted a finance comparison tool that dealers could integrate into their websites. Buyers can compare finance products 
                             for the vehicle they want, then continue on to NewVehicle.com to check their eligibility or apply. Sellers are then notified of the lead 
                             within a lead management system so they can take action.
                           </p>
-                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-10">
                             Research
                           </h3>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             At the beginning I wanted to better understand how people felt about buying cars, in particular about buying on finance. There seemed to be a
                             wealth of knowledge about the behaviour of car buyers online, but much less about finance specifically.
                           </p>
@@ -230,7 +230,7 @@ export default function NewVehicle() {
                               <Image src={researchPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="Research plan" />
                             </Zoomy>
                           </div>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             I planned the questions with our team then took to the streets and asked people around Manchester their thoughts.
                           </p>
                           <div className="mt-6 cursor-zoom-in">
@@ -238,7 +238,7 @@ export default function NewVehicle() {
                               <Image src={streetQPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6" alt="Planning for street interviews" />
                           </Zoomy>
                           </div>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             We then card sorted the results into different types of buyers, then I created personas matching people to shopping behaviours and business opportunities, 
                             which became invaluable when designing many parts of the consumer UI.
                           </p>
@@ -247,23 +247,23 @@ export default function NewVehicle() {
                               <Image src={personas} loading="lazy" placeholder="blur" className="rounded-lg" alt="Four of the personas created" />
                             </Zoomy>
                           </div>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           One of the common worries that respondents expressed with buying online was <span className="font-bold">trust and security.</span> Finance applications inherently require very sensitive customer data (from employment history to bank details), and respondents commented that they’d need to trust a 3rd party website for them to enter this kind of information with confidence.
                           </p>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           A <span className="font-bold">lack of transparency</span> with the finance process was also commonly expressed, with some respondents commenting on how they sometimes felt “left in the dark” when it comes to a finance deal. Some claimed sales staff may emphasise the <span className="italic">monthly payment</span> while glossing over <span className="italic">interest rates, payment schedules, final payments</span> and potential <span className="italic">penalty fees</span> for going over the mileage limits of a PCP finance deal.
                           </p>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
 
                           From this one of the goals became <span className="font-bold">compliance, security</span> at every stage of the process.
                           </p>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           Other take-aways included having clear and detailed vehicle information, the ability to save your progress during the application, and having the dealer information available from any step of the purchase.
                           </p>
-                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-10">
                             Wireframing
                           </h3>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             The next sessions I brought devs together to brainstorm user flows, while I scribbled on the (WriteOn) walls.
                           </p>
                           <div className="mt-6 cursor-zoom-in">
@@ -271,7 +271,7 @@ export default function NewVehicle() {
                               <Image src={wireframeNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Wireframes of the NV application process" />
                             </Zoomy>
                           </div>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             Due to the size of the undertaking (quoting, eligibility checking, applications, an account) I formalized a process diagram in Miro to share how everything could fit together.
                           </p>
                           <div className="mt-6 flex flex-row gap-4">
@@ -286,7 +286,7 @@ export default function NewVehicle() {
                             </Zoomy>
                             </div>
                           </div>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             After lots of coffee, hundreds of variations and a few review sessions, the first designs for the new finance calculators, applications, and checkout were presented end-to-end. 
                           </p>
                           <div className="mt-6 cursor-zoom-in">
@@ -294,17 +294,17 @@ export default function NewVehicle() {
                               <Image src={productPages} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
                             </Zoomy>
                           </div>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             Given that trust was a big factor, it was important to create a seamless experience for users 
                             transitioning from dealership websites to our checkout process. I sat down with developers to create 
                             a themeing guide that would allow each dealership to customize their checkout to their own brand, ensuring 
                             customers still felt at home when leaving the retailer’s site. A separate 'NewVehicle.com' UI guide was 
                             also created that could be expanded on if the business decided to have parts of the site unthemed and unrelated to dealerships.
                           </p>
-                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 mt-10">
+                          <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-10">
                             Analytics and Optimisations
                           </h3>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             After release the product was a huge success shipping live to 800+ dealerships in the UK, with the number of
                             leads generated up around ~35%. The following year I spent a lot of time burried in Google Analytics and Hotjar, setting it up, searching for weak performing pages and presenting
                             hypotheses of ways we could make the process simpler and improve conversion rates on different pages.
@@ -314,16 +314,16 @@ export default function NewVehicle() {
                               <Image src={analyticsNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
                             </Zoomy>
                           </div>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             One example of improvement was a change to the finance calculator and its following page. The calculator was the one area embedded on the retailer's vehicle page
                             and received the highest number of impressions of any stage. Each quote had a "Learn More" call to action which lead
                             to a "Finance Details" page with 2 options: Check Eligibility or Apply.
                           </p>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             Drop-offs were highest at these two steps, so the hypothesis was to add a more direct call to action on each quote ("Apply Now" and "Check Eligibility") and move the finance details 
                             into the calculator, removing the need for the page inbetween a quote and applying or checking eligbility.
                           </p>
-                          <p className="mt-4 text-lg tracking-tight text-midnight-800">
+                          <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                             The change was beta tested to select retailers, and the results showed both an increase in engagement on the quotes, 
                             and considerably less dropoffs during the checkout, so the change was subsequently rolled out to all retailers.
                           </p>
@@ -340,7 +340,7 @@ export default function NewVehicle() {
           </div>
           {/* Right col */}
             <motion.div 
-              className="w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%] order-1 md:order-2"
+              className="relative w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%] order-1 md:order-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 70, delay: initialWindowWidth > 767 ? 1 : 0, duration: 1.5 }}
@@ -348,7 +348,7 @@ export default function NewVehicle() {
             <motion.ol 
               style={{ y }}
               role="list" 
-              className="rounded-t-xl px-2 py-2 xs:px-4 xs:py-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4 md:backdrop-blur-[0px]"
+              className="rounded-t-xl px-2 py-2 xs:px-4 xs:py-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
               >
               {/* CAUSING HYDRATION ISSUES? */}
               {NVImages.map((images) => (
@@ -363,15 +363,23 @@ export default function NewVehicle() {
                 }
                 </MediaQuery>
               ))}
-              {isDesktopOrLaptop && ( 
-                <ContactBox useContainerQuery={true} flexClass="@xs:flex-row" />
-              )} 
             </motion.ol>
+              {isDesktopOrLaptop && ( 
+                <motion.div 
+                  className="absolute bottom-0 w-full md:pr-4"
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport= {{ once: false, amount: 0.25 }}
+                  transition={{ type: "spring", stiffness: 70, duration: 1.2 }}
+                  >
+                  <ContactBox useContainerQuery={true} parentClass="" flexClass="@xs:flex-row" />
+                </motion.div>
+              )} 
             </motion.div>
           </div>
         </div>
         {!isDesktopOrLaptop && (
-        <div className="px-2 xs:px-4">
+        <div className="relative px-2 xs:px-4 mt-2 xs:mt-4 sm:mb-16">
           <ContactBox useContainerQuery={false} flexClass="md:flex-row" />
         </div>
         )}

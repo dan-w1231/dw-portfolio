@@ -17,7 +17,7 @@ import { processClasses } from '@/app/utils/processClasses'
 function FieldStatus({ name, error, showMessage }: { name: string; error: string | undefined; showMessage: boolean }) {
   return (
     <motion.div 
-      className="flex items-center gap-2 text-base"
+      className="flex items-center gap-2 text-base dark:text-white"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 80, duration: 1.5 }}
@@ -320,17 +320,13 @@ const processClasses = (classes: string, useContainerQuery?: boolean) => {
       </div>
 
         {formInteracted && showValidationStatus && (
-        <motion.div 
-          className="z-[99] sm:flex sm:flex-col gap-2 bg-white bg-opacity-100 md:bg-opacity-80 rounded-t-[40px] rounded-b-[20px] overflow-hidden px-6 py-8 mt-2"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 30}}
-          transition={{ type: "spring", stiffness: 80, duration: 1.5 }}
+        <div
+          className="z-[99] sm:flex sm:flex-col gap-2 bg-white dark:bg-transparent dark:bg-cardGradDark dark:backdrop-blur-[140px] md:bg-opacity-80 rounded-t-[40px] rounded-b-[20px] overflow-hidden px-6 py-8 mt-2"
         >
             <FieldStatus name="Name" error={values.errors.name} showMessage={false} />
             <FieldStatus name="Email" error={values.errors.email} showMessage={true} />
             <FieldStatus name="Message" error={values.errors.message} showMessage={false} />
-        </motion.div>
+        </div>
 
         )}
     </form>

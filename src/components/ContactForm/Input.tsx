@@ -88,7 +88,7 @@ const Input = forwardRef(({
       borderColor = "#5768FF";
     }
 
-    const inputClasses = `relative border transition-all ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-300 flex items-center align-center p-0 box-border transition-all outline-0 w-full bg-white shadow-xl text-base rounded-full hover:shadow-lg focus:shadow-lg pointer-events-none`;
+    const inputClasses = `relative border transition-all ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-300 flex items-center align-center p-0 box-border transition-all outline-0 w-full bg-white dark:bg-transparent dark:bg-cardGradDark shadow-xl dark:shadow-xlD text-base rounded-full hover:shadow-lg focus:shadow-lg pointer-events-none`;
 
     const wrapperVariants = ({
       default: { scale: 1, y: 0 },
@@ -110,13 +110,14 @@ const Input = forwardRef(({
       >
         <motion.label
           htmlFor={id}
-          className={`absolute left-[16px] text-base tracking-tight sm:text-lg transition-transform duration-600 px-[14px] rounded-full bg-white bg-opacity-50 backdrop-blur text-midnight-900 border-2xl`}
+          className={`absolute left-[16px] text-base tracking-tight sm:text-lg transition-transform dark:bg-transparent duration-600 px-[14px] rounded-full text-midnight-900 dark:text-ice-900 border-2xl z-[98]`}
           initial={{ x: 0, y: 0 }}
           style={{ 
             translateY: isFocused || value ? '-38px' : '0',
             translateX: isFocused || value ? '-17px' : '0',
             scale: isFocused || value ? 0.8 : 1,
-            // backgroundColor: isFocused || props.value ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0)'
+            backdropFilter: isFocused || value ? 'blur(140px)' : 'none',
+            backgroundColor: isFocused || value ? '#20252b' : 'transparent',
           }}
           transition={{ type:"spring", stiffness: 80, duration: 0.5 }}
           >
@@ -127,7 +128,7 @@ const Input = forwardRef(({
           id={id}
           name={name}
           value={value}
-          className="block pointer-events-auto transition-all px-[32px] py-[21px] rounded-full w-full appearance-none outline-none text-blurple text-base sm:text-base font-bold tracking-tight  p-0"
+          className="block pointer-events-auto transition-all px-[32px] py-[21px] rounded-full w-full appearance-none outline-none text-blurple-900 dark:text-white text-base sm:text-base font-bold tracking-tight p-0 dark:bg-transparent"
           onInput={handleInput}
           onFocus={handleFocus}
           onBlur={handleBlur}

@@ -5,7 +5,7 @@ import { ContactBox } from '@/components/ContactBox'
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef, useEffect } from "react";
 import { Container } from '@/components/Container'
-import arrowTopRight from '@/images/resources/arrowTopRight.svg'
+import { Arrow } from '@/components/Arrow'
 import NVDeal from '@/images/resources/deviceImages/yourDealTradein.png'
 import insightsImage from '@/images/resources/insights.png'
 import breatheImage from '@/images/resources/breathe.png'
@@ -24,7 +24,7 @@ const myWork = [
     type: 'Case Study',
     image: function NVBuyNow() {
       return (
-        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#202A37_16%,#253243)]">
+        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#202A37_16%,#253243)] dark:bg-opacity-50">
           <motion.div
             className="w-[496px]"
             initial={{ opacity: 0, y: 32 }}
@@ -68,7 +68,7 @@ const myWork = [
     type: 'Case Study',
     image: function InsightsImage() {
       return (
-        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#3C2E97_35%,#5945D6)]">
+        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#3C2E97_35%,#5945D6)] dark:bg-opacity-50">
           <motion.div
             className="w-[370px]"
             initial={{ opacity: 0, y: 32 }}
@@ -90,7 +90,7 @@ const myWork = [
     type: 'Gallery',
     image: function FitnessCheckImage() {
       return (
-        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#95702A,#FEC351)]">
+        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#95702A,#FEC351)] dark:bg-opacity-50">
           <motion.div
             className="w-80"
             initial={{ opacity: 0, y: 32 }}
@@ -112,7 +112,7 @@ const myWork = [
     type: 'Gallery',
     image: function BreatheImage() {
       return (
-        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)]">
+        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[linear-gradient(#003842_33%,#001D22)] dark:bg-opacity-50">
           <motion.div
             className="w-[370px]"
             initial={{ opacity: 0, y: 32 }}
@@ -134,7 +134,7 @@ const myWork = [
     type: 'Gallery',
     image: function FinanceComparison() {
       return (
-        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#95702A,#FEC351)]">
+        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#95702A,#FEC351)] dark:bg-opacity-50">
           <motion.div
             className="w-80"
             initial={{ opacity: 0, y: 32 }}
@@ -156,7 +156,7 @@ const myWork = [
     type: 'Gallery',
     image: function DealerPlatform() {
       return (
-        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#3AC0A8,#45D6BC)]">
+        <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#3AC0A8,#45D6BC)] dark:bg-opacity-20 dark:backdrop-blur-[140px]">
           <motion.div
             className="w-80"
             initial={{ opacity: 0, y: 32 }}
@@ -179,12 +179,12 @@ export function MyWork() {
     hover: { scale: 0.98, y: -2 },
   })
 
-  const workArrowVariants = ({
-    hover: { 
-      backgroundColor: 'rgba(255,255,255,1)',
-      transform: 'scale(0.98)',
-       },
-  })
+  // const workArrowVariants = (theme: 'light' | 'dark') => ({
+  //   hover: { 
+  //     backgroundColor: theme === 'dark' ? 'rgba(0,0,0,0.8)' : 'rgba(255,255,255,1)',
+  //     transform: 'scale(0.98)',
+  //   },
+  // })
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -227,14 +227,14 @@ export function MyWork() {
                   <Link href={`/${work.url}/`} className="select-none">
                     <li
                       key={work.title}
-                      className="items-center gap-8 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-xl hover:shadow-lg md:grid-cols-3"
+                      className="items-center gap-8 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-xl dark:shadow-xlD hover:shadow-lg md:grid-cols-3"
                     >
                       <div key="workImageWrapper" className="relative flex justify-center h-[370px] md:h-[496px] sm:h-[496px] w-full md:w-[496px] overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl sm:h-60">
                         <work.image />
-                        <motion.div id="proceedArrow" variants={workArrowVariants} className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] xl:w-[140px] xl:h-[140px] bg-white bg-opacity-60 backdrop-blur-[60px] scale-100 rounded-full">
-                          <Image src={arrowTopRight} alt="" className="absolute w-auto xl:w-[40px]" />
+                        <motion.div id="proceedArrow" className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] bg-white/60 dark:bg-[#1B1B27] backdrop-blur-[60px] scale-100 rounded-[18px_26px_18px_18px] md:rounded-[18px_42px_18px_28px] xl:rounded-[18px_117px_18px_48px]">
+                          <Arrow className="absolute scale-[1.3] rotate-[235deg] text-midnight-700 dark:text-ice-700 w-auto" />
                         </motion.div>
-                        <motion.div id="typeTag" variants={workArrowVariants} className="absolute left-2 bottom-2 md:left-[initial] md:bottom-6 flex items-center justify-center px-4 py-2 bg-white bg-opacity-60 backdrop-blur-[60px] scale-100 rounded-full font-display text-lg tracking-tight font-bold text-midnight-900 text-center">
+                        <motion.div id="typeTag" className="absolute left-2 bottom-2 md:left-[initial] flex items-center justify-center px-4 py-2 bg-white dark:bg-[#1B1B27] bg-opacity-60 backdrop-blur-[60px] scale-100 rounded-full font-display text-lg tracking-tight font-bold text-midnight-900 dark:text-ice-900 text-center">
                           {work.type}
                         </motion.div>
                       </div>
@@ -248,11 +248,11 @@ export function MyWork() {
                 className="sticky top-[176px] md:top-[624px] px-2 xs:px-4 z-50"
                 // style={{ zIndex: aboutZIndex }}
                 initial={{ opacity: 0, y: 50 }}
-                viewport= {{ once: true, amount: 0 }}
+                viewport= {{ once: true, amount: 0.25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{  stiffness: 70, duration: 1.5, staggerChildren: 0.5 }}
+                transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
               >
-              <ContactBox useContainerQuery={false} parentClass="mt-2 xs:mt-4" flexClass="md:flex-row" />
+              <ContactBox useContainerQuery={false} parentClass="mt-2 sm:pb-16 xs:mt-4" flexClass="md:flex-row" />
           </motion.div>
         </section>
       </motion.div>

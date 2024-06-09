@@ -11,16 +11,16 @@ export function BulletTag({
   return (
     <div
       id="bulletTag"
-      className="relative flex align-center bg-white py-3 px-4 pr-5 rounded-full inline-block shadow-lg"
+      className="relative flex align-center bg-white dark:bg-transparent dark:bg-cardGradDark py-3 px-4 pr-5 rounded-full inline-block shadow-lg"
     >
       <div
         id="Tag"
         className="flex flex-row no-wrap justify-start items-center"
       >
-        <span className="mr-2 text-base leading-6 text-blurple font-medium tracking-tight self-start">
+        <span className="mr-2 text-base leading-6 text-blurple-900 dark:text-blurple-700 font-medium tracking-tight self-start">
           •
         </span>
-        <span className="text-base leading-6 text-blurple font-medium tracking-tight">
+        <span className="text-base leading-6 text-blurple-900 dark:text-blurple-700 font-medium tracking-tight">
           {children}
         </span>
       </div>

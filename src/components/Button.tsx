@@ -54,12 +54,12 @@ export function Button({ className, variant = 'primary', ...props }: ButtonProps
 
   const baseClasses = 'relative overflow-hidden transform-gpu transition-all ease-in-out duration-300 hover:shadow-lg inline-flex items-center min-w-[108px] md:max-w-[248px] justify-center rounded-full py-4 px-8 text-lg font-semibold tracking-tight shadow-lg focus:outline-none h-[64px]';
   const primaryClasses = 'bg-primaryGrad text-white';
-  const secondaryClasses = 'bg-white/60 hover:bg-white/90 text-blurple border-2 border-blurple';
+  const secondaryClasses = 'bg-white/10 dark:transparent dark:bg-midnight-900/20 hover:bg-white/20 text-blurple-900 border border-blurple-900 h-[64px] rounded-full';
 
   const shineBaseClasses = clsx('absolute inset-0 bg-white bg-opacity-40 pointer-events-none transition-opacity duration-300', { 'opacity-0': !isMouseOver });
   // If primary button use primary, if secondary button use secondary
   const shinePrimaryClasses = 'radial-gradient(circle 220px at var(--x) var(--y), rgba(36,250,199,0.4) 0%, rgba(36,250,199,0))'
-  const shineSecondaryClasses = 'radial-gradient(circle 100px at var(--x) var(--y), rgba(168, 147, 255, 0.6) 0%, rgba(255, 216, 157, 0.6))';
+  const shineSecondaryClasses = 'radial-gradient(circle 100px at var(--x) var(--y), rgba(4, 30, 255, 0.2) 0%, rgba(4, 30, 255, 0))';
 
   const textClasses = 'relative pointer-events-none z-20';
 

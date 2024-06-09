@@ -53,7 +53,7 @@ export function ButtonLink({ className, href, target, ...props }: ButtonLinkProp
     };
   }, [element, springX, springY]);
 
-  const baseClasses = 'relative text-white overflow-hidden transform-gpu transition-all ease-in-out duration-300 hover:scale-98 hover:shadow-lg inline-flex min-w-[108px] md:max-w-[248px] justify-center rounded-full text-lg font-semibold tracking-tight shadow-xl focus:outline-none bg-primaryGrad h-[64px]';
+  const baseClasses = 'relative text-white overflow-hidden transform-gpu transition-all ease-in-out duration-300 hover:scale-98 hover:shadow-lg inline-flex min-w-[108px] md:max-w-[248px] justify-center rounded-full text-lg font-semibold tracking-tight shadow-xl dark:shadow-xlD focus:outline-none bg-primaryGrad h-[64px]';
   const shineClasses = clsx('absolute inset-0 bg-white bg-opacity-40 pointer-events-none transition-opacity duration-300', { 'opacity-0': !isMouseOver });
   const textClasses = 'relative pointer-events-none w-full h-full flex items-center justify-center z-20';
 

@@ -1,44 +1,52 @@
 import Image from 'next/image'
 import { motion } from "framer-motion"
+import { useInView } from 'react-intersection-observer';
 import { Button } from '@/components/Button'
 import { ButtonLink } from '@/components/ButtonLink'
-// Webpack import fuckery why do PDFs not just work?
-// import CV from '../../public/CV.pdf'
 import Circle from '@/images/resources/circle.svg'
-import nightBg from '@/images/resources/nightBg.svg'
+// import nightBg from '@/images/resources/nightBg.svg'
 import marbleSphere from '@/images/resources/marbleSphere.png'
-import mL1 from '@/images/resources/sphere/1.png'
 import mL2 from '@/images/resources/sphere/2.png'
 import mL3 from '@/images/resources/sphere/3.png'
-import mL4 from '@/images/resources/sphere/4.png'
-import mL5 from '@/images/resources/sphere/5.png'
+
 
 export function Hero() {
+
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+  const handleContactClick = () => {
+    const element = document.getElementById('contactBox');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+  
   return ( 
-      <motion.div key={1} >
+      <motion.div key={1} ref={ref} >
         <header className="relative m-w-full px-2 xs:px-4 rounded-4xl max-w-screen-2xl mx-auto">
           <div  
-            className="relative max-w-full pt-11 md:pt-20 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad backdrop-blur shadow-xl rounded-4xl md:rounded-5xl xl:rounded-6xl flex flex-row flex-wrap justify-between gap-6 md:gap-10 overflow-hidden z-[2]">
+            className="relative max-w-full pt-11 md:pt-20 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad dark:bg-cardGradDark backdrop-blur-[140px] shadow-xl dark:shadow-xlD rounded-4xl md:rounded-5xl xl:rounded-6xl flex flex-row flex-wrap justify-between gap-6 md:gap-10 overflow-hidden z-[2] before:absolute before:z[-1] before:rounded-[inherit] before:margin-1 before:blurple-900-gradient(#003842_33%,#001D22)]">
             <div className="relative max-w-full md:w-3/4 items-end flex items-center z-[1]">
               <div className="w-full">
                 <motion.div
                   className="relative z-[99]"
                   initial={{ opacity: 0, x: -80 }}
+                  viewport= {{ once: true, amount: 0 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ type: "spring", stiffness: 80, delay: 0.4, duration: 3, staggerChildren: 0.4 }}
                 >
-                  <p className="font-display text-3xl font-semibold tracking-tight text-midnight-600 mb-4 z-[99]">
+                  <p className="font-display text-3xl font-semibold tracking-tight text-midnight-600 dark:text-ice-600 mb-4 z-[99]">
                     Hey, I'm Dan 👋
                   </p>
-                  <h1 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900 z-1">
+                  <h1 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 z-1">
                     Digital product designer.
                   </h1>
                 </motion.div>
               </div>
             </div>
-            <div className="relative w-full sm:w-1/3 flex z-[3]">
-              <motion.button 
-                className="relative px-2 sm:px-0 z-10 max-w-full flex w-full md:w-80 xl:w-64 rounded-full"
+            <div className="relative w-full sm:w-1/2 flex flex-start z-[3] gap-2 md:gap-4">
+            <motion.button 
+                className="relative z-10 max-w-full flex w-full rounded-full max-w-[248px]"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ type: "spring", stiffness: 100, duration: 1.5}}
@@ -48,16 +56,27 @@ export function Hero() {
                 <ButtonLink href="/danWallaceCV2024.pdf" target="_blank" className="w-full">
                   View CV
                 </ButtonLink>
-                <div className="absolute h-[64px] bg-primaryGrad rounded-full pointer-events-none z-[98] scale-y-[-0.99] scale-x-[-0.99] brightness-100 blur-[8px] md:blur-[40px] opacity-20 w-[96%] top-[62px]" />
+                <div className="absolute h-[64px] bg-primaryGrad rounded-full pointer-events-none z-[98] scale-y-[-0.99] scale-x-[-0.99] brightness-100 blur-[20px] md:blur-[70px] opacity-20 w-full top-[62px]" />
+              </motion.button>
+              <motion.button 
+                className="relative z-10 max-w-full flex w-1/3 sm:w-full rounded-full max-w-[220px]"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ type: "spring", stiffness: 100, duration: 1.5}}
+                whileHover={{ scale: 0.98, y: 0, transition: { type: "spring", stiffness: 400, duration: 0.2 }, }}
+                whileTap={{ scale: 0.95, y: 0, transition: { type: "spring", stiffness: 400, duration: 0.2 }, }}
+                >
+                <Button onClick={handleContactClick} variant="secondary" className="w-full">
+                  Contact
+                </Button>
+                <div className="absolute h-[64px] border-3 border-blurple-900 rounded-full pointer-events-none z-[98] scale-y-[-0.99] scale-x-[-0.99] brightness-100 blur-[0px] md:blur-[40px] opacity-100 w-full top-[62px]" />
               </motion.button>
             </div>
-            <div className="absolute top-0 right-0 w-full h-full z-[2]">
-              {/* // header image stuff */}
-                            
+            <div className="absolute top-0 right-0 w-full h-full z-[2]">        
               <motion.div
-
                 className="absolute w-full h-full right-0 top-0"
                 initial={{ opacity: 0, x: 60, rotate: 0 }}
+                viewport= {{ once: true, amount: 0 }}
                 whileInView={{ opacity: 1, x: 0, rotate: 0 }}
                 transition={{ type: "spring", stiffness: 100, delay: 1, duration: 6 }}
               >
@@ -72,8 +91,8 @@ export function Hero() {
                         w-[10rem] sm:w-[14rem] md:w-[54rem] 
                         top-[6px] sm:top-[13px] xl:top-[-238px]
                         right-[-71px] md:right-[-230px] xl:right-[-245px] z-[-97] md:rotate-[30deg] 
-                        blur-[32px] md:blur-[130px] 
-                        opacity-75 lg:opacity-80 rotate-[-60deg] md:rotate(0deg)"
+                        blur-[32px] md:blur-[160px] 
+                        opacity-75 dark:opacity-55 lg:opacity-80 rotate-[-60deg] md:rotate(0deg)"
                       unoptimized
                     />
                   </motion.div>

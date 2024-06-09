@@ -86,7 +86,7 @@ const TextArea = forwardRef (({
     borderColor = "#5768FF";
   }
 
-  const inputClasses = `relative border flex items-center align-center transition-all ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-300 p-0 box-border transition-all outline-0 w-full bg-white shadow-xl  hover:shadow-lg focus:shadow-lg text-base md:text-base rounded-[38px] pointer-events-none`;
+  const inputClasses = `relative border flex items-center align-center transition-all ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-300 p-0 box-border transition-all outline-0 w-full bg-white dark:bg-cardGradDark dark:bg-transparent shadow-xl dark:shadow-xlD hover:shadow-lg focus:shadow-lg text-base md:text-base rounded-[38px] pointer-events-none`;
 
   const wrapperVariants = ({
     default: { scale: 1, y: 0 },
@@ -107,7 +107,7 @@ const TextArea = forwardRef (({
       variants={wrapperVariants}
       >
         <motion.label 
-          className="absolute top-4 left-[16px] block text-base tracking-tight sm:text-lg transition-transform duration-600 px-[14px] rounded-full bg-white bg-opacity-50 backdrop-blur text-midnight-900 border-2xl"
+          className="absolute top-4 left-[16px] block text-base tracking-tight sm:text-lg transition-transform duration-600 px-[14px] rounded-full bg-white/50 dark:bg-transparent text-midnight-900 dark:text-ice-900 border-2xl"
           htmlFor={id}
           initial={{ x: 0, y: 6 }}
           transition={{ type:"spring", stiffness: 80, duration: 0.5 }}
@@ -115,7 +115,8 @@ const TextArea = forwardRef (({
             translateY: isFocused || value ? '-38px' : '0',
             translateX: isFocused || value ? '-17px' : '0',
             scale: isFocused || value ? 0.8 : 1,
-            // backgroundColor: isFocused || props.value ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0)'
+            backdropFilter: isFocused || value ? 'blur(140px)' : 'none',
+            backgroundColor: isFocused || value ? '#20252b' : 'transparent',
           }}
           >
           {label}
@@ -128,7 +129,7 @@ const TextArea = forwardRef (({
           onInput={handleInput}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          className="block transition-all resize-none pointer-events-auto leading-normal tracking-tight pl-[32px] pr-[88px] py-[21px] rounded-[38px] w-full max-w-[95%] appearance-none outline-none text-blurple text-base font-bold sm:text-lg p-0 h-[78px] max-h-[278px]"
+          className="block transition-all resize-none pointer-events-auto leading-normal tracking-tight pl-[32px] pr-[88px] py-[21px] rounded-[38px] w-full max-w-[95%] appearance-none outline-none text-blurple-900 dark:text-white text-base font-bold sm:text-lg p-0 h-[78px] max-h-[278px] dark:bg-transparent"
         ></textarea>
     </motion.div>
   );

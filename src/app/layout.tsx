@@ -1,13 +1,16 @@
-import { type Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import clsx from 'clsx'
-import '@/styles/tailwind.css'
-import { NavBar } from '@/components/NavBar'
-import { Footer } from '@/components/Footer'
-import { GridPattern } from '@/components/GridPattern'
-import { FlowChart } from '@/components/FlowChart'
-import Template from '@/app/template'
-import { Toaster } from 'react-hot-toast'
+'use client'
+
+import React, { useEffect, useState } from 'react';
+import { type Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import clsx from 'clsx';
+import '@/styles/tailwind.css';
+import { NavBar } from '@/components/NavBar';
+import { Footer } from '@/components/Footer';
+import { GridPattern } from '@/components/GridPattern';
+import { FlowChart } from '@/components/FlowChart';
+import Template from '@/app/template';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,16 +29,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html
       lang="en"
       className={clsx(
-        'h-full scroll-smooth bg-white antialiased',
+        'h-full scroll-smooth bg-white antialiased dark:bg-darkBg',
         inter.variable,
       )}
     >
       <head>
-        <meta name="theme-color" content="#E1D4DE"/>
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link
           rel="preconnect"
@@ -60,7 +63,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-noise-pattern bg-radial-bg">
+      <body className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-lightBg bg-[#E1D4DE] dark:bg-[#1A1824] dark:bg-darkBg bg-noise-pattern bg-radial-bg">
         <Toaster 
           position="bottom-center"
           toastOptions={{
@@ -90,12 +93,12 @@ export default function RootLayout({
             }
         }}
         />
-        <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
-            <GridPattern x="20%" />
-          </div>
-          <div key="flowChartPattern" className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-midnight-900/10 [mask-image:linear-gradient(rgba(255,255,255,0.5),transparent)]">
-            <div className="right-[-90px]">
-              <FlowChart size="100%" />
+        <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/10 dark:text-ice-900/20 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
+          <GridPattern x="20%" />
+        </div>
+        <div key="flowChartPattern" className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-midnight-900/50 dark:text-ice-900/40 [mask-image:linear-gradient(rgba(255,255,255,0.2),transparent)]">
+          <div className="right-[-90px]">
+            <FlowChart size="100%" />
           </div>
         </div>
         <NavBar />
