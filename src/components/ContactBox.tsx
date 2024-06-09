@@ -34,7 +34,7 @@ export function ContactBox({ useContainerQuery, parentClass, flexClass }: { useC
                 className={processClasses(`w-full xl:w-1/2`, useContainerQuery)}
               >
               <div className={processClasses(`font-display text-5xl font-extrabold tracking-tight text-blurple-900 sm:text-6xl`, useContainerQuery)}>
-                <span className="block text-midnight-900 dark:text-ice-900">Reach out.</span>
+                <span className="block text-midnight-900 dark:text-ice-900 no-underline">Reach out.</span>
                 <span onClick={copyEmail} className={processClasses(`md:underline border-none text-4xl sm:text-6xl cursor-pointer`, useContainerQuery)}>
                   {email}
                 </span>  
