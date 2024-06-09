@@ -29,7 +29,7 @@ const JuhuImages = [
     // IMAGES TOO BIG, OPTIMIZE
     image: function BDKToJuhu() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0 dark:bg-transparent dark:bg-cardGradDark">
           <motion.div
             className=""
             initial={{ opacity: 1, y: 32 }}
@@ -48,7 +48,7 @@ const JuhuImages = [
   {
     image: function JuhuVehicleAdvert() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0 dark:bg-transparent dark:bg-cardGradDark">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -67,7 +67,7 @@ const JuhuImages = [
   {
     image: function JuhuPreapproval() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0 dark:bg-transparent dark:bg-cardGradDark">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -86,7 +86,7 @@ const JuhuImages = [
   {
     image: function JuhuQuotes() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-white bg-opacity-40 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0 dark:bg-transparent dark:bg-cardGradDark">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -291,7 +291,7 @@ export default function JuhuAuto() {
           </div>
           {/* Right col */}
           <motion.div layout
-              className="relative w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%] order-1 md:order-2"
+              className="relative w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%] order-1 md:order-2 overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 70, delay: initialWindowWidth > 767 ? 1 : 0, duration: 1.5 }}

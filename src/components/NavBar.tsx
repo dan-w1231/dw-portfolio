@@ -35,14 +35,16 @@ export function NavBar() {
     <motion.div
       id="navContainer"
       key="navContainer"
-      className="sticky top-0 w-full mt-2 flex items-center space-between z-[99]"
+      className={`sticky top-0 w-full mt-2 flex items-center space-between z-[99] ${isSticky ? 'px-0 xs:px-0' : 'px-2 xs:px-4'}`}
+      transition={{ duration: 1.5 }}
     >
       <motion.div 
         id="navBar"
         key="navBar"
-        className={`w-full flex items-center space-between transition-all duration-300 py-2 backdrop-blur-[60px] overflow-hidden z-[99] ${isSticky ? 'bg-solidLight/90 dark:bg-solidDark/90 rounded-none pl-2 md:pl-4 pr-2 md:pr-4' : 'bg-bgGrad dark:bg-bgGradDark rounded-4xl xl:rounded-5xl mx-2 xs:mx-4 pl-4 md:pl-10 pr-2'}`}
+        className={`w-full ml-auto mr-auto flex items-center space-between transition-all duration-300 py-2 backdrop-blur-[60px] overflow-hidden z-[99] ${isSticky ? 'max-w-full ml-auto mr-auto bg-solidLight/70 dark:bg-solidDark/70 rounded-[0_0_24px_24px] pl-2 md:pl-4 pr-2 md:pr-4' : 'max-w-[1504px] ml-auto mr-auto bg-bgGrad dark:bg-bgGradDark rounded-4xl pl-4 md:pl-10 pr-2'}`}
         initial={navBarStyles.initial}
         animate={navBarStyles.animate}
+        transition={{ duration: 1.5 }}
       >
         <Link href="/">
           <Logo className="text-midnight-900 dark:text-ice-900" />

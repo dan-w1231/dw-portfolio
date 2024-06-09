@@ -340,7 +340,7 @@ export default function NewVehicle() {
           </div>
           {/* Right col */}
             <motion.div 
-              className="relative w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%] order-1 md:order-2"
+              className="relative w-full max-w-full md:max-w-[50%] 2xl:max-w-[40%] order-1 md:order-2 overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 70, delay: initialWindowWidth > 767 ? 1 : 0, duration: 1.5 }}

@@ -46,7 +46,7 @@ export function Hero() {
             </div>
             <div className="relative w-full sm:w-1/2 flex flex-start z-[3] gap-2 md:gap-4">
             <motion.button 
-                className="relative z-10 max-w-full flex w-full rounded-full max-w-[248px]"
+                className="relative z-10 flex w-full rounded-full max-w-[248px]"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ type: "spring", stiffness: 100, duration: 1.5}}
@@ -59,7 +59,7 @@ export function Hero() {
                 <div className="absolute h-[64px] bg-primaryGrad rounded-full pointer-events-none z-[98] scale-y-[-0.99] scale-x-[-0.99] brightness-100 blur-[20px] md:blur-[70px] opacity-20 w-full top-[62px]" />
               </motion.button>
               <motion.button 
-                className="relative z-10 max-w-full flex w-1/3 sm:w-full rounded-full max-w-[220px]"
+                className="relative z-10 flex w-1/3 sm:w-full rounded-full max-w-[220px]"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ type: "spring", stiffness: 100, duration: 1.5}}
