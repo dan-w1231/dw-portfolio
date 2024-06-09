@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Light } from './Light';
-import { Divider } from './Divider';
-import { Dark } from './Dark';
+import { Light } from '../Light';
+import { Divider } from '../Divider';
+import { Dark } from '../Dark';
 
 const getInitialTheme = (): 'dark' | 'light' => {
   if (typeof window !== 'undefined') {

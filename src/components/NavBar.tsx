@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 import { motion } from 'framer-motion';
-import { LightDarkToggle } from '@/components/LightDarkToggle';
+import { LightDarkToggle } from '@/components/HOC/LightDarkToggle';
 import marble from '@/images/resources/sphereLowqual.png';
 
 
@@ -35,7 +35,7 @@ export function NavBar() {
     <motion.div
       id="navContainer"
       key="navContainer"
-      className={`sticky top-0 w-full mt-2 flex items-center space-between z-[99] ${isSticky ? 'px-0 xs:px-0' : 'px-2 xs:px-4'}`}
+      className={`sticky top-0 w-full mt-2 flex items-center space-between z-[98] ${isSticky ? 'px-0 xs:px-0' : 'px-2 xs:px-4'}`}
       transition={{ duration: 1.5 }}
     >
       <motion.div 
