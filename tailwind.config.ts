@@ -36,6 +36,14 @@ export default {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      transitionProperty: {
+        'bg': 'background-color',
+        'opacity': 'opacity',
+        'height': 'height',
+      },
+      transitionDuration: {
+        '900': '900ms',
+      },
       colors: {
         'blurple': {
           900: '#5768FF',
@@ -93,9 +101,6 @@ export default {
         '7xl': '6rem',
         '8xl': '7rem',
         '9xl': '8rem'
-      },
-      transitionProperty: {
-        'height': 'height',
       },
       backgroundImage: {
         'primaryGrad': `linear-gradient(180deg, rgba(128,141,255,1) 0%, rgba(87,104,255,1) 8%, rgba(87,104,255,1) 50%, rgba(71,86,226,1) 100%);`,

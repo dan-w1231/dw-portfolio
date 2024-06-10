@@ -19,10 +19,10 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   // Toggle theme function
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setDarkMode(newTheme === 'dark');
     localStorage.setItem('theme', newTheme);
     setTheme(newTheme);
     applyTheme(newTheme);
-    setDarkMode(newTheme === 'dark');
   };
 
   // Apply theme to document

@@ -1,5 +1,3 @@
-
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Light } from '../Light';
 import { Divider } from '../Divider';
@@ -31,14 +29,8 @@ export const LightDarkToggle: React.FC = () => {
   };
 
   return (
-    // //Test button
-    // <button onClick={toggleTheme}>
-    //   {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-    // </button>
-
     <div className="flex items-center">
       <label htmlFor="toggle" className="inline-flex relative items-center cursor-pointer">
-        {/* <input type="checkbox" value="" id="toggle" className="sr-only peer" onChange={toggleTheme} /> */}
         <input type="checkbox" value="" id="toggle" className="sr-only peer" checked={darkMode} onChange={toggleTheme} />
         <motion.div 
           className="h-[64px] p-2 rounded-[25px] z-[-1]"

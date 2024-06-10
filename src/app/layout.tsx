@@ -1,3 +1,4 @@
+import React from 'react';
 import { type Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import clsx from 'clsx';
@@ -9,7 +10,6 @@ import { FlowChart } from '@/components/FlowChart';
 import Template from '@/app/template';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from '@/components/HOC/ThemeContext'
-import React from 'react';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         <html
           lang="en"
           className={clsx(
-            'h-full scroll-smooth bg-[#E1D4DE] dark:bg-[#1A1824] bg-lightBg dark:bg-darkBg antialiased',
+            'h-full scroll-smooth bg-[#E1D4DE] bg-lightBg dark:bg-[#1A1824] dark:bg-darkBg antialiased transition-all duration-900',
             inter.variable,
           )}
         >
@@ -76,48 +76,49 @@ export const metadata: Metadata = {
             />
           </head>
           <body
-            className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-lightBg bg-[#E1D4DE] dark:bg-[#1A1824] dark:bg-darkBg bg-noisePattern"
+            className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-lightBg bg-[#E1D4DE] bg-noisePattern before:absolute before:inset-0 before:content-[''] before:top-0 before:left-0 before:opacity-0 before:dark:opacity-100 before:transition-opacity before:duration-900 before:bg-darkBg z-[1]"
             >
-            <Toaster 
-              position="bottom-center"
-              toastOptions={{
-                success: {  
-                  style: {
-                    fontFamily: "Cabinet Grotesk",
-                    alignItems: "flex-start",
-                    letterSpacing: "-0.025em",
-                    padding: "24px",
-                    borderRadius: "38px",
-                    background: "rgba(255,255,255,0.95)",
-                    backdropFilter: "blur(8px)",
-                    border: "1px solid #2AC355",
+              <Toaster 
+                position="bottom-center"
+                toastOptions={{
+                  success: {  
+                    style: {
+                      fontFamily: "Cabinet Grotesk",
+                      alignItems: "flex-start",
+                      letterSpacing: "-0.025em",
+                      padding: "24px",
+                      borderRadius: "38px",
+                      background: "rgba(255,255,255,0.95)",
+                      backdropFilter: "blur(8px)",
+                      border: "1px solid #2AC355",
+                    },
                   },
-                },
-                error: {  
-                  style: {
-                    fontFamily: "Cabinet Grotesk",
-                    alignItems: "flex-start",
-                    letterSpacing: "-0.025em",
-                    padding: "24px",
-                    borderRadius: "38px",
-                    background: "rgba(255,255,255,0.95)",
-                    backdropFilter: "blur(8px)",
-                    border: "1px solid #FF3257",
-                  },
-                }
-            }}
-            />
-            <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/20 dark:text-ice-900/20 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
-              <GridPattern x="20%" />
-            </div>
-            <div key="flowChartPattern" className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-midnight-900/50 dark:text-ice-900/40 [mask-image:linear-gradient(rgba(255,255,255,0.2),transparent)]">
-              <div className="right-[-90px]">
-                <FlowChart size="100%" />
+                  error: {  
+                    style: {
+                      fontFamily: "Cabinet Grotesk",
+                      alignItems: "flex-start",
+                      letterSpacing: "-0.025em",
+                      padding: "24px",
+                      borderRadius: "38px",
+                      background: "rgba(255,255,255,0.95)",
+                      backdropFilter: "blur(8px)",
+                      border: "1px solid #FF3257",
+                    },
+                  }
+              }}
+              />
+              <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/20 dark:text-ice-900/20 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
+                <GridPattern x="20%" />
               </div>
-            </div>
-            <NavBar />
-              <Template>{children}</Template>
-            <Footer />
+              <div key="flowChartPattern" className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-midnight-900/50 dark:text-ice-900/40 [mask-image:linear-gradient(rgba(255,255,255,0.2),transparent)]">
+                <div className="right-[-90px]">
+                  <FlowChart size="100%" />
+                </div>
+              </div>
+              <NavBar />
+                <Template>{children}</Template>
+              <Footer />
+            {/* </div>   */}
           </body>
         </html>
       </ThemeProvider>
