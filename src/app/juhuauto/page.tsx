@@ -119,7 +119,7 @@ export default function JuhuAuto() {
       <motion.div 
         id="main"
         key="juhuAuto"
-        className="relative w-screen mx-auto mt-2 xs:mt-4 md:mt-8 xl:mt-8"
+        className="relative w-screen mx-auto mt-2 xs:mt-2 md:mt-4 xl:mt-4"
         ref={targetRef}
       >
         <div className="relative mx-auto z-[1]">

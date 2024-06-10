@@ -1,21 +1,30 @@
 'use client'
-
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Light } from '../Light';
 import { Divider } from '../Divider';
 import { Dark } from '../Dark';
 
+// const getInitialTheme = (): 'dark' | 'light' => {
+//   // Attempt to get the theme from localStorage
+//   const storedTheme = localStorage.getItem('theme');
+//   if (storedTheme) {
+//     return storedTheme === 'dark' ? 'dark' : 'light';
+//   }
+//   // Default to light theme if not found
+//   return 'light';
+// };
+
 const getInitialTheme = (): 'dark' | 'light' => {
-  if (typeof window !== 'undefined') {
-    if (localStorage.theme) return localStorage.theme as 'dark' | 'light';
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme) {
+    return storedTheme === 'dark' ? 'dark' : 'light';
   }
   return 'light';
 };
 
 const saveTheme = (theme: 'dark' | 'light'): void => {
-  localStorage.theme = theme;
+  localStorage.setItem('theme', theme);
   if (theme === 'dark') {
     document.documentElement.classList.add('dark');
   } else {
@@ -23,15 +32,20 @@ const saveTheme = (theme: 'dark' | 'light'): void => {
   }
 };
 
+// Adjust the component to accept `initialTheme` prop
 export const LightDarkToggle: React.FC = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(getInitialTheme() === 'dark');
+  const [darkMode, setDarkMode] = useState(() => getInitialTheme() === 'dark');
+
 
   useEffect(() => {
+    // Apply the theme when the component mounts
     saveTheme(darkMode ? 'dark' : 'light');
   }, [darkMode]);
 
   const toggleDarkMode = (): void => {
+    const newTheme = !darkMode ? 'dark' : 'light';
     setDarkMode(!darkMode);
+    saveTheme(newTheme);
   };
   
   const OuterVariants = {

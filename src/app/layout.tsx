@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import { type Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import clsx from 'clsx';
@@ -9,7 +10,7 @@ import { GridPattern } from '@/components/GridPattern';
 import { FlowChart } from '@/components/FlowChart';
 import Template from '@/app/template';
 import { Toaster } from 'react-hot-toast';
-import { LightDarkToggle, useTheme } from '@/components/HOC/ThemeContext';
+
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,16 +29,80 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  
+  // const [theme, setTheme] = useState('light');
+
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') { // Check if window is defined
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme) {
+        return storedTheme;
+      } else {
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+    } else {
+      return 'light'; // Default theme
+    }
+  });
+
+  useEffect(() => {
+    // First, try to get the theme from local storage
+    let storedTheme = localStorage.getItem('theme');
+  
+    type Theme = 'dark' | 'light';
+
+    const applyTheme = (theme: Theme) => {
+      setTheme(theme); // Update state
+      document.documentElement.classList.toggle('dark', theme === 'dark'); // Apply theme
+      console.log(`Theme set to: ${theme}`); // Debugging
+    };
+  
+    if (storedTheme === 'dark' || storedTheme === 'light') {
+      applyTheme(storedTheme);
+    } else {
+      // If no theme in local storage, fetch from the API
+      fetch('/api/theme')
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.theme === 'dark' || data.theme === 'light') {
+            localStorage.setItem('theme', data.theme);
+            applyTheme(data.theme);
+          } else {
+            console.error('Invalid theme value from API:', data.theme);
+          }
+        })
+        .catch((error) => console.error('Failed to fetch theme:', error));
+    }
+  }, []);
+
   return (
-    <LightDarkToggle>
       <html
         lang="en"
         className={clsx(
-          'h-full scroll-smooth bg-white antialiased dark:bg-darkBg',
+          'h-full scroll-smooth bg-[#E1D4DE] dark:bg-[#1A1824] antialiased',
+          theme === 'dark' ? 'dark:bg-[#1A1824]' : 'bg-[#E1D4DE]',
           inter.variable,
         )}
       >
         <head>
+        {/* <script dangerouslySetInnerHTML={{__html: `
+          // Immediately invoked function to set the theme before the page renders
+          (function() {
+            var theme = localStorage.getItem('theme') || 'light'; // Default to light theme
+            document.documentElement.classList.add(theme);
+          })();
+          `}}></script> */}
+
+          {/* <script>
+            (function() {
+              const storedTheme = localStorage.getItem('theme') || 'light';
+              if (storedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+            })();
+          </script> */}
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
           <link
             rel="preconnect"
@@ -107,6 +172,5 @@ export default function RootLayout({
           <Footer />
         </body>
       </html>
-    </LightDarkToggle>
   )
 }
