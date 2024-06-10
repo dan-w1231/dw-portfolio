@@ -3,6 +3,7 @@ import '@/styles/tailwind.css'
 import { usePathname } from 'next/navigation'
 import FrozenRoute from '@/components/HOC/FrozenRoute'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ThemeProvider } from '@/components/HOC/ThemeContext'
 
 export default function Template({ 
   children, 
@@ -11,6 +12,7 @@ export default function Template({
 }) {
   const pathname = usePathname()
   return (
+    
     <AnimatePresence mode="wait">
       <motion.div 
         key={pathname}

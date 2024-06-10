@@ -45,7 +45,7 @@ export function Hero() {
               </div>
             </div>
             <div className="relative w-full sm:w-1/2 flex flex-start z-[3] gap-2 md:gap-4">
-            <motion.button 
+            <motion.div
                 className="relative z-10 flex w-full rounded-full max-w-[248px]"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -57,8 +57,8 @@ export function Hero() {
                   View CV
                 </ButtonLink>
                 <div className="absolute h-[64px] bg-primaryGrad rounded-full pointer-events-none z-[98] scale-y-[-0.99] scale-x-[-0.99] brightness-100 blur-[20px] md:blur-[70px] opacity-20 w-full top-[62px]" />
-              </motion.button>
-              <motion.button 
+              </motion.div>
+              <motion.div 
                 className="relative z-10 flex w-1/3 sm:w-full rounded-full max-w-[220px]"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -70,7 +70,7 @@ export function Hero() {
                   Contact
                 </Button>
                 <div className="absolute h-[64px] border-3 border-blurple-900 rounded-full pointer-events-none z-[98] scale-y-[-0.99] scale-x-[-0.99] brightness-100 blur-[0px] md:blur-[40px] opacity-100 w-full top-[62px]" />
-              </motion.button>
+              </motion.div>
             </div>
             <div className="absolute top-0 right-0 w-full h-full z-[2]">        
               <motion.div

@@ -1,52 +1,13 @@
-'use client'
+
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Light } from '../Light';
 import { Divider } from '../Divider';
 import { Dark } from '../Dark';
+import { useTheme } from '@/components/HOC/ThemeContext';
 
-// const getInitialTheme = (): 'dark' | 'light' => {
-//   // Attempt to get the theme from localStorage
-//   const storedTheme = localStorage.getItem('theme');
-//   if (storedTheme) {
-//     return storedTheme === 'dark' ? 'dark' : 'light';
-//   }
-//   // Default to light theme if not found
-//   return 'light';
-// };
-
-const getInitialTheme = (): 'dark' | 'light' => {
-  const storedTheme = localStorage.getItem('theme');
-  if (storedTheme) {
-    return storedTheme === 'dark' ? 'dark' : 'light';
-  }
-  return 'light';
-};
-
-const saveTheme = (theme: 'dark' | 'light'): void => {
-  localStorage.setItem('theme', theme);
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-};
-
-// Adjust the component to accept `initialTheme` prop
 export const LightDarkToggle: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(() => getInitialTheme() === 'dark');
-
-
-  useEffect(() => {
-    // Apply the theme when the component mounts
-    saveTheme(darkMode ? 'dark' : 'light');
-  }, [darkMode]);
-
-  const toggleDarkMode = (): void => {
-    const newTheme = !darkMode ? 'dark' : 'light';
-    setDarkMode(!darkMode);
-    saveTheme(newTheme);
-  };
+  const { darkMode, toggleTheme } = useTheme();
   
   const OuterVariants = {
     light: {
@@ -70,9 +31,15 @@ export const LightDarkToggle: React.FC = () => {
   };
 
   return (
+    // //Test button
+    // <button onClick={toggleTheme}>
+    //   {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+    // </button>
+
     <div className="flex items-center">
       <label htmlFor="toggle" className="inline-flex relative items-center cursor-pointer">
-        <input type="checkbox" value="" id="toggle" className="sr-only peer" checked={darkMode} onChange={toggleDarkMode} />
+        {/* <input type="checkbox" value="" id="toggle" className="sr-only peer" onChange={toggleTheme} /> */}
+        <input type="checkbox" value="" id="toggle" className="sr-only peer" checked={darkMode} onChange={toggleTheme} />
         <motion.div 
           className="h-[64px] p-2 rounded-[25px] z-[-1]"
           variants={OuterVariants}

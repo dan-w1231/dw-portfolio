@@ -345,9 +345,8 @@ export default function NewVehicle() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 70, delay: initialWindowWidth > 767 ? 1 : 0, duration: 1.5 }}
               >
-            <motion.ol 
+            <motion.div 
               style={{ y }}
-              role="list" 
               className="rounded-t-xl px-2 py-2 xs:px-4 xs:py-4 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:py-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
               >
               {/* CAUSING HYDRATION ISSUES? */}
@@ -363,7 +362,7 @@ export default function NewVehicle() {
                 }
                 </MediaQuery>
               ))}
-            </motion.ol>
+            </motion.div>
               {isDesktopOrLaptop && ( 
                 <motion.div 
                   className="absolute bottom-0 w-full md:pr-4"
