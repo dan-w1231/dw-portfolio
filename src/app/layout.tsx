@@ -1,6 +1,7 @@
 import React from 'react';
 import { type Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/react"
 import clsx from 'clsx';
 import '@/styles/tailwind.css';
 import { NavBar } from '@/components/NavBar';
@@ -117,6 +118,7 @@ export const metadata: Metadata = {
               </div>
               <NavBar />
                 <Template>{children}</Template>
+                <Analytics />
               <Footer />
             {/* </div>   */}
           </body>
