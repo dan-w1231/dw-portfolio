@@ -20,3 +20,11 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: #E1D4DE;
 }
+
+.custom-zoom-default {
+  @apply bg-gray-100;
+}
+
+.custom-zoom-dark {
+  @apply bg-gray-800;
+}

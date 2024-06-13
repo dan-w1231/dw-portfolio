@@ -35,18 +35,18 @@ export function ButtonLink({ className, href, target, ...props }: ButtonLinkProp
   };
 
   useEffect(() => {
-    const unsubscribeX = springX.onChange(value => {
+    const unsubscribeX = springX.on("change", value => {
       if (element) {
         element.style.setProperty('--x', `${value}px`);
       }
     });
-
-    const unsubscribeY = springY.onChange(value => {
+  
+    const unsubscribeY = springY.on("change", value => {
       if (element) {
         element.style.setProperty('--y', `${value}px`);
       }
     });
-
+  
     return () => {
       unsubscribeX();
       unsubscribeY();

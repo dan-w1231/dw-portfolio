@@ -12,8 +12,8 @@ export function Divider({ className }: Props) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className} >
-        <path d="M1.03125 32V0" stroke="white" strokeOpacity="0.08" strokeWidth="0.5"/>
-        <path d="M1.53125 32V0" stroke="black" strokeOpacity="0.12" strokeWidth="0.5"/>
+        <path d="M1.03125 32V0" stroke="white" strokeOpacity="0.12" strokeWidth="0.5"/>
+        <path d="M1.53125 32V0" stroke="black" strokeOpacity="0.16" strokeWidth="0.5"/>
     </svg>
   )
 }

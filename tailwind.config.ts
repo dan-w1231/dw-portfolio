@@ -38,6 +38,8 @@ export default {
     extend: {
       transitionProperty: {
         'bg': 'background-color',
+        'bgImage': 'background-image',
+        'color': 'color',
         'opacity': 'opacity',
         'height': 'height',
       },
@@ -119,7 +121,7 @@ export default {
                           radial-gradient(105% 105% at 115% -10%, rgba(225, 72, 117, 0.10) 0%, rgba(225, 72, 117, 0) 100%),
                           linear-gradient(180deg, #181625 0%, #0B0A11 100%);`,
         'bgGradDark': `linear-gradient(150deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.02) 100%),
-                          radial-gradient(100% 100% at 100% 20%, rgba(251, 160, 5, 0.16) 0%, rgba(255, 26, 136, 0.06) 100%);`,
+                          radial-gradient(100% 100% at 100% 20%, rgba(251, 5, 155, 0.11) 0%, rgba(39, 26, 255, 0.08) 100%);`,
         'bgGrad': `linear-gradient(150deg, rgba(255, 255, 255, .6) 0%, rgba(255, 255, 255,0.1) 100%),
                   radial-gradient(100% 100% at 100% 100%, rgba(251, 190, 5, 0.2) 0%, rgba(255, 26, 136, 0.06) 100%);`,
         'noisePattern': `url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1295275/background-noise.png)`,

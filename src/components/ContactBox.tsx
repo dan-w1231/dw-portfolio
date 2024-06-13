@@ -1,4 +1,5 @@
 'use client'
+import { useEffect, useState } from 'react';
 import Image from 'next/image'
 import toast from "react-hot-toast";
 import { GridPattern } from '@/components/GridPattern'
@@ -8,9 +9,14 @@ import { processClasses } from '@/app/utils/processClasses'
 
 export function ContactBox({ useContainerQuery, parentClass, flexClass }: { useContainerQuery?: boolean, parentClass?: string, flexClass?: string}) {
 
+  const [isMobile, setIsMobile] = useState(false);
+
   const email = "dan@dwdesign.io";
+  useEffect(() => {
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+  }, []);
+  
   const copyEmail = (event: React.MouseEvent) => {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (!isMobile) {
       navigator.clipboard.writeText(email);
       toast.success('Email copied to clipboard');
@@ -27,7 +33,7 @@ export function ContactBox({ useContainerQuery, parentClass, flexClass }: { useC
         <GridPattern x="50%" y="100%" />
       </div>
       <div className="relative">
-        <div className={processClasses(`@container bg-cardGrad dark:bg-cardGradDark rounded-4xl rounded-tr-8xl backdrop-blur-[140px] shadow-xl dark:shadow-xlD rounded-4xl md:rounded-5xl xl:rounded-6xl`, useContainerQuery)}>
+        <div className={processClasses(`@container bg-cardGrad dark:bg-cardGradDark rounded-tr-8xl backdrop-blur-[140px] shadow-xl dark:shadow-xlD rounded-4xl md:rounded-5xl xl:rounded-6xl`, useContainerQuery)}>
           <div className={processClasses(`flex flex-col xl:flex-row gap-4 md:gap-10 px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32`, useContainerQuery)}>
             <div
                 id="contactStart"

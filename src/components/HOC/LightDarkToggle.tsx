@@ -24,7 +24,7 @@ export const LightDarkToggle: React.FC = () => {
     },
     dark: {
       backgroundImage: "linear-gradient(200deg,rgba(21,23,33,0.50),rgba(21,23,33,0.1))",
-      boxShadow: "inset -3px 0 2px 0 rgba(21,23,33,0.85), inset 6px 0 0 rgba(21,23,33,0.38), -2px 0 4px rgba(21,23,33,0)",
+      boxShadow: "inset -3px 0 2px 0 rgba(21,23,33,0.45), inset 6px 0 0 rgba(21,23,33,0.5), -2px 0 4px rgba(21,23,33,0), 0 2px 5px rgba(21,23,33,0.5)",
     },
   };
 
@@ -44,9 +44,9 @@ export const LightDarkToggle: React.FC = () => {
             animate={darkMode ? "dark" : "light"}
             transition={{ duration: 0.3 }}
             >
-            <motion.div className={`w-full flex justify-center items-center ${darkMode ? 'text-white/30 translate-x-[3px]' : 'text-blurple-900 '}`}><Light className={`${darkMode ? 'drop-shadow-none' : 'drop-shadow-[0_0_6px_rgba(82,100,255,0.4)]' }`} /></motion.div>
+            <motion.div className={`w-full flex justify-center items-center transition-all delay-150 duration-300 ${darkMode ? 'text-white/30 translate-x-[3px]' : 'text-blurple-900 '}`}><Light className={`${darkMode ? 'drop-shadow-none' : 'drop-shadow-[0_0_6px_rgba(82,100,255,0.4)]' }`} /></motion.div>
             <motion.div className="w-[2px] flex justify-center items-center"><Divider /></motion.div>
-            <motion.div className={`w-full flex justify-center items-center ${darkMode ? 'text-blurple-900 ' : 'text-midnight-900/40 translate-x-[-3px]'}`}><Dark className={`${darkMode ? 'drop-shadow-[0_0_6px_rgba(82,100,255,0.8)]' : 'drop-shadow-none' }`} /></motion.div>
+            <motion.div className={`w-full flex justify-center items-center transition-all delay-150 duration-300 ${darkMode ? 'text-blurple-900 ' : 'text-midnight-900/40 translate-x-[-3px]'}`}><Dark className={`${darkMode ? 'drop-shadow-[0_0_6px_rgba(82,100,255,0.8)]' : 'drop-shadow-none' }`} /></motion.div>
           </motion.div>
         </motion.div>
       </label>

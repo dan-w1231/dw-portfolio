@@ -1,26 +1,28 @@
-// 'use client'
-import Image from 'next/image'
-import { motion } from "framer-motion"
-import arrowDown from '@/images/resources/arrowDown.svg'
+interface BulletTagProps extends React.ComponentPropsWithoutRef<'h2'> {
+  bulletPoint?: boolean;
+}
 
 export function BulletTag({
   children,
   className,
+  bulletPoint = true,
   ...props
-}: React.ComponentPropsWithoutRef<'h2'>) {
+}: BulletTagProps) {
   return (
     <div
       id="bulletTag"
-      className="relative flex align-center bg-white dark:bg-transparent dark:bg-cardGradDark py-3 px-4 pr-5 rounded-full inline-block shadow-lg"
+      className="relative flex align-center bg-ice-900/60 dark:bg-ice-900/10 transition-bg duration-900 py-3 px-4 pr-5 rounded-full inline-block shadow-lg"
     >
       <div
         id="Tag"
         className="flex flex-row no-wrap justify-start items-center"
       >
-        <span className="mr-2 text-base leading-6 text-blurple-900 dark:text-blurple-700 font-medium tracking-tight self-start">
-          •
-        </span>
-        <span className="text-base leading-6 text-blurple-900 dark:text-blurple-700 font-medium tracking-tight">
+        {bulletPoint && ( 
+          <span className="mr-2 text-base leading-6 text-blurple-900 dark:text-blurple-500 font-medium tracking-tight self-start">
+            •
+          </span>
+        )}
+        <span className="text-base leading-6 text-blurple-900 dark:text-blurple-500 font-medium tracking-tight">
           {children}
         </span>
       </div>

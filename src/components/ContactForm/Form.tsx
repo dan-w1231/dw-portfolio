@@ -150,7 +150,7 @@ const Form: React.FC<FormProps> = ({ flexClass, useContainerQuery, ...props }) =
       // No valdy error, proceed
       const baseUrl = process.env.NODE_ENV === 'production' 
         ? 'https://dwdesign-five.vercel.app' 
-        : 'http://192.168.1.179:3000';
+        : 'http://localhost:3000';
 
       const response = await fetch(`${baseUrl}/api/SendEmail`, {
         method: 'POST',

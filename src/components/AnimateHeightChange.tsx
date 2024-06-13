@@ -28,25 +28,6 @@ export const AnimateHeightChange: React.FC<AnimateHeightChangeProps> = ({ childr
     }
   }, [])
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (window.innerWidth < 768) {
-  //       setHeight('auto'); // Set height to 'auto' for small viewports
-  //     }
-  //   };
-
-  //   // Initial check
-  //   handleResize();
-
-  //   // Listen for window resize events
-  //   window.addEventListener('resize', handleResize);
-
-  //   return () => {
-  //     // Cleanup the event listener when the component is unmounted
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, []);
-
   return (
     <motion.div className={clsx(className, 'w-full')} style={{ height }} animate={{ height }} transition={{ type: "spring", duration: 1.5 }}>
       <div ref={containerRef}>{children}</div>
