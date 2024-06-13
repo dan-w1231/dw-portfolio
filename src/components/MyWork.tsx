@@ -248,6 +248,9 @@ export function MyWork() {
                     >
                       <motion.div layout key="workImageWrapper" className="relative flex justify-center h-[370px] md:h-[496px] sm:h-[496px] w-full md:w-[496px] overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl sm:h-60">
                         <work.image />
+                        <motion.div id="typeTag" className="absolute left-2 bottom-2 md:left-[initial] flex items-center justify-center px-4 py-2 bg-white/60 dark:bg-[#1B1B27] transition-bg transition-color duration-900 backdrop-blur-[60px] scale-100 rounded-full font-display text-lg tracking-tight font-bold text-midnight-900 dark:text-ice-900 text-center">
+                          {work.type}
+                        </motion.div>
                       </motion.div>
                     </li>
                   </div>
