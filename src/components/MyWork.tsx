@@ -265,7 +265,7 @@ export function MyWork() {
                         <motion.div id="proceedArrow" className="absolute top-2 right-2 flex items-center justify-center w-[52px] h-[52px] md:w-[80px] md:h-[80px] bg-ice-900/60 dark:bg-[#1B1B27] transition-bg duration-900 backdrop-blur-[60px] scale-100 rounded-[18px_26px_18px_18px] md:rounded-[18px_42px_18px_28px] xl:rounded-[18px_117px_18px_48px]">
                           <Arrow className="absolute scale-[1.3] rotate-[235deg] text-midnight-700 dark:text-ice-700 transition-bg duration-900 w-auto" />
                         </motion.div>
-                        <motion.div id="typeTag" className="absolute left-2 bottom-2 md:left-[initial] flex items-center justify-center px-4 py-2 bg-white/60 dark:bg-[#1B1B27] transition-bg transition-color duration-900 backdrop-blur-[60px] scale-100 rounded-full font-display text-lg tracking-tight font-bold text-midnight-900 dark:text-ice-900 text-center">
+                        <motion.div id="typeTag" className="absolute left-2 bottom-2 md:left-[initial] flex items-center justify-center px-4 py-2 bg-white/60 dark:bg-[#1B1B27] transition-bg transition-color duration-900 scale-100 rounded-full font-display text-lg tracking-tight font-bold text-midnight-900 dark:text-ice-900 text-center">
                           {work.type}
                         </motion.div>
                       </motion.div>
