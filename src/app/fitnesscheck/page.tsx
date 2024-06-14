@@ -139,7 +139,7 @@ export default function FitnessCheck() {
     <>
       <motion.div
         id="main"
-        key="newVehicle"
+        key="fitcheck"
         className="relative w-screen mx-auto mt-2 xs:mt-4"
         ref={targetRef}
       >

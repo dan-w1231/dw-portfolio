@@ -5,9 +5,10 @@ import { useTheme } from '@/components/HOC/ThemeContext';
 
 interface ZoomyProps {
   children: ReactNode;
+  wrapElement?: string;
 }
 
-const Zoomy: React.FC<ZoomyProps> = ({ children }) => {
+const Zoomy: React.FC<ZoomyProps> = ({ children, wrapElement }) => {
   const [isZoomed, setIsZoomed] = useState(false);
   const { darkMode } = useTheme();
 
@@ -17,7 +18,6 @@ const Zoomy: React.FC<ZoomyProps> = ({ children }) => {
       const css = `[data-rmiz-modal-overlay="visible"] { background-color: ${darkMode ? '#151721' : '#FFFFFF'}; }`;
       const head = document.head || document.getElementsByTagName('head')[0];
       const style = document.createElement('style');
-      style.type = 'text/css';
       style.appendChild(document.createTextNode(css));
       head.appendChild(style);
       return () => {
@@ -27,13 +27,16 @@ const Zoomy: React.FC<ZoomyProps> = ({ children }) => {
   }, [isZoomed, darkMode]);
 
   return (
-    <OGZoom
-      isZoomed={isZoomed}
-      onZoomChange={setIsZoomed}
-      swipeToUnzoomThreshold={200}
-    >
-      {children}
-    </OGZoom>
+    <div className="relative w-full h-full flex items-center justify-center">
+      <OGZoom
+        isZoomed={isZoomed}
+        onZoomChange={setIsZoomed}
+        swipeToUnzoomThreshold={200}
+        wrapElement='undefined'
+      >
+        {children}
+      </OGZoom>
+    </div>
   );
 };
 
