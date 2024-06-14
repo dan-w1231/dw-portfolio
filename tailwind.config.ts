@@ -1,4 +1,5 @@
 import { type Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default {
@@ -43,6 +44,10 @@ export default {
         'opacity': 'opacity',
         'height': 'height',
       },
+      translate: {
+        '0': '0px',
+      },
+      transform: ['hover', 'focus'],
       transitionDuration: {
         '900': '900ms',
       },
@@ -134,7 +139,15 @@ export default {
       }
     },
   },
-    plugins: [
+  plugins: [
     require('@tailwindcss/container-queries'),
+    plugin(function({ addUtilities }: { addUtilities: any }) {
+      const newUtilities = {
+        '.translate-z-0': {
+          transform: 'translateZ(0.0001px)',
+        },
+      };
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    }),
   ],
 } satisfies Config

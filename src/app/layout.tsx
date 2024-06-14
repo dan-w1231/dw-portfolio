@@ -108,7 +108,7 @@ export const metadata: Metadata = {
                   }
               }}
               />
-              <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-96 text-midnight-900/20 dark:text-ice-900/20 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
+              <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-124 text-midnight-900/50 dark:text-ice-900/30 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
                 <GridPattern x="20%" />
               </div>
               <div key="flowChartPattern" className="absolute overflow-hidden w-3/4 lg:w-1/4 top-[-40px] right-0 lg:right-0 text-midnight-900/50 dark:text-ice-900/40 [mask-image:linear-gradient(rgba(255,255,255,0.2),transparent)]">

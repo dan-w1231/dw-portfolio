@@ -8,6 +8,7 @@ import Zoomy from '@/components/HOC/Zoomy'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import juhuFPA from '@/images/resources/juhuFPA1.png'
 import bdkToJuhu from '@/images/resources/deviceImages/bdkTojuhu.png'
 import juhuFPAs from '@/images/resources/deviceImages/juhuFPAs.png'
 import juhuQuotes from '@/images/resources/deviceImages/juhuFinanceWide.png'
@@ -27,6 +28,25 @@ import MediaQuery, { useMediaQuery } from 'react-responsive';
 const JuhuImages = [
   {
     // IMAGES TOO BIG, OPTIMIZE
+    image: function JuhuFPAFront() {
+      return (
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+          <motion.div
+            className=""
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 1.2 }}
+          >
+            <Zoomy>
+              <Image src={juhuFPA} className="w-full max-w-[496px] p-10 object-contain" alt="One of my designs for the juhu vehicle advert page" />
+            </Zoomy>
+          </motion.div>
+        </motion.div>
+      )
+    },
+  },
+  {
     image: function BDKToJuhu() {
       return (
         <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
@@ -112,7 +132,7 @@ export default function JuhuAuto() {
     target: targetRef,
   });
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0", "0"] : ["0px", "1800px"]);
+  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0", "0"] : ["0px", "1174px"]);
 
   return (
     <>
@@ -140,7 +160,7 @@ export default function JuhuAuto() {
                           Juhu Auto
                         </h1>
                         <h2 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 ">
-                          Car marketplace in Germahy
+                          Car marketplace in Germany
                         </h2>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           Create a finance-focused vehicle marketplace for buyers and sellers in Germany, on behalf of Bank Deutsches Kraftfahrzeuggewerbe (BDK). Combining previous work where I designed online retailing tools including vehicle search, finance calculators, applications and eligibility checking, brought together into a simple yet engaging way to buy a car.

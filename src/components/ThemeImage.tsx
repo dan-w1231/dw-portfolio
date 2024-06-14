@@ -44,7 +44,6 @@ export const ThemeImage: React.FC = (): JSX.Element => {
                 right-[-71px] md:right-[-230px] xl:right-[-245px] z-[-97] md:rotate-[30deg] 
                 blur-[32px] md:blur-[160px] 
                 opacity-75 dark:opacity-55 lg:opacity-80 rotate-[-60deg] md:rotate(0deg)"
-                unoptimized
               />
             </motion.div>
             <motion.div
@@ -60,7 +59,6 @@ export const ThemeImage: React.FC = (): JSX.Element => {
               right-[-112px] md:right-[-230px] xl:right-[-245px]
               z-[-97] 
               md:rotate-[12deg]"
-                unoptimized
               />
             </motion.div>
           </motion.div>
@@ -95,7 +93,6 @@ export const ThemeImage: React.FC = (): JSX.Element => {
                   right-[-71px] md:right-[-230px] xl:right-[-245px] z-[-97] md:rotate-[30deg] 
                   blur-[32px] md:blur-[160px] 
                   opacity-75 dark:opacity-55 lg:opacity-80 rotate-[-60deg] md:rotate(0deg)"
-                unoptimized
               />
             </motion.div>
             <motion.div
@@ -111,7 +108,6 @@ export const ThemeImage: React.FC = (): JSX.Element => {
                 right-[-112px] md:right-[-230px] xl:right-[-245px]
                 z-[-97] 
                 md:rotate-[12deg]"
-                unoptimized
               />
             </motion.div>
             <motion.div
@@ -127,7 +123,6 @@ export const ThemeImage: React.FC = (): JSX.Element => {
                 right-[-112px] md:right-[-230px] xl:right-[-245px]
                 z-[-95] 
                 md:rotate-[12deg]"
-                unoptimized
               />
             </motion.div>
             <motion.div
