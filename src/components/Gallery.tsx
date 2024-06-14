@@ -13,6 +13,8 @@ import JDEFRecord from '@/images/resources/jdefRecord.png';
 import JDEFRecordDark from '@/images/resources/jdefConceptDark.png';
 import JDEFInProgress from '@/images/resources/jdefInProgress.png';
 import CWMedical from '@/images/resources/connectedWorker-Medical.png';
+import CWTesting from '@/images/resources/connectedWTesting.png';
+import CWTestingB from '@/images/resources/connectedWTesting2.png';
 import fitcheckImage from '@/images/resources/fitcheckp6.png';
 
 
@@ -23,7 +25,7 @@ const workImages = [
       'Description.',
     type: 'Type',
     background: 'bg-cardGradDark',
-    image: function NVBuyNow() {
+    image: function Login() {
       return (
         <motion.li
           key="title1"
@@ -43,7 +45,7 @@ const workImages = [
       'Description2.',
     type: 'Type2',
     background: 'bg-cardGradDark',
-    image: function NVBuyNow() {
+    image: function InProgress() {
       return (
         <motion.li
           key="title2"
@@ -63,7 +65,7 @@ const workImages = [
       'Description3.',
     type: 'Type3',
     background: 'bg-cardGradDark',
-    image: function NVBuyNow() {
+    image: function JobRecord() {
       return (
         <motion.li
           key="title3"
@@ -83,7 +85,7 @@ const workImages = [
       'Description4.',
     type: 'Type4',
     background: 'bg-cardGradDark',
-    image: function NVBuyNow() {
+    image: function Medical() {
       return (
         <motion.li
           key="title4"
@@ -103,13 +105,31 @@ const workImages = [
       'Description5.',
     type: 'Type5',
     background: 'bg-cardGradDark',
-    image: function NVBuyNow() {
+    image: function Testing() {
       return (
         <motion.li
-          className="relative w-full h-full flex items-center justify-center"
+          className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl"
         >
           <Zoomy>
-            <Image src={JDEFRecord} className="h-[115%] object-contain" alt="" />
+            <Image src={CWTesting} className="h-[496px] object-cover" alt="" />
+          </Zoomy>
+        </motion.li>
+      )
+    },
+  },
+  {
+    title: 'Title6',
+    description:
+      'Description6.',
+    type: 'Type6',
+    background: 'bg-cardGradDark',
+    image: function CWTesting2() {
+      return (
+        <motion.li
+          className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl"
+        >
+          <Zoomy>
+            <Image src={CWTestingB} className="h-[496px] object-cover" alt="" />
           </Zoomy>
         </motion.li>
       )
@@ -129,7 +149,7 @@ export function Gallery() {
     <motion.div key={2}>
       <section
         id="gallery"
-        className="relative px-2 xs:px-4 w-full grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 md:mt-8"
+        className="relative px-2 xs:px-4 w-full grid grid-cols-1 md:grid-cols-2 gap-4"
       >
         {workImages.map((images) => (
           <motion.ul layout

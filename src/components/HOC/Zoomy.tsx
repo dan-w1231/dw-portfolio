@@ -32,7 +32,6 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, wrapElement }) => {
         isZoomed={isZoomed}
         onZoomChange={setIsZoomed}
         swipeToUnzoomThreshold={200}
-        wrapElement='undefined'
       >
         {children}
       </OGZoom>

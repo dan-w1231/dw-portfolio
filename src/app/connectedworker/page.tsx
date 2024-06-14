@@ -113,7 +113,7 @@ const fitcheck6Fs = [
   },
 ]
 
-export default function JobDemands() {
+export default function ConnectedWorker() {
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 768 });
@@ -143,7 +143,7 @@ export default function JobDemands() {
             viewport={{ once: true, amount: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 70, delay: 1.4, duration: 1.5, staggerChildren: 0.5 }}
-            className="w-full max-w-screen-2xl mx-auto"
+            className="w-full max-w-screen-2xl mx-auto mt-2 xs:mt-4"
           >
             <Gallery />
           </motion.div>
