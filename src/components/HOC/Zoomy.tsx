@@ -92,7 +92,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children }) => {
               if (React.isValidElement(child)) {
                 const element = child as React.ReactElement<any>;
                 return React.cloneElement(element, {
-                  className: `${element.props.className || ''} max-w-full max-h-screen object-contain pointer-events-auto`
+                  className: `${element.props.className || ''} max-w-full max-h-[90vh] object-contain pointer-events-auto`
                 });
               }
               return child;
