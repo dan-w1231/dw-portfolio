@@ -1,33 +1,32 @@
 'use client'
-import { BulletTag } from '@/components/BulletTag'
-import { motion, useTransform, useScroll } from 'framer-motion'
-import { AnimateHeightChange } from '@/components/AnimateHeightChange'
-import { useRef, useEffect } from "react"
-import { ContactBox } from '@/components/ContactBox'
-import Zoomy from '@/components/HOC/Zoomy'
-import Link from 'next/link'
-import Image from 'next/image'
-
-import juhuFPA from '@/images/resources/juhuFPA1.png'
-import bdkToJuhu from '@/images/resources/deviceImages/bdkTojuhu.png'
-import juhuFPAs from '@/images/resources/deviceImages/juhuFPAs.png'
-import juhuQuotes from '@/images/resources/deviceImages/juhuFinanceWide.png'
-import juhuPreApproval from '@/images/resources/deviceImages/juhuPreApproval.png'
-
-import bdkSitemap from '@/images/resources/bdkSitemap.png'
-import bdkTaskflow from '@/images/resources/bdktaskFlow.png'
-import bdkEEA from '@/images/resources/bdkEEA.png'
-import bdkWireframes from '@/images/resources/bdkWireframes.png'
-import bdkWireframesToJuhu from '@/images/resources/bdkWireframesToJuhu.png'
-import juhuUserTest from '@/images/resources/juhuUserTest.png'
-import ABcategories from '@/images/resources/CategoryABResults.png'
+import { BulletTag } from '@/components/BulletTag';
+import { motion, useTransform, useScroll } from 'framer-motion';
+import { AnimateHeightChange } from '@/components/AnimateHeightChange';
+import { useRef, useEffect } from "react";
+import { ContactBox } from '@/components/ContactBox';
+import Zoomy from '@/components/HOC/Zoomy';
+import Image from 'next/image';
 import MediaQuery, { useMediaQuery } from 'react-responsive';
-// import PhysicalDemandsTest from '@/images/resources/PDA-jobRecordDARK.png'
+
+// Gallery Images
+import juhuFPA from '@/images/resources/juhuFPA1.png';
+import bdkToJuhu from '@/images/resources/deviceImages/bdkTojuhu.png';
+import juhuFPAs from '@/images/resources/deviceImages/juhuFPAs.png';
+import juhuQuotes from '@/images/resources/deviceImages/juhuFinanceWide.png';
+import juhuPreApproval from '@/images/resources/deviceImages/juhuPreApproval.png';
+
+// Article Images
+import bdkSitemap from '@/images/resources/bdkSitemap.png';
+import bdkTaskflow from '@/images/resources/bdktaskFlow.png';
+import bdkEEA from '@/images/resources/bdkEEA.png';
+import bdkWireframes from '@/images/resources/bdkWireframes.png';
+import bdkWireframesToJuhu from '@/images/resources/bdkWireframesToJuhu.png';
+import juhuUserTest from '@/images/resources/juhuUserTest.png';
+import ABcategories from '@/images/resources/CategoryABResults.png';
 
 
 const JuhuImages = [
   {
-    // IMAGES TOO BIG, OPTIMIZE
     image: function JuhuFPAFront() {
       return (
         <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">

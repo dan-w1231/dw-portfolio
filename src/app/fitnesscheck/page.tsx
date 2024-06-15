@@ -2,7 +2,7 @@
 import { BulletTag } from '@/components/BulletTag';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import { AnimateHeightChange } from '@/components/AnimateHeightChange';
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { ContactBox } from '@/components/ContactBox';
 import Zoomy from '@/components/HOC/Zoomy';
 import Image from 'next/image';
@@ -15,9 +15,7 @@ import fitcheck4F from '@/images/resources/fitCheck4F.png';
 import fitcheck6F from '@/images/resources/fitcheckp6.png';
 import fitcheckSummary from '@/images/resources/fitCheckSummary.png';
 
-
 // Article Images
-
 import brief from '@/images/resources/fitcheck-brief.png';
 import observeTest from '@/images/resources/fitcheck-Observe.png';
 import PrototypeA from '@/images/resources/fitcheck1stPrototype.png';
@@ -25,9 +23,9 @@ import PrototypeB from '@/images/resources/fitcheck2ndPrototype.png';
 import DesignBoard from '@/images/resources/fitcheck-designBoard.png';
 import fitcheckUserTest from '@/images/resources/fitcheckuserTesting.png';
 
-const fitcheck6Fs = [
-  {
-    image: function IntroScreen() {
+const fitcheckImages = [
+   {
+    image: function FitCheckIntroduction() {
       return (
         <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
@@ -46,18 +44,18 @@ const fitcheck6Fs = [
     },
   },
   {
-    image: function Warmup() {
+    image: function FitCheckWarmupScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 1, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={fitcheck1E} className="w-full m-w-[496px] p-[8%]" alt="Warmup screen during fitness check" />
+              <Image src={fitcheck1E} className="w-full max-w-[496px] py-8 object-contain" alt="Warmup screen during fitness check" />
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -65,9 +63,9 @@ const fitcheck6Fs = [
     },
   },
   {
-    image: function MaxIntensity() {
+    image: function FitCheckMaxIntensityScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -76,7 +74,7 @@ const fitcheck6Fs = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={fitcheck4F} className="w-full max-w-[44rem] p-[6%]" alt="Max intensity part of the fitness check" />
+              <Image src={fitcheck4F} className="w-full max-w-[496px] py-1 object-contain" alt="Max intensity part of the fitness check" />
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -84,9 +82,9 @@ const fitcheck6Fs = [
     },
   },
   {
-    image: function Cooldown() {
+    image: function FitCheckCooldownScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -95,7 +93,7 @@ const fitcheck6Fs = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={fitcheck6F} className="w-full max-w-[496px] p-[8%]" alt="Reducing pace with a cool down" />
+              <Image src={fitcheck6F} className="w-full max-w-[496px] p-2 object-contain" alt="Reducing pace with a cool down" />
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -103,9 +101,9 @@ const fitcheck6Fs = [
     },
   },
   {
-    image: function ResultScreen() {
+    image: function FitCheckResultsScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -114,7 +112,7 @@ const fitcheck6Fs = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={fitcheckSummary} className="w-full max-w-[512px]" alt="Result screen" />
+              <Image src={fitcheckSummary} className="w-full max-w-[496px] object-contain p-0" alt="FitnessCheck result screen" />
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -362,8 +360,7 @@ export default function FitnessCheck() {
                 style={{ y }}
                 className="rounded-t-xl px-2 xs:px-4 mb-2 xs:mb-4 md:mb-0 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
               >
-                {/* CAUSING HYDRATION ISSUES? */}
-                {fitcheck6Fs.map((images) => (
+                {fitcheckImages.map((images) => (
                   <MediaQuery minWidth={768}>
                     {(matches) =>
                       matches ?
