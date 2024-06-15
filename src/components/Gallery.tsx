@@ -28,13 +28,13 @@ export function Gallery({ workImages }: GalleryProps) {
         id="gallery"
         className="relative px-2 xs:px-4 w-full grid grid-cols-1 gap-2 xs:gap-4"
       >
-        {workImages.map((images) => (
+        {workImages.map((images, index) => (
           <motion.ul layout
             role="list"
             variants={workContainerVariants}
             whileHover="hover"
             id={images.title}
-            key={images.title}
+            key={index}
             className={`w-full flex items-center justify-center rounded-4xl md:rounded-5xl xl:rounded-6xl ${images.background ? `${images.background}` : 'bg-cardGrad'}`}
           >
             <images.image />

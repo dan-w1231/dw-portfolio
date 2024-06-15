@@ -29,17 +29,19 @@ export const LightDarkToggle: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center" key="toggleSwitch">
       <label htmlFor="toggle" className="inline-flex relative items-center cursor-pointer">
         <input type="checkbox" value="" id="toggle" className="sr-only peer" checked={darkMode} onChange={toggleTheme} />
         <motion.div 
           className="h-[64px] p-2 rounded-[25px] z-[-1]"
+          key="toggleSwitchOuter"
           variants={OuterVariants}
           animate={darkMode ? "dark" : "light"}
           transition={{ duration: 0.3 }}
           >
           <motion.div 
             className="flex space-between justify-center items-center w-[96px] h-full bg-transparent dark:bg-transparent peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-[18px] peer"
+            key="toggleSwitchInner"
             variants={SwitchVariants}
             animate={darkMode ? "dark" : "light"}
             transition={{ duration: 0.3 }}

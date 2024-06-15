@@ -1,6 +1,5 @@
 'use client'
 
-// import { sendEmailAction } from "@/pages/api/SendEmail";
 import { useRef, useEffect, useState } from "react";
 import Image from 'next/image'
 import Input from './Input';
@@ -12,7 +11,6 @@ import { motion } from "framer-motion";
 import Cross from '@/images/resources/cross.svg';
 import Tick from '@/images/resources/tick.svg';
 import Loader from 'react-loading-icons/dist/esm/components/rings'
-import { processClasses } from '@/app/utils/processClasses'
 
 function FieldStatus({ name, error, showMessage }: { name: string; error: string | undefined; showMessage: boolean }) {
   return (
@@ -246,7 +244,7 @@ const processClasses = (classes: string, useContainerQuery?: boolean) => {
     <form
       ref={formRef}
       onSubmit={handleSubmitContactForm}
-      className={processClasses(`relative w-full xl:absolute rounded-lg bg-transparent w-full @container`, useContainerQuery)}
+      className={processClasses(`relative w-full xl:absolute rounded-lg bg-transparent @container`, useContainerQuery)}
     >
       <div className={processClasses(`relative flex flex-col gap-2`, useContainerQuery)}>
       <div className={processClasses(`flex flex-col gap-2 ${flexClass}`, useContainerQuery)}>

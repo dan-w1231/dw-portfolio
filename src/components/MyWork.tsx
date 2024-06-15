@@ -33,7 +33,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={NVDeal} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto translate-z-0 object-contain p-4 sm:p-6" alt="" />
+            <Image src={NVDeal} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto translate-z-0 object-contain p-4 sm:p-6" alt="NewVehicle Buy Online" />
           </motion.div>
         </div>
       )
@@ -56,7 +56,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={juhuAutoImage} width={1984} height={1984} quality={100} className="pointer-events-none w-full translate-z-0" alt="" />
+            <Image src={juhuAutoImage} width={1984} height={1984} quality={100} className="pointer-events-none w-full translate-z-0" alt="Juhu Auto Vehicle Marketplace" />
           </motion.div>
         </motion.div>
       )
@@ -79,7 +79,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={fitcheckImage} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto p-4 sm:p-8 translate-z-0" alt="" />
+            <Image src={fitcheckImage} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto p-4 sm:p-8 translate-z-0" alt="FitnessCheck" />
           </motion.div>
         </div>
       )
@@ -102,7 +102,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={JDEFRecord} width={1984} height={1984} quality={100} className="w-full pointer-events-none translate-z-0" alt=""/>
+            <Image src={JDEFRecord} width={1984} height={1984} quality={100} className="w-full pointer-events-none translate-z-0" alt="Connected Worker"/>
           </motion.div>
         </div>
       )
@@ -112,7 +112,7 @@ const myWork = [
     title: 'Dealer Platform',
     description:
       'Lorem description.',
-    url: '#',
+    url: 'dealerplatform',
     type: 'Coming Soon',
     disabled: true,
     image: function DealerPlatform() {
@@ -125,7 +125,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={dealerPlatform} width={1984} height={1984} quality={100} className="w-full pointer-events-none translate-z-0" alt="" />
+            <Image src={dealerPlatform} width={1984} height={1984} quality={100} className="w-full pointer-events-none translate-z-0" alt="iVendi Dealer Platform" />
           </motion.div>
         </div>
       )
@@ -134,7 +134,7 @@ const myWork = [
     title: 'FAFMC',
     description:
       'Lorem description.',
-    url: '#',
+    url: 'findandfundmycar',
     type: 'Coming Soon',
     disabled: true,
     image: function FAFMC() {
@@ -147,7 +147,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={fafmcImage} width={1984} height={1984} quality={100} className="w-full pointer-events-none translate-z-0" alt="" />
+            <Image src={fafmcImage} width={1984} height={1984} quality={100} className="w-full pointer-events-none translate-z-0" alt="Findandfundmycar.com" />
           </motion.div>
         </div>
       )
@@ -187,6 +187,7 @@ export function MyWork() {
   return (
       <div key={2} >
         <section
+          key="myWork"
           id="myWork"
           aria-labelledby="myWork-title"
           ref={targetRef}
@@ -198,7 +199,6 @@ export function MyWork() {
 
             >
             <motion.ol
-              // layout={!isExiting}
               style={{ x }}
               role="list"
               className="w-full xl:ease-[cubic-bezier(0.16,0.84,0.44,1)] xl:duration-[600ms] md:max-w-screen-2xl grid md:grid-flow-col md:grid-cols-[repeat(auto-fill,_minmax(496px,_1fr))] md:auto-cols-[minmax(496px,_1fr)] grid-cols-1 gap-y-2 xs:gap-y-4 md:gap-x-4 md:-my-16 md:-mx-4 md:py-16 2xl:px-4"
@@ -250,7 +250,6 @@ export function MyWork() {
           </Container>
           <motion.div
                 className="sticky top-[176px] md:top-[624px] z-50"
-                // style={{ zIndex: aboutZIndex }}
                 initial={{ opacity: 0, y: 50 }}
                 viewport= {{ once: true, amount: 0.25 }}
                 whileInView={{ opacity: 1, y: 0 }}

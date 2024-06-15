@@ -215,13 +215,13 @@ export default function FitnessCheck() {
                           This type of test is typically instructed by a trainer or health professional, so it was important that the app communicated to the user in a similar way to enable them to do the test on their own. 
                         </p>
                         <ul className="list-disc list-inside">
-                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                          <li key="1" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
                           I observed a number of tests being conducted by a trainer in the on-site gym, to get an idea of how trainers communicate the instructions to the participant.
                           </li>
-                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                          <li key="2" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
                           I recorded the ways the trainer would communicate the test, the types of reinforcements, and the cues they would give to the participant at each stage.
                           </li>
-                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                          <li key="3" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
                           I recorded the participant's reactions to the test, and whether they changed their pace in line with the instructions.
                           </li>
                         </ul>
@@ -298,22 +298,22 @@ export default function FitnessCheck() {
                         </p>
 
                         <ul className="list-disc list-inside">
-                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                          <li key="4" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
                             See how easy/difficult it was for the participant to find and begin the feature.
                           </li>
-                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                          <li key="5" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
                             Observe how participants interact with the feature, before, during and after.
                           </li>
-                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                          <li key="6" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
                             Do they understand the purpose of the feature?
                           </li>
-                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                          <li key="7" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
                             Is the test completed accurately?
                           </li>
-                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                          <li key="8" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
                             Does the participant reach close-to or above their maximum heart rate, as the test requires?
                           </li>
-                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                          <li key="9" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
                             Do they understand their results?
                           </li>
                         </ul>                      
@@ -363,11 +363,11 @@ export default function FitnessCheck() {
                 style={{ y }}
                 className="rounded-t-xl px-2 xs:px-4 mb-2 xs:mb-4 md:mb-0 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
               >
-                {fitcheckImages.map((images) => (
-                  <MediaQuery minWidth={768}>
+                {fitcheckImages.map((images, index) => (
+                  <MediaQuery minWidth={768} key={index}>
                     {(matches) =>
                       matches ?
-                        <AnimateHeightChange>
+                        <AnimateHeightChange key={index}>
                           <images.image />
                         </AnimateHeightChange>
                         :
