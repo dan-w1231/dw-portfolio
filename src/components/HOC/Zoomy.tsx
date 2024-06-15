@@ -45,8 +45,8 @@ const Zoomy: React.FC<ZoomyProps> = ({ children }) => {
           className="backdrop-blur-[140px]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ type: "spring", stiffness: 70, duration: 1.2 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6 }}
           style={{
             position: 'fixed',
             top: 0,
@@ -88,11 +88,15 @@ const Zoomy: React.FC<ZoomyProps> = ({ children }) => {
             }}
             onClick={(e) => e.stopPropagation()}
             >
-            {React.Children.map(children, child =>
-              React.isValidElement(child) ? cloneElement(child, {
-                className: `${child.props.className || ''} max-w-full max-h-screen object-contain pointer-events-auto`
-              }) : child
-            )}
+            {React.Children.map(children, child => {
+              if (React.isValidElement(child)) {
+                const element = child as React.ReactElement<any>;
+                return React.cloneElement(element, {
+                  className: `${element.props.className || ''} max-w-full max-h-screen object-contain pointer-events-auto`
+                });
+              }
+              return child;
+            })}
           </motion.div>
         </motion.div>
       )}
