@@ -2,10 +2,9 @@
 import { BulletTag } from '@/components/BulletTag'
 import { motion, useTransform, useScroll } from 'framer-motion'
 import { AnimateHeightChange } from '@/components/AnimateHeightChange'
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import { ContactBox } from '@/components/ContactBox'
 import Zoomy from '@/components/HOC/Zoomy'
-import Link from 'next/link'
 import Image from 'next/image'
 import MediaQuery, { useMediaQuery } from 'react-responsive';
 
@@ -28,7 +27,6 @@ import approved from '@/images/resources/approved.png'
 
 const NVImages = [
   {
-    // IMAGES TOO BIG, OPTIMIZE
     image: function Calcs() {
       return (
         <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
@@ -126,6 +124,13 @@ const NVImages = [
 ]
 
 export default function NewVehicle() {
+
+  // Scroll to top on load due to next/link conflict with framer motion
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 1);
+  }, []);
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 768 });

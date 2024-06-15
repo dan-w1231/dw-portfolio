@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         <html
           lang="en"
           className={clsx(
-            'h-full scroll-smooth bg-[#E1D4DE] bg-lightBg dark:bg-[#1A1824] dark:bg-darkBg antialiased transition-all duration-900',
+            'h-full bg-[#E1D4DE] bg-lightBg dark:bg-[#1A1824] dark:bg-darkBg antialiased transition-all duration-900',
             inter.variable,
           )}
         >

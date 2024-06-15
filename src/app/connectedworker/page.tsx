@@ -1,6 +1,6 @@
 'use client'
 import { motion, useTransform, useScroll } from 'framer-motion';
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { ContactBox } from '@/components/ContactBox';
 import Zoomy from '@/components/HOC/Zoomy';
 import Image from 'next/image';
@@ -155,13 +155,12 @@ const workImages = [
 
 export default function ConnectedWorker() {
 
-  const targetRef = useRef<HTMLDivElement | null>(null);
-  const isDesktopOrLaptop = useMediaQuery({ minWidth: 768 });
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-  const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0%", "0%"] : ["0px", "1800px"]);
+  // Scroll to top on load due to next/link conflict with framer motion
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 1);
+  }, []);
 
   return (
     <>
@@ -169,7 +168,6 @@ export default function ConnectedWorker() {
         id="main"
         key="jobdemands"
         className="relative w-screen mx-auto mt-2 xs:mt-4"
-        ref={targetRef}
       >
         <div className="relative mx-auto mt-2 xs:mt-4 xl:mt-4" key={4}>
           <motion.div

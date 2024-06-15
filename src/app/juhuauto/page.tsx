@@ -2,7 +2,7 @@
 import { BulletTag } from '@/components/BulletTag'
 import { motion, useTransform, useScroll } from 'framer-motion'
 import { AnimateHeightChange } from '@/components/AnimateHeightChange'
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import { ContactBox } from '@/components/ContactBox'
 import Zoomy from '@/components/HOC/Zoomy'
 import Link from 'next/link'
@@ -125,6 +125,13 @@ const JuhuImages = [
 ]
 
 export default function JuhuAuto() {
+
+  // Scroll to top on load due to next/link conflict with framer motion
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 1);
+  }, []);
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 768 });
