@@ -46,7 +46,7 @@ const fitcheckImages = [
   {
     image: function FitCheckWarmupScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 1, y: 32 }}
@@ -65,7 +65,7 @@ const fitcheckImages = [
   {
     image: function FitCheckMaxIntensityScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -84,7 +84,7 @@ const fitcheckImages = [
   {
     image: function FitCheckCooldownScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -103,7 +103,7 @@ const fitcheckImages = [
   {
     image: function FitCheckResultsScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
