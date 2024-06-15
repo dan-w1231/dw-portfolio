@@ -8,7 +8,7 @@ import { Container } from '@/components/Container';
 import { Arrow } from '@/components/Arrow';
 
 //ITEMS
-import NVDeal from '@/images/resources/deviceImages/yourDealTradein.png';
+import NVDeal from '@/images/resources/deviceImages/yourDealTradein2.png';
 import JDEFRecord from '@/images/resources/deviceImages/JDEF.png';
 import fitcheckImage from '@/images/resources/fitcheckp6.png';
 import fafmcImage from '@/images/resources/fafmc.png';
@@ -33,7 +33,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={NVDeal} width={1984} height={1984} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto translate-z-0 object-contain" alt="" />
+            <Image src={NVDeal} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto translate-z-0 object-contain p-4 sm:p-6" alt="" />
           </motion.div>
         </div>
       )
@@ -79,7 +79,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={fitcheckImage} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto p-8 translate-z-0" alt="" />
+            <Image src={fitcheckImage} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto p-4 sm:p-8 translate-z-0" alt="" />
           </motion.div>
         </div>
       )
@@ -208,8 +208,7 @@ export function MyWork() {
                   key={work.url}
                   className="md:snap-start md:scroll-mx-0 select-none"
                   variants={workContainerVariants}
-                  whileHover="hover"
-                  whileTap={{ scale: 0.97, y: 0 }}
+                  {...(!work.disabled ? { whileHover: "hover", whileTap: { scale: 0.97, y: 0 } } : {})}
                   transition={{ duration: 0.2 }}
                 >
                   {/* Temporarily disable incomplete items */}

@@ -1,11 +1,11 @@
 'use client'
-import { BulletTag } from '@/components/BulletTag'
-import { motion, useTransform, useScroll } from 'framer-motion'
-import { AnimateHeightChange } from '@/components/AnimateHeightChange'
-import { useRef, useEffect } from "react"
-import { ContactBox } from '@/components/ContactBox'
-import Zoomy from '@/components/HOC/Zoomy'
-import Image from 'next/image'
+import { BulletTag } from '@/components/BulletTag';
+import { motion, useTransform, useScroll } from 'framer-motion';
+import { AnimateHeightChange } from '@/components/AnimateHeightChange';
+import { useRef, useEffect } from "react";
+import { ContactBox } from '@/components/ContactBox';
+import Zoomy from '@/components/HOC/Zoomy';
+import Image from 'next/image';
 import MediaQuery, { useMediaQuery } from 'react-responsive';
 
 // Static Images
@@ -38,7 +38,7 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={calcs} className="w-full max-w-[496px]" alt="Themed finance calculators embedded in dealership websites" />
+              <Image src={calcs} className="w-full max-w-[496px] object-contain" alt="Themed finance calculators embedded in dealership websites" />
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -57,7 +57,7 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={yourDeal} className="w-full m-w-[496px]" alt="The deal page." />
+              <Image src={yourDeal} className="w-full m-w-[496px] object-contain" alt="The deal page." />
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -76,7 +76,7 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={reserve} className="w-full max-w-[44rem] p-[12%]" alt="Desktop view of a reservation." />
+              <Image src={reserve} className="w-full max-w-[44rem] p-[12%] object-contain" alt="Desktop view of a reservation." />
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -95,7 +95,7 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={fpa} className="w-full max-w-[17rem]" alt="Vehicle advert." />
+              <Image src={fpa} className="w-full max-w-[17rem] object-contain" alt="Vehicle advert." />
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -114,7 +114,7 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={approved} className="w-full max-w-[17rem]" alt="Instant decision on finance applications." />
+              <Image src={approved} className="w-full max-w-[17rem] object-contain" alt="Instant decision on finance applications." />
             </Zoomy>
           </motion.div>
         </motion.div>

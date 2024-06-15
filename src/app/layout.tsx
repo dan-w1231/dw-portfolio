@@ -79,6 +79,7 @@ export const metadata: Metadata = {
           <body
             className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-lightBg bg-[#E1D4DE] bg-noisePattern before:absolute before:inset-0 before:content-[''] before:top-0 before:left-0 before:opacity-0 before:dark:opacity-100 before:transition-opacity before:duration-900 before:bg-darkBg z-[1]"
             >
+              <div id="modal-root"></div>
               <Toaster 
                 position="bottom-center"
                 toastOptions={{
