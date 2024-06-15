@@ -2,7 +2,7 @@
 
 import { useState, forwardRef, useImperativeHandle } from 'react';
 import { motion } from "framer-motion";
-
+import { useTheme } from '@/components/HOC/ThemeContext'
 interface TextAreaProps extends React.InputHTMLAttributes<HTMLTextAreaElement> {
   id: string;
   name: string;
@@ -37,6 +37,7 @@ const TextArea = forwardRef (({
   const [isFocused, setIsFocused] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [touched, setTouched] = useState(false);
+  const { darkMode } = useTheme();
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -116,7 +117,7 @@ const TextArea = forwardRef (({
             translateX: isFocused || value ? '-17px' : '0',
             scale: isFocused || value ? 0.8 : 1,
             backdropFilter: isFocused || value ? 'blur(140px)' : 'none',
-            backgroundColor: isFocused || value ? '#20252b' : 'transparent',
+            backgroundColor: darkMode ? (isFocused || value ? '#20252b' : 'transparent') : (isFocused || value ? '#FFFFFF' : 'transparent'),
           }}
           >
           {label}
