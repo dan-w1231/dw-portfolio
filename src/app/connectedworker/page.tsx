@@ -9,108 +9,148 @@ import { useMediaQuery } from 'react-responsive';
 import { Gallery } from '@/components/Gallery';
 
 // Gallery Images
-import fitcheckStart from '@/images/resources/fitCheckStart.png';
+import JDEFLogin from '@/images/resources/jdefLogin.png';
+import JDEFRecord from '@/images/resources/jdefRecord.png';
+import JDEFInProgress from '@/images/resources/jdefInProgress.png';
+import CWMedical from '@/images/resources/connectedWorker-Medical.png';
+import CWIndustry from '@/images/resources/jdefConceptDark.png';
+import CWTesting from '@/images/resources/connectedWTesting.png';
+import CWTestingB from '@/images/resources/connectedWTesting2.png';
 
 
 // Article Images
 
-const fitcheck6Fs = [
+const workImages = [
   {
-    // IMAGES TOO BIG, OPTIMIZE
-    image: function IntroScreen() {
+    title: 'Login',
+    description:
+      'Logging in to the JDEF app.',
+    background: 'bg-cardGradDark',
+    image: function Login() {
       return (
-        <motion.div layout className="relative w-[370px] md:w-[496px] h-[370px] md:h-[496px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <Image src={fitcheckStart} className="w-full max-w-[496px]" alt="Introduction screen for fitness check" />
-            </Zoomy>
-          </motion.div>
-        </motion.div>
+        <motion.li
+          key="login"
+          role="listitem"
+          className="relative w-full h-full flex items-center justify-center p-8"
+        >
+          <Zoomy>
+            <Image src={JDEFLogin} className="h-[115%] object-contain translate-z-0" alt="" />
+          </Zoomy>
+        </motion.li>
       )
     },
   },
   {
-    image: function Warmup() {
+    title: 'In progress',
+    description:
+      'A job in progress.',
+    background: 'bg-cardGradDark',
+    image: function InProgress() {
       return (
-        <motion.div layout className="relative w-[370px] md:w-[496px] h-[370px] md:h-[496px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <Image src={fitcheckStart} className="w-full m-w-[496px] p-[8%]" alt="Warmup screen during fitness check" />
-            </Zoomy>
-          </motion.div>
-        </motion.div>
+        <motion.li
+          key="title2"
+          role="listitem"
+          className="relative w-full h-full flex items-center justify-center p-8"
+        >
+          <Zoomy>
+            <Image src={JDEFInProgress} className="h-[115%] object-contain translate-z-0" alt="" />
+          </Zoomy>
+        </motion.li>
       )
     },
   },
   {
-    image: function MaxIntensity() {
+    title: 'Testing.',
+    description:
+      'Testing the MVP.',
+    background: 'bg-cardGradDark',
+    image: function Testing() {
       return (
-        <motion.div layout className="relative w-[370px] md:w-[496px] h-[370px] md:h-[496px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <Image src={fitcheckStart} className="w-full max-w-[44rem] p-[6%]" alt="Max intensity part of the fitness check" />
-            </Zoomy>
-          </motion.div>
-        </motion.div>
+        <motion.li
+          className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl"
+        >
+          <Zoomy>
+            <Image src={CWTesting} className="object-cover translate-z-0" alt="" />
+          </Zoomy>
+        </motion.li>
       )
     },
   },
   {
-    image: function Cooldown() {
+    title: 'Testing2',
+    description:
+      'Testing the MVP.',
+    background: 'bg-cardGradDark',
+    image: function CWTesting2() {
       return (
-        <motion.div layout className="relative w-[370px] md:w-[496px] h-[370px] md:h-[496px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <Image src={fitcheckStart} className="w-full max-w-[496px] p-[8%]" alt="Reducing pace with a cool down" />
-            </Zoomy>
-          </motion.div>
-        </motion.div>
+        <motion.li
+          className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl"
+        >
+          <Zoomy>
+            <Image src={CWTestingB} className="object-cover translate-z-0" alt="" />
+          </Zoomy>
+        </motion.li>
       )
     },
   },
   {
-    image: function ResultScreen() {
+    title: 'JobRecordConcept',
+    description:
+      'Concept for the job record.',
+    background: 'bg-cardGradDark',
+    image: function JobRecord() {
       return (
-        <motion.div layout className="relative w-[370px] md:w-[496px] h-[370px] md:h-[496px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <Image src={fitcheckStart} className="w-full max-w-[512px]" alt="Result screen" />
-            </Zoomy>
-          </motion.div>
-        </motion.div>
+        <motion.li
+          key="title3"
+          role="listitem"
+          className="relative w-full h-full flex items-center justify-center p-8"
+        >
+          <Zoomy>
+            <Image src={JDEFRecord} className="h-[115%] object-contain translate-z-0" alt="" />
+          </Zoomy>
+        </motion.li>
       )
     },
   },
+  {
+    title: 'ActivityScreen',
+    description:
+      'Concept for viewing the activity screen.',
+    background: 'bg-cardGradDark',
+    image: function ActivityScreen() {
+      return (
+        <motion.li
+          key="title4"
+          role="listitem"
+          className="relative w-full h-full flex items-center justify-center p-8"
+        >
+          <Zoomy>
+            <Image src={CWMedical} className="h-[115%] object-contain translate-z-0" alt="" />
+          </Zoomy>
+        </motion.li>
+      )
+    },
+  },
+  {
+    title: 'UserRecord',
+    description:
+      'Concept for viewing the user record.',
+    background: 'bg-cardGradDark',
+    image: function UserRecord() {
+      return (
+        <motion.li
+          key="title4"
+          role="listitem"
+          className="relative w-full h-full flex items-center justify-center p-8"
+        >
+          <Zoomy>
+            <Image src={CWIndustry} className="h-[115%] object-contain translate-z-0" alt="" />
+          </Zoomy>
+        </motion.li>
+      )
+    },
+  },
+
 ]
 
 export default function ConnectedWorker() {
@@ -135,7 +175,7 @@ export default function ConnectedWorker() {
           <motion.div
             key="contentHero"
           >
-            <GalleryHero />
+            <GalleryHero title="Connected Worker" description="A project with the materials science company Gore, to provide insight into workplace injury in high risk-factor industries, and empower companies to reduce it." />
           </motion.div>
           <motion.div
             key="contentGallery"
@@ -145,7 +185,16 @@ export default function ConnectedWorker() {
             transition={{ type: "spring", stiffness: 70, delay: 1.4, duration: 1.5, staggerChildren: 0.5 }}
             className="w-full max-w-screen-2xl mx-auto mt-2 xs:mt-4"
           >
-            <Gallery />
+             <Gallery workImages={workImages} />
+          </motion.div>
+          <motion.div
+                className="relative z-50"
+                initial={{ opacity: 0, y: 50 }}
+                viewport= {{ once: true, amount: 0.25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
+              >
+              <ContactBox useContainerQuery={false} parentClass="mt-2 sm:pb-16 xs:mt-4 px-2 xs:px-4" flexClass="md:flex-row" />
           </motion.div>
         </div>
       </motion.div>
