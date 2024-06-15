@@ -129,7 +129,7 @@ export default function FitnessCheck() {
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 1);
+    }, 0);
   }, []);
 
   const targetRef = useRef<HTMLDivElement | null>(null);

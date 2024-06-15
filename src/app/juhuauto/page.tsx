@@ -130,7 +130,7 @@ export default function JuhuAuto() {
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 1);
+    }, 0);
   }, []);
 
   const targetRef = useRef<HTMLDivElement | null>(null);

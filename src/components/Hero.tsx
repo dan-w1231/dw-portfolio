@@ -1,7 +1,8 @@
+'use client'
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTheme } from '@/components/HOC/ThemeContext';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
 import { Button } from '@/components/Button';
 import { ButtonLink } from '@/components/ButtonLink';
@@ -20,13 +21,35 @@ export function Hero() {
     const element = document.getElementById('contactBox');
     element?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event: MouseEvent) => {
+    setMousePosition({
+      x: event.clientX,
+      y: event.clientY,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  const imageStyle = {
+    transform: `translate(${mousePosition.x * 0.005}px, ${mousePosition.y * 0.002}px)`,
+    transition: 'transform 1s cubic-bezier(0.16,0.84,0.44,1)',
+  };
   
   return ( 
       <motion.div key={1} ref={ref} >
         <header className="relative m-w-full px-2 xs:px-4 rounded-4xl max-w-screen-2xl mx-auto">
           <div  
             className="relative max-w-full pt-11 md:pt-20 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad dark:bg-cardGradDark backdrop-blur-[140px] shadow-xl dark:shadow-xlD rounded-4xl md:rounded-5xl xl:rounded-6xl flex flex-row flex-wrap justify-between gap-6 md:gap-10 overflow-hidden z-[2] before:absolute before:z[-1] before:rounded-[inherit] before:margin-1 before:blurple-900-gradient(#003842_33%,#001D22)] transition-opacity transition-bg duration-900">
-            <div className="relative max-w-full md:w-3/4 items-end flex items-center z-[1]">
+            <div className="relative max-w-full md:w-3/4 flex items-center z-[1]">
               <div className="w-full">
                 <motion.div
                   className="relative z-[99]"
@@ -72,7 +95,7 @@ export function Hero() {
                 <div className="absolute h-[64px] border-3 border-blurple-900 rounded-full pointer-events-none z-[98] scale-y-[-0.99] scale-x-[-0.99] brightness-100 blur-[0px] md:blur-[40px] opacity-100 w-full top-[62px]" />
               </motion.div>
             </div>
-            <div className="absolute top-0 right-0 w-full h-full z-[2]">    
+            <div className="absolute top-0 right-0 w-full h-full z-[2]" style={imageStyle}>    
               <ThemeImage/>
             </div>
               <div className="absolute top-[16px] md:top-[40px] left-[16px] md:left-[40px] w-full z-[-99]">
