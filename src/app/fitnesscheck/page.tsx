@@ -260,7 +260,7 @@ export default function FitnessCheck() {
                           <span className="font-bold">Observation:</span> We needed the user to ramp up their intensity in a specific way, and a single instruction per phase was not enough during the test.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          <span className="font-bold">Iteration:</span> Have a number of instructions per phase that update as time progresses, e.g. for the warmup phase:
+                          <span className="font-bold">Iteration:</span> Add multiple prompts per phase that update as time progresses. Rather than a single 'Warmup' instruction, the Warmup phase was given 6 prompts that build up their pace gradually. Each phase was given 1 prompt per 30seconds.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           <span className="font-bold">Observation:</span> The phone was typically placed on the treadmill, and some users struggled to see details when running.
@@ -296,24 +296,27 @@ export default function FitnessCheck() {
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           I created a test plan with the following goals:
                         </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          + See how easy/difficult it was for the participant to find and begin the feature.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          + Observe how the participant interacts with the feature, before, during and after.
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          + Do they understand the purpose of the feature?
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          + Is the test completed accurately?
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          + Does the participant reach close-to or above their maximum heart rate, as the test requires?
-                        </p>
-                        <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          + Do they understand the results?
-                        </p>
+
+                        <ul className="list-disc list-inside">
+                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                            See how easy/difficult it was for the participant to find and begin the feature.
+                          </li>
+                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                            Observe how participants interact with the feature, before, during and after.
+                          </li>
+                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                            Do they understand the purpose of the feature?
+                          </li>
+                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                            Is the test completed accurately?
+                          </li>
+                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                            Does the participant reach close-to or above their maximum heart rate, as the test requires?
+                          </li>
+                          <li className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                            Do they understand their results?
+                          </li>
+                        </ul>                      
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
                             <Image src={fitcheckUserTest} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg object-cover" alt="Four of the personas created" />
@@ -338,7 +341,7 @@ export default function FitnessCheck() {
                           All participants read and understood what the results were communicating to them.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          After a round of text changes, tests were performed again with new people. All participants reached a peak heart rate within the expected range for the test, and 2 participants set a new record maximum in their profiles. 
+                          After a round of text changes, tests were performed again with new people. All participants reached a peak heart rate within the expected range for the test, and a number of participants set a new record maximum heart rate during the test. 
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           The feature was then released to the public as part of the Prevayl app.
