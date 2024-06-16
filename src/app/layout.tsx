@@ -41,17 +41,27 @@ export const metadata: Metadata = {
         >
           <head>
           <script dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (localStorage.getItem("theme") === 'dark' || (localStorage.getItem("theme") === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark')
-                } else {
-                    document.documentElement.classList.remove('dark')
-                }
-              } catch (_) {}
-            `,
-          }}>
-          </script>
+              __html: `
+                (function() {
+                  try {
+                    var theme = localStorage.getItem("theme");
+                    var isDark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                    document.documentElement.classList.toggle('dark', isDark);
+                    var content = isDark ? '#1A1824' : '#E1D4DE'; 
+                    var metaThemeColor = document.querySelector('meta[name=theme-color]');
+                    if (!metaThemeColor) {
+                      metaThemeColor = document.createElement('meta');
+                      metaThemeColor.setAttribute('name', 'theme-color');
+                      document.getElementsByTagName('head')[0].appendChild(metaThemeColor);
+                    }
+                    metaThemeColor.setAttribute('content', content);
+                  } catch (error) {
+                    console.error('Error applying theme:', error);
+                  }
+                })();
+              `,
+            }}>
+            </script>
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
             <link
               rel="preconnect"
