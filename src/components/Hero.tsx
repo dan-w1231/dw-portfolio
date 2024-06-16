@@ -18,8 +18,7 @@ export function Hero() {
     threshold: 0.1,
   });
   const handleContactClick = () => {
-    const element = document.getElementById('contactBox');
-    element?.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   };
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

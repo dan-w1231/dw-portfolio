@@ -29,7 +29,7 @@ export function ContactBox({ useContainerQuery, parentClass, flexClass }: { useC
       aria-labelledby="contactBox-Title"
       className={`max-w-screen-2xl m-auto w-full ${parentClass}`}
     >
-      <div className="absolute pointer-events-none inset-x-0 bottom-0 top-1/2 text-midnight-900/10 [mask-image:linear-gradient(transparent,white)]">
+      <div className="absolute pointer-events-none h-[308px] inset-x-0 bottom-0 top-1/2 text-midnight-900/10 dark:text-ice-900/10 [mask-image:linear-gradient(transparent,white)]">
         <GridPattern x="50%" y="100%" />
       </div>
       <div className="relative">

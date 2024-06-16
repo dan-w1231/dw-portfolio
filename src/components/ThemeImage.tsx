@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useTheme } from '@/components/HOC/ThemeContext';
-import Circle from '@/images/resources/circle.svg';
 import marbleMoon from '@/images/resources/marbleMoon.png';
 import marbleSphere from '@/images/resources/marbleSphere.png';
 import mL2 from '@/images/resources/sphere/2.png';

@@ -9,7 +9,7 @@ import { Footer } from '@/components/Footer';
 import { GridPattern } from '@/components/GridPattern';
 import { FlowChart } from '@/components/FlowChart';
 import Template from '@/app/template';
-import { Toaster } from 'react-hot-toast';
+import Toasted from '@/components/Toasted'
 import { ThemeProvider } from '@/components/HOC/ThemeContext'
 
 const inter = Inter({
@@ -80,35 +80,7 @@ export const metadata: Metadata = {
             className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-lightBg bg-[#E1D4DE] bg-noisePattern before:absolute before:inset-0 before:content-[''] before:top-0 before:left-0 before:opacity-0 before:dark:opacity-100 before:transition-opacity before:duration-900 before:bg-darkBg z-[1]"
             >
               <div id="modal-root"></div>
-              <Toaster 
-                position="bottom-center"
-                toastOptions={{
-                  success: {  
-                    style: {
-                      fontFamily: "Cabinet Grotesk",
-                      alignItems: "flex-start",
-                      letterSpacing: "-0.025em",
-                      padding: "24px",
-                      borderRadius: "38px",
-                      background: "rgba(255,255,255,0.95)",
-                      backdropFilter: "blur(8px)",
-                      border: "1px solid #2AC355",
-                    },
-                  },
-                  error: {  
-                    style: {
-                      fontFamily: "Cabinet Grotesk",
-                      alignItems: "flex-start",
-                      letterSpacing: "-0.025em",
-                      padding: "24px",
-                      borderRadius: "38px",
-                      background: "rgba(255,255,255,0.95)",
-                      backdropFilter: "blur(8px)",
-                      border: "1px solid #FF3257",
-                    },
-                  }
-              }}
-              />
+              <Toasted />
               <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-124 text-midnight-900/50 dark:text-ice-900/30 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
                 <GridPattern x="20%" />
               </div>

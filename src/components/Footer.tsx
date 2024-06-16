@@ -1,7 +1,8 @@
 'use client'
 import { GridPattern } from '@/components/GridPattern';
 import Link from 'next/link';
-import { Github } from '@/components/Github'
+import { Github } from '@/components/Github';
+import { Logo } from '@/components/Logo';
 
 export function Footer() {
   return (
@@ -19,6 +20,9 @@ export function Footer() {
           <p>Copyright &copy; {new Date().getFullYear()} Dan Wallace</p>
           <p>All rights reserved.</p>
         </div>
+        <Link href="/" className="text-midnight-600 dark:text-ice-600 mt-12 hover:text-blurple-900 dark:hover:text-blurple-900">
+          <Logo />
+        </Link>
       </div>
     </footer>
   )
