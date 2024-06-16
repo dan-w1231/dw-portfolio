@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -62,8 +61,8 @@ export function NavBar() {
                 key="navLogoArrow"
                 initial={false}
                 animate={{ width: pathname === '/' ? '50px' : '71px' }}
-                whileHover={{ transition: { duration: 0.1, delay: 0 }, x: pathname === '/' ? '0' : '-4px' }}
-                whileTap={{ transition: { duration: 0.1, delay: 0 }, x: pathname === '/' ? '0' : '-6px' }}
+                // whileHover={{ transition: { duration: 0.1, delay: 0 }, x: pathname === '/' ? '0' : '-4px' }}
+                // whileTap={{ transition: { duration: 0.1, delay: 0 }, x: pathname === '/' ? '0' : '-6px' }}
                 className="relative h-[23px] flex items-center grow shrink justify-start gap-2 transition-all duration-300"
               >
 
@@ -80,7 +79,7 @@ export function NavBar() {
                   </motion.div>
                 )}
                 <div className={`absolute ${pathname === '/' ? 'left-[0px]' : 'left-[21px]'} transition-all duration-500`}>
-                  <Logo className="text-midnight-900 dark:text-ice-900" />
+                  <Logo className="text-midnight-900 dark:text-ice-900 hover:text-blurple-900 hover:dark:text-blurple-900" />
                 </div>
               </motion.div>
             </AnimatePresence>

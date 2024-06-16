@@ -40,10 +40,14 @@ export function ContactBox({ useContainerQuery, parentClass, flexClass }: { useC
                 className={processClasses(`w-full xl:w-1/2`, useContainerQuery)}
               >
               <div className={processClasses(`font-display text-5xl font-extrabold tracking-tight text-blurple-900 sm:text-6xl`, useContainerQuery)}>
-                <span className="block text-midnight-900 dark:text-ice-900 no-underline">Reach out.</span>
-                <span onClick={copyEmail} className={processClasses(`md:underline border-none text-4xl sm:text-6xl cursor-pointer`, useContainerQuery)}>
-                  {email}
-                </span>  
+                <div id="contactText">
+                  <span className="block text-midnight-900 dark:text-ice-900 no-underline">Reach out.</span>
+                </div>
+                <div id="contactEmail">
+                  <span onClick={copyEmail} className={processClasses(`underline border-none text-4xl sm:text-6xl cursor-pointer`, useContainerQuery)}>
+                    {email}
+                  </span>
+                </div>
               </div>
               <p className="mt-4 text-2xl tracking-tight text-midnight-700 dark:text-ice-700 flex items-center gap-2">
                 Or fill out this form and I'll get back to you<Image src={arrow} alt="arrow pointing to form" width="13" height="13" className={processClasses(`xl:-rotate-90`, useContainerQuery)}/>
