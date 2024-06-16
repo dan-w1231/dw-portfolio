@@ -54,7 +54,7 @@ export function Button({ className, variant = 'primary', ...props }: ButtonProps
 
   const baseClasses = 'relative overflow-hidden transform-gpu transition-all ease-in-out duration-300 hover:shadow-lg inline-flex items-center min-w-[108px] md:max-w-[248px] justify-center rounded-full py-4 px-8 text-lg font-semibold tracking-tight shadow-lg focus:outline-none h-[64px]';
   const primaryClasses = 'bg-primaryGrad text-white';
-  const secondaryClasses = 'bg-white/10 dark:transparent dark:bg-midnight-900/20 hover:bg-white/20 text-blurple-900 border border-blurple-900 h-[64px] rounded-full';
+  const secondaryClasses = 'bg-white/10 dark:transparent dark:bg-midnight-900/20 hover:bg-white/20 text-blurple-900 border border-blurple-900 h-[64px] rounded-full backdrop-blur-[100px]';
 
   const shineBaseClasses = clsx('absolute inset-0 bg-white bg-opacity-40 pointer-events-none transition-opacity duration-300', { 'opacity-0': !isMouseOver });
   // If primary button use primary, if secondary button use secondary
