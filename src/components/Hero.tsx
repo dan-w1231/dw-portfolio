@@ -39,7 +39,7 @@ export function Hero() {
   }, []);
 
   const imageStyle = {
-    transform: `translate(${mousePosition.x * 0.005}px, ${mousePosition.y * 0.002}px)`,
+    transform: `translate(${mousePosition.x * 0.008}px, ${mousePosition.y * 0.005}px)`,
     transition: 'transform 1s cubic-bezier(0.16,0.84,0.44,1)',
   };
   
