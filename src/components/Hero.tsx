@@ -48,7 +48,7 @@ export function Hero() {
         <header className="relative m-w-full px-2 xs:px-4 rounded-4xl max-w-screen-2xl mx-auto">
           <div  
             className="relative max-w-full pt-11 md:pt-20 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad dark:bg-cardGradDark backdrop-blur-[140px] shadow-xl dark:shadow-xlD rounded-4xl md:rounded-5xl xl:rounded-6xl flex flex-row flex-wrap justify-between gap-6 md:gap-10 overflow-hidden z-[2] before:absolute before:z[-1] before:rounded-[inherit] before:margin-1 before:blurple-900-gradient(#003842_33%,#001D22)] transition-opacity transition-bg duration-900">
-            <div className="relative max-w-full md:w-3/4 flex items-center z-[1]">
+            <div className="relative max-w-full md:w-3/4 flex items-center z-[3]">
               <div className="w-full">
                 <motion.div
                   className="relative z-[99]"
@@ -60,7 +60,7 @@ export function Hero() {
                   <p className="font-display text-3xl font-semibold tracking-tight text-midnight-600 dark:text-ice-600 mb-4 z-[99]">
                     Hey, I'm Dan 👋
                   </p>
-                  <h1 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 z-1">
+                  <h1 className="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 z-2 drop-shadow-[4px_0_0_#e4d3d8] dark:drop-shadow-[4px_0_0_#352c48] transition-color">
                     Digital product designer.
                   </h1>
                 </motion.div>

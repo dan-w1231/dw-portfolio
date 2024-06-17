@@ -11,7 +11,7 @@ import MediaQuery, { useMediaQuery } from 'react-responsive';
 // Gallery Images
 import juhuFPA from '@/images/resources/juhuFPA1.png';
 import bdkToJuhu from '@/images/resources/deviceImages/bdkTojuhu.png';
-import juhuFPAs from '@/images/resources/deviceImages/juhuFPAs.png';
+import juhuFPAs from '@/images/resources/deviceImages/juhuFPAsB.png';
 import juhuQuotes from '@/images/resources/deviceImages/juhuFinanceWide.png';
 import juhuPreApproval from '@/images/resources/deviceImages/juhuPreApproval.png';
 
@@ -48,7 +48,7 @@ const JuhuImages = [
   {
     image: function BDKToJuhu() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[340px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 1, y: 32 }}
@@ -67,7 +67,7 @@ const JuhuImages = [
   {
     image: function JuhuVehicleAdvert() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[340px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -105,7 +105,7 @@ const JuhuImages = [
   {
     image: function JuhuQuotes() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[500px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
