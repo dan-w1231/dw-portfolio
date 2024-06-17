@@ -20,9 +20,11 @@ import flowOptions from '@/images/resources/flowOptions.png'
 import productPages from '@/images/resources/productPages.png'
 import analyticsNV from '@/images/resources/analyticsNV.png'
 import ABWidget from '@/images/resources/ABWidget.png'
-import calcs from '@/images/resources/productPagesCalcs.png'
+import calcs from '@/images/resources/calcs.png'
+import dealSummary from '@/images/resources/dealSummary.png'
 import fpa from '@/images/resources/fpa.png'
 import reserve from '@/images/resources/reserve-wide.png'
+import reserveB from '@/images/resources/reserve.png'
 import approved from '@/images/resources/approved.png'
 
 const NVImages = [
@@ -31,14 +33,14 @@ const NVImages = [
       return (
         <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
-            className="-ml-[15%]"
+            className=""
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={calcs} className="w-full max-w-[496px] object-contain" alt="Themed finance calculators embedded in dealership websites" />
+              <Image src={calcs} className="w-full object-contain py-4" alt="Themed finance calculators embedded in dealership websites" />
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -57,7 +59,26 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={yourDeal} className="w-full m-w-[496px] object-contain" alt="The deal page." />
+              <Image src={yourDeal} className="w-full object-contain" alt="The deal page." />
+            </Zoomy>
+          </motion.div>
+        </motion.div>
+      )
+    },
+  },
+  {
+    image: function DealSummary() {
+      return (
+        <motion.div layout className="relative w-32 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[390px] md:min-w-0 overflow-hidden">
+          <motion.div
+            className="flex items-center justify-center w-full h-auto"
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 1.2 }}
+          >
+            <Zoomy>
+              <Image src={dealSummary} className="w-full object-contain md:px-6" alt="Desktop view of a reservation." />
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -67,16 +88,16 @@ const NVImages = [
   {
     image: function Reserve() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-32 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[390px] md:min-w-0 overflow-hidden">
           <motion.div
-            className=""
+            className="flex items-center justify-center w-full h-auto"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={reserve} className="w-full max-w-[44rem] p-[12%] object-contain" alt="Desktop view of a reservation." />
+              <Image src={reserveB} className="w-full object-contain md:px-6" alt="Desktop view of a reservation." />
             </Zoomy>
           </motion.div>
         </motion.div>
