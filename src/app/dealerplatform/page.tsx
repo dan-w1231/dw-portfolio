@@ -12,6 +12,8 @@ import { Gallery } from '@/components/Gallery';
 import Dashboard from '@/images/resources/dealerPlatformDash.png';
 import CustomerRecord from '@/images/resources/dealerPlatformCustomer.png';
 import Order from '@/images/resources/dealerPlatformOrder.png';
+import BuildDeal from '@/images/resources/dealerPlatformSendDeal.png';
+import SentDeal from '@/images/resources/dealerPlatformSent.png';
 
 
 
@@ -82,6 +84,44 @@ const workImages = [
       )
     },
   },
+  {
+    title: 'Send deal',
+    description:
+      'Building a deal to email to send to a customer account.',
+    background: 'bg-cardGradDark',
+    image: function InProgress() {
+      return (
+        <motion.li
+          key="title2"
+          role="listitem"
+          className="relative w-full h-full flex items-center justify-center p-8"
+        >
+          <Zoomy>
+            <Image src={BuildDeal} className="h-[115%] object-contain translate-z-0" alt="" />
+          </Zoomy>
+        </motion.li>
+      )
+    },
+  },
+  {
+    title: 'Deal sent',
+    description:
+      'Deal sent.',
+    background: 'bg-cardGradDark',
+    image: function InProgress() {
+      return (
+        <motion.li
+          key="title2"
+          role="listitem"
+          className="relative w-full h-full flex items-center justify-center p-8"
+        >
+          <Zoomy>
+            <Image src={SentDeal} className="h-[115%] object-contain translate-z-0" alt="" />
+          </Zoomy>
+        </motion.li>
+      )
+    },
+  },
 ]
 
 export default function DealerPlatform() {
@@ -104,7 +144,13 @@ export default function DealerPlatform() {
           <motion.div
             key="contentHero"
           >
-            <GalleryHero title="iVendi Dealer Platform" description="An online showroom and deal management system I designed allowing retailers to view leads and manage deals, winning a number of innovation of the year awards." />
+            <GalleryHero 
+              title="iVendi Transact" 
+              description="An online showroom and deal management system I designed allowing retailers to view leads and manage deals, winning a number of innovation of the year awards."
+              linkPreamble="This was designed as the retailer system for the "
+              linkText="NewVehicle consumer platform."
+              link="/newvehicle"
+              />
           </motion.div>
           <motion.div
             key="contentGallery"

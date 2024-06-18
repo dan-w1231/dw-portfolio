@@ -6,6 +6,7 @@ import { useRef, useEffect } from "react";
 import { ContactBox } from '@/components/ContactBox';
 import Zoomy from '@/components/HOC/Zoomy';
 import Image from 'next/image';
+import Link from 'next/link';
 import MediaQuery, { useMediaQuery } from 'react-responsive';
 
 // Static Images
@@ -212,6 +213,15 @@ export default function NewVehicle() {
                           Generate and display high quality leads by making a frictionless car purchase experience for buyers, themed to fit each retailer’s
                           branding. Working from the philosophy that the better the experience is for the buyer, the more cars dealers will sell.
                         </p>
+                        <span
+                          className="inline-block mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                            See the&nbsp;
+                        </span>
+                        <Link
+                          href="/dealerplatform"
+                          className="text-lg font-base tracking-tight text-blurple-900 dark:text-blurple-900 hover:text-midnight-900 dark:hover:text-ice-900 z-[99]">
+                            Transact Dealer Platform.
+                        </Link>
                         <h3 className="font-display text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 mt-10">
                           Scope
                         </h3>
