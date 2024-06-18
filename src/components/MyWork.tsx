@@ -111,10 +111,10 @@ const myWork = [
   {
     title: 'Dealer Platform',
     description:
-      'Lorem description.',
+      'iVendi dealer platform (Transact).',
     url: 'dealerplatform',
-    type: 'Coming Soon',
-    disabled: true,
+    type: 'Gallery',
+    disabled: false,
     image: function DealerPlatform() {
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[#d0f0e7] dark:bg-opacity-20 dark:backdrop-blur-[140px]">

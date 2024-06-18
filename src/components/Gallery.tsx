@@ -12,8 +12,7 @@ interface GalleryProps {
     title: string;
     description: string;
     background: string;
-    image: () => JSX.Element;
-  }>;
+    } & ({ image: () => JSX.Element; video?: never } | { video: string; image?: never })>;
 }
 
 export function Gallery({ workImages }: GalleryProps) {
@@ -28,19 +27,32 @@ export function Gallery({ workImages }: GalleryProps) {
         id="gallery"
         className="relative px-2 xs:px-4 w-full grid grid-cols-1 gap-2 xs:gap-4"
       >
-        {workImages.map((images, index) => (
+        {workImages.map((item, index) => (
           <motion.ul layout
             role="list"
             variants={workContainerVariants}
             whileHover="hover"
-            id={images.title}
+            id={item.title}
             key={index}
-            className={`w-full flex items-center justify-center rounded-4xl md:rounded-5xl xl:rounded-6xl ${images.background ? `${images.background}` : 'bg-cardGrad'}`}
+            className={`w-full  min-h-32 flex items-center justify-center rounded-4xl md:rounded-5xl xl:rounded-6xl ${item.background ? `${item.background}` : 'bg-cardGrad'}`}
           >
-            <images.image />
+            {item.video && (
+            <iframe
+              src={item.video}
+              className="aspect-video w-full h-full rounded-4xl md:rounded-5xl xl:rounded-6xl"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+            )}
+              {item.image && (
+              <>{item.image()}</>
+              )}
           </motion.ul>
         ))}
       </section>
     </motion.div>
   )
 }
+
