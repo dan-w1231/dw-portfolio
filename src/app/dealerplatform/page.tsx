@@ -9,6 +9,7 @@ import { useMediaQuery } from 'react-responsive';
 import { Gallery } from '@/components/Gallery';
 
 // Gallery Images
+import Dashboard from '@/images/resources/dealerPlatformDash.png';
 import CustomerRecord from '@/images/resources/dealerPlatformCustomer.png';
 import Order from '@/images/resources/dealerPlatformOrder.png';
 
@@ -23,6 +24,25 @@ const workImages = [
       'A deal management system for vehicle retailers.',
     background: 'bg-cardGradDark',
     video: 'https://www.youtube.com/embed/PymHk-nW25w',
+  },
+  {
+    title: 'Dashboard',
+    description:
+      'New dashboard homescreen.',
+    background: 'bg-cardGradDark',
+    image: function Login() {
+      return (
+        <motion.li
+          key="login"
+          role="listitem"
+          className="relative w-full h-full flex items-center justify-center p-8"
+        >
+          <Zoomy>
+            <Image src={Dashboard} className="h-[115%] object-contain translate-z-0" alt="" />
+          </Zoomy>
+        </motion.li>
+      )
+    },
   },
   {
     title: 'Customer record',
