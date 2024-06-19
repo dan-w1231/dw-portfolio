@@ -1,9 +1,10 @@
 'use client'
 import { motion } from "framer-motion"
 import { Arrow } from '@/components/Arrow'
+import MediaQuery, { useMediaQuery } from 'react-responsive';
 
 export function SectionTitle() {
-  
+  const isDesktopOrLaptop = useMediaQuery({ minWidth: 768 });
   return (
     <motion.div
       id="sectionPill"
@@ -19,15 +20,16 @@ export function SectionTitle() {
       >
         <h2
           id="sectionPillText"
-          className="font-display mr-[-2px] text-midnight-700 dark:text-ice-700 text-lg tracking-tight leading-5 [writing-mode:vertical-lr]">
-            Portfolio
+          className="font-display mr-[-2px] text-midnight-700 dark:text-ice-700 text-lg tracking-tight leading-5 [writing-mode:vertical-lr]"
+        >
+          {isDesktopOrLaptop ? 'Scroll' : 'Portfolio'}
         </h2>
         <motion.div
           id="sectionPillIcon"
           // style={{ rotateZ: arrowRotation }}
           className="flex flex-col justify-center items-center"
         >
-          <Arrow className="md:-rotate-90 text-midnight-700 dark:text-ice-600" />
+          <Arrow className="text-midnight-700 dark:text-ice-600" />
         </motion.div>
       </div>
     </motion.div>
