@@ -24,10 +24,10 @@ import DesignBoard from '@/images/resources/fitcheck-designBoard.png';
 import fitcheckUserTest from '@/images/resources/fitcheckuserTesting.png';
 
 const fitcheckImages = [
-   {
+  {
     image: function FitCheckIntroduction() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -36,7 +36,9 @@ const fitcheckImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={fitcheckStart} className="w-full max-w-[496px]" alt="Introduction screen for fitness check" />
+              <motion.div layoutId="fitcheckStart" key="456" className="w-full h-full">
+                <Image src={fitcheckStart} className="w-full max-w-[496px] max-h-[85vh] pointer-events-none object-contain" alt="Introduction screen for fitness check" />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -46,7 +48,7 @@ const fitcheckImages = [
   {
     image: function FitCheckWarmupScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 1, y: 32 }}
@@ -55,7 +57,9 @@ const fitcheckImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={fitcheck1E} className="w-full max-w-[496px] py-8 object-contain" alt="Warmup screen during fitness check" />
+              <motion.div layoutId="fitcheck1E" key="456" className="w-full h-full">
+                <Image src={fitcheck1E} className="w-full max-w-[496px] py-8 max-h-[85vh] pointer-events-none object-contain" alt="Warmup screen during fitness check" />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -65,7 +69,7 @@ const fitcheckImages = [
   {
     image: function FitCheckMaxIntensityScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -74,7 +78,9 @@ const fitcheckImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={fitcheck4F} className="w-full max-w-[496px] py-1 object-contain" alt="Max intensity part of the fitness check" />
+              <motion.div layoutId="fitcheck4F" key="456" className="w-full h-full">
+                <Image src={fitcheck4F} className="w-full max-w-[496px] py-1 max-h-[85vh] pointer-events-none object-contain" alt="Max intensity part of the fitness check" />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -84,7 +90,7 @@ const fitcheckImages = [
   {
     image: function FitCheckCooldownScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -93,7 +99,9 @@ const fitcheckImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={fitcheck6F} className="w-full max-w-[496px] p-2 object-contain" alt="Reducing pace with a cool down" />
+              <motion.div layoutId="fitcheck6F" key="456" className="w-full h-full">
+                <Image src={fitcheck6F} className="w-full max-w-[496px] p-2 max-h-[85vh] pointer-events-none object-contain" alt="Reducing pace with a cool down" />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -103,7 +111,7 @@ const fitcheckImages = [
   {
     image: function FitCheckResultsScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -112,7 +120,9 @@ const fitcheckImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={fitcheckSummary} className="w-full max-w-[496px] object-contain p-0" alt="FitnessCheck result screen" />
+              <motion.div layoutId="fitcheckSummary" key="456" className="w-full h-full">
+                <Image src={fitcheckSummary} className="w-full max-w-[496px] max-h-[85vh] pointer-events-none object-contain p-0" alt="FitnessCheck result screen" />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -122,7 +132,7 @@ const fitcheckImages = [
 ]
 
 export default function FitnessCheck() {
-  
+
   // Scroll to top on load due to next/link conflict with framer motion
   useEffect(() => {
     setTimeout(() => {
@@ -205,29 +215,33 @@ export default function FitnessCheck() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={brief} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg object-contain overflow-hidden" alt="Basic feature brief" />
+                            <motion.div layoutId="brief" key="456" className="w-full h-full">
+                              <Image src={brief} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-contain overflow-hidden" alt="Basic feature brief" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <h3 className="font-display text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 mt-10">
                           Research
                         </h3>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          This type of test is typically instructed by a trainer or health professional, so it was important that the app communicated to the user in a similar way to enable them to do the test on their own. 
+                          This type of test is typically instructed by a trainer or health professional, so it was important that the app communicated to the user in a similar way to enable them to do the test on their own.
                         </p>
                         <ul className="list-disc list-inside">
                           <li key="1" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
-                          I observed a number of tests being conducted by a trainer in the on-site gym, to get an idea of how trainers communicate the instructions to the participant.
+                            I observed a number of tests being conducted by a trainer in the on-site gym, to get an idea of how trainers communicate the instructions to the participant.
                           </li>
                           <li key="2" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
-                          I recorded the ways the trainer would communicate the test, the types of reinforcements, and the cues they would give to the participant at each stage.
+                            I recorded the ways the trainer would communicate the test, the types of reinforcements, and the cues they would give to the participant at each stage.
                           </li>
                           <li key="3" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
-                          I recorded the participant's reactions to the test, and whether they changed their pace in line with the instructions.
+                            I recorded the participant's reactions to the test, and whether they changed their pace in line with the instructions.
                           </li>
                         </ul>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={observeTest} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg object-contain" alt="Planning for street interviews" />
+                            <motion.div layoutId="observeTest" key="456" className="w-full h-full">
+                              <Image src={observeTest} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Planning for street interviews" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -244,7 +258,9 @@ export default function FitnessCheck() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={PrototypeA} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg object-contain" alt="Four of the personas created" />
+                            <motion.div layoutId="PrototypeA" key="456" className="w-full h-full">
+                              <Image src={PrototypeA} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Four of the personas created" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <h4 className="font-display text-2xl xl:text-3xl tracking-tight font-bold text-midnight-900 dark:text-ice-900 mt-6">
@@ -270,18 +286,22 @@ export default function FitnessCheck() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={PrototypeB} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg object-contain" alt="Four of the personas created" />
+                            <motion.div layoutId="PrototypeB" key="456" className="w-full h-full">
+                              <Image src={PrototypeB} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Four of the personas created" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          I made adjustments based on this feedback and retested. The results with this version were much better, with all test participants able to complete the test without the trainer. 
+                          I made adjustments based on this feedback and retested. The results with this version were much better, with all test participants able to complete the test without the trainer.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           This was still a low-fidelity Figma prototype and lacked some of the functionality of the final feature, so I started work with developers to design and implement the final product.
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={DesignBoard} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg object-cover" alt="Four of the personas created" />
+                            <motion.div layoutId="DesignBoard" key="456" className="w-full h-full">
+                              <Image src={DesignBoard} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Four of the personas created" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -316,10 +336,12 @@ export default function FitnessCheck() {
                           <li key="9" className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
                             Do they understand their results?
                           </li>
-                        </ul>                      
+                        </ul>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={fitcheckUserTest} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg object-cover" alt="Four of the personas created" />
+                            <motion.div layoutId="fitcheckUserTest" key="456" className="w-full h-full">
+                              <Image src={fitcheckUserTest} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-cover" alt="Four of the personas created" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <h4 className="font-display text-2xl xl:text-3xl tracking-tight font-bold text-midnight-900 dark:text-ice-900 mt-6">
@@ -341,7 +363,7 @@ export default function FitnessCheck() {
                           All participants read and understood what the results were communicating to them.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          After a round of text changes, tests were performed again with new people. All participants reached a peak heart rate within the expected range for the test, and a number of participants set a new record maximum heart rate during the test. 
+                          After a round of text changes, tests were performed again with new people. All participants reached a peak heart rate within the expected range for the test, and a number of participants set a new record maximum heart rate during the test.
                         </p>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           The feature was then released to the public as part of the Prevayl app.
@@ -361,7 +383,7 @@ export default function FitnessCheck() {
             >
               <motion.div
                 style={{ y }}
-                className="rounded-t-xl px-2 xs:px-4 mb-2 xs:mb-4 md:mb-0 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
+                className="rounded-t-xl px-2 xs:px-4 mb-2 xs:mb-4 md:mb-0 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] sm:h-2/3 h-[360px] md:max-h-auto md:h-auto md:relative md:top-0 md:px-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
               >
                 {fitcheckImages.map((images, index) => (
                   <MediaQuery minWidth={768} key={index}>

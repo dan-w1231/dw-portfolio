@@ -29,16 +29,18 @@ const JuhuImages = [
   {
     image: function JuhuFPAFront() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
+            className="w-full h-full flex items-center justify-center"
+            initial={{ opacity: 0.5, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={juhuFPA} className="w-full max-w-[496px] p-10 object-contain" alt="One of my designs for the juhu vehicle advert page" />
+              <motion.div className="w-full h-full flex items-center justify-center" layoutId="juhuFPA">
+                <Image src={juhuFPA} className="w-full h-full max-w-[496px] p-4 max-h-[85vh] pointer-events-none object-contain" alt="One of my designs for the juhu vehicle advert page" />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -48,16 +50,18 @@ const JuhuImages = [
   {
     image: function BDKToJuhu() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[340px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[340px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 1, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.10 }}
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={bdkToJuhu} className="w-full max-w-[390px] py-10 object-contain" alt="Wireframes to brand" />
+              <motion.div layoutId="bdkToJuhu">
+                <Image src={bdkToJuhu} className="w-full py-10 max-h-[85vh] pointer-events-none object-contain" alt="Wireframes to brand" />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -67,7 +71,7 @@ const JuhuImages = [
   {
     image: function JuhuVehicleAdvert() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[340px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[340px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -76,7 +80,9 @@ const JuhuImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={juhuFPAs} className="w-full max-w-[400px] object-contain" alt="The vehicle advert page." />
+              <motion.div layoutId="juhuFPAs">
+                <Image src={juhuFPAs} className="w-full max-h-[85vh] pointer-events-none object-contain" alt="The vehicle advert page." />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -86,7 +92,7 @@ const JuhuImages = [
   {
     image: function JuhuPreapproval() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -95,7 +101,9 @@ const JuhuImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={juhuPreApproval} className="w-full max-w-[400px] object-contain" alt="Getting pre-approved" />
+              <motion.div layoutId="juhuPreApproval">
+                <Image src={juhuPreApproval} className="w-full max-h-[85vh] pointer-events-none object-contain" alt="Getting pre-approved" />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -105,7 +113,7 @@ const JuhuImages = [
   {
     image: function JuhuQuotes() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-xl md:rounded-5xl xl:rounded-6xl min-w-[500px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[500px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -114,7 +122,9 @@ const JuhuImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={juhuQuotes} className="w-full max-w-[650px] object-contain p-[10%]" alt="Viewing finance quotes on a laptop." />
+              <motion.div layoutId="juhuQuotes">
+                <Image src={juhuQuotes} className="w-full max-h-[85vh] pointer-events-none object-contain p-[10%]" alt="Viewing finance quotes on a laptop." />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -138,7 +148,7 @@ export default function JuhuAuto() {
     target: targetRef,
   });
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0", "0"] : ["0px", "1174px"]);
+  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0", "0"] : ["0px", "432px"]);
 
   return (
     <>
@@ -156,7 +166,7 @@ export default function JuhuAuto() {
               <header className="relative w-full px-2 xs:px-4 md:pr-0 md:pl-4 rounded-4xl mx-auto">
                 <div
                   className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] shadow-xl dark:shadow-xlD rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">
-                  <div className="relative max-w-full items-end flex items-center md:mt-4">
+                  <div className="relative max-w-full flex items-center md:mt-4">
                     <div className="w-full">
                       <motion.div
                         key="contentWorkImage"
@@ -174,23 +184,23 @@ export default function JuhuAuto() {
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
                           <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>Post-release User & A/B Testing</BulletTag>
                         </div>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-10">
+                        <h3 className="font-displaytext-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 mt-10">
                           Goals
                         </h3>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           Use research conducted in the UK market and German market experts to create a bespoke vehicle marketplace for Germany, with a goal to optimise post-release.
                         </p>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-10">
+                        <h3 className="font-display text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 mt-10">
                           Scope
                         </h3>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
                           <BulletTag>Find a car</BulletTag><BulletTag>Contact seller</BulletTag>
                           <BulletTag>Get Pre-Approved</BulletTag><BulletTag>Book a test drive</BulletTag>
                         </div>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-10">
+                        <h3 className="font-display text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 mt-10">
                           Ideation
                         </h3>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-6">
+                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight text-midnight-900 dark:text-ice-900  mt-6">
                           Task Flows
                         </h4>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -200,19 +210,23 @@ export default function JuhuAuto() {
                         <div className="mt-6 flex flex-row gap-4">
                           <div className="w-1/2">
                             <Zoomy>
-                              <Image src={bdkEEA} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="research plan" />
+                              <motion.div layoutId="bdkEEA">
+                                <Image src={bdkEEA} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="research plan" />
+                              </motion.div>
                             </Zoomy>
                           </div>
                           <div className="w-1/2">
                             <Zoomy>
-                              <Image src={bdkTaskflow} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="Research plan" />
+                              <motion.div layoutId="bdkTaskflow">
+                                <Image src={bdkTaskflow} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Research plan" />
+                              </motion.div>
                             </Zoomy>
                           </div>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           People who know exactly which model they want can quickly get to the evaluation stage, while those still unsure need ways to explore and browse potential options.
                         </p>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-6">
+                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight text-midnight-900 dark:text-ice-900 mt-6">
                           Navigation
                         </h4>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -220,15 +234,19 @@ export default function JuhuAuto() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={bdkSitemap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6 object-contain" alt="Planning for street interviews" />
+                            <motion.div layoutId="bdkSitemap">
+                              <Image src={bdkSitemap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6  max-h-[85vh] pointer-events-none object-contain" alt="Planning for street interviews" />
+                            </motion.div>
                           </Zoomy>
                         </div>
-                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-6">
+                        <h4 className="font-display font-bold text-2xl xl:text-3xl tracking-tight text-midnight-900 dark:text-ice-900 mt-6">
                           Wireframing & Prototyping
                         </h4>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={bdkWireframes} loading="lazy" placeholder="blur" className="rounded-lg object-contain" alt="Four of the personas created" />
+                            <motion.div layoutId="bdkWireframes">
+                            <Image src={bdkWireframes} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Four of the personas created" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-6 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -239,10 +257,12 @@ export default function JuhuAuto() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={bdkWireframesToJuhu} loading="lazy" placeholder="blur" className="rounded-lg object-contain" alt="Four of the personas created" />
+                            <motion.div layoutId="bdkWireframesToJuhu">
+                              <Image src={bdkWireframesToJuhu} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Four of the personas created" />
+                            </motion.div>
                           </Zoomy>
                         </div>
-                        <h3 className="font-display font-bold text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900  dark:text-ice-900 mt-10">
+                        <h3 className="font-display text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900  dark:text-ice-900 mt-10">
                           User Testing
                         </h3>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -259,7 +279,9 @@ export default function JuhuAuto() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={juhuUserTest} loading="lazy" placeholder="blur" className="rounded-lg" alt="Wireframes of the NV application process" />
+                            <motion.div layoutId="juhuUserTest">
+                              <Image src={juhuUserTest} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Wireframes of the NV application process" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -295,7 +317,9 @@ export default function JuhuAuto() {
                         </h4>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={ABcategories} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6 object-contain" alt="Wireframes of the NV application process" />
+                            <motion.div layoutId="ABcategories">
+                              <Image src={ABcategories} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-2 max-h-[85vh] pointer-events-none object-contain" alt="Wireframes of the NV application process" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                       </motion.div>
@@ -313,8 +337,8 @@ export default function JuhuAuto() {
             >
               <motion.div layout
                 style={{ y }}
-                className="rounded-t-xl px-2 xs:px-4 mb-2 xs:mb-4 md:mb-0 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
-              >
+                className="rounded-t-xl px-2 xs:px-4 mb-2 xs:mb-4 md:mb-0 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] sm:h-2/3 h-[360px] md:max-h-auto md:h-auto md:relative md:top-0 md:px-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
+              > 
                 {/* CAUSING HYDRATION ISSUES? */}
                 {JuhuImages.map((images) => (
                   <MediaQuery minWidth={768}>

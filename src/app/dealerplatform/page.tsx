@@ -15,8 +15,6 @@ import Order from '@/images/resources/dealerPlatformOrder.png';
 import BuildDeal from '@/images/resources/dealerPlatformSendDeal.png';
 import SentDeal from '@/images/resources/dealerPlatformSent.png';
 
-
-
 // Article Images
 
 const workImages = [
@@ -40,7 +38,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <Image src={Dashboard} className="h-[115%] object-contain translate-z-0" alt="" />
+            <motion.div layoutId="Dashboard" key="456" className="w-full h-full">
+              <Image src={Dashboard} className="h-[115%] object-contain translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -59,7 +59,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <Image src={CustomerRecord} className="h-[115%] object-contain translate-z-0" alt="" />
+            <motion.div layoutId="CustomerRecord" key="456" className="w-full h-full">
+              <Image src={CustomerRecord} className="h-[115%] object-contain translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -78,7 +80,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <Image src={Order} className="h-[115%] object-contain translate-z-0" alt="" />
+            <motion.div layoutId="Order" key="456" className="w-full h-full">
+              <Image src={Order} className="h-[115%] object-contain translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -97,7 +101,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <Image src={BuildDeal} className="h-[115%] object-contain translate-z-0" alt="" />
+            <motion.div layoutId="BuildDeal" key="456" className="w-full h-full">
+              <Image src={BuildDeal} className="h-[115%] object-contain translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -116,7 +122,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <Image src={SentDeal} className="h-[115%] object-contain translate-z-0" alt="" />
+            <motion.div layoutId="SentDeal" key="456" className="w-full h-full">
+              <Image src={SentDeal} className="h-[115%] object-contain translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -144,13 +152,13 @@ export default function DealerPlatform() {
           <motion.div
             key="contentHero"
           >
-            <GalleryHero 
-              title="iVendi Transact" 
+            <GalleryHero
+              title="iVendi Transact"
               description="An online showroom and deal management system I designed allowing retailers to view leads and manage deals, winning a number of innovation of the year awards."
               linkPreamble="This was designed as the retailer system for the "
               linkText="NewVehicle consumer platform."
               link="/newvehicle"
-              />
+            />
           </motion.div>
           <motion.div
             key="contentGallery"
@@ -163,13 +171,13 @@ export default function DealerPlatform() {
             <Gallery workImages={workImages} />
           </motion.div>
           <motion.div
-                className="relative z-50"
-                initial={{ opacity: 0, y: 50 }}
-                viewport= {{ once: true, amount: 0.25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
-              >
-              <ContactBox useContainerQuery={false} parentClass="mt-2 sm:pb-16 xs:mt-4 px-2 xs:px-4" flexClass="md:flex-row" />
+            className="relative z-50"
+            initial={{ opacity: 0, y: 50 }}
+            viewport={{ once: true, amount: 0.25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
+          >
+            <ContactBox useContainerQuery={false} parentClass="mt-2 sm:pb-16 xs:mt-4 px-2 xs:px-4" flexClass="md:flex-row" />
           </motion.div>
         </div>
       </motion.div>

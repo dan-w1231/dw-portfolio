@@ -32,7 +32,7 @@ const NVImages = [
   {
     image: function Calcs() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -41,7 +41,9 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={calcs} className="w-full object-contain py-4" alt="Themed finance calculators embedded in dealership websites" />
+              <motion.div layoutId="nvImgA" key="456" className="w-full h-full">
+                <Image src={calcs} className="w-full max-h-[85vh] object-contain py-4 pointer-events-none" alt="Themed finance calculators embedded in dealership websites" />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -51,7 +53,7 @@ const NVImages = [
   {
     image: function YourDeal() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 32 }}
@@ -60,7 +62,9 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={yourDeal} className="w-full object-contain" alt="The deal page." />
+              <motion.div layoutId="nvImgB" key="457" className="w-full h-full">
+                <Image src={yourDeal} className="w-full object-contain max-h-[85vh] pointer-events-none" alt="The deal page." />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -69,8 +73,9 @@ const NVImages = [
   },
   {
     image: function DealSummary() {
+      const imageRef = useRef<HTMLDivElement | null>(null);
       return (
-        <motion.div layout className="relative w-32 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[390px] md:min-w-0 overflow-hidden">
+        <motion.div layout className="relative w-32 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[390px] md:min-w-0 overflow-hidden">
           <motion.div
             className="flex items-center justify-center w-full h-auto"
             initial={{ opacity: 0, y: 32 }}
@@ -79,7 +84,9 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={dealSummary} className="w-full object-contain md:px-6" alt="Desktop view of a reservation." />
+              <motion.div layoutId="nvImgC" key="458" className="w-full h-full">
+                <Image src={dealSummary} className="w-full object-contain md:px-6 max-h-[85vh] pointer-events-none" alt="Desktop view of a reservation." />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -89,7 +96,7 @@ const NVImages = [
   {
     image: function Reserve() {
       return (
-        <motion.div layout className="relative w-32 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[390px] md:min-w-0 overflow-hidden">
+        <motion.div layout className="relative w-32 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[390px] md:min-w-0 overflow-hidden">
           <motion.div
             className="flex items-center justify-center w-full h-auto"
             initial={{ opacity: 0, y: 32 }}
@@ -98,7 +105,9 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={reserveB} className="w-full object-contain md:px-6" alt="Desktop view of a reservation." />
+              <motion.div layoutId="nvImgD" key="459" className="w-full h-full">
+                <Image src={reserveB} className="w-full object-contain md:px-6 max-h-[85vh] pointer-events-none" alt="Desktop view of a reservation." />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -108,7 +117,7 @@ const NVImages = [
   {
     image: function VehicleAd() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             className="p-[18%] h-auto"
             initial={{ opacity: 0, y: 32 }}
@@ -117,7 +126,9 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={fpa} className="w-full max-w-[17rem] object-contain" alt="Vehicle advert." />
+              <motion.div layoutId="nvImgE" key="460" className="w-full h-full">
+                <Image src={fpa} className="w-full max-w-[17rem] object-contain max-h-[85vh] pointer-events-none" alt="Vehicle advert." />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -127,7 +138,7 @@ const NVImages = [
   {
     image: function Approved() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div
             className="p-[18%] h-auto"
             initial={{ opacity: 0, y: 32 }}
@@ -136,7 +147,9 @@ const NVImages = [
             transition={{ duration: 1.2 }}
           >
             <Zoomy>
-              <Image src={approved} className="w-full max-w-[17rem] object-contain" alt="Instant decision on finance applications." />
+              <motion.div layoutId="nvImgF" key="461" className="w-full h-full">
+                <Image src={approved} className="w-full max-w-[17rem] object-contain max-h-[85vh] pointer-events-none" alt="Instant decision on finance applications." />
+              </motion.div>
             </Zoomy>
           </motion.div>
         </motion.div>
@@ -215,12 +228,12 @@ export default function NewVehicle() {
                         </p>
                         <span
                           className="inline-block mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
-                            See the&nbsp;
+                          See the&nbsp;
                         </span>
                         <Link
                           href="/dealerplatform"
                           className="text-lg font-base tracking-tight text-blurple-900 dark:text-blurple-900 hover:text-midnight-900 dark:hover:text-ice-900 z-[99]">
-                            Transact Dealer Platform.
+                          Transact Dealer Platform.
                         </Link>
                         <h3 className="font-display text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 mt-10">
                           Scope
@@ -235,7 +248,9 @@ export default function NewVehicle() {
                         </div>
                         <div className="mt-6 cursor-zoom-in" >
                           <Zoomy>
-                            <Image src={relationshipMap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="research plan" />
+                            <motion.div layoutId="relationshipMap">
+                              <Image src={relationshipMap} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] object-contain rounded-lg max-h-[85vh] pointer-events-none" alt="research plan" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -252,7 +267,9 @@ export default function NewVehicle() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={researchPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg" alt="Research plan" />
+                            <motion.div layoutId="researchPlan">
+                              <Image src={researchPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Research plan" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -260,7 +277,9 @@ export default function NewVehicle() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={streetQPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6" alt="Planning for street interviews" />
+                            <motion.div layoutId="streetQPlan">
+                              <Image src={streetQPlan} loading="lazy" placeholder="blur" className="bg-[#DDDAE3] rounded-lg p-6 max-h-[85vh] pointer-events-none object-contain" alt="Planning for street interviews" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -269,7 +288,9 @@ export default function NewVehicle() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={personas} loading="lazy" placeholder="blur" className="rounded-lg" alt="Four of the personas created" />
+                            <motion.div layoutId="personas">
+                              <Image src={personas} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Four of the personas created" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -293,7 +314,9 @@ export default function NewVehicle() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={wireframeNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Wireframes of the NV application process" />
+                            <motion.div layoutId="wireframeNV">
+                              <Image src={wireframeNV} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Wireframes of the NV application process" />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -302,12 +325,16 @@ export default function NewVehicle() {
                         <div className="mt-6 flex flex-row gap-4">
                           <div className="w-1/2">
                             <Zoomy>
-                              <Image src={featureMap} loading="lazy" placeholder="blur" className="rounded-lg" alt="A map of how the different vehicle retailing features fit together" />
+                              <motion.div layoutId="featureMap">
+                                <Image src={featureMap} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="A map of how the different vehicle retailing features fit together" />
+                              </motion.div>
                             </Zoomy>
                           </div>
                           <div className="w-1/2">
                             <Zoomy>
-                              <Image src={flowOptions} loading="lazy" placeholder="blur" className="rounded-lg" alt="Different options placed on the ideas wall." />
+                              <motion.div layoutId="relationshipMap">
+                                <Image src={flowOptions} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Different options placed on the ideas wall." />
+                              </motion.div>
                             </Zoomy>
                           </div>
                         </div>
@@ -316,7 +343,9 @@ export default function NewVehicle() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={productPages} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
+                            <motion.div layoutId="productPages">
+                              <Image src={productPages} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Some samples of pages in the web app." />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -336,7 +365,9 @@ export default function NewVehicle() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={analyticsNV} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
+                            <motion.div layoutId="analyticsNV">
+                              <Image src={analyticsNV} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Some samples of pages in the web app." />
+                            </motion.div>
                           </Zoomy>
                         </div>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
@@ -354,7 +385,9 @@ export default function NewVehicle() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <Image src={ABWidget} loading="lazy" placeholder="blur" className="rounded-lg" alt="Some samples of pages in the web app." />
+                            <motion.div layoutId="ABWidget">
+                              <Image src={ABWidget} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Some samples of pages in the web app." />
+                            </motion.div>
                           </Zoomy>
                         </div>
                       </motion.div>
@@ -372,7 +405,7 @@ export default function NewVehicle() {
             >
               <motion.div
                 style={{ y }}
-                className="rounded-t-xl px-2 xs:px-4 mb-2 xs:mb-4 md:mb-0 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] h-1/2 sm:h-2/3 md:h-auto md:relative md:top-0 md:px-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
+                className="rounded-t-xl px-2 xs:px-4 mb-2 xs:mb-4 md:mb-0 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] sm:h-2/3 h-[360px] md:max-h-auto md:h-auto md:relative md:top-0 md:px-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
               >
                 {/* CAUSING HYDRATION ISSUES? */}
                 {NVImages.map((images) => (

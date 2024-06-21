@@ -34,7 +34,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <Image src={JDEFLogin} className="h-[115%] object-contain translate-z-0" alt="" />
+            <motion.div layoutId="JDEFLogin" key="456" className="w-full h-full">
+              <Image src={JDEFLogin} className="h-[115%] object-contain translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -53,7 +55,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <Image src={JDEFInProgress} className="h-[115%] object-contain translate-z-0" alt="" />
+            <motion.div layoutId="JDEFInProgress" key="456" className="w-full h-full">
+              <Image src={JDEFInProgress} className="h-[115%] object-contain translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -70,7 +74,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl"
         >
           <Zoomy>
-            <Image src={CWTesting} className="object-cover translate-z-0" alt="" />
+            <motion.div layoutId="CWTesting" key="456" className="w-full h-full">
+              <Image src={CWTesting} className="object-cover translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -87,7 +93,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl"
         >
           <Zoomy>
-            <Image src={CWTestingB} className="object-cover translate-z-0" alt="" />
+            <motion.div layoutId="CWTestingB" key="456" className="w-full h-full">
+              <Image src={CWTestingB} className="object-cover translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -106,7 +114,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <Image src={JDEFRecord} className="h-[115%] object-contain translate-z-0" alt="" />
+            <motion.div layoutId="JDEFRecord" key="456" className="w-full h-full">
+              <Image src={JDEFRecord} className="h-[115%] object-contain translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -125,7 +135,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <Image src={CWMedical} className="h-[115%] object-contain translate-z-0" alt="" />
+            <motion.div layoutId="CWMedical" key="456" className="w-full h-full">
+              <Image src={CWMedical} className="h-[115%] object-contain translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -144,7 +156,9 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <Image src={CWIndustry} className="h-[115%] object-contain translate-z-0" alt="" />
+            <motion.div layoutId="CWIndustry" key="456" className="w-full h-full">
+              <Image src={CWIndustry} className="h-[115%] object-contain translate-z-0" alt="" />
+            </motion.div>
           </Zoomy>
         </motion.li>
       )
@@ -183,16 +197,16 @@ export default function ConnectedWorker() {
             transition={{ type: "spring", stiffness: 70, delay: 1.4, duration: 1.5, staggerChildren: 0.5 }}
             className="w-full max-w-screen-2xl mx-auto mt-2 xs:mt-4"
           >
-             <Gallery workImages={workImages} />
+            <Gallery workImages={workImages} />
           </motion.div>
           <motion.div
-                className="relative z-50"
-                initial={{ opacity: 0, y: 50 }}
-                viewport= {{ once: true, amount: 0.25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
-              >
-              <ContactBox useContainerQuery={false} parentClass="mt-2 sm:pb-16 xs:mt-4 px-2 xs:px-4" flexClass="md:flex-row" />
+            className="relative z-50"
+            initial={{ opacity: 0, y: 50 }}
+            viewport={{ once: true, amount: 0.25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
+          >
+            <ContactBox useContainerQuery={false} parentClass="mt-2 sm:pb-16 xs:mt-4 px-2 xs:px-4" flexClass="md:flex-row" />
           </motion.div>
         </div>
       </motion.div>
