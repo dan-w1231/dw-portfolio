@@ -52,7 +52,7 @@ const JuhuImages = [
       return (
         <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[340px] md:min-w-0">
           <motion.div
-            className=""
+            className="w-full h-full flex items-center justify-center"
             initial={{ opacity: 1, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.10 }}
@@ -60,7 +60,7 @@ const JuhuImages = [
           >
             <Zoomy>
               <motion.div layoutId="bdkToJuhu">
-                <Image src={bdkToJuhu} className="w-full py-10 max-h-[85vh] pointer-events-none object-contain" alt="Wireframes to brand" />
+                <Image src={bdkToJuhu} className="w-full md:py-10 max-h-[85vh] pointer-events-none object-contain" alt="Wireframes to brand" />
               </motion.div>
             </Zoomy>
           </motion.div>
