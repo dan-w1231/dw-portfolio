@@ -332,7 +332,7 @@ export default function NewVehicle() {
                           </div>
                           <div className="w-1/2">
                             <Zoomy>
-                              <motion.div layoutId="relationshipMap">
+                              <motion.div layoutId="flowOptions">
                                 <Image src={flowOptions} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Different options placed on the ideas wall." />
                               </motion.div>
                             </Zoomy>
