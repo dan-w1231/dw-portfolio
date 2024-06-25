@@ -461,15 +461,15 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
                   const originalHeight = Number(props.height) || 0; 
                   const aspectRatio = originalWidth / originalHeight;
                   
-                  //Request higher quality image when in modal
-                  // Note adds loading time and fails to play layout animation first time.
-                  // const desiredWidth = isOpen && isMobile ? 768 : 1300;
-                  // const desiredHeight = Math.round(desiredWidth / aspectRatio);
+                  //Request different quality image when in modal
+                  const desiredWidth = isMobile ? 768 : 1457;
+                  const desiredHeight = Math.round(desiredWidth / aspectRatio);
 
+                  // const additionalClass = isMobile ? '' : '';
                   const additionalProps = {
                     ...props,
-                    // width: desiredWidth,
-                    // height: desiredHeight,
+                    width: desiredWidth,
+                    height: desiredHeight,
                     // fill: true,
                     // className: `${props.className || ''} ${additionalClass}`,
                   };
@@ -632,7 +632,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
           <motion.div
             key="ZoomyImage"
             onClick={openModal}
-            exit={{ opacity: 0, transition: { duration: 0.6 } }}
+            // exit={{ opacity: 0, transition: { duration: 0.4 } }}
             whileTap={{ scale: 0.95 }}
             whileHover={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 70, duration: 0.5 }}

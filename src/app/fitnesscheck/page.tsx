@@ -8,6 +8,7 @@ import Zoomy from '@/components/HOC/Zoomy';
 import Image from 'next/image';
 import { NextPreviousArticle } from '@/components/NextPreviousArticle';
 import MediaQuery, { useMediaQuery } from 'react-responsive';
+import { useIsMobile } from '@/app/utils/useIsMobile';
 
 // Gallery Images
 import fitcheckStart from '@/images/resources/fitCheckStart.png';
@@ -24,16 +25,16 @@ import PrototypeB from '@/images/resources/fitcheck2ndPrototype.png';
 import DesignBoard from '@/images/resources/fitcheck-designBoard.png';
 import fitcheckUserTest from '@/images/resources/fitcheckuserTesting.png';
 
-
 const fitcheckImages = [
   {
     image: function FitCheckIntroduction() {
+      const isMobile = useIsMobile();
       return (
         <motion.div className="relative w-full md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[230px] md:min-w-0">
           <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy initialScale={1.1}>
               <motion.div layoutId="fitcheckStart" layout="preserve-aspect" key="456" className="w-full h-full flex items-center justify-center">
-                <Image key="fitcheckStart" priority src={fitcheckStart} objectFit="contain" className="object-contain w-full py-4 transform-gpu max-h-[85vh] pointer-events-none z-[99]" alt="Introduction screen for fitness check" />
+                <Image key="fitcheckStart" priority width={ isMobile ? 768 : 1457} src={fitcheckStart} objectFit="contain" className="object-contain w-full py-4 transform-gpu max-h-[85vh] pointer-events-none z-[99]" alt="Introduction screen for fitness check" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -43,12 +44,13 @@ const fitcheckImages = [
   },
   {
     image: function FitCheckWarmupScreen() {
+      const isMobile = useIsMobile();
       return (
         <motion.div className="relative w-full md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[230px] md:min-w-0">
           <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy initialScale={1.1}>
               <motion.div layoutId="fitcheck1E" layout="preserve-aspect" key="457" className="w-full h-full flex items-center justify-center">
-                <Image key="fitcheck1E" priority src={fitcheck1E}  className="object-contain w-full py-4 transform-gpu max-h-[85vh] pointer-events-none z-[99]" alt="Warmup screen during fitness check" />
+                <Image key="fitcheck1E" priority width={ isMobile ? 768 : 1457} placeholder="blur" src={fitcheck1E}  className="object-contain w-full py-4 transform-gpu max-h-[85vh] pointer-events-none z-[99]" alt="Warmup screen during fitness check" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -58,12 +60,13 @@ const fitcheckImages = [
   },
   {
     image: function FitCheckMaxIntensityScreen() {
+      const isMobile = useIsMobile();
       return (
         <motion.div className="relative w-full md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[230px] md:min-w-0">
           <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy initialScale={1.1}>
               <motion.div layoutId="fitcheck4F" key="458" layout="preserve-aspect" className="w-full h-full flex items-center justify-center">
-                <Image key="fitcheck4F" priority src={fitcheck4F} objectFit="contain" className="object-contain w-full py-4 transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Max intensity part of the fitness check" />
+                <Image key="fitcheck4F" priority width={ isMobile ? 768 : 1457} placeholder="blur" src={fitcheck4F} objectFit="contain" className="object-contain w-full py-4 transform-gpu max-h-[85vh] pointer-events-none z-[99]" alt="Max intensity part of the fitness check" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -73,12 +76,13 @@ const fitcheckImages = [
   },
   {
     image: function FitCheckCooldownScreen() {
+      const isMobile = useIsMobile();
       return (
         <motion.div className="relative w-full md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[230px] md:min-w-0">
           <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy initialScale={1.1}>
               <motion.div layoutId="fitcheck6F" key="459" layout="preserve-aspect" className="w-full h-full flex items-center justify-center">
-                <Image key="fitcheck6F" src={fitcheck6F} objectFit="contain" className="object-contain w-full py-4 transform-gpu max-h-[85vh] pointer-events-none z-[99]" alt="Reducing pace with a cool down" />
+                <Image key="fitcheck6F" priority width={ isMobile ? 768 : 1457} placeholder="blur" src={fitcheck6F} objectFit="contain" className="object-contain w-full py-4 transform-gpu max-h-[85vh] pointer-events-none z-[99]" alt="Reducing pace with a cool down" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -88,12 +92,13 @@ const fitcheckImages = [
   },
   {
     image: function FitCheckResultsScreen() {
+      const isMobile = useIsMobile();
       return (
         <motion.div className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[230px] md:min-w-0">
           <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy initialScale={1.1}>
               <motion.div layoutId="fitcheckSummary" key="460" layout="preserve-aspect" className="w-full h-full flex items-center justify-center">
-                <Image key="fitcheckSummary" src={fitcheckSummary} objectFit="contain" className="object-contain w-full py-4 transform-gpu max-h-[85vh] pointer-events-none z-[99]" alt="FitnessCheck result screen" />
+                <Image key="fitcheckSummary" priority width={ isMobile ? 768 : 1457} placeholder="blur" src={fitcheckSummary} objectFit="contain" className="object-contain w-full py-4 transform-gpu max-h-[85vh] pointer-events-none z-[99]" alt="FitnessCheck result screen" />
               </motion.div>
             </Zoomy>
           </motion.div>
