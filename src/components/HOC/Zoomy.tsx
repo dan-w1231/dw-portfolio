@@ -28,12 +28,9 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [animateInitialScale, setAnimateInitialScale] = useState(true);
 
-
-  // animate scale to initialScale, but remove transition thereafter
   useEffect(() => {
     if (isOpen && initialScale !== undefined && animateInitialScale) {
       if (dragRef.current) {
-        // Apply the transition only for the initial scale change
         dragRef.current.style.transition = 'transform 0.3s ease';
 
         setTimeout(() => {
@@ -51,7 +48,6 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
             }
           }, 400);
 
-          // Update state to indicate the initial animation is complete
           setAnimateInitialScale(false);
           setIsAnimatingIn(false);
           // console.log('animateInitialScale', animateInitialScale);
@@ -465,7 +461,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
                   const originalHeight = Number(props.height) || 0; 
                   const aspectRatio = originalWidth / originalHeight;
 
-                  const desiredWidth = isOpen && isMobile ? 900 : 1200;
+                  const desiredWidth = isOpen && isMobile ? 1000 : 1600;
                   const desiredHeight = Math.round(desiredWidth / aspectRatio);
 
                   const additionalProps = {
@@ -473,7 +469,6 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
                     width: desiredWidth,
                     height: desiredHeight,
                     // fill: true,
-                    // Uncomment or adjust className as needed
                     // className: `${props.className || ''} ${additionalClass}`,
                   };
 
@@ -524,7 +519,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
                   id="closeButton"
                   onClick={closeModal}
                   tabIndex={3}
-                  className={`${buttonColor} relative select-none top-0 left-0 z-[999] hover:bg-blurple-700 text-ice-900 dark:text-ice-900 overflow-hidden transform-gpu transition-bg duration-200 hover:shadow-lg inline-flex items-center justify-center rounded-full text-xl font-semibold tracking-tight shadow-lg focus:outline-none w-[64px] h-[64px]`}
+                  className={`${buttonColor} relative select-none touch-none top-0 left-0 z-[999] hover:bg-blurple-700 text-ice-900 dark:text-ice-900 overflow-hidden transform-gpu transition-bg duration-200 hover:shadow-lg inline-flex items-center justify-center rounded-full text-xl font-semibold tracking-tight shadow-lg focus:outline-none w-[64px] h-[64px]`}
                 >
                   ×
                 </button>
@@ -550,7 +545,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
                   onTouchStart={() => startScaling(false)}
                   onTouchEnd={stopScaling}
                   tabIndex={2}
-                  className="relative select-none border border-midnight-900 dark:border-ice-900 bg-midnight-900/5 dark:bg-midnight-900/10 backdrop-blur-[20px] text-midnight-900 dark:text-ice-900 overflow-hidden transform-gpu transition-bg duration-200 hover:shadow-lg inline-flex items-center justify-center rounded-full text-xl font-extrabold tracking-tight shadow-[0_4px_16px_rgba(15,23,42,0.16)] drop-shadow-[3px_3px_2px_rgba(15,23,42,0.08)] focus:outline-none w-[64px] h-[64px]"
+                  className="relative select-none touch-none border border-midnight-900 dark:border-ice-900 bg-midnight-900/5 dark:bg-midnight-900/10 backdrop-blur-[20px] text-midnight-900 dark:text-ice-900 overflow-hidden transform-gpu transition-bg duration-200 hover:shadow-lg inline-flex items-center justify-center rounded-full text-xl font-extrabold tracking-tight shadow-[0_4px_16px_rgba(15,23,42,0.16)] drop-shadow-[3px_3px_2px_rgba(15,23,42,0.08)] focus:outline-none w-[64px] h-[64px]"
                 >
                   -
                 </button>
@@ -571,7 +566,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
                   onTouchStart={() => startScaling(true)}
                   onTouchEnd={stopScaling}
                   tabIndex={1}
-                  className="relative select-none border border-midnight-900 dark:border-ice-900 bg-midnight-900/5 dark:bg-midnight-900/10 backdrop-blur-[20px] z-[999] text-midnight-900 dark:text-ice-900 overflow-hidden transform-gpu transition-bg duration-200 hover:shadow-lg inline-flex items-center justify-center rounded-full text-xl font-extrabold tracking-tight shadow-[0_4px_16px_rgba(15,23,42,0.16)] drop-shadow-[3px_3px_2px_rgba(15,23,42,0.08)] focus:outline-none w-[64px] h-[64px]"
+                  className="relative select-none touch-none border border-midnight-900 dark:border-ice-900 bg-midnight-900/5 dark:bg-midnight-900/10 backdrop-blur-[20px] z-[999] text-midnight-900 dark:text-ice-900 overflow-hidden transform-gpu transition-bg duration-200 hover:shadow-lg inline-flex items-center justify-center rounded-full text-xl font-extrabold tracking-tight shadow-[0_4px_16px_rgba(15,23,42,0.16)] drop-shadow-[3px_3px_2px_rgba(15,23,42,0.08)] focus:outline-none w-[64px] h-[64px]"
                 >
                   +
                 </button>
