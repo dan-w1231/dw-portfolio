@@ -61,7 +61,7 @@ const fitcheckImages = [
       return (
         <motion.div className="relative w-full md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[230px] md:min-w-0">
           <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
-            <Zoomy initialScale={1.2}>
+            <Zoomy initialScale={1.1}>
               <motion.div layoutId="fitcheck4F" key="458" layout="preserve-aspect" className="w-full h-full flex items-center justify-center">
                 <Image key="fitcheck4F" priority src={fitcheck4F} objectFit="contain" className="object-contain w-full py-4 transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Max intensity part of the fitness check" />
               </motion.div>
@@ -76,7 +76,7 @@ const fitcheckImages = [
       return (
         <motion.div className="relative w-full md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[230px] md:min-w-0">
           <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
-            <Zoomy initialScale={1.2}>
+            <Zoomy initialScale={1.1}>
               <motion.div layoutId="fitcheck6F" key="459" layout="preserve-aspect" className="w-full h-full flex items-center justify-center">
                 <Image key="fitcheck6F" src={fitcheck6F} objectFit="contain" className="object-contain w-full py-4 transform-gpu max-h-[85vh] pointer-events-none z-[99]" alt="Reducing pace with a cool down" />
               </motion.div>
@@ -91,7 +91,7 @@ const fitcheckImages = [
       return (
         <motion.div className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[230px] md:min-w-0">
           <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
-            <Zoomy initialScale={1.2}>
+            <Zoomy initialScale={1.1}>
               <motion.div layoutId="fitcheckSummary" key="460" layout="preserve-aspect" className="w-full h-full flex items-center justify-center">
                 <Image key="fitcheckSummary" src={fitcheckSummary} objectFit="contain" className="object-contain w-full py-4 transform-gpu max-h-[85vh] pointer-events-none z-[99]" alt="FitnessCheck result screen" />
               </motion.div>
