@@ -28,29 +28,32 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [animateInitialScale, setAnimateInitialScale] = useState(true);
 
+
   // animate scale to initialScale, but remove transition thereafter
   useEffect(() => {
     if (isOpen && initialScale !== undefined && animateInitialScale) {
       if (dragRef.current) {
         // Apply the transition only for the initial scale change
         dragRef.current.style.transition = 'transform 0.3s ease';
-        
+
         setTimeout(() => {
           if (scale !== initialScale) {
-          setScale(initialScale);
-          // console.log('initialScale set to scale');
-          if (dragRef.current) {
-          dragRef.current.style.transform = `scale(${initialScale})`;
+            setScale(initialScale);
+            // console.log('initialScale set to scale');
+            if (dragRef.current) {
+              dragRef.current.style.transform = `scale(${initialScale})`;
+              setIsAnimatingIn(true);
+            }
           }
-        }
           setTimeout(() => {
             if (dragRef.current) {
               dragRef.current.style.transition = '';
-              }
+            }
           }, 400);
-  
+
           // Update state to indicate the initial animation is complete
           setAnimateInitialScale(false);
+          setIsAnimatingIn(false);
           // console.log('animateInitialScale', animateInitialScale);
         }, 300);
       }
@@ -100,18 +103,17 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
 
   const [isAnimatingIn, setIsAnimatingIn] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+
   // 2.1. Working but causes image to disappear if you close modal too quick
   const closeModal = () => {
     setIsAnimatingOut(true);
     if (!isAnimatingIn && !isAnimatingOut) {
       setTimeout(() => {
         setIsOpen(false);
-        // console.log('close modal allowed');
         setScale(1);
-      }, 1);
+      }, 100);
       // console.log('close modal called');
     }
-
   };
   const handleAnimationStart = () => {
     setIsAnimatingIn(true);
@@ -127,7 +129,8 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
     // console.log('handleAnimationComplete called');
   };
 
-  // console.log('isOpen, isAnimatingIn, IsAnimatingOut', isOpen, isAnimatingIn, isAnimatingOut)
+
+  // console.log(isAnimatingIn, isAnimatingOut)
 
   // const closeModal = () => {
   //   setIsAnimatingOut(true); 
@@ -345,7 +348,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && !isAnimatingIn && !isAnimatingOut) {
-        closeModal();
+        setTimeout(() => { closeModal(); }, 300);
       }
     };
 
@@ -430,7 +433,9 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
           <motion.div
             id="cloneDragContainer"
             key="cloneDragContainer"
-            className="z-[99] cursor-move"
+            className="z-[99] cursor-move touch-none select-none"
+            onAnimationStart={handleAnimationStart}
+            onAnimationComplete={handleAnimationComplete}
             ref={dragRef}
             exit={{ opacity: 0, transition: { duration: 0.2 } }}
             style={{ scale, zIndex: 101 }}
@@ -455,21 +460,55 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
                   React.isValidElement(nextImage) &&
                   props.hasOwnProperty('src')
                 ) {
-                  const additionalClass = isOpen && isMobile ? '!w-[900px] !h-auto' : '!w-[1200px] !h-auto !object-contain !top-[unset] !left-[unset] !right-[unset]';
+
+                  const originalWidth = Number(props.width) || 0;
+                  const originalHeight = Number(props.height) || 0; 
+                  const aspectRatio = originalWidth / originalHeight;
+
+                  const desiredWidth = isOpen && isMobile ? 900 : 1200;
+                  const desiredHeight = Math.round(desiredWidth / aspectRatio);
+
                   const additionalProps = {
                     ...props,
-                    className: `${props.className || ''} ${additionalClass}`,
+                    width: desiredWidth,
+                    height: desiredHeight,
+                    // fill: true,
+                    // Uncomment or adjust className as needed
+                    // className: `${props.className || ''} ${additionalClass}`,
                   };
+
                   const clonedMotionDiv = React.cloneElement(nextImage, additionalProps);
                   return React.cloneElement(child, { ...child.props }, clonedMotionDiv);
                 }
               }
               return child;
             })}
+            {/* {React.Children.map(children, (child) => {
+              if (
+                React.isValidElement(child) &&
+                child.props.hasOwnProperty('layoutId')
+              ) {
+                const nextImage = React.Children.only(child.props.children);
+                const props = nextImage.props as NextImageProps;
+                if (
+                  React.isValidElement(nextImage) &&
+                  props.hasOwnProperty('src')
+                ) {
+                  // const additionalClass = isOpen && isMobile ? '!w-[900px] !h-auto' : '!w-[1200px] !h-auto !object-contain !top-[unset] !left-[unset] !right-[unset]';
+                  const additionalProps = {
+                    ...props,
+                    // className: `${props.className || ''} ${additionalClass}`,
+                  };
+                  const clonedMotionDiv = React.cloneElement(nextImage, additionalProps);
+                  return React.cloneElement(child, { ...child.props }, clonedMotionDiv);
+                }
+              }
+              return child;
+            })} */}
           </motion.div>
 
           {/* Actions Flexbox */}
-          <motion.div className="fixed bottom-6 w-full flex items-center justify-between z-[9999]">
+          <motion.div className="fixed bottom-6 w-full flex items-center justify-between z-[9999] touch-none select-none">
             {/* Close Actions */}
             <motion.div
               className="fixed w-full h-[64px] px-6 flex flex-row items-center justify-end bottom-6 md:top-6 z-[9999] text-xl select-none"
@@ -540,7 +579,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
             </motion.div>
           </motion.div>
           {!isMobile && (
-            <motion.div id="modalHelper" 
+            <motion.div id="modalHelper"
               className="fixed top-8 self-center px-4 py-2 rounded-full flex justify-center items-center bg-midnight-900/10 backdrop-blur-[20px] z-[98] display-visible md:display-none"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 0.3 } }}
@@ -590,14 +629,18 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
 
   return (
     <>
+      {/* ORIGINAL IMAGE */}
       <AnimatePresence mode="wait">
         {!isOpen && (
           <motion.div
             key="ZoomyImage"
             onClick={openModal}
             exit={{ opacity: 0, transition: { duration: 0.6 } }}
+            whileTap={{ scale: 0.95 }}
             whileHover={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 70, duration: 0.5 }}
+            // onAnimationStart={handleAnimationStart}
+            // onAnimationComplete={handleAnimationComplete}
             className="w-auto h-full select-none"
             style={{ cursor: 'pointer' }}
           >
@@ -605,12 +648,13 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* CLONED IMAGE IN MODAL */}
       {isMounted && (isOpen || isAnimatingOut) && modalRoot && ReactDOM.createPortal(
         <>
           <motion.div key="modalImageWrapper"
             className={`fixed top-0 left-0 w-full h-full z-[999] flex items-center justify-center transform-gpu select-none ${!isOpen ? 'pointer-events-none' : ''}`}
-            onAnimationStart={handleAnimationStart}
-            onAnimationComplete={handleAnimationComplete}
+          // onAnimationStart={handleAnimationStart}
+          // onAnimationComplete={handleAnimationComplete}
           >
             {modalOverlay}
             {modalImage}
