@@ -367,7 +367,7 @@ export default function NewVehicle() {
                         </p>
                         <div className="mt-6 flex flex-row gap-4">
                           <div className="w-1/2">
-                            <Zoomy>
+                            <Zoomy initialScale={1.6}>
                               <motion.div layoutId="featureMap">
                                 <Image src={featureMap} loading="lazy" placeholder="blur" className="rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="A map of how the different vehicle retailing features fit together" />
                               </motion.div>
