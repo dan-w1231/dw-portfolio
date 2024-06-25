@@ -17,8 +17,11 @@ export function GalleryHero({ title, description, linkPreamble, linkText, link }
     <motion.div key={1}>
       <header className="relative m-w-full px-2 xs:px-4 rounded-4xl max-w-screen-2xl mx-auto">
         <div className="relative max-w-full pt-20 md:pt-20 pb-10 md:pb-20 px-4 sm:px-6 md:px-10 bg-cardGrad dark:bg-cardGradDark backdrop-blur-[140px] shadow-xl dark:shadow-xlD rounded-4xl md:rounded-5xl xl:rounded-6xl flex flex-row flex-wrap justify-between gap-6 md:gap-10 overflow-hidden z-[2] before:absolute before:z[-1] before:rounded-[inherit] before:margin-1 before:blurple-900-gradient(#003842_33%,#001D22)] transition-opacity transition-bg duration-900">
-          <div className="relative max-w-full md:w-3/4 flex items-center z-[1]">
-            <div className="w-full md:w-3/4">
+          {/* <div className="relative max-w-full md:w-3/4 flex items-center z-[1]"> */}
+            {/* 3/4 width if image added on right */}
+            {/* <div className="w-full md:w-3/4"> */}
+            <div className="relative max-w-full w-full flex items-center z-[1]">
+            <div className="w-full">
               <div
                 className="relative z-[99]"
               >

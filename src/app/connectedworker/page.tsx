@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { GalleryHero } from '@/components/GalleryHero';
 import { useMediaQuery } from 'react-responsive';
 import { Gallery } from '@/components/Gallery';
+import { NextPreviousArticle } from '@/components/NextPreviousArticle';
 
 // Gallery Images
 import JDEFLogin from '@/images/resources/jdefLogin.png';
@@ -35,7 +36,7 @@ const workImages = [
         >
           <Zoomy>
             <motion.div layoutId="JDEFLogin" key="456" className="w-full h-full">
-              <Image src={JDEFLogin} className="h-[115%] object-contain translate-z-0" alt="" />
+              <Image src={JDEFLogin} className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -56,7 +57,7 @@ const workImages = [
         >
           <Zoomy>
             <motion.div layoutId="JDEFInProgress" key="456" className="w-full h-full">
-              <Image src={JDEFInProgress} className="h-[115%] object-contain translate-z-0" alt="" />
+              <Image src={JDEFInProgress} className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -115,7 +116,7 @@ const workImages = [
         >
           <Zoomy>
             <motion.div layoutId="JDEFRecord" key="456" className="w-full h-full">
-              <Image src={JDEFRecord} className="h-[115%] object-contain translate-z-0" alt="" />
+              <Image src={JDEFRecord} className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -136,7 +137,7 @@ const workImages = [
         >
           <Zoomy>
             <motion.div layoutId="CWMedical" key="456" className="w-full h-full">
-              <Image src={CWMedical} className="h-[115%] object-contain translate-z-0" alt="" />
+              <Image src={CWMedical} className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -157,7 +158,7 @@ const workImages = [
         >
           <Zoomy>
             <motion.div layoutId="CWIndustry" key="456" className="w-full h-full">
-              <Image src={CWIndustry} className="h-[115%] object-contain translate-z-0" alt="" />
+              <Image src={CWIndustry} className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -168,6 +169,16 @@ const workImages = [
 ]
 
 export default function ConnectedWorker() {
+
+  const previousArticle = {
+    href: '/fitnesscheck',
+    text: 'Previous',
+  };
+
+  const nextArticle = {
+    href: '/dealerplatform',
+    text: 'Next',
+  };
 
   // Scroll to top on load due to next/link conflict with framer motion
   useEffect(() => {
@@ -206,6 +217,7 @@ export default function ConnectedWorker() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
           >
+            <NextPreviousArticle previousArticle={previousArticle} nextArticle={nextArticle} />
             <ContactBox useContainerQuery={false} parentClass="mt-2 sm:pb-16 xs:mt-4 px-2 xs:px-4" flexClass="md:flex-row" />
           </motion.div>
         </div>

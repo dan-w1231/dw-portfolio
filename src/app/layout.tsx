@@ -1,5 +1,6 @@
 import React from 'react';
 import { type Metadata } from 'next';
+import ModalRoot from '@/components/ModalRoot';
 import { Inter } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/react"
 import clsx from 'clsx';
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
         <html
           lang="en"
           className={clsx(
-            'h-full bg-[#E1D4DE] bg-lightBg dark:bg-[#1A1824] dark:bg-darkBg antialiased transition-all duration-900',
+            'h-full bg-[#E1D4DE] bg-lightBg dark:bg-[#1A1824] dark:bg-darkBg antialiased transition-bg duration-900',
             inter.variable,
           )}
         >
@@ -87,9 +88,9 @@ export const metadata: Metadata = {
             />
           </head>
           <body
-            className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-lightBg bg-[#E1D4DE] bg-noisePattern before:absolute before:inset-0 before:content-[''] before:top-0 before:left-0 before:opacity-0 before:dark:opacity-100 before:transition-opacity before:duration-900 before:bg-darkBg z-[1]"
+            className="relative min-w-screen flex overflow-x-hidden min-h-full flex-col bg-lightBg bg-[#E1D4DE] bg-noisePattern before:absolute before:inset-0 before:content-[''] before:top-0 before:left-0 before:opacity-0 before:dark:opacity-100 before:transition-opacity before:duration-900 before:bg-darkBg z-[1] select-none"
             >
-              <div id="modal-root"></div>
+              <ModalRoot />
               <Toasted />
               <div key="gridPattern" className="absolute overflow-hidden w-1/3 top-[-40px] left-0 h-124 text-midnight-900/50 dark:text-ice-900/30 [mask-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.05))]">
                 <GridPattern x="20%" />

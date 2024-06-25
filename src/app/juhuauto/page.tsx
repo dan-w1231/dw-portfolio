@@ -6,12 +6,15 @@ import { useRef, useEffect } from "react";
 import { ContactBox } from '@/components/ContactBox';
 import Zoomy from '@/components/HOC/Zoomy';
 import Image from 'next/image';
+import Link from 'next/link';
+import { NextPreviousArticle } from '@/components/NextPreviousArticle';
 import MediaQuery, { useMediaQuery } from 'react-responsive';
 
 // Gallery Images
 import juhuFPA from '@/images/resources/juhuFPA1.png';
-import bdkToJuhu from '@/images/resources/deviceImages/bdkTojuhu.png';
+import bdkToJuhu from '@/images/resources/juhuSearchDesign.png';
 import juhuFPAs from '@/images/resources/deviceImages/juhuFPAsB.png';
+import juhuTabletFPA from '@/images/resources/juhuFPAtablet.png';
 import juhuQuotes from '@/images/resources/deviceImages/juhuFinanceWide.png';
 import juhuPreApproval from '@/images/resources/deviceImages/juhuPreApproval.png';
 
@@ -24,22 +27,50 @@ import bdkWireframesToJuhu from '@/images/resources/bdkWireframesToJuhu.png';
 import juhuUserTest from '@/images/resources/juhuUserTest.png';
 import ABcategories from '@/images/resources/CategoryABResults.png';
 
+// Weird issue where unless I name this image array the same as the NV page, and the functions the same layoutId animations break. As soon
+// as I change it to JuhuImages = [], layout animate presence breaks. Zoomy component knows nothing about the names of this array, no idea why it's happening.
 
-const JuhuImages = [
+// layoutId animation issue:
+// 1. it seems highly related to image aspect ratio/size. Feels like the more it has to do when resizing the more broke the animation becomes.
+// 2. having a squarish box for all images and adjusting the outer card size seems to work best, but the image isnt as zoomed on click
+// 3. Try fixed position images
+
+//Issue is likely incongruent aspect ratio:
+//"* If `layout` is set to `"position"`, the size of the component will change instantly and
+// * only its position will animate. If `layout` is set to `"size"`, the position of the
+// * component will change instantly but its size will animate.
+// *
+// * If `layout` is set to `"size"`, the position of the component will change instantly and
+// * only its size will animate.
+// *
+// * If `layout` is set to `"preserve-aspect"`, the component will animate size & position if
+// * the aspect ratio remains the same between renders, and just position if the ratio changes."
+
+const NVImages = [
   {
-    image: function JuhuFPAFront() {
+    image: function Calcs() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-          <motion.div
-            className="w-full h-full flex items-center justify-center"
-            initial={{ opacity: 0.5, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <motion.div className="w-full h-full flex items-center justify-center" layoutId="juhuFPA">
-                <Image src={juhuFPA} className="w-full h-full max-w-[496px] p-4 max-h-[85vh] pointer-events-none object-contain" alt="One of my designs for the juhu vehicle advert page" />
+        <motion.div key="Calcs" className="relative w-full flex items-center justify-center min-w-[220px] md:min-w-0 md:min-h-[498px] bg-ice-800/30 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg dark:bg-ice-900/5">
+          <motion.div key="112" className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
+            <Zoomy initialScale={1.3}>
+              <motion.div layoutId="nvImgA" layout="preserve-aspect" key="456B" className="w-full h-full">
+                <Image key="calcsImg" priority src={juhuFPA} className="h-[316px] md:w-[630px] md:h-full transform-gpu max-h-[85vh] object-cover py-4 pointer-events-none z-[99] overflow-visible" alt="One of my designs for the juhu vehicle advert page" />
+              </motion.div> 
+            </Zoomy>
+          </motion.div>
+        </motion.div>
+      )
+    },
+  },
+  {
+    image: function DealSummary() {
+      const imageRef = useRef<HTMLDivElement | null>(null);
+      return (
+        <motion.div key="DealSummary" className="relative overflow-hidden w-32 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0">
+          <motion.div className="w-auto h-full" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
+            <Zoomy initialScale={1.2}>
+              <motion.div layoutId="nvImgC" layout="preserve-aspect" key="458" className="w-auto h-full">
+                <Image key="dealSummary" priority src={juhuFPAs} objectFit="contain" className="relative w-[310px] md:w-[640px] transform-gpu max-h-[85vh] object-contain py-2 pointer-events-none z-[99]" alt="The vehicle advert page." />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -48,19 +79,13 @@ const JuhuImages = [
     },
   },
   {
-    image: function BDKToJuhu() {
+    image: function YourDeal() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[340px] md:min-w-0">
-          <motion.div
-            className="w-full h-full flex items-center justify-center"
-            initial={{ opacity: 1, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.10 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <motion.div layoutId="bdkToJuhu">
-                <Image src={bdkToJuhu} className="w-full md:py-10 max-h-[85vh] pointer-events-none object-contain" alt="Wireframes to brand" />
+        <motion.div key="YourDeal" className="relative w-full flex items-center justify-center min-w-[320px] md:min-h-[498px] md:min-w-0 bg-ice-800/30 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg dark:bg-ice-900/5">
+          <motion.div className="w-auto h-full" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
+            <Zoomy initialScale={1.2}>
+              <motion.div layoutId="nvImgB" layout="preserve-aspect" key="457" className="w-auto h-full">
+                <Image key="dealImg" src={bdkToJuhu} priority objectFit="contain" className="relative w-[310px] md:w-[640px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Wireframes before and after branding" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -69,19 +94,13 @@ const JuhuImages = [
     },
   },
   {
-    image: function JuhuVehicleAdvert() {
+    image: function Reserve() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[340px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <motion.div layoutId="juhuFPAs">
-                <Image src={juhuFPAs} className="w-full max-h-[85vh] pointer-events-none object-contain" alt="The vehicle advert page." />
+        <motion.div key="Reserve" className="relative w-32 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0 overflow-hidden">
+          <motion.div className="w-auto h-full" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
+            <Zoomy initialScale={1.4}>
+              <motion.div layoutId="nvImgD" layout="preserve-aspect" key="459" className="w-auto h-full">
+                <Image key="reserveB" src={juhuPreApproval} priority objectFit="contain" className="relative h-full md:w-[640px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Getting pre-approved" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -90,40 +109,13 @@ const JuhuImages = [
     },
   },
   {
-    image: function JuhuPreapproval() {
+    image: function VehicleAd() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
+        <motion.div key="VehicleAd" className="relative w-full overflow-hidden md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[500px] md:min-w-0">
+          <motion.div className="w-auto h-full" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy>
-              <motion.div layoutId="juhuPreApproval">
-                <Image src={juhuPreApproval} className="w-full max-h-[85vh] pointer-events-none object-contain" alt="Getting pre-approved" />
-              </motion.div>
-            </Zoomy>
-          </motion.div>
-        </motion.div>
-      )
-    },
-  },
-  {
-    image: function JuhuQuotes() {
-      return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[500px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <motion.div layoutId="juhuQuotes">
-                <Image src={juhuQuotes} className="w-full max-h-[85vh] pointer-events-none object-contain p-[10%]" alt="Viewing finance quotes on a laptop." />
+              <motion.div layoutId="nvImgE" layout="preserve-aspect" key="460" className="w-auto h-full">
+                <Image key="fpa" src={juhuTabletFPA} priority className="relative md:left-16 w-[720px] md:w-[640px] md:max-w-none h-full transform-gpu max-h-[85vh] object-contain py-2 select-none z-[999]" alt="Viewing finance quotes on a laptop." />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -133,13 +125,23 @@ const JuhuImages = [
   },
 ]
 
-export default function JuhuAuto() {
+export default function NewVehicle() {
+
+  const previousArticle = {
+    href: '/newvehicle',
+    text: 'Previous',
+  };
+
+  const nextArticle = {
+    href: '/fitnesscheck',
+    text: 'Next',
+  };
 
   // Scroll to top on load due to next/link conflict with framer motion
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 0);
+    }, 1);
   }, []);
 
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -148,7 +150,7 @@ export default function JuhuAuto() {
     target: targetRef,
   });
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0", "0"] : ["0px", "432px"]);
+  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0%", "0%"] : ["0px", "412px"]);
 
   return (
     <>
@@ -179,7 +181,10 @@ export default function JuhuAuto() {
                           Car marketplace in Germany
                         </h2>
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
-                          Create a finance-focused vehicle marketplace for buyers and sellers in Germany, on behalf of Bank Deutsches Kraftfahrzeuggewerbe (BDK). Combining previous work where I designed online retailing tools including vehicle search, finance calculators, applications and eligibility checking, brought together into a simple yet engaging way to buy a car.
+                          Create a finance-focused vehicle marketplace for buyers and sellers in Germany, on behalf of Bank Deutsches Kraftfahrzeuggewerbe (BDK).
+                        </p>
+                        <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
+                          Combining lessons learned from designing online retailing tools including vehicle search, finance calculators, applications and eligibility checking, brought together into a simple yet engaging way to buy a car.
                         </p>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
                           <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>Post-release User & A/B Testing</BulletTag>
@@ -327,24 +332,25 @@ export default function JuhuAuto() {
                   </div>
                 </div>
               </header>
+              <NextPreviousArticle previousArticle={previousArticle} nextArticle={nextArticle} />
             </div>
             {/* Right col */}
-            <motion.div layout
-              className="relative w-full max-w-full md:max-w-[40%] order-1 md:order-2 overflow-hidden"
+            <motion.div
+              className="relative w-full max-w-full md:max-w-[40%] order-1 md:order-2 overflow-hidden z-[4]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 70, delay: initialWindowWidth > 767 ? 1 : 0, duration: 1.5 }}
             >
-              <motion.div layout
+              <motion.div
                 style={{ y }}
                 className="rounded-t-xl px-2 xs:px-4 mb-2 xs:mb-4 md:mb-0 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] sm:h-2/3 h-[360px] md:max-h-auto md:h-auto md:relative md:top-0 md:px-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
-              > 
+              >
                 {/* CAUSING HYDRATION ISSUES? */}
-                {JuhuImages.map((images) => (
+                {NVImages.map((images, index) => (
                   <MediaQuery minWidth={768}>
                     {(matches) =>
                       matches ?
-                        <AnimateHeightChange>
+                        <AnimateHeightChange key={index}>
                           <images.image />
                         </AnimateHeightChange>
                         :
@@ -368,7 +374,9 @@ export default function JuhuAuto() {
           </div>
         </div>
         {!isDesktopOrLaptop && (
-          <ContactBox useContainerQuery={false} flexClass="md:flex-row" />
+          <div className="relative px-2 xs:px-4 mt-2 xs:mt-4 sm:mb-16">
+            <ContactBox useContainerQuery={false} flexClass="md:flex-row" />
+          </div>
         )}
       </motion.div>
     </>

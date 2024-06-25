@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { GalleryHero } from '@/components/GalleryHero';
 import { useMediaQuery } from 'react-responsive';
 import { Gallery } from '@/components/Gallery';
+import { NextPreviousArticle } from '@/components/NextPreviousArticle';
 
 // Gallery Images
 import Dashboard from '@/images/resources/dealerPlatformDash.png';
@@ -39,7 +40,7 @@ const workImages = [
         >
           <Zoomy>
             <motion.div layoutId="Dashboard" key="456" className="w-full h-full">
-              <Image src={Dashboard} className="h-[115%] object-contain translate-z-0" alt="" />
+              <Image src={Dashboard} className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -60,7 +61,7 @@ const workImages = [
         >
           <Zoomy>
             <motion.div layoutId="CustomerRecord" key="456" className="w-full h-full">
-              <Image src={CustomerRecord} className="h-[115%] object-contain translate-z-0" alt="" />
+              <Image src={CustomerRecord} className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -81,7 +82,7 @@ const workImages = [
         >
           <Zoomy>
             <motion.div layoutId="Order" key="456" className="w-full h-full">
-              <Image src={Order} className="h-[115%] object-contain translate-z-0" alt="" />
+              <Image src={Order} className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -102,7 +103,7 @@ const workImages = [
         >
           <Zoomy>
             <motion.div layoutId="BuildDeal" key="456" className="w-full h-full">
-              <Image src={BuildDeal} className="h-[115%] object-contain translate-z-0" alt="" />
+              <Image src={BuildDeal} className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -123,7 +124,7 @@ const workImages = [
         >
           <Zoomy>
             <motion.div layoutId="SentDeal" key="456" className="w-full h-full">
-              <Image src={SentDeal} className="h-[115%] object-contain translate-z-0" alt="" />
+              <Image src={SentDeal} className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -133,6 +134,16 @@ const workImages = [
 ]
 
 export default function DealerPlatform() {
+
+  const previousArticle = {
+    href: '/connectedworker',
+    text: 'Previous',
+  };
+
+  // const nextArticle = {
+  //   href: '/dealerplatform',
+  //   text: 'Next',
+  // };
 
   // Scroll to top on load due to next/link conflict with framer motion
   useEffect(() => {
@@ -177,6 +188,7 @@ export default function DealerPlatform() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
           >
+            <NextPreviousArticle previousArticle={previousArticle} />
             <ContactBox useContainerQuery={false} parentClass="mt-2 sm:pb-16 xs:mt-4 px-2 xs:px-4" flexClass="md:flex-row" />
           </motion.div>
         </div>

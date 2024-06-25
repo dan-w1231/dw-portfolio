@@ -2,47 +2,47 @@
 import { BulletTag } from '@/components/BulletTag';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import { AnimateHeightChange } from '@/components/AnimateHeightChange';
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { ContactBox } from '@/components/ContactBox';
 import Zoomy from '@/components/HOC/Zoomy';
 import Image from 'next/image';
 import Link from 'next/link';
 import MediaQuery, { useMediaQuery } from 'react-responsive';
+import { NextPreviousArticle } from '@/components/NextPreviousArticle';
 
 // Static Images
-import yourDeal from '@/images/resources/deviceImages/yourDeal-flat.png'
-import relationshipMap from '@/images/resources/relationshipMap.png'
-import researchPlan from '@/images/resources/researchPlan.png'
-import streetQPlan from '@/images/resources/streetInterviewQPlan.png'
-import personas from '@/images/resources/personas.png'
-import wireframeNV from '@/images/resources/wireframingNV.png'
-import featureMap from '@/images/resources/fullFeatureMap.png'
-import flowOptions from '@/images/resources/flowOptions.png'
-import productPages from '@/images/resources/productPages.png'
-import analyticsNV from '@/images/resources/analyticsNV.png'
-import ABWidget from '@/images/resources/ABWidget.png'
-import calcs from '@/images/resources/calcs.png'
-import dealSummary from '@/images/resources/dealSummary.png'
-import fpa from '@/images/resources/fpa.png'
-import reserve from '@/images/resources/reserve-wide.png'
-import reserveB from '@/images/resources/reserve.png'
-import approved from '@/images/resources/approved.png'
+import yourDeal from '@/images/resources/deviceImages/yourDeal-flat.png';
+import relationshipMap from '@/images/resources/relationshipMap.png';
+import researchPlan from '@/images/resources/researchPlan.png';
+import streetQPlan from '@/images/resources/streetInterviewQPlan.png';
+import personas from '@/images/resources/personas.png';
+import wireframeNV from '@/images/resources/wireframingNV.png';
+import featureMap from '@/images/resources/fullFeatureMap.png';
+import flowOptions from '@/images/resources/flowOptions.png';
+import productPages from '@/images/resources/productPages.png';
+import analyticsNV from '@/images/resources/analyticsNV.png';
+import ABWidget from '@/images/resources/ABWidget.png';
+import calcs from '@/images/resources/calcs.png';
+import dealSummary from '@/images/resources/dealSummary.png';
+import fpa from '@/images/resources/fpa.png';
+import reserve from '@/images/resources/reserve-wide.png';
+import reserveB from '@/images/resources/reserve.png';
+import approved from '@/images/resources/approved.png';
+import dealFPA from '@/images/resources/deviceImages/yourDealTradein2.png';
+import webshopA from '@/images/resources/webshop1.png';
+import webshopB from '@/images/resources/webshop2.png';
+import webshopC from '@/images/resources/webshop3.png';
+import webshopD from '@/images/resources/webshop4.png';
 
 const NVImages = [
   {
-    image: function Calcs() {
+    image: function DealFPA() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <motion.div layoutId="nvImgA" key="456" className="w-full h-full">
-                <Image src={calcs} className="w-full max-h-[85vh] object-contain py-4 pointer-events-none" alt="Themed finance calculators embedded in dealership websites" />
+        <motion.div key="dealFPA" className="relative w-2/3 md:w-full md:min-h-[800px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+          <motion.div className="w-auto h-full">
+            <Zoomy initialScale={1.3}>
+              <motion.div layoutId="dealFPA" layout="preserve-aspect" key="457" className="w-auto h-full">
+                <Image key="dealFPAimg" src={dealFPA} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -51,41 +51,52 @@ const NVImages = [
     },
   },
   {
-    image: function YourDeal() {
+    image: function Calcs() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
+        // This element is ahead of other images in array. It fixes layout animation bugs.
+        // Change other images to match this:
+          // Remove layout from top level
+          // Div1 Classes -> Remove inset, remove transition/duration, min-w change
+          // Div2 remove initials/whileinviews
+          // Zoomy same
+          // parent zoomy motiondiv w-auto h-auto, layout="preserve-aspect" exit animation, 
+          // image add key, new classes, objectFit
+        <motion.div key="Calcs" className="relative w-2/3 md:w-full md:min-h-[498px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0">
+          <motion.div key="112" className="w-auto h-auto">
             <Zoomy>
-              <motion.div layoutId="nvImgB" key="457" className="w-full h-full">
-                <Image src={yourDeal} className="w-full object-contain max-h-[85vh] pointer-events-none" alt="The deal page." />
-              </motion.div>
+              <motion.div layoutId="nvImgA" layout="preserve-aspect" key="456B" className="w-auto h-auto">
+                <Image key="calcsImg" src={calcs} objectFit="contain" className="relative w-[500px] transform-gpu max-h-[85vh] h-auto object-contain py-4 pointer-events-none z-[99]" alt="Themed finance calculators embedded in dealership websites" />
+              </motion.div> 
             </Zoomy>
           </motion.div>
         </motion.div>
       )
     },
   },
+  // {
+  //   image: function YourDeal() {
+  //     return (
+  //       <motion.div key="YourDeal" className="relative w-2/3 md:w-full md:min-h-[498px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+  //         <motion.div className="w-auto h-full">
+  //           <Zoomy>
+  //             <motion.div layoutId="nvImgB" layout="preserve-aspect" key="457" className="w-auto h-full">
+  //               <Image key="dealImg" src={yourDeal} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
+  //             </motion.div>
+  //           </Zoomy>
+  //         </motion.div>
+  //       </motion.div>
+  //     )
+  //   },
+  // },
   {
     image: function DealSummary() {
       const imageRef = useRef<HTMLDivElement | null>(null);
       return (
-        <motion.div layout className="relative w-32 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[390px] md:min-w-0 overflow-hidden">
-          <motion.div
-            className="flex items-center justify-center w-full h-auto"
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <motion.div layoutId="nvImgC" key="458" className="w-full h-full">
-                <Image src={dealSummary} className="w-full object-contain md:px-6 max-h-[85vh] pointer-events-none" alt="Desktop view of a reservation." />
+        <motion.div key="DealSummary" className="relative w-2/3 md:w-full md:min-h-[498px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+          <motion.div className="w-auto h-auto">
+            <Zoomy initialScale={1.3}>
+              <motion.div layoutId="nvImgC" layout="preserve-aspect" key="458" className="w-auto h-auto">
+                <Image key="dealSummary" src={dealSummary} objectFit="contain" className="relative h-full transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Desktop view of a reservation." />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -96,17 +107,11 @@ const NVImages = [
   {
     image: function Reserve() {
       return (
-        <motion.div layout className="relative w-32 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[390px] md:min-w-0 overflow-hidden">
-          <motion.div
-            className="flex items-center justify-center w-full h-auto"
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
+        <motion.div key="Reserve" className="relative w-2/3 md:w-full md:min-h-[498px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0">
+          <motion.div className="w-auto h-auto">
             <Zoomy>
-              <motion.div layoutId="nvImgD" key="459" className="w-full h-full">
-                <Image src={reserveB} className="w-full object-contain md:px-6 max-h-[85vh] pointer-events-none" alt="Desktop view of a reservation." />
+              <motion.div layoutId="nvImgD" layout="preserve-aspect" key="459" className="w-auto h-auto">
+                <Image key="reserveB" src={reserveB} objectFit="contain" className="relative h-full transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Reserve a vehicle." />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -115,19 +120,58 @@ const NVImages = [
     },
   },
   {
-    image: function VehicleAd() {
+    image: function WebshopA() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-          <motion.div
-            className="p-[18%] h-auto"
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
+        <motion.div key="WebshopA" className="relative w-2/3 md:w-full md:min-h-[800px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+          <motion.div className="w-auto h-full">
             <Zoomy>
-              <motion.div layoutId="nvImgE" key="460" className="w-full h-full">
-                <Image src={fpa} className="w-full max-w-[17rem] object-contain max-h-[85vh] pointer-events-none" alt="Vehicle advert." />
+              <motion.div layoutId="WebshopA" layout="preserve-aspect" key="457" className="w-auto h-full">
+                <Image key="WebshopAimg" src={webshopA} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
+              </motion.div>
+            </Zoomy>
+          </motion.div>
+        </motion.div>
+      )
+    },
+  },
+  {
+    image: function WebshopB() {
+      return (
+        <motion.div key="WebshopB" className="relative w-2/3 md:w-full md:min-h-[800px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+          <motion.div className="w-auto h-full">
+            <Zoomy>
+              <motion.div layoutId="WebshopB" layout="preserve-aspect" key="457" className="w-auto h-full">
+                <Image key="WebshopBimg" src={webshopB} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
+              </motion.div>
+            </Zoomy>
+          </motion.div>
+        </motion.div>
+      )
+    },
+  },
+  {
+    image: function WebshopC() {
+      return (
+        <motion.div key="WebshopC" className="relative w-2/3 md:w-full md:min-h-[800px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+          <motion.div className="w-auto h-full">
+            <Zoomy>
+              <motion.div layoutId="WebshopC" layout="preserve-aspect" key="457" className="w-auto h-full">
+                <Image key="WebshopCImg" src={webshopC} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
+              </motion.div>
+            </Zoomy>
+          </motion.div>
+        </motion.div>
+      )
+    },
+  },
+  {
+    image: function WebshopD() {
+      return (
+        <motion.div key="WebshopD" className="relative w-2/3 md:w-full md:min-h-[800px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
+          <motion.div className="w-auto h-full">
+            <Zoomy>
+              <motion.div layoutId="WebshopD" layout="preserve-aspect" key="457" className="w-auto h-full">
+                <Image key="WebshopDimg" src={webshopD} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -138,17 +182,11 @@ const NVImages = [
   {
     image: function Approved() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253243] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-          <motion.div
-            className="p-[18%] h-auto"
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
+        <motion.div key="Approved" className="relative w-2/3 md:w-full md:min-h-[800px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0">
+          <motion.div className="w-auto h-full">
             <Zoomy>
-              <motion.div layoutId="nvImgF" key="461" className="w-full h-full">
-                <Image src={approved} className="w-full max-w-[17rem] object-contain max-h-[85vh] pointer-events-none" alt="Instant decision on finance applications." />
+              <motion.div layoutId="nvImgF" layout="preserve-aspect" key="461" className="w-auto h-full">
+                <Image key="approved" src={approved} className="relative w-[340px] h-full transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Instant decision on finance applications." />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -159,6 +197,11 @@ const NVImages = [
 ]
 
 export default function NewVehicle() {
+
+  const nextArticle = {
+    href: '/juhuauto',
+    text: 'Next',
+  };
 
   // Scroll to top on load due to next/link conflict with framer motion
   useEffect(() => {
@@ -173,7 +216,7 @@ export default function NewVehicle() {
     target: targetRef,
   });
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0%", "0%"] : ["0px", "1800px"]);
+  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0%", "0%"] : ["0px", "1180px"]);
 
   return (
     <>
@@ -187,7 +230,7 @@ export default function NewVehicle() {
           <div className="w-full max-w-screen-2xl flex flex-col gap-0 md:gap-4 no-wrap flex-center mx-auto md:flex-row 2xl:gap-4 z-97">
 
             {/* Left col */}
-            <div className="w-full max-w-[800px] md:max-w-[60%] order-2 md:order-1">
+            <div className="w-full max-w-[800px] md:max-w-[60%] order-2 md:order-1 z-[3]">
               <header className="relative w-full px-2 xs:px-4 md:pr-0 md:pl-4 rounded-4xl mx-auto">
                 <div
                   className="relative w-full pt-11 md:pt-10 pb-6 md:pb-10 px-4 sm:px-6 md:px-10 bg-cardGrad dark:bg-cardGradDark backdrop-blur-[140px] shadow-xl dark:shadow-xlD rounded-4xl md:rounded-5xl xl:rounded-6xl overflow-hidden">
@@ -395,10 +438,11 @@ export default function NewVehicle() {
                   </div>
                 </div>
               </header>
+              <NextPreviousArticle nextArticle={nextArticle} />
             </div>
             {/* Right col */}
             <motion.div
-              className="relative w-full max-w-full md:max-w-[40%] order-1 md:order-2 overflow-hidden"
+              className="relative w-full max-w-full md:max-w-[40%] order-1 md:order-2 overflow-hidden z-[4]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 70, delay: initialWindowWidth > 767 ? 1 : 0, duration: 1.5 }}
@@ -408,11 +452,11 @@ export default function NewVehicle() {
                 className="rounded-t-xl px-2 xs:px-4 mb-2 xs:mb-4 md:mb-0 w-full flex flex-row gap-2 overflow-x-scroll overflow-y-hidden md:overflow-visible md:gap-4 ease-[cubic-bezier(0.16,0.84,0.44,1)] duration-[600ms] sm:h-2/3 h-[360px] md:max-h-auto md:h-auto md:relative md:top-0 md:px-0 md:bg-transparent md:shadow-[0] md:border-0 md:flex-col md:pr-4"
               >
                 {/* CAUSING HYDRATION ISSUES? */}
-                {NVImages.map((images) => (
+                {NVImages.map((images, index) => (
                   <MediaQuery minWidth={768}>
                     {(matches) =>
                       matches ?
-                        <AnimateHeightChange>
+                        <AnimateHeightChange key={index}>
                           <images.image />
                         </AnimateHeightChange>
                         :

@@ -6,6 +6,7 @@ import { useRef, useEffect } from "react";
 import { ContactBox } from '@/components/ContactBox';
 import Zoomy from '@/components/HOC/Zoomy';
 import Image from 'next/image';
+import { NextPreviousArticle } from '@/components/NextPreviousArticle';
 import MediaQuery, { useMediaQuery } from 'react-responsive';
 
 // Gallery Images
@@ -23,21 +24,16 @@ import PrototypeB from '@/images/resources/fitcheck2ndPrototype.png';
 import DesignBoard from '@/images/resources/fitcheck-designBoard.png';
 import fitcheckUserTest from '@/images/resources/fitcheckuserTesting.png';
 
+
 const fitcheckImages = [
   {
     image: function FitCheckIntroduction() {
       return (
-        <motion.div layout className="relative w-2/3 md:w-full md:min-h-[498px] inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <motion.div layoutId="fitcheckStart" key="456" className="w-full h-full">
-                <Image src={fitcheckStart} className="w-full max-w-[496px] max-h-[85vh] pointer-events-none object-contain" alt="Introduction screen for fitness check" />
+        <motion.div className="relative w-full md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[266px] md:min-w-0">
+          <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
+            <Zoomy initialScale={1.4}>
+              <motion.div layoutId="fitcheckStart" layout="preserve-aspect" key="456" className="w-full h-full">
+                <Image key="fitcheckStart" src={fitcheckStart} objectFit="contain" className="object-cover md:object-contain h-[410px] md:h-full transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Introduction screen for fitness check" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -48,17 +44,11 @@ const fitcheckImages = [
   {
     image: function FitCheckWarmupScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 1, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <motion.div layoutId="fitcheck1E" key="456" className="w-full h-full">
-                <Image src={fitcheck1E} className="w-full max-w-[496px] py-8 max-h-[85vh] pointer-events-none object-contain" alt="Warmup screen during fitness check" />
+        <motion.div className="relative w-full md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[266px] md:min-w-0">
+          <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
+            <Zoomy initialScale={1.2}>
+              <motion.div layoutId="fitcheck1E" layout="preserve-aspect" key="457" className="w-full h-full">
+                <Image key="fitcheck1E" src={fitcheck1E}  className="object-cover md:object-contain h-[410px] md:h-full transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Warmup screen during fitness check" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -69,17 +59,11 @@ const fitcheckImages = [
   {
     image: function FitCheckMaxIntensityScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <motion.div layoutId="fitcheck4F" key="456" className="w-full h-full">
-                <Image src={fitcheck4F} className="w-full max-w-[496px] py-1 max-h-[85vh] pointer-events-none object-contain" alt="Max intensity part of the fitness check" />
+        <motion.div className="relative w-full md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[266px] md:min-w-0">
+          <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
+            <Zoomy initialScale={1.2}>
+              <motion.div layoutId="fitcheck4F" key="458" layout="preserve-aspect" className="w-full h-full">
+                <Image key="fitcheck4F" src={fitcheck4F} objectFit="contain" className="object-cover md:object-contain h-[410px] md:h-full transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Max intensity part of the fitness check" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -90,17 +74,11 @@ const fitcheckImages = [
   {
     image: function FitCheckCooldownScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <motion.div layoutId="fitcheck6F" key="456" className="w-full h-full">
-                <Image src={fitcheck6F} className="w-full max-w-[496px] p-2 max-h-[85vh] pointer-events-none object-contain" alt="Reducing pace with a cool down" />
+        <motion.div className="relative w-full md:w-full md:min-h-[498px] flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[266px] md:min-w-0">
+          <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
+            <Zoomy initialScale={1.2}>
+              <motion.div layoutId="fitcheck6F" key="459" layout="preserve-aspect" className="w-full h-full">
+                <Image key="fitcheck6F" src={fitcheck6F} objectFit="contain" className="object-cover md:object-contain h-[410px] md:h-full transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Reducing pace with a cool down" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -111,17 +89,11 @@ const fitcheckImages = [
   {
     image: function FitCheckResultsScreen() {
       return (
-        <motion.div layout className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[220px] md:min-w-0">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Zoomy>
-              <motion.div layoutId="fitcheckSummary" key="456" className="w-full h-full">
-                <Image src={fitcheckSummary} className="w-full max-w-[496px] max-h-[85vh] pointer-events-none object-contain p-0" alt="FitnessCheck result screen" />
+        <motion.div className="relative w-2/3 md:min-h-[490px] md:w-full inset-0 flex items-center justify-center bg-[#253337] dark:bg-ice-900/5 transition-bg duration-900 backdrop-blur-[140px] rounded-4xl md:rounded-5xl xl:rounded-6xl min-w-[240px] md:min-w-0">
+          <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
+            <Zoomy initialScale={1.2}>
+              <motion.div layoutId="fitcheckSummary" key="460" layout="preserve-aspect" className="w-full h-full">
+                <Image key="fitcheckSummary" src={fitcheckSummary} objectFit="contain" className="object-cover md:object-contain h-[410px] md:h-full transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="FitnessCheck result screen" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -132,6 +104,17 @@ const fitcheckImages = [
 ]
 
 export default function FitnessCheck() {
+
+  const previousArticle = {
+    href: '/juhuauto',
+    text: 'Previous',
+  };
+
+  const nextArticle = {
+    href: '/connectedworker',
+    text: 'Next',
+  };
+
 
   // Scroll to top on load due to next/link conflict with framer motion
   useEffect(() => {
@@ -373,10 +356,11 @@ export default function FitnessCheck() {
                   </div>
                 </div>
               </header>
+              <NextPreviousArticle previousArticle={previousArticle} nextArticle={nextArticle} />
             </div>
             {/* Right col */}
             <motion.div
-              className="relative w-full max-w-full md:max-w-[40%] order-1 md:order-2 overflow-hidden"
+              className="relative w-full max-w-full md:max-w-[40%] order-1 md:order-2 overflow-x-scroll overflow-y-hidden md:overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 70, delay: initialWindowWidth > 767 ? 1 : 0, duration: 1.5 }}

@@ -11,7 +11,7 @@ export function Footer() {
         <GridPattern x="50%" />
       </div>
       <div className="relative flex flex-col items-center justify-center gap-4 ">
-        <Link href="https://github.com/dan-w1231" className=" text-midnight-600 dark:text-ice-600 hover:text-blurple-900 dark:hover:text-blurple-900">
+        <Link href="https://github.com/dan-w1231/dw-portfolio" target="blank" className=" text-midnight-600 dark:text-ice-600 hover:text-blurple-900 dark:hover:text-blurple-900">
           <div className="relative flex items-center flex-col justify-center gap-2 text-center text-sm">
             <Github h={32} /><span>Made with &lt;3 by me</span>
           </div>

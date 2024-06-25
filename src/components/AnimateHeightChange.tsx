@@ -29,7 +29,7 @@ export const AnimateHeightChange: React.FC<AnimateHeightChangeProps> = ({ childr
   }, [])
 
   return (
-    <motion.div className={clsx(className, 'w-full')} style={{ height }} animate={{ height }} transition={{ type: "spring", duration: 1.5 }}>
+    <motion.div key="HeightChanger" className={clsx(className, 'w-full')} style={{ height }} animate={{ height }} transition={{ type: "spring", duration: 1.5 }}>
       <div ref={containerRef}>{children}</div>
     </motion.div>
   )

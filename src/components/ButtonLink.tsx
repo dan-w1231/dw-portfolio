@@ -10,9 +10,9 @@ declare module 'react' {
   }
 }
 
-type ButtonLinkProps = React.ComponentPropsWithoutRef<'a'> & { href: string, target?: string };
+type ButtonLinkProps = React.ComponentPropsWithoutRef<'a'> & { href: string, target?: string, variant?: 'primary' | 'secondary' };
 
-export function ButtonLink({ className, href, target, ...props }: ButtonLinkProps) {
+export function ButtonLink({ className, href, target, variant = 'primary', ...props }: ButtonLinkProps) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const springX = useSpring(x, { stiffness: 100, damping: 20 });
@@ -53,22 +53,29 @@ export function ButtonLink({ className, href, target, ...props }: ButtonLinkProp
     };
   }, [element, springX, springY]);
 
-  const baseClasses = 'relative text-white overflow-hidden transform-gpu transition-all ease-in-out duration-300 hover:scale-98 hover:shadow-lg inline-flex min-w-[108px] md:max-w-[248px] justify-center rounded-full text-lg font-semibold tracking-tight shadow-xl dark:shadow-xlD focus:outline-none bg-primaryGrad h-[64px]';
-  const shineClasses = clsx('absolute inset-0 bg-white bg-opacity-40 pointer-events-none transition-opacity duration-300', { 'opacity-0': !isMouseOver });
+  const baseClasses = 'relative overflow-hidden transform-gpu transition-all ease-in-out duration-300 hover:scale-98 hover:shadow-lg inline-flex min-w-[108px] md:max-w-[248px] justify-center rounded-full text-lg font-semibold tracking-tight shadow-xl dark:shadow-xlD focus:outline-none h-[64px]';
+  const primaryClasses = 'bg-primaryGrad text-white';
+  const secondaryClasses = 'bg-white/10 dark:transparent dark:bg-midnight-900/20 hover:bg-white/20 text-blurple-900 border border-blurple-900 h-[64px] rounded-full backdrop-blur-[100px]';
+
+  const shineBaseClasses = clsx('absolute inset-0 bg-white bg-opacity-40 pointer-events-none transition-opacity duration-300', { 'opacity-0': !isMouseOver });
+  // If primary button use primary, if secondary button use secondary
+  const shinePrimaryClasses = 'radial-gradient(circle 220px at var(--x) var(--y), rgba(36,250,199,0.4) 0%, rgba(36,250,199,0))'
+  const shineSecondaryClasses = 'radial-gradient(circle 100px at var(--x) var(--y), rgba(4, 30, 255, 0.2) 0%, rgba(4, 30, 255, 0))';
+
   const textClasses = 'relative pointer-events-none w-full h-full flex items-center justify-center z-20';
 
   return (
     <div
       ref={setElement}
-      className={clsx(baseClasses, className)}
+      className={clsx(baseClasses, variant === 'primary' ? primaryClasses : secondaryClasses, className)}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <a href={href} target={target} className="w-full h-full">
+      <Link href={href} target={target} className="w-full h-full">
         <span className={textClasses}>{props.children}</span>
-        <span className={shineClasses} style={{ background: `radial-gradient(circle 220px at var(--x) var(--y), rgba(36,250,199,0.4) 0%, rgba(36,250,199,0) 70%)` }}></span>
-      </a>
+        <span className={shineBaseClasses} style={{ background: variant === 'primary' ? shinePrimaryClasses : shineSecondaryClasses }}></span>
+      </Link>
     </div>
   );
 }
