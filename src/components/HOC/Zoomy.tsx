@@ -198,7 +198,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
         if (dragRef.current) {
           setScale(1.01);
         }
-      }, 200);
+      }, 300);
     }
   }, [isOpen, isMobile]);
 
@@ -461,7 +461,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
                   const originalHeight = Number(props.height) || 0; 
                   const aspectRatio = originalWidth / originalHeight;
 
-                  const desiredWidth = isOpen && isMobile ? 1000 : 1600;
+                  const desiredWidth = isOpen && isMobile ? 880 : 1920;
                   const desiredHeight = Math.round(desiredWidth / aspectRatio);
 
                   const additionalProps = {

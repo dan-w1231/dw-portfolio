@@ -201,7 +201,7 @@ export default function NewVehicle() {
     target: targetRef,
   });
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0%", "0%"] : ["0px", "970px"]);
+  const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0%", "0%"] : ["0px", "476px"]);
 
   return (
     <>
