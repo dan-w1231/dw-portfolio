@@ -480,28 +480,6 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
               }
               return child;
             })}
-            {/* {React.Children.map(children, (child) => {
-              if (
-                React.isValidElement(child) &&
-                child.props.hasOwnProperty('layoutId')
-              ) {
-                const nextImage = React.Children.only(child.props.children);
-                const props = nextImage.props as NextImageProps;
-                if (
-                  React.isValidElement(nextImage) &&
-                  props.hasOwnProperty('src')
-                ) {
-                  // const additionalClass = isOpen && isMobile ? '!w-[900px] !h-auto' : '!w-[1200px] !h-auto !object-contain !top-[unset] !left-[unset] !right-[unset]';
-                  const additionalProps = {
-                    ...props,
-                    // className: `${props.className || ''} ${additionalClass}`,
-                  };
-                  const clonedMotionDiv = React.cloneElement(nextImage, additionalProps);
-                  return React.cloneElement(child, { ...child.props }, clonedMotionDiv);
-                }
-              }
-              return child;
-            })} */}
           </motion.div>
 
           {/* Actions Flexbox */}

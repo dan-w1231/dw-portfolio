@@ -180,7 +180,7 @@ const NVImages = [
           <motion.div className="w-auto h-full" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy initialScale={1.2}>
               <motion.div layoutId="nvImgF" layout="preserve-aspect" key="461" className="w-auto h-full flex items-center justify-center">
-                <Image key="approved" priority width={ isMobile ? 768 : 1457} placeholder="blur" src={approved} className="relative h-full w-full transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Instant decision on finance applications." />
+                <Image key="approved" priority width={ isMobile ? 768 : 1457} placeholder="blur" src={approved} className="relative w-full transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Instant decision on finance applications." />
               </motion.div>
             </Zoomy>
           </motion.div>
