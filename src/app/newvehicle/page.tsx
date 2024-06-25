@@ -63,7 +63,7 @@ const NVImages = [
           // image add key, new classes, objectFit
         <motion.div key="Calcs" className="relative w-2/3 md:w-full md:min-h-[498px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0">
           <motion.div key="112" className="w-auto h-auto">
-            <Zoomy>
+            <Zoomy initialScale={1.2}>
               <motion.div layoutId="nvImgA" layout="preserve-aspect" key="456B" className="w-auto h-auto">
                 <Image key="calcsImg" src={calcs} objectFit="contain" className="relative w-[500px] transform-gpu max-h-[85vh] h-auto object-contain py-4 pointer-events-none z-[99]" alt="Themed finance calculators embedded in dealership websites" />
               </motion.div> 
@@ -109,7 +109,7 @@ const NVImages = [
       return (
         <motion.div key="Reserve" className="relative w-2/3 md:w-full md:min-h-[498px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0">
           <motion.div className="w-auto h-auto">
-            <Zoomy>
+            <Zoomy initialScale={1.3}>
               <motion.div layoutId="nvImgD" layout="preserve-aspect" key="459" className="w-auto h-auto">
                 <Image key="reserveB" src={reserveB} objectFit="contain" className="relative h-full transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Reserve a vehicle." />
               </motion.div>
@@ -124,7 +124,7 @@ const NVImages = [
       return (
         <motion.div key="WebshopA" className="relative w-2/3 md:w-full md:min-h-[800px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div className="w-auto h-full">
-            <Zoomy>
+            <Zoomy initialScale={1.2}>
               <motion.div layoutId="WebshopA" layout="preserve-aspect" key="457" className="w-auto h-full">
                 <Image key="WebshopAimg" src={webshopA} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
               </motion.div>
@@ -139,7 +139,7 @@ const NVImages = [
       return (
         <motion.div key="WebshopB" className="relative w-2/3 md:w-full md:min-h-[800px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div className="w-auto h-full">
-            <Zoomy>
+            <Zoomy initialScale={1.2}>
               <motion.div layoutId="WebshopB" layout="preserve-aspect" key="457" className="w-auto h-full">
                 <Image key="WebshopBimg" src={webshopB} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
               </motion.div>
@@ -154,7 +154,7 @@ const NVImages = [
       return (
         <motion.div key="WebshopC" className="relative w-2/3 md:w-full md:min-h-[800px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div className="w-auto h-full">
-            <Zoomy>
+            <Zoomy initialScale={1.2}>
               <motion.div layoutId="WebshopC" layout="preserve-aspect" key="457" className="w-auto h-full">
                 <Image key="WebshopCImg" src={webshopC} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
               </motion.div>
@@ -169,7 +169,7 @@ const NVImages = [
       return (
         <motion.div key="WebshopD" className="relative w-2/3 md:w-full md:min-h-[800px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div className="w-auto h-full">
-            <Zoomy>
+            <Zoomy initialScale={1.2}>
               <motion.div layoutId="WebshopD" layout="preserve-aspect" key="457" className="w-auto h-full">
                 <Image key="WebshopDimg" src={webshopD} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
               </motion.div>
@@ -184,7 +184,7 @@ const NVImages = [
       return (
         <motion.div key="Approved" className="relative w-2/3 md:w-full md:min-h-[800px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0">
           <motion.div className="w-auto h-full">
-            <Zoomy>
+            <Zoomy initialScale={1.2}>
               <motion.div layoutId="nvImgF" layout="preserve-aspect" key="461" className="w-auto h-full">
                 <Image key="approved" src={approved} className="relative w-[340px] h-full transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Instant decision on finance applications." />
               </motion.div>
