@@ -33,7 +33,7 @@ const fitcheckImages = [
           <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy initialScale={1.4}>
               <motion.div layoutId="fitcheckStart" layout="preserve-aspect" key="456" className="w-full h-full">
-                <Image key="fitcheckStart" src={fitcheckStart} objectFit="contain" className="object-cover md:object-contain h-[410px] md:h-full transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Introduction screen for fitness check" />
+                <Image key="fitcheckStart" priority src={fitcheckStart} objectFit="contain" className="object-cover md:object-contain h-[410px] md:h-full transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Introduction screen for fitness check" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -48,7 +48,7 @@ const fitcheckImages = [
           <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy initialScale={1.2}>
               <motion.div layoutId="fitcheck1E" layout="preserve-aspect" key="457" className="w-full h-full">
-                <Image key="fitcheck1E" src={fitcheck1E}  className="object-cover md:object-contain h-[410px] md:h-full transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Warmup screen during fitness check" />
+                <Image key="fitcheck1E" priority src={fitcheck1E}  className="object-cover md:object-contain h-[410px] md:h-full transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Warmup screen during fitness check" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -63,7 +63,7 @@ const fitcheckImages = [
           <motion.div className="" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy initialScale={1.2}>
               <motion.div layoutId="fitcheck4F" key="458" layout="preserve-aspect" className="w-full h-full">
-                <Image key="fitcheck4F" src={fitcheck4F} objectFit="contain" className="object-cover md:object-contain h-[410px] md:h-full transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Max intensity part of the fitness check" />
+                <Image key="fitcheck4F" priority src={fitcheck4F} objectFit="contain" className="object-cover md:object-contain h-[410px] md:h-full transform-gpu max-h-[85vh] py-4 pointer-events-none z-[99]" alt="Max intensity part of the fitness check" />
               </motion.div>
             </Zoomy>
           </motion.div>

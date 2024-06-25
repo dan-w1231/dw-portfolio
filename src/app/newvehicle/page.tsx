@@ -42,7 +42,7 @@ const NVImages = [
           <motion.div className="w-auto h-full">
             <Zoomy initialScale={1.3}>
               <motion.div layoutId="dealFPA" layout="preserve-aspect" key="457" className="w-auto h-full">
-                <Image key="dealFPAimg" src={dealFPA} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
+                <Image key="dealFPAimg" priority src={dealFPA} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -65,7 +65,7 @@ const NVImages = [
           <motion.div key="112" className="w-auto h-auto">
             <Zoomy initialScale={1.2}>
               <motion.div layoutId="nvImgA" layout="preserve-aspect" key="456B" className="w-auto h-auto">
-                <Image key="calcsImg" src={calcs} objectFit="contain" className="relative w-[500px] transform-gpu max-h-[85vh] h-auto object-contain py-4 pointer-events-none z-[99]" alt="Themed finance calculators embedded in dealership websites" />
+                <Image key="calcsImg" priority src={calcs} objectFit="contain" className="relative w-[500px] transform-gpu max-h-[85vh] h-auto object-contain py-4 pointer-events-none z-[99]" alt="Themed finance calculators embedded in dealership websites" />
               </motion.div> 
             </Zoomy>
           </motion.div>
@@ -73,21 +73,6 @@ const NVImages = [
       )
     },
   },
-  // {
-  //   image: function YourDeal() {
-  //     return (
-  //       <motion.div key="YourDeal" className="relative w-2/3 md:w-full md:min-h-[498px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
-  //         <motion.div className="w-auto h-full">
-  //           <Zoomy>
-  //             <motion.div layoutId="nvImgB" layout="preserve-aspect" key="457" className="w-auto h-full">
-  //               <Image key="dealImg" src={yourDeal} objectFit="contain" className="relative h-full w-[500px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="The deal page." />
-  //             </motion.div>
-  //           </Zoomy>
-  //         </motion.div>
-  //       </motion.div>
-  //     )
-  //   },
-  // },
   {
     image: function DealSummary() {
       const imageRef = useRef<HTMLDivElement | null>(null);
@@ -96,7 +81,7 @@ const NVImages = [
           <motion.div className="w-auto h-auto">
             <Zoomy initialScale={1.3}>
               <motion.div layoutId="nvImgC" layout="preserve-aspect" key="458" className="w-auto h-auto">
-                <Image key="dealSummary" src={dealSummary} objectFit="contain" className="relative h-full transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Desktop view of a reservation." />
+                <Image key="dealSummary" priority src={dealSummary} objectFit="contain" className="relative h-full transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Desktop view of a reservation." />
               </motion.div>
             </Zoomy>
           </motion.div>

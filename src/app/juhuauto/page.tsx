@@ -100,7 +100,7 @@ const NVImages = [
           <motion.div className="w-auto h-full" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy initialScale={1.4}>
               <motion.div layoutId="nvImgD" layout="preserve-aspect" key="459" className="w-auto h-full">
-                <Image key="reserveB" src={juhuPreApproval} priority objectFit="contain" className="relative h-full md:w-[640px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Getting pre-approved" />
+                <Image key="reserveB" src={juhuPreApproval} objectFit="contain" className="relative h-full md:w-[640px] transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Getting pre-approved" />
               </motion.div>
             </Zoomy>
           </motion.div>
@@ -115,7 +115,7 @@ const NVImages = [
           <motion.div className="w-auto h-full" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy>
               <motion.div layoutId="nvImgE" layout="preserve-aspect" key="460" className="w-auto h-full">
-                <Image key="fpa" src={juhuTabletFPA} priority className="relative md:left-16 w-[720px] md:w-[640px] md:max-w-none h-full transform-gpu max-h-[85vh] object-contain py-2 select-none z-[999]" alt="Viewing finance quotes on a laptop." />
+                <Image key="fpa" src={juhuTabletFPA} className="relative md:left-16 w-[720px] md:w-[640px] md:max-w-none h-full transform-gpu max-h-[85vh] object-contain py-2 select-none z-[999]" alt="Viewing finance quotes on a laptop." />
               </motion.div>
             </Zoomy>
           </motion.div>
