@@ -38,11 +38,11 @@ export const NextPreviousArticle: React.FC<NextPreviousArticleProps> = ({ previo
             className="relative z-10 flex justify-end w-auto rounded-full max-w-[140px]"
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ type: "spring", stiffness: 100, duration: 1.5 }}
+            transition={{ type: "spring", stiffness: 70, duration: 1.5 }}
             whileHover={{ scale: 0.98, y: 0, transition: { type: "spring", stiffness: 400, duration: 0.2 }, }}
             whileTap={{ scale: 0.95, y: 0, transition: { type: "spring", stiffness: 400, duration: 0.2 }, }}
           >
-            <ButtonLink variant="primary" href={nextArticle.href} className="w-[140px]">
+            <ButtonLink variant="secondary" href={nextArticle.href} className="w-[140px]">
             {nextArticle.text} →
             </ButtonLink>
           </motion.div>

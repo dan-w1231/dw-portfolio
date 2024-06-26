@@ -21,6 +21,10 @@ body {
   background-color: #E1D4DE;
 }
 
+*:focus {
+  outline: 2px solid #5768FF;
+}
+
 .custom-zoom-default {
   @apply bg-gray-100;
 }

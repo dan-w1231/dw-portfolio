@@ -611,6 +611,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
           <motion.div
             key="ZoomyImage"
             onClick={openModal}
+            tabIndex={0}
             // exit={{ opacity: 0, transition: { duration: 0.4 } }}
             whileTap={{ scale: 0.95 }}
             whileHover={{ scale: 0.95 }}
@@ -618,7 +619,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
             // onAnimationStart={handleAnimationStart}
             // onAnimationComplete={handleAnimationComplete}
             className="w-auto h-full select-none"
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: 'zoom-in' }}
           >
             {children}
           </motion.div>
