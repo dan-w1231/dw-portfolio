@@ -14,7 +14,7 @@ export const ThemeImage: React.FC = (): JSX.Element => {
       <AnimatePresence>
         {darkMode ? (
           <motion.div
-            key="light"
+            key="dark"
             className="absolute w-full h-full right-0 top-0"
             initial={{ opacity: 0, x: 60, rotate: 0 }}
             viewport={{ once: true, amount: 0 }}
@@ -51,6 +51,7 @@ export const ThemeImage: React.FC = (): JSX.Element => {
             >
               <Image
                 src={marbleMoon}
+                priority
                 alt=""
                 className="absolute 
               w-[14rem] md:w-[35rem] xl:w-[54rem] 
@@ -64,7 +65,7 @@ export const ThemeImage: React.FC = (): JSX.Element => {
         ) : (
           // Light Mode Image set
           <motion.div
-            key="moon"
+            key="light"
             className="absolute w-full h-full right-0 top-0"
             initial={{ opacity: 0, x: 60 }}
             viewport={{ once: true, amount: 0 }}
@@ -101,6 +102,7 @@ export const ThemeImage: React.FC = (): JSX.Element => {
               <Image
                 src={marbleSphere}
                 alt=""
+                priority
                 className="absolute 
                 w-[14rem] md:w-[35rem] xl:w-[54rem] 
                 top-[-80px] sm:top-[13px] md:top-[-72px] xl:top-[-238px]
@@ -137,7 +139,6 @@ export const ThemeImage: React.FC = (): JSX.Element => {
                 right-[-112px] md:right-[-230px] xl:right-[-245px]
                 z-[-94] 
                 md:rotate-[12deg]"
-                unoptimized
               />
             </motion.div>
           </motion.div>

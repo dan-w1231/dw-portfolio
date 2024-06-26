@@ -445,6 +445,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
             {...(isMobile ? mobileProps : {})}
             {...(!isMobile ? nonTouchProps : {})}
           >
+            {/* IMAGE BEING CLONED */}
             {React.Children.map(children, (child) => {
               if (
                 React.isValidElement(child) &&
@@ -604,7 +605,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
 
   return (
     <>
-      {/* ORIGINAL IMAGE */}
+      {/* ORIGINAL IMAGE WRAPPED IN THIS COMPONENT */}
       <AnimatePresence mode="wait">
         {!isOpen && (
           <motion.div
@@ -623,7 +624,7 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* CLONED IMAGE IN MODAL */}
+      {/* CLONED IMAGE & OVERLAY (MODAL) OPEN IN LAYOUT */}
       {isMounted && (isOpen || isAnimatingOut) && modalRoot && ReactDOM.createPortal(
         <>
           <motion.div key="modalImageWrapper"

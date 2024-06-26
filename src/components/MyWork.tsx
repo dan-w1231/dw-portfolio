@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Container } from '@/components/Container';
 import { Arrow } from '@/components/Arrow';
+import { useIsMobile } from '@/app/utils/useIsMobile';
 
 //ITEMS
 import NVDeal from '@/images/resources/deviceImages/yourDealTradein2.png';
@@ -14,6 +15,9 @@ import fitcheckImage from '@/images/resources/fitcheckp6.png';
 import fafmcImage from '@/images/resources/fafmc.png';
 import juhuAutoImage from '@/images/resources/deviceImages/juhuCover2.png';
 import dealerPlatform from '@/images/resources/deviceImages/dealerPlatform.png';
+
+// could serve animated svg shimmer effect on load
+// const shimmerDataURL = 'data:image/svg+xml;base64,[YourBase64EncodedSVG]'; 
 
 const myWork = [
   {
@@ -24,6 +28,7 @@ const myWork = [
     type: 'Case Study',
     disabled: false,
     image: function NVBuyNow() {
+      const isMobile = useIsMobile();
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#202A37_16%,#253243)] dark:bg-opacity-50">
           <motion.div
@@ -33,7 +38,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={NVDeal} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto translate-z-0 object-contain p-4 sm:p-6" alt="NewVehicle Buy Online" />
+            <Image src={NVDeal} priority width={ isMobile ? 768 : 1457} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto translate-z-0 object-contain p-4 sm:p-6" alt="NewVehicle Buy Online" />
           </motion.div>
         </div>
       )
@@ -47,6 +52,7 @@ const myWork = [
     type: 'Case Study',
     disabled: false,
     image: function JuhuAutoCover() {
+      const isMobile = useIsMobile();
       return (
         <motion.div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[#C3E72F]">
           <motion.div 
@@ -56,7 +62,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={juhuAutoImage} width={1984} height={1984} quality={100} className="pointer-events-none w-full translate-z-0" alt="Juhu Auto Vehicle Marketplace" />
+            <Image src={juhuAutoImage} priority width={ isMobile ? 768 : 1457} quality={100} className="pointer-events-none w-full translate-z-0" alt="Juhu Auto Vehicle Marketplace" />
           </motion.div>
         </motion.div>
       )
@@ -70,6 +76,7 @@ const myWork = [
     type: 'Case Study',
     disabled: false,
     image: function FitnessCheckImage() {
+      const isMobile = useIsMobile();
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#3C2E97_35%,#5945D6)] dark:bg-opacity-50">
           <motion.div 
@@ -79,7 +86,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={fitcheckImage} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto p-4 sm:p-8 translate-z-0" alt="FitnessCheck" />
+            <Image src={fitcheckImage} priority width={ isMobile ? 768 : 1457} quality={100} className="pointer-events-none h-[370px] sm:h-[496px] w-auto p-4 sm:p-8 translate-z-0" alt="FitnessCheck" />
           </motion.div>
         </div>
       )
@@ -93,6 +100,7 @@ const myWork = [
     type: 'Gallery',
     disabled: false,
     image: function ConnectedWorker() {
+      const isMobile = useIsMobile();
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[#E3DAF7]">
           <motion.div
@@ -102,7 +110,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={JDEFRecord} width={1984} height={1984} quality={100} className="w-full pointer-events-none translate-z-0" alt="Connected Worker"/>
+            <Image src={JDEFRecord} width={ isMobile ? 768 : 1457} quality={100} className="w-full pointer-events-none translate-z-0" alt="Connected Worker"/>
           </motion.div>
         </div>
       )
@@ -116,6 +124,7 @@ const myWork = [
     type: 'Gallery',
     disabled: false,
     image: function DealerPlatform() {
+      const isMobile = useIsMobile();
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[#d0f0e7] dark:bg-opacity-20 dark:backdrop-blur-[140px]">
           <motion.div
@@ -125,7 +134,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={dealerPlatform} width={1984} height={1984} quality={100} className="w-full pointer-events-none translate-z-0" alt="iVendi Dealer Platform" />
+            <Image src={dealerPlatform} width={ isMobile ? 768 : 1457} quality={100} className="w-full pointer-events-none translate-z-0" alt="iVendi Dealer Platform" />
           </motion.div>
         </div>
       )
@@ -138,6 +147,7 @@ const myWork = [
     type: 'Coming Soon',
     disabled: true,
     image: function FAFMC() {
+      const isMobile = useIsMobile();
       return (
         <div className="absolute w-full h-full inset-0 flex items-center justify-center bg-[radial-gradient(#3AC0A8,#45D6BC)] dark:bg-opacity-20 dark:backdrop-blur-[140px]">
           <motion.div
@@ -147,7 +157,7 @@ const myWork = [
             viewport= {{ once: false, amount: 0.25 }}
             transition={{ duration: 1.5 }}
           >
-            <Image src={fafmcImage} width={1984} height={1984} quality={100} className="w-full pointer-events-none translate-z-0" alt="Findandfundmycar.com" />
+            <Image src={fafmcImage} width={ isMobile ? 768 : 1457} quality={100} className="w-full pointer-events-none translate-z-0" alt="Findandfundmycar.com" />
           </motion.div>
         </div>
       )
