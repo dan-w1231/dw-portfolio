@@ -270,8 +270,13 @@ export default function NewVehicle() {
                         <Link
                           href="/dealerplatform"
                           className="text-lg font-base tracking-tight text-blurple-900 dark:text-blurple-900 hover:text-midnight-900 dark:hover:text-ice-900 z-[99]">
-                          Transact Dealer Platform for the dealer management system which I also designed.
+                          Transact Dealer Platform,&nbsp;
                         </Link>
+                        <span
+                          className="inline-block mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                          for the dealer management system which I also designed.
+                        </span>
+                        
                         <h3 className="font-display text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 mt-10">
                           Scope
                         </h3>

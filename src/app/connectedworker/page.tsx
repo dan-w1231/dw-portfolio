@@ -8,6 +8,7 @@ import { GalleryHero } from '@/components/GalleryHero';
 import { useMediaQuery } from 'react-responsive';
 import { Gallery } from '@/components/Gallery';
 import { NextPreviousArticle } from '@/components/NextPreviousArticle';
+import { useIsMobile } from '@/app/utils/useIsMobile';
 
 // Gallery Images
 import JDEFLogin from '@/images/resources/jdefLogin.png';
@@ -28,6 +29,7 @@ const workImages = [
       'Logging in to the JDEF app.',
     background: 'bg-cardGradDark',
     image: function Login() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           key="login"
@@ -35,8 +37,8 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <motion.div layoutId="JDEFLogin" key="456" className="w-full h-full">
-              <Image src={JDEFLogin} className="h-full object-contain translate-z-0" alt="" />
+            <motion.div layoutId="JDEFLogin" layout="preserve-aspect" key="556" className="w-full h-full">
+              <Image src={JDEFLogin} width={ isMobile ? 768 : 1457} objectFit="contain" className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -49,6 +51,7 @@ const workImages = [
       'A job in progress.',
     background: 'bg-cardGradDark',
     image: function InProgress() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           key="title2"
@@ -56,8 +59,8 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <motion.div layoutId="JDEFInProgress" key="456" className="w-full h-full">
-              <Image src={JDEFInProgress} className="h-full object-contain translate-z-0" alt="" />
+            <motion.div layoutId="JDEFInProgress" layout="preserve-aspect" key="557" className="w-full h-full">
+              <Image src={JDEFInProgress} width={ isMobile ? 768 : 1457} objectFit="contain" className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -70,13 +73,14 @@ const workImages = [
       'Testing the MVP.',
     background: 'bg-cardGradDark',
     image: function Testing() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl"
         >
           <Zoomy>
-            <motion.div layoutId="CWTesting" key="456" className="w-full h-full">
-              <Image src={CWTesting} className="object-cover translate-z-0" alt="" />
+            <motion.div layoutId="CWTesting" layout="preserve-aspect" key="558" className="w-full h-full">
+              <Image src={CWTesting} width={ isMobile ? 768 : 1457} objectFit="contain" className="object-cover translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -89,13 +93,14 @@ const workImages = [
       'Testing the MVP.',
     background: 'bg-cardGradDark',
     image: function CWTesting2() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-4xl md:rounded-5xl xl:rounded-6xl"
         >
           <Zoomy>
-            <motion.div layoutId="CWTestingB" key="456" className="w-full h-full">
-              <Image src={CWTestingB} className="object-cover translate-z-0" alt="" />
+            <motion.div layoutId="CWTestingB" layout="preserve-aspect" key="559" className="w-full h-full">
+              <Image src={CWTestingB} width={ isMobile ? 768 : 1457} objectFit="contain" className="object-cover translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -108,6 +113,7 @@ const workImages = [
       'Concept for the job record.',
     background: 'bg-cardGradDark',
     image: function JobRecord() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           key="title3"
@@ -115,8 +121,8 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <motion.div layoutId="JDEFRecord" key="456" className="w-full h-full">
-              <Image src={JDEFRecord} className="h-full object-contain translate-z-0" alt="" />
+            <motion.div layoutId="JDEFRecord" layout="preserve-aspect" key="560" className="w-full h-full">
+              <Image src={JDEFRecord} width={ isMobile ? 768 : 1457} objectFit="contain" className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -129,6 +135,7 @@ const workImages = [
       'Concept for viewing the activity screen.',
     background: 'bg-cardGradDark',
     image: function ActivityScreen() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           key="title4"
@@ -136,8 +143,8 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <motion.div layoutId="CWMedical" key="456" className="w-full h-full">
-              <Image src={CWMedical} className="h-full object-contain translate-z-0" alt="" />
+            <motion.div layoutId="CWMedical" layout="preserve-aspect" key="561" className="w-full h-full">
+              <Image src={CWMedical} width={ isMobile ? 768 : 1457} objectFit="contain" className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -150,6 +157,7 @@ const workImages = [
       'Concept for viewing the user record.',
     background: 'bg-cardGradDark',
     image: function UserRecord() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           key="title5"
@@ -157,8 +165,8 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <motion.div layoutId="CWIndustry" key="456" className="w-full h-full">
-              <Image src={CWIndustry} className="h-full object-contain translate-z-0" alt="" />
+            <motion.div layoutId="CWIndustry" layout="preserve-aspect" key="562" className="w-full h-full">
+              <Image src={CWIndustry} width={ isMobile ? 768 : 1457} objectFit="contain" className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>

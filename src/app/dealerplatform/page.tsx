@@ -8,6 +8,7 @@ import { GalleryHero } from '@/components/GalleryHero';
 import { useMediaQuery } from 'react-responsive';
 import { Gallery } from '@/components/Gallery';
 import { NextPreviousArticle } from '@/components/NextPreviousArticle';
+import { useIsMobile } from '../utils/useIsMobile';
 
 // Gallery Images
 import Dashboard from '@/images/resources/dealerPlatformDash.png';
@@ -32,6 +33,7 @@ const workImages = [
       'New dashboard homescreen.',
     background: 'bg-cardGradDark',
     image: function Login() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           key="login"
@@ -39,8 +41,8 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <motion.div layoutId="Dashboard" key="456" className="w-full h-full">
-              <Image src={Dashboard} className="h-full object-contain translate-z-0" alt="" />
+            <motion.div layoutId="Dashboard" layout="preserve-aspect" key="656" className="w-full h-full">
+              <Image src={Dashboard} width={ isMobile ? 768 : 1457} objectFit="contain" className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -53,6 +55,7 @@ const workImages = [
       'A customer record showing vehicles of interest and activity.',
     background: 'bg-cardGradDark',
     image: function Login() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           key="login"
@@ -60,8 +63,8 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <motion.div layoutId="CustomerRecord" key="456" className="w-full h-full">
-              <Image src={CustomerRecord} className="h-full object-contain translate-z-0" alt="" />
+            <motion.div layoutId="CustomerRecord" layout="preserve-aspect" key="657" className="w-full h-full">
+              <Image src={CustomerRecord} width={ isMobile ? 768 : 1457} objectFit="contain" className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -74,6 +77,7 @@ const workImages = [
       'A summary of an order showing current application status',
     background: 'bg-cardGradDark',
     image: function InProgress() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           key="title2"
@@ -81,8 +85,8 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <motion.div layoutId="Order" key="456" className="w-full h-full">
-              <Image src={Order} className="h-full object-contain translate-z-0" alt="" />
+            <motion.div layoutId="Order" layout="preserve-aspect" key="658" className="w-full h-full">
+              <Image src={Order} width={ isMobile ? 768 : 1457} objectFit="contain" className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -95,6 +99,7 @@ const workImages = [
       'Building a deal to email to send to a customer account.',
     background: 'bg-cardGradDark',
     image: function InProgress() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           key="title2"
@@ -102,8 +107,8 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <motion.div layoutId="BuildDeal" key="456" className="w-full h-full">
-              <Image src={BuildDeal} className="h-full object-contain translate-z-0" alt="" />
+            <motion.div layoutId="BuildDeal" layout="preserve-aspect" key="659" className="w-full h-full">
+              <Image src={BuildDeal} width={ isMobile ? 768 : 1457} objectFit="contain" className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
@@ -116,6 +121,7 @@ const workImages = [
       'Deal sent.',
     background: 'bg-cardGradDark',
     image: function InProgress() {
+      const isMobile = useIsMobile();
       return (
         <motion.li
           key="title2"
@@ -123,8 +129,8 @@ const workImages = [
           className="relative w-full h-full flex items-center justify-center p-8"
         >
           <Zoomy>
-            <motion.div layoutId="SentDeal" key="456" className="w-full h-full">
-              <Image src={SentDeal} className="h-full object-contain translate-z-0" alt="" />
+            <motion.div layoutId="SentDeal" layout="preserve-aspect" key="660" className="w-full h-full">
+              <Image src={SentDeal} width={ isMobile ? 768 : 1457} objectFit="contain" className="h-full object-contain translate-z-0" alt="" />
             </motion.div>
           </Zoomy>
         </motion.li>
