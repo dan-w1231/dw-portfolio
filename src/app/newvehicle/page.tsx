@@ -245,7 +245,7 @@ export default function NewVehicle() {
                           for Buyer’s to manage their car purchase.
                         </p>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                          <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>To optimised experience</BulletTag>
+                          <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>To optimised experience</BulletTag><BulletTag>Web</BulletTag>
                         </div>
                         <h3 className="font-display  text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 mt-10">
                           Goals

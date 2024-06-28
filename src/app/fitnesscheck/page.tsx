@@ -168,7 +168,7 @@ export default function FitnessCheck() {
                           A guided workout to give a picture of your current health and fitness, and an activity you can use to measure cardio fitness progress.
                         </p>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                          <BulletTag>Live user testing</BulletTag><BulletTag>To live product</BulletTag>
+                          <BulletTag>Live user testing</BulletTag><BulletTag>To live product</BulletTag><BulletTag>App</BulletTag>
                         </div>
                         <h3 className="font-display text-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 mt-10">
                           Goals

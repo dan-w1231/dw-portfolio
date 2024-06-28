@@ -176,7 +176,7 @@ export default function NewVehicle() {
                           Combining lessons learned from designing online retailing tools including vehicle search, finance calculators, applications and eligibility checking, brought together into a simple yet engaging way to buy a car.
                         </p>
                         <div className="flex flow-row flex-wrap w-full gap-2 mt-4">
-                          <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>Post-release User & A/B Testing</BulletTag>
+                          <BulletTag>From concept</BulletTag><BulletTag>To live product</BulletTag><BulletTag>Post-release User & A/B Testing</BulletTag><BulletTag>Web</BulletTag>
                         </div>
                         <h3 className="font-displaytext-3xl xl:text-4xl tracking-tight font-extrabold text-midnight-900 dark:text-ice-900 mt-10">
                           Goals
