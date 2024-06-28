@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import toast from "react-hot-toast";
 import { GridPattern } from '@/components/GridPattern';
-import arrow from '@/images/resources/arrowDown.svg';
+import { Arrow } from '@/components/Arrow';
 import Form from './ContactForm/Form';
 import { processClasses } from '@/app/utils/processClasses';
 import { useIsMobile } from '@/app/utils/useIsMobile';
@@ -59,7 +59,7 @@ export function ContactBox({ useContainerQuery, parentClass, flexClass }: { useC
                 </div>
               </div>
               <p className="mt-4 text-2xl tracking-tight text-midnight-700 dark:text-ice-700 flex items-center gap-2">
-                Or fill out this form and I'll get back to you<Image src={arrow} alt="arrow pointing to form" width="13" height="13" className={processClasses(`xl:-rotate-90`, useContainerQuery)}/>
+                Or fill out this form and I'll get back to you<Arrow className={processClasses(`xl:-rotate-90 text-midnight-900 dark:text-ice-900` , useContainerQuery)}/>
               </p>
             </div>
             <div id="contactFormArea" className={processClasses(`relative w-full md:w-half xl:max-w-[580px] xl:h-auto`, useContainerQuery)}>
