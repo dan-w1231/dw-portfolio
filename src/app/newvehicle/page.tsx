@@ -273,7 +273,7 @@ export default function NewVehicle() {
                           Transact Dealer Platform,&nbsp;
                         </Link>
                         <span
-                          className="inline-block mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
+                          className="inline mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500">
                           for the dealer management system which I also designed.
                         </span>
                         
