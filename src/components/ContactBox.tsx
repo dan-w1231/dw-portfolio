@@ -1,26 +1,23 @@
 'use client'
 import { useEffect, useState } from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
 import toast from "react-hot-toast";
-import { GridPattern } from '@/components/GridPattern'
-import arrow from '@/images/resources/arrowDown.svg'
-import Form from './ContactForm/Form'
-import { processClasses } from '@/app/utils/processClasses'
+import { GridPattern } from '@/components/GridPattern';
+import arrow from '@/images/resources/arrowDown.svg';
+import Form from './ContactForm/Form';
+import { processClasses } from '@/app/utils/processClasses';
+import { useIsMobile } from '@/app/utils/useIsMobile';
 
 export function ContactBox({ useContainerQuery, parentClass, flexClass }: { useContainerQuery?: boolean, parentClass?: string, flexClass?: string}) {
 
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
 
   const email = "dan@dwdesign.io";
-  useEffect(() => {
-    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
-  }, []);
   
-  const copyEmail = (event: React.MouseEvent) => {
-    if (!isMobile) {
-      navigator.clipboard.writeText(email);
-      toast.success('Email copied to clipboard');
-    }
+  const copyEmail = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    navigator.clipboard.writeText(email);
+    toast.success('Email copied to clipboard');
   };
 
   return (
@@ -43,10 +40,22 @@ export function ContactBox({ useContainerQuery, parentClass, flexClass }: { useC
                 <div id="contactText">
                   <span className="block text-midnight-900 dark:text-ice-900 no-underline">Reach out.</span>
                 </div>
-                <div id="contactEmail">
-                  <span onClick={copyEmail} className={processClasses(`underline border-none text-4xl sm:text-6xl cursor-pointer`, useContainerQuery)}>
-                    {email}
-                  </span>
+                
+                <div id="contactEmail" className="flex flex-row items-center justify-start">
+                {isMobile ? ( 
+                  <div className="flex flex-row flex-wrap items-center justify-start gap-2">
+                    <a href={`mailto:${email}`} className={processClasses(`underline border-none text-4xl sm:text-6xl cursor-pointer`, useContainerQuery)}>
+                      {email}
+                    </a>
+                    <button onClick={copyEmail} className="font-sans text-sm tracking-wide font-normal py-1 px-3 rounded-full bg-transparent text-blurple-900 border border-blurple-900">
+                        COPY
+                    </button>
+                  </div>
+                  ) : (  
+                    <span onClick={copyEmail} className={processClasses(`underline border-none text-4xl sm:text-6xl cursor-pointer`, useContainerQuery)}>
+                      {email}
+                    </span>
+                  )}
                 </div>
               </div>
               <p className="mt-4 text-2xl tracking-tight text-midnight-700 dark:text-ice-700 flex items-center gap-2">
