@@ -1,7 +1,6 @@
 import { motion, AnimatePresence, useAnimation, PanInfo } from 'framer-motion';
 import React, { useRef, useState, useEffect, ReactNode, cloneElement } from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from '@/components/Button';
 import { useTheme } from '@/components/HOC/ThemeContext'
 import { useMediaQuery } from 'react-responsive';
 
@@ -56,51 +55,15 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
     }
   }, [isOpen, initialScale, scale, animateInitialScale]);
 
-
-
-  // closeModal -> modal has onAnimationComplete=handleAnimationComplete -> checks if animating -> closes modal
-  // 1. This doesn't work, handleAnimationComplete is never called when you click the button.
-
-  // const closeModal = () => {
-  //   setIsAnimatingOut(true);
-  //   console.log('close modal called ');
-  // };
-
-  // const handleAnimationComplete = () => {
-  //   console.log('handleAnimationComplete called, isAnimatingOut:', isAnimatingOut);
-  //   if (isAnimatingOut) {
-  //     setIsOpen(false);
-  //     setIsAnimatingOut(false);
-  //   }
-  //   console.log('handleAnimationComplete called ');
-  // };
-
-  // 2. Working but causes image to disappear if you close modal too quick
-  // const closeModal = () => {
-  //   setIsAnimatingOut(true);
-  //   setIsOpen(false);
-  //   console.log('close modal called');
-  // };
-
-  // const handleAnimationComplete = () => {
-  //   if (isOpen) { 
-  //     setTimeout(() => {
-  //       setIsAnimatingOut(false);
-  //     }, 300);
-  //   }
-  //   console.log('handleAnimationComplete called');
-  // };
-
   const openModal = () => {
     setIsOpen(true);
     setAnimateInitialScale(true);
-    //This might not be necessary:
   };
 
   const [isAnimatingIn, setIsAnimatingIn] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
 
-  // 2.1. Working but causes image to disappear if you close modal too quick
+  // 2.1. Working but causes image to disappear if you close modal too quick // Fixed
   const closeModal = () => {
     setIsAnimatingOut(true);
     if (!isAnimatingIn && !isAnimatingOut) {
@@ -124,33 +87,6 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
     }
     // console.log('handleAnimationComplete called');
   };
-
-
-  // console.log(isAnimatingIn, isAnimatingOut)
-
-  // const closeModal = () => {
-  //   setIsAnimatingOut(true); 
-  //   console.log('close modal called');
-
-  //   // Delay state update to after the animation duration
-  //   setTimeout(() => {
-  //     setIsOpen(false); 
-  //     setIsAnimatingOut(false);
-  //   }, 705);
-  // };
-
-  // const handleAnimationComplete = () => {
-  //   console.log('handleAnimationComplete called');
-  //   // Adjust logic here if needed, based on the new approach
-  // };
-
-  // 4. at the end of the animation it think isOpen is still true, so this doesn't work
-  // const handleAnimationComplete = () => {
-  //   if (!isOpen) { // Adjusted condition to check if the modal is closed
-  //       setIsAnimatingOut(false);
-  //   }
-  //   console.log('handleAnimationComplete called');
-  // };
 
   const { darkMode } = useTheme();
   const overlayBackgroundColor = darkMode ? 'rgba(21, 23, 33, 0.6)' : 'rgba(225,212,222,0.6)';
@@ -182,16 +118,6 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
     }
   }, [dragRef.current, modalRef.current]);
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //       if (dragRef.current) {
-  //         setScale(2.5);
-  //       }
-  //   } else {
-  //     setScale(1); 
-  //   }
-  // }, [isOpen, isMobile]); 
-
   useEffect(() => {
     if (isOpen && !isMobile) {
       setTimeout(() => {
@@ -207,17 +133,6 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
       if (touchTimeout) clearTimeout(touchTimeout);
     };
   }, []);
-
-  // useEffect(() => {
-  //   if (initialScale !== undefined) {
-  //     const scaleTimeout = setTimeout(() => {
-  //       setScale(initialScale)
-  //     }, 300); 
-
-  //     // Cleanup function to clear the timeout
-  //     return () => clearTimeout(scaleTimeout);
-  //   }
-  // }, [initialScale]);
 
   useEffect(() => {
     const root = document.getElementById('modal-root');
@@ -309,8 +224,6 @@ const Zoomy: React.FC<ZoomyProps> = ({ children, initialScale }) => {
       }
     }, 100);
 
-    // if (touches.length === 1) {
-    // }
   };
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     const minModalScale = 0.85;
