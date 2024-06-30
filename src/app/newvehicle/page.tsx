@@ -176,11 +176,11 @@ const NVImages = [
     image: function Approved() {
       const isMobile = useIsMobile();
       return (
-        <motion.div key="Approved" className="relative w-full md:min-h-[540px] lg:min-h-[907px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[320px] md:min-w-0">
+        <motion.div key="Approved" className="relative w-full md:min-h-[540px] lg:min-h-[907px] flex items-center justify-center bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-4xl md:rounded-5xl xl:rounded-6xl shadow-lg min-w-[220px] md:min-w-0">
           <motion.div className="w-auto h-full" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 1.2 }}>
             <Zoomy initialScale={1.2}>
               <motion.div layoutId="nvImgF" layout="preserve-aspect" key="461" className="w-auto h-full flex items-center justify-center">
-                <Image key="approved" priority width={ isMobile ? 768 : 1457} src={approved} className="relative w-full transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Instant decision on finance applications." />
+                <Image key="approved" priority width={ isMobile ? 768 : 1457} src={approved} objectFit="contain" className="relative w-full transform-gpu max-h-[85vh] object-contain py-4 pointer-events-none z-[99]" alt="Instant decision on finance applications." />
               </motion.div>
             </Zoomy>
           </motion.div>

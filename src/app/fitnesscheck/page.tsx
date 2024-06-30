@@ -24,6 +24,7 @@ import PrototypeA from '@/images/resources/fitcheck1stPrototype.png';
 import PrototypeB from '@/images/resources/fitcheck2ndPrototype.png';
 import DesignBoard from '@/images/resources/fitcheck-designBoard.png';
 import fitcheckUserTest from '@/images/resources/fitcheckuserTesting.png';
+import fitcheckScreens from '@/images/resources/fitcheckScreens.png';
 
 const fitcheckImages = [
   {
@@ -135,6 +136,7 @@ export default function FitnessCheck() {
   });
   const initialWindowWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
   const y = useTransform(scrollYProgress, [0, 1], initialWindowWidth < 768 ? ["0%", "0%"] : ["0px", "1800px"]);
+  const isMobile = useIsMobile();
 
   return (
     <>
@@ -203,7 +205,7 @@ export default function FitnessCheck() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <motion.div layoutId="brief" key="456" className="w-full h-full">
+                            <motion.div layoutId="brief" key="100" className="w-full h-full">
                               <Image src={brief} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-contain overflow-hidden" alt="Basic feature brief" />
                             </motion.div>
                           </Zoomy>
@@ -227,7 +229,7 @@ export default function FitnessCheck() {
                         </ul>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <motion.div layoutId="observeTest" key="456" className="w-full h-full">
+                            <motion.div layoutId="observeTest" key="101" className="w-full h-full">
                               <Image src={observeTest} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Planning for street interviews" />
                             </motion.div>
                           </Zoomy>
@@ -246,7 +248,7 @@ export default function FitnessCheck() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <motion.div layoutId="PrototypeA" key="456" className="w-full h-full">
+                            <motion.div layoutId="PrototypeA" key="102" className="w-full h-full">
                               <Image src={PrototypeA} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Four of the personas created" />
                             </motion.div>
                           </Zoomy>
@@ -274,7 +276,7 @@ export default function FitnessCheck() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <motion.div layoutId="PrototypeB" key="456" className="w-full h-full">
+                            <motion.div layoutId="PrototypeB" key="103" className="w-full h-full">
                               <Image src={PrototypeB} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Four of the personas created" />
                             </motion.div>
                           </Zoomy>
@@ -287,7 +289,7 @@ export default function FitnessCheck() {
                         </p>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <motion.div layoutId="DesignBoard" key="456" className="w-full h-full">
+                            <motion.div layoutId="DesignBoard" key="104" className="w-full h-full">
                               <Image src={DesignBoard} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-contain" alt="Four of the personas created" />
                             </motion.div>
                           </Zoomy>
@@ -327,7 +329,7 @@ export default function FitnessCheck() {
                         </ul>
                         <div className="mt-6 cursor-zoom-in">
                           <Zoomy>
-                            <motion.div layoutId="fitcheckUserTest" key="456" className="w-full h-full">
+                            <motion.div layoutId="fitcheckUserTest" key="105" className="w-full h-full">
                               <Image src={fitcheckUserTest} loading="lazy" placeholder="blur" className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-cover" alt="Four of the personas created" />
                             </motion.div>
                           </Zoomy>
@@ -356,6 +358,13 @@ export default function FitnessCheck() {
                         <p className="mt-4 text-lg tracking-tight text-midnight-800 dark:text-ice-500 ">
                           The feature was then released to the public as part of the Prevayl app.
                         </p>
+                        <div className="mt-6 cursor-zoom-in">
+                          <Zoomy>
+                            <motion.div layoutId="fitcheckScreens" key="106" className="w-full h-full">
+                              <Image src={fitcheckScreens} loading="lazy" placeholder="blur" width={ isMobile ? 1024 : 1536} className="bg-ice-800/30 dark:bg-ice-900/5 transition-bg duration-900 rounded-lg max-h-[85vh] pointer-events-none object-cover" alt="Four of the personas created" />
+                            </motion.div>
+                          </Zoomy>
+                        </div>
                       </motion.div>
                     </div>
                   </div>

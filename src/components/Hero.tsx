@@ -8,10 +8,12 @@ import { Button } from '@/components/Button';
 import { ButtonLink } from '@/components/ButtonLink';
 import Circle from '@/images/resources/circle.svg';
 import { ThemeImage } from '@/components/ThemeImage';
+import { useIsMobile } from '@/app/utils/useIsMobile';
 
 
 
 export function Hero() {
+  const isMobile = useIsMobile();
 
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -31,11 +33,13 @@ export function Hero() {
   };
 
   useEffect(() => {
+    if (!isMobile) {
     window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
+  }
   }, []);
 
   const imageStyle = {
